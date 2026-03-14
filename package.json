@@ -1,20 +1,33 @@
 {
-  "name": "ngatoms",
-  "version": "0.0.1",
-  "description": "Angular UI primitives you own.",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/thereisnoplacelike/ngatoms"
-  },
-  "keywords": [
-    "angular",
-    "ui",
-    "design-system",
-    "components",
-    "primitives"
+  "name": "ngatoms-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
   ],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "changeset": "changeset",
+    "version:packages": "changeset version",
+    "publish:changesets": "changeset publish",
+    "pre:enter:alpha": "changeset pre enter alpha",
+    "pre:enter:beta": "changeset pre enter beta",
+    "pre:enter:rc": "changeset pre enter rc",
+    "pre:exit": "changeset pre exit",
+    "status:changesets": "changeset status --verbose",
+    "publish:latest": "node tools/scripts/publish.mjs --channel latest",
+    "publish:alpha": "node tools/scripts/publish.mjs --channel alpha",
+    "publish:beta": "node tools/scripts/publish.mjs --channel beta",
+    "publish:rc": "node tools/scripts/publish.mjs --channel rc",
+    "publish:alpha:dry": "node tools/scripts/publish.mjs --channel alpha --dry-run",
+    "publish:beta:dry": "node tools/scripts/publish.mjs --channel beta --dry-run",
+    "publish:rc:dry": "node tools/scripts/publish.mjs --channel rc --dry-run",
+    "publish:latest:dry": "node tools/scripts/publish.mjs --channel latest --dry-run"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.30.0"
+  }
 }

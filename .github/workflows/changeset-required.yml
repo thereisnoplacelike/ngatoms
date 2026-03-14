@@ -1,0 +1,57 @@
+name: Changeset Required
+
+on:
+  pull_request:
+    branches:
+      - main
+      - alpha
+      - beta
+      - rc
+
+jobs:
+  check-changeset:
+    name: Check changeset
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        run: git fetch origin ${{ github.base_ref }} --depth=1
+
+      - name: Detect changed files
+        id: changed
+        shell: bash
+        run: |
+          CHANGED_FILES="$(git diff --name-only origin/${{ github.base_ref }}...HEAD)"
+          echo "changed_files<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$CHANGED_FILES" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+          if echo "$CHANGED_FILES" | grep -qE '^(packages/(ngatoms|cli|primitives|tokens|utils)/|registry/)'; then
+            echo "package_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "package_changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          if echo "$CHANGED_FILES" | grep -qE '^\.changeset/.+\.md$'; then
+            echo "has_changeset=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changeset=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fail when package changes have no changeset
+        if: steps.changed.outputs.package_changed == 'true' && steps.changed.outputs.has_changeset == 'false'
+        run: |
+          echo "Changes detected in publishable packages or registry, but no changeset file was found."
+          echo "Run: npx changeset"
+          exit 1
+
+      - name: Summary
+        shell: bash
+        run: |
+          echo "Package changed: ${{ steps.changed.outputs.package_changed }}"
+          echo "Has changeset: ${{ steps.changed.outputs.has_changeset }}"
