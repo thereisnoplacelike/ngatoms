@@ -1,0 +1,14 @@
+{
+  "name": "ngatoms",
+  "version": "0.0.3",
+  "description": "Angular UI primitives you own.",
+  "author": "Lázaro Dutra",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "build": "node -e \"console.log('build placeholder')\""
+  }
+}
