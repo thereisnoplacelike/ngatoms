@@ -190,6 +190,10 @@
   pointer-events: none;
 }
 
+.nga-btn--loading > :not(.nga-btn-spinner) {
+  opacity: 0.5;
+}
+
 /* ── Spinner ────────────────────────────────────────────────── */
 @keyframes nga-btn-spin {
   to { transform: rotate(360deg); }

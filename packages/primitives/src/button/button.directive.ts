@@ -67,7 +67,10 @@ export class NgAtomsButtonDirective implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this._spinnerEl = null;
+    if (this._spinnerEl) {
+      this.renderer.removeChild(this.el.nativeElement, this._spinnerEl);
+      this._spinnerEl = null;
+    }
   }
 
   private _activateLoading(): void {
