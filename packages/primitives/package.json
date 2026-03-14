@@ -2,6 +2,7 @@
   "name": "@thereisnoplacelike/ngatoms-primitives",
   "version": "0.0.1",
   "description": "Angular UI primitives for NgAtoms",
+  "private": true,
   "author": "Lázaro Dutra",
   "license": "MIT",
   "type": "module",

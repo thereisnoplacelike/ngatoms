@@ -2,11 +2,11 @@
   "name": "@thereisnoplacelike/ngatoms-docs",
   "version": "0.0.1",
   "private": true,
-  "description": "Documentation site for NgAtoms",
+  "description": "NgAtoms playground app",
   "author": "Lázaro Dutra",
   "license": "MIT",
   "scripts": {
-    "dev": "node -e \"console.log('docs dev placeholder')\"",
-    "build": "node -e \"console.log('docs build placeholder')\""
+    "dev": "ng serve --project=docs",
+    "build": "ng build --project=docs"
   }
 }
