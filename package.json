@@ -1,0 +1,20 @@
+{
+  "name": "ngatoms",
+  "version": "0.0.1",
+  "description": "Angular UI primitives you own.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thereisnoplacelike/ngatoms"
+  },
+  "keywords": [
+    "angular",
+    "ui",
+    "design-system",
+    "components",
+    "primitives"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
