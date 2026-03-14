@@ -12,7 +12,7 @@
     "lint": "npm run lint --workspaces --if-present",
     "changeset": "changeset",
     "version:packages": "changeset version",
-    "publish:changesets": "changeset publish --access public",
+    "publish:changesets": "changeset publish --access public --provenance",
     "pre:enter:alpha": "changeset pre enter alpha",
     "pre:enter:beta": "changeset pre enter beta",
     "pre:enter:rc": "changeset pre enter rc",
