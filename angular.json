@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "apps",
+  "projects": {
+    "docs": {
+      "projectType": "application",
+      "root": "apps/docs",
+      "sourceRoot": "apps/docs/src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "apps/docs/dist",
+            "index": "apps/docs/src/index.html",
+            "browser": "apps/docs/src/main.ts",
+            "tsConfig": "apps/docs/tsconfig.app.json",
+            "styles": ["apps/docs/src/styles.css"],
+            "scripts": [],
+            "assets": [
+              "apps/docs/src/favicon.ico",
+              { "glob": "**/*", "input": "apps/docs/src/assets", "output": "assets" }
+            ]
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "docs:build"
+          }
+        }
+      }
+    }
+  }
+}
