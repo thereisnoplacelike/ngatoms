@@ -28,7 +28,7 @@
 .grid-header,
 .grid-row {
   display: grid;
-  grid-template-columns: 100px repeat(5, 1fr);
+  grid-template-columns: 100px repeat(5, 1fr); /* 5 = SIZES.length in button-page.component.ts */
   align-items: center;
   gap: 0.75rem;
 }
