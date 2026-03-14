@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgAtomsButtonDirective } from '../../../../../../packages/primitives/src/button';
 
 const VARIANTS = ['primary', 'outline', 'ghost', 'secondary', 'destructive'] as const;
@@ -11,7 +11,6 @@ type Size = typeof SIZES[number];
   selector: 'app-button-page',
   standalone: true,
   imports: [NgAtomsButtonDirective],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './button-page.component.html',
   styleUrl: './button-page.component.css',
 })

@@ -1,4 +1,5 @@
 @import '../../../packages/primitives/src/button/button.styles.css';
+@import '@phosphor-icons/web/bold';
 
 *, *::before, *::after {
   box-sizing: border-box;
