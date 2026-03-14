@@ -1,2 +1,2 @@
 // NgAtoms primitives — components will be exported from here
-export {};
+export * from './button';
