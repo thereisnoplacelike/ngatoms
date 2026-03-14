@@ -28,6 +28,13 @@
     "publish:latest:dry": "node tools/scripts/publish.mjs --channel latest --dry-run"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.30.0"
+    "@angular/common": "^21.0.0",
+    "@angular/compiler": "^21.0.0",
+    "@angular/compiler-cli": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0",
+    "@changesets/cli": "^2.30.0",
+    "rxjs": "^7.8.0",
+    "typescript": "~5.9.0"
   }
 }
