@@ -9,6 +9,6 @@
     "src"
   ],
   "scripts": {
-    "build": "node -e \"console.log('utils build placeholder')\""
+    "build": "tsc --noEmit -p tsconfig.json"
   }
 }
