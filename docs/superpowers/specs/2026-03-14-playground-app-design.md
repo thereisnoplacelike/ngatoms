@@ -222,7 +222,7 @@ Standard Angular CLI template. Root element tag must match the component selecto
 **`apps/docs/src/app/pages/button/button-page.component.ts`:**
 - Standalone, imports `NgAtomsButtonDirective` from a relative path into the primitives source:
   ```typescript
-  import { NgAtomsButtonDirective } from '../../../../../packages/primitives/src/button';
+  import { NgAtomsButtonDirective } from '../../../../../../packages/primitives/src/button';
   ```
   This matches the source-import strategy used for CSS (integration harness imports from source, not from a compiled package).
 - Also includes `CUSTOM_ELEMENTS_SCHEMA` in its `schemas` array to allow Phosphor icon tags in its own template.
