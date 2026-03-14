@@ -34,18 +34,20 @@ apps/docs/
 ├── package.json                             ← updated: ng serve / ng build scripts
 ├── tsconfig.app.json                        ← NEW: extends ../../tsconfig.json
 └── src/
-    ├── index.html
-    ├── main.ts                              ← bootstrapApplication(AppComponent, appConfig)
+    ├── index.html                           ← standard Angular shell; root element <app-root>
+    ├── favicon.ico                          ← placeholder (can be any .ico file)
+    ├── assets/                              ← empty directory (required by angular.json assets glob)
+    ├── main.ts                              ← bootstrapApplication + Phosphor side-effect import
     ├── styles.css                           ← global styles + button.styles.css import
     └── app/
         ├── app.component.ts                 ← root shell: <nav> + <router-outlet>
-        ├── app.component.css                ← layout: sidebar nav + main content area
-        ├── app.config.ts                    ← provideRouter(routes), provideZonelessChangeDetection()
+        ├── app.component.css                ← CSS grid layout: sidebar + main
+        ├── app.config.ts                    ← provideRouter(routes), provideZonelessChangeDetection() [stable API, Angular 18+]
         ├── app.routes.ts                    ← routes array
         └── pages/
             └── button/
                 ├── button-page.component.ts ← showcase grid
-                └── button-page.component.css
+                └── button-page.component.css ← showcase section spacing; no layout primitives
 ```
 
 ---
@@ -73,7 +75,11 @@ apps/docs/
             "browser": "apps/docs/src/main.ts",
             "tsConfig": "apps/docs/tsconfig.app.json",
             "styles": ["apps/docs/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "assets": [
+              "apps/docs/src/favicon.ico",
+              { "glob": "**/*", "input": "apps/docs/src/assets", "output": "assets" }
+            ]
           }
         },
         "serve": {
@@ -88,20 +94,22 @@ apps/docs/
 }
 ```
 
+> `favicon.ico` and the `assets/` directory must exist on disk for the build to succeed. Both are listed in the file structure above. `assets/` can be an empty directory — it just needs to exist.
+
 ---
 
 ## New Root devDependencies
 
-| Package | Purpose |
-|---|---|
-| `@angular/cli` | `ng serve` / `ng build` |
-| `@angular/router` | Client-side routing |
-| `@angular/platform-browser` | `bootstrapApplication` |
-| `@angular/platform-browser-dynamic` | Not needed (standalone bootstrap) |
-| `@angular-devkit/build-angular` | Application builder (esbuild) |
-| `@phosphor-icons/web` | Icon web components |
+| Package | Status | Purpose |
+|---|---|---|
+| `@angular/cli` | new | `ng serve` / `ng build` |
+| `@angular/router` | new | Client-side routing |
+| `@angular-devkit/build-angular` | new | Application builder (esbuild) |
+| `@phosphor-icons/web` | new | Icon web components |
 
-> `@angular/core`, `@angular/compiler`, `@angular/compiler-cli`, `@angular/common`, and `typescript` are already installed at the root.
+> Already installed at root: `@angular/core`, `@angular/common`, `@angular/compiler`, `@angular/compiler-cli`, `@angular/platform-browser`, `typescript`.
+
+> `@angular/cli` must be installed at the **monorepo root only**. Do not add it to `apps/docs/package.json`. The `ng` binary resolves from root `node_modules/.bin` via npm workspace hoisting — this is correct behavior and requires no local entry.
 
 ---
 
@@ -109,6 +117,7 @@ apps/docs/
 
 **`apps/docs/src/main.ts`:**
 ```typescript
+import '@phosphor-icons/web';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
@@ -116,15 +125,17 @@ import { AppComponent } from './app/app.component';
 bootstrapApplication(AppComponent, appConfig).catch(console.error);
 ```
 
+> The `import '@phosphor-icons/web'` is a side-effect import that registers all Phosphor icon custom elements globally. It must appear before `bootstrapApplication`.
+
 **`apps/docs/src/app/app.config.ts`:**
 ```typescript
-import { ApplicationConfig, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideExperimentalZonelessChangeDetection(),
+    provideZonelessChangeDetection(),
     provideRouter(routes),
   ],
 };
@@ -149,17 +160,72 @@ export const routes: Routes = [
 ## Root Shell Component
 
 **`apps/docs/src/app/app.component.ts`:**
-- Standalone component
-- Imports: `RouterOutlet`, `RouterLink`, `RouterLinkActive`
-- Template: a `<nav>` sidebar listing primitive pages, plus `<router-outlet>`
-- `CUSTOM_ELEMENTS_SCHEMA` in `schemas` to allow Phosphor web component tags
+
+`CUSTOM_ELEMENTS_SCHEMA` is a property of the `@Component` decorator (standalone component — no NgModule involved):
+
+```typescript
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  template: `
+    <div class="layout">
+      <nav class="sidebar">
+        <a routerLink="/button" routerLinkActive="active">Button</a>
+      </nav>
+      <main class="content">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  `,
+  styleUrl: './app.component.css',
+})
+export class AppComponent {}
+```
+
+**`apps/docs/src/app/app.component.css`:**
+- CSS grid layout: two columns (fixed sidebar + flexible main)
+- Sidebar: ~200px wide, dark background, vertical nav links
+- Content area: fills remaining width, padding for readability
+- Example:
+  ```css
+  .layout { display: grid; grid-template-columns: 200px 1fr; min-height: 100vh; }
+  .sidebar { padding: 1.5rem 1rem; background: #111; display: flex; flex-direction: column; gap: 0.5rem; }
+  .content { padding: 2rem; }
+  ```
+
+**`apps/docs/src/index.html`:**
+Standard Angular CLI template. Root element tag must match the component selector (`app-root`):
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NgAtoms Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+```
 
 ---
 
 ## Button Showcase Page
 
 **`apps/docs/src/app/pages/button/button-page.component.ts`:**
-- Standalone, imports `NgAtomsButtonDirective`
+- Standalone, imports `NgAtomsButtonDirective` from a relative path into the primitives source:
+  ```typescript
+  import { NgAtomsButtonDirective } from '../../../../../packages/primitives/src/button';
+  ```
+  This matches the source-import strategy used for CSS (integration harness imports from source, not from a compiled package).
+- Also includes `CUSTOM_ELEMENTS_SCHEMA` in its `schemas` array to allow Phosphor icon tags in its own template.
 - Sections rendered:
 
 ### 1. Variants × Sizes grid
@@ -189,6 +255,9 @@ A few buttons with Phosphor icons as leading/trailing content, using `CUSTOM_ELE
 ```
 
 Phosphor web components are registered by importing `@phosphor-icons/web` in `main.ts`.
+
+**`apps/docs/src/app/pages/button/button-page.component.css`:**
+Contains section-level spacing only — no layout primitives. Each showcase section (variants grid, loading row, disabled row, icon examples) is wrapped in a `<section>` with a heading. CSS provides `margin-bottom` between sections and styles the `<h2>` headings. The variant-size grid is rendered as a plain `<div>` with CSS grid columns (one per size), rows flowing naturally.
 
 ---
 
@@ -223,14 +292,23 @@ Phosphor web components are registered by importing `@phosphor-icons/web` in `ma
 }
 ```
 
+> **Trade-off:** `"types": []` suppresses all ambient type declarations (e.g. `@types/node`). This is intentional — the playground is a browser app that shouldn't have Node types leaking in. If a test runner is added later that requires ambient types, this array will need entries added.
+
+> **`emitDecoratorMetadata` is intentionally absent.** Angular 21 standalone bootstrapping with signals does not require it. The root `tsconfig.json` sets `experimentalDecorators: true` (inherited here), which is sufficient for Angular decorators without metadata emission.
+
 ---
 
 ## Global Styles
 
 **`apps/docs/src/styles.css`:**
-- Imports `button.styles.css` from the primitives package source
+- Imports `button.styles.css` from the primitives package source via relative path:
+  ```css
+  @import '../../../packages/primitives/src/button/button.styles.css';
+  ```
 - Sets a dark background, basic reset, monospace/sans-serif font stack
 - No component styles — those live in component CSS files
+
+> **Coupling note:** The relative import path ties the playground directly to the primitives source tree. This is intentional — the playground is an integration harness, not a consumer project, so importing raw source is appropriate. The Angular CLI build (esbuild) resolves the `@import` at build time, so no extra bundler config is needed.
 
 ---
 
