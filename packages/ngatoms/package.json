@@ -10,7 +10,11 @@
   },
   "files": [
     "bin",
-    "src"
+    "src/commands/add.js",
+    "src/commands/init.js",
+    "src/lib/config.js",
+    "src/lib/github.js",
+    "src/lib/registry.js"
   ],
   "engines": {
     "node": ">=18"
