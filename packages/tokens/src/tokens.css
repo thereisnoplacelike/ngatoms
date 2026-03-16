@@ -4,8 +4,9 @@
    Dark mode: add .dark class to <html> or <body>
    ============================================================= */
 
-/* ── Primitives: Neutral gray (warm undertone) ────────────── */
+/* ── Primitives ───────────────────────────────────────────── */
 :root {
+  /* Neutral gray (warm undertone) */
   --nga-gray-50:  #FAFAF9;
   --nga-gray-100: #F4F4F2;
   --nga-gray-200: #E8E8E5;
@@ -17,26 +18,26 @@
   --nga-gray-800: #242422;
   --nga-gray-900: #141413;
   --nga-gray-950: #0A0A09;
-}
 
-/* ── Primitives: Gold (restrained accent) ─────────────────── */
-:root {
+  /* Gold (restrained accent) */
   --nga-gold-50:  #FBF5E9;
   --nga-gold-100: #F0E0BC;
   --nga-gold-200: #DEC48A;
   --nga-gold-300: #C8A97E;
   --nga-gold-400: #B08D5A;
   --nga-gold-500: #8A6B3A;
-}
 
-/* ── Primitives: Green (muted sage, success only) ─────────── */
-:root {
+  /* Green (muted sage, success only) */
   --nga-green-50:  #F0F4EF;
   --nga-green-100: #D8E8D5;
   --nga-green-200: #AEC9A9;
   --nga-green-300: #7FA878;
   --nga-green-400: #527A4C;
   --nga-green-500: #365230;
+
+  /* White & Red (used in semantic layer) */
+  --nga-white:   #FFFFFF;
+  --nga-red-600: #A8392A;
 }
 
 /* ── Semantic: Light mode (default) ───────────────────────── */
@@ -47,7 +48,7 @@
 
   /* Primary action */
   --nga-color-primary:               var(--nga-gray-900);
-  --nga-color-primary-foreground:    #ffffff;
+  --nga-color-primary-foreground:    var(--nga-white);
 
   /* Secondary action */
   --nga-color-secondary:             var(--nga-gray-100);
@@ -66,16 +67,16 @@
   --nga-color-ring:                  var(--nga-gold-300);
 
   /* Card */
-  --nga-color-card:                  #ffffff;
+  --nga-color-card:                  var(--nga-white);
   --nga-color-card-foreground:       var(--nga-gray-950);
 
   /* Success */
   --nga-color-success:               var(--nga-green-400);
-  --nga-color-success-foreground:    #ffffff;
+  --nga-color-success-foreground:    var(--nga-white);
 
   /* Destructive */
-  --nga-color-destructive:           #A8392A;
-  --nga-color-destructive-foreground: #ffffff;
+  --nga-color-destructive:           var(--nga-red-600);
+  --nga-color-destructive-foreground: var(--nga-white);
 
   /* Radius */
   --nga-radius-none: 0;
@@ -164,6 +165,6 @@
   --nga-color-success-foreground:    var(--nga-gray-950);
 
   /* Destructive — same value, readable on dark */
-  --nga-color-destructive:           #A8392A;
-  --nga-color-destructive-foreground: #ffffff;
+  --nga-color-destructive:           var(--nga-red-600);
+  --nga-color-destructive-foreground: var(--nga-white);
 }
