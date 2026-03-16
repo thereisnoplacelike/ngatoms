@@ -1,6 +1,6 @@
 {
   "name": "@thereisnoplacelike/ngatoms-primitives",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Angular UI primitives for NgAtoms",
   "private": true,
   "author": "Lázaro Dutra",
