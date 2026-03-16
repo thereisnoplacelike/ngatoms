@@ -3,3 +3,6 @@ dist
 .idea
 coverage
 .DS_Store
+.superpowers/
+apps/docs/dist/
+/.angular/*
