@@ -1,5 +1,11 @@
 # @thereisnoplacelike/ngatoms-docs
 
+## 0.0.3
+
+### Patch Changes
+
+- f721d4a: config packages
+
 ## 0.0.2
 
 ### Patch Changes
