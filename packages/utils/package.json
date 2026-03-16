@@ -1,7 +1,8 @@
 {
   "name": "@thereisnoplacelike/ngatoms-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shared utilities for NgAtoms",
+  "private": true,
   "author": "Lázaro Dutra",
   "license": "MIT",
   "type": "module",
@@ -9,6 +10,6 @@
     "src"
   ],
   "scripts": {
-    "build": "node -e \"console.log('utils build placeholder')\""
+    "build": "tsc --noEmit -p tsconfig.json"
   }
 }

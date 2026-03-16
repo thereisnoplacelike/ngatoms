@@ -1,5 +1,170 @@
+/* =============================================================
+   NgAtoms Design Tokens
+   Two-tier system: primitives → semantic roles
+   Dark mode: add .dark class to <html> or <body>
+   ============================================================= */
+
+/* ── Primitives ───────────────────────────────────────────── */
 :root {
-    --nga-radius-md: 0.5rem;
-    --nga-color-primary: #2563eb;
-    --nga-color-primary-foreground: #ffffff;
+  /* Neutral gray (warm undertone — H 85°, very low chroma) */
+  --nga-gray-50:  oklch(98% 0.002 85);
+  --nga-gray-100: oklch(96% 0.003 85);
+  --nga-gray-200: oklch(92% 0.004 85);
+  --nga-gray-300: oklch(85% 0.005 85);
+  --nga-gray-400: oklch(71% 0.006 85);
+  --nga-gray-500: oklch(54% 0.006 85);
+  --nga-gray-600: oklch(40% 0.005 85);
+  --nga-gray-700: oklch(29% 0.004 85);
+  --nga-gray-800: oklch(20% 0.003 85);
+  --nga-gray-900: oklch(13% 0.002 85);
+  --nga-gray-950: oklch(8% 0.002 85);
+
+  /* Gold (warm amber accent — H shifts 80°→58° as it deepens) */
+  --nga-gold-50:  oklch(97% 0.016 80);
+  --nga-gold-100: oklch(91% 0.035 75);
+  --nga-gold-200: oklch(84% 0.058 72);
+  --nga-gold-300: oklch(76% 0.068 68);
+  --nga-gold-400: oklch(66% 0.068 62);
+  --nga-gold-500: oklch(50% 0.060 58);
+
+  /* Green (muted sage, success only — H 148°) */
+  --nga-green-50:  oklch(96% 0.010 148);
+  --nga-green-100: oklch(90% 0.022 148);
+  --nga-green-200: oklch(80% 0.038 148);
+  --nga-green-300: oklch(68% 0.050 148);
+  --nga-green-400: oklch(54% 0.052 148);
+  --nga-green-500: oklch(38% 0.046 148);
+
+  /* White & destructive red */
+  --nga-white:   oklch(100% 0 0);
+  --nga-red-600: oklch(47% 0.130 22);
+}
+
+/* ── Semantic: Light mode (default) ───────────────────────── */
+:root {
+  /* Surfaces */
+  --nga-color-background:            var(--nga-gray-50);
+  --nga-color-foreground:            var(--nga-gray-950);
+
+  /* Primary action */
+  --nga-color-primary:               var(--nga-gray-900);
+  --nga-color-primary-foreground:    var(--nga-white);
+
+  /* Secondary action */
+  --nga-color-secondary:             var(--nga-gray-100);
+  --nga-color-secondary-foreground:  var(--nga-gray-900);
+
+  /* Muted / subdued */
+  --nga-color-muted:                 var(--nga-gray-100);
+  --nga-color-muted-foreground:      var(--nga-gray-500);
+
+  /* Accent (gold — use sparingly) */
+  --nga-color-accent:                var(--nga-gold-300);
+  --nga-color-accent-foreground:     var(--nga-gold-500);
+
+  /* Borders & rings */
+  --nga-color-border:                var(--nga-gray-200);
+  --nga-color-ring:                  var(--nga-gold-300);
+
+  /* Card */
+  --nga-color-card:                  var(--nga-white);
+  --nga-color-card-foreground:       var(--nga-gray-950);
+
+  /* Success */
+  --nga-color-success:               var(--nga-green-400);
+  --nga-color-success-foreground:    var(--nga-white);
+
+  /* Destructive */
+  --nga-color-destructive:           var(--nga-red-600);
+  --nga-color-destructive-foreground: var(--nga-white);
+
+  /* Radius */
+  --nga-radius-none: 0;
+  --nga-radius-sm:   0.25rem;
+  --nga-radius-md:   0.5rem;
+  --nga-radius-lg:   0.75rem;
+  --nga-radius-xl:   1rem;
+  --nga-radius-2xl:  1.5rem;
+  --nga-radius-full: 9999px;
+
+  /* Spacing (4px base) */
+  --nga-space-1:  0.25rem;
+  --nga-space-2:  0.5rem;
+  --nga-space-3:  0.75rem;
+  --nga-space-4:  1rem;
+  --nga-space-5:  1.25rem;
+  --nga-space-6:  1.5rem;
+  --nga-space-8:  2rem;
+  --nga-space-10: 2.5rem;
+  --nga-space-12: 3rem;
+  --nga-space-16: 4rem;
+  --nga-space-20: 5rem;
+  --nga-space-24: 6rem;
+
+  /* Typography */
+  --nga-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --nga-font-mono: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+
+  --nga-text-xs:   0.75rem;
+  --nga-text-sm:   0.875rem;
+  --nga-text-base: 1rem;
+  --nga-text-lg:   1.125rem;
+  --nga-text-xl:   1.25rem;
+  --nga-text-2xl:  1.5rem;
+  --nga-text-3xl:  1.875rem;
+  --nga-text-4xl:  2.25rem;
+
+  --nga-font-weight-normal:   400;
+  --nga-font-weight-medium:   500;
+  --nga-font-weight-semibold: 600;
+  --nga-font-weight-bold:     700;
+
+  --nga-leading-tight:   1.25;
+  --nga-leading-snug:    1.375;
+  --nga-leading-normal:  1.5;
+  --nga-leading-relaxed: 1.625;
+
+  --nga-tracking-tight:  -0.02em;
+  --nga-tracking-normal:  0em;
+  --nga-tracking-wide:    0.05em;
+  --nga-tracking-wider:   0.1em;
+}
+
+/* ── Semantic: Dark mode (.dark on <html> or <body>) ──────── */
+.dark {
+  /* Surfaces */
+  --nga-color-background:            var(--nga-gray-950);
+  --nga-color-foreground:            var(--nga-gray-50);
+
+  /* Primary action */
+  --nga-color-primary:               var(--nga-gray-100);
+  --nga-color-primary-foreground:    var(--nga-gray-900);
+
+  /* Secondary action */
+  --nga-color-secondary:             var(--nga-gray-800);
+  --nga-color-secondary-foreground:  var(--nga-gray-300);
+
+  /* Muted / subdued */
+  --nga-color-muted:                 var(--nga-gray-800);
+  --nga-color-muted-foreground:      var(--nga-gray-500);
+
+  /* Accent — gold steps up one shade for dark background contrast */
+  --nga-color-accent:                var(--nga-gold-400);
+  --nga-color-accent-foreground:     var(--nga-gold-50);
+
+  /* Borders & rings */
+  --nga-color-border:                var(--nga-gray-700);
+  --nga-color-ring:                  var(--nga-gold-400);
+
+  /* Card */
+  --nga-color-card:                  var(--nga-gray-900);
+  --nga-color-card-foreground:       var(--nga-gray-50);
+
+  /* Success */
+  --nga-color-success:               var(--nga-green-300);
+  --nga-color-success-foreground:    var(--nga-gray-950);
+
+  /* Destructive — same value, readable on dark */
+  --nga-color-destructive:           var(--nga-red-600);
+  --nga-color-destructive-foreground: var(--nga-white);
 }

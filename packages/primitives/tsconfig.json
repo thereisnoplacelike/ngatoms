@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.json",
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  },
+  "include": ["src/**/*.ts"]
+}

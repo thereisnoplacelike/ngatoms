@@ -1,17 +1,15 @@
 {
   "name": "@thereisnoplacelike/ngatoms-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI for NgAtoms",
+  "private": true,
   "author": "Lázaro Dutra",
   "license": "MIT",
   "type": "module",
-  "bin": {
-    "ngatoms": "./bin/ngatoms.js"
-  },
   "files": [
     "bin"
   ],
   "scripts": {
-    "build": "node ./bin/ngatoms.js"
+    "build": "echo 'Superseded by packages/ngatoms — no build needed'"
   }
 }
