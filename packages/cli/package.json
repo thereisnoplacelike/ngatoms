@@ -1,6 +1,6 @@
 {
   "name": "@thereisnoplacelike/ngatoms-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI for NgAtoms",
   "private": true,
   "author": "Lázaro Dutra",
