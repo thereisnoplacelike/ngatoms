@@ -4,11 +4,19 @@
   "description": "Angular UI primitives you own.",
   "author": "Lázaro Dutra",
   "license": "MIT",
-  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "ngatoms": "./bin/cli.js"
+  },
   "files": [
-    "index.js"
+    "bin",
+    "src"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "build": "node -e \"console.log('build placeholder')\""
+    "build": "echo 'CLI has no build step'",
+    "test": "node --test src/**/*.test.js"
   }
 }

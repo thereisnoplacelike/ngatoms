@@ -2,12 +2,10 @@
   "name": "@thereisnoplacelike/ngatoms-cli",
   "version": "0.0.1",
   "description": "CLI for NgAtoms",
+  "private": true,
   "author": "Lázaro Dutra",
   "license": "MIT",
   "type": "module",
-  "bin": {
-    "ngatoms": "./bin/ngatoms.js"
-  },
   "files": [
     "bin"
   ],
