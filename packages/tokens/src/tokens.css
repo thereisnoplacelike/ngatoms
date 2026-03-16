@@ -6,38 +6,38 @@
 
 /* ── Primitives ───────────────────────────────────────────── */
 :root {
-  /* Neutral gray (warm undertone) */
-  --nga-gray-50:  #FAFAF9;
-  --nga-gray-100: #F4F4F2;
-  --nga-gray-200: #E8E8E5;
-  --nga-gray-300: #D1D1CD;
-  --nga-gray-400: #A8A8A3;
-  --nga-gray-500: #7A7A75;
-  --nga-gray-600: #525250;
-  --nga-gray-700: #3A3A38;
-  --nga-gray-800: #242422;
-  --nga-gray-900: #141413;
-  --nga-gray-950: #0A0A09;
+  /* Neutral gray (warm undertone — H 85°, very low chroma) */
+  --nga-gray-50:  oklch(98% 0.002 85);
+  --nga-gray-100: oklch(96% 0.003 85);
+  --nga-gray-200: oklch(92% 0.004 85);
+  --nga-gray-300: oklch(85% 0.005 85);
+  --nga-gray-400: oklch(71% 0.006 85);
+  --nga-gray-500: oklch(54% 0.006 85);
+  --nga-gray-600: oklch(40% 0.005 85);
+  --nga-gray-700: oklch(29% 0.004 85);
+  --nga-gray-800: oklch(20% 0.003 85);
+  --nga-gray-900: oklch(13% 0.002 85);
+  --nga-gray-950: oklch(8% 0.002 85);
 
-  /* Gold (restrained accent) */
-  --nga-gold-50:  #FBF5E9;
-  --nga-gold-100: #F0E0BC;
-  --nga-gold-200: #DEC48A;
-  --nga-gold-300: #C8A97E;
-  --nga-gold-400: #B08D5A;
-  --nga-gold-500: #8A6B3A;
+  /* Gold (warm amber accent — H shifts 80°→58° as it deepens) */
+  --nga-gold-50:  oklch(97% 0.016 80);
+  --nga-gold-100: oklch(91% 0.035 75);
+  --nga-gold-200: oklch(84% 0.058 72);
+  --nga-gold-300: oklch(76% 0.068 68);
+  --nga-gold-400: oklch(66% 0.068 62);
+  --nga-gold-500: oklch(50% 0.060 58);
 
-  /* Green (muted sage, success only) */
-  --nga-green-50:  #F0F4EF;
-  --nga-green-100: #D8E8D5;
-  --nga-green-200: #AEC9A9;
-  --nga-green-300: #7FA878;
-  --nga-green-400: #527A4C;
-  --nga-green-500: #365230;
+  /* Green (muted sage, success only — H 148°) */
+  --nga-green-50:  oklch(96% 0.010 148);
+  --nga-green-100: oklch(90% 0.022 148);
+  --nga-green-200: oklch(80% 0.038 148);
+  --nga-green-300: oklch(68% 0.050 148);
+  --nga-green-400: oklch(54% 0.052 148);
+  --nga-green-500: oklch(38% 0.046 148);
 
-  /* White & Red (used in semantic layer) */
-  --nga-white:   #FFFFFF;
-  --nga-red-600: #A8392A;
+  /* White & destructive red */
+  --nga-white:   oklch(100% 0 0);
+  --nga-red-600: oklch(47% 0.130 22);
 }
 
 /* ── Semantic: Light mode (default) ───────────────────────── */
