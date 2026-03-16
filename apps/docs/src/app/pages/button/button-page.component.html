@@ -1,0 +1,59 @@
+<h1 class="page-title">Button</h1>
+
+<section class="showcase-section">
+  <h2 class="section-title">Variants &times; Sizes</h2>
+  <div class="grid-table">
+    <div class="grid-header">
+      <span></span>
+      @for (size of sizes; track size) {
+        <span class="col-label">{{ size }}</span>
+      }
+    </div>
+    @for (variant of variants; track variant) {
+      <div class="grid-row">
+        <span class="row-label">{{ variant }}</span>
+        @for (size of sizes; track size) {
+          <span>
+            <button ngAtomsButton [variant]="variant" [size]="size">Button</button>
+          </span>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">Loading state</h2>
+  <div class="row-group">
+    @for (variant of variants; track variant) {
+      <button ngAtomsButton [variant]="variant" [loading]="true">Loading</button>
+    }
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">Disabled state</h2>
+  <div class="row-group">
+    @for (variant of variants; track variant) {
+      <button ngAtomsButton [variant]="variant" disabled>Disabled</button>
+    }
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">With icons</h2>
+  <div class="row-group">
+    <button ngAtomsButton variant="primary">
+      <i class="ph-bold ph-arrow-right"></i>
+      Continue
+    </button>
+    <button ngAtomsButton variant="outline">
+      <i class="ph-bold ph-download"></i>
+      Download
+    </button>
+    <button ngAtomsButton variant="destructive">
+      <i class="ph-bold ph-trash"></i>
+      Delete
+    </button>
+  </div>
+</section>

@@ -1,0 +1,215 @@
+/* =============================================================
+   NgAtoms Button — button.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/button.styles.css';
+   ============================================================= */
+
+/* ── Custom properties (override at :root or component level) ─ */
+:root {
+  /* Shape */
+  --nga-btn-radius: var(--nga-radius-md, 0.5rem);
+  --nga-btn-font-weight: 600;
+  --nga-btn-gap: 0.5rem;
+  --nga-btn-transition: background 150ms ease, border-color 150ms ease, opacity 150ms ease;
+
+  /* Focus ring — gold from semantic token */
+  --nga-btn-focus-ring-color: var(--nga-color-ring, oklch(76% 0.068 68));
+  --nga-btn-focus-ring-offset: 2px;
+  --nga-btn-focus-ring-width: 2px;
+
+  /* Sizes — padding */
+  --nga-btn-padding-xs: 3px 10px;
+  --nga-btn-padding-sm: 5px 14px;
+  --nga-btn-padding-md: 8px 20px;
+  --nga-btn-padding-lg: 11px 28px;
+  --nga-btn-padding-xl: 14px 36px;
+
+  /* Sizes — font */
+  --nga-btn-font-size-xs: 11px;
+  --nga-btn-font-size-sm: 13px;
+  --nga-btn-font-size-md: 14px;
+  --nga-btn-font-size-lg: 16px;
+  --nga-btn-font-size-xl: 18px;
+
+  /* Sizes — spinner */
+  --nga-btn-spinner-size-xs: 10px;
+  --nga-btn-spinner-size-sm: 12px;
+  --nga-btn-spinner-size-md: 14px;
+  --nga-btn-spinner-size-lg: 16px;
+  --nga-btn-spinner-size-xl: 18px;
+
+  /* Variant: primary — near-black, fallback to oklch gray-900 */
+  --nga-btn-primary-bg:        var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-btn-primary-fg:        var(--nga-color-primary-foreground, oklch(100% 0 0));
+  --nga-btn-primary-bg-hover:  color-mix(in oklch, var(--nga-btn-primary-bg) 85%, black);
+  --nga-btn-primary-bg-active: color-mix(in oklch, var(--nga-btn-primary-bg) 75%, black);
+
+  /* Variant: outline — near-black border */
+  --nga-btn-outline-border:    var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-btn-outline-fg:        var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-btn-outline-bg-hover:  color-mix(in oklch, var(--nga-btn-outline-border) 10%, transparent);
+  --nga-btn-outline-bg-active: color-mix(in oklch, var(--nga-btn-outline-border) 20%, transparent);
+
+  /* Variant: ghost — near-black */
+  --nga-btn-ghost-fg:          var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-btn-ghost-bg-hover:    color-mix(in oklch, var(--nga-btn-ghost-fg) 10%, transparent);
+  --nga-btn-ghost-bg-active:   color-mix(in oklch, var(--nga-btn-ghost-fg) 20%, transparent);
+
+  /* Variant: secondary — warm gray from semantic tokens */
+  --nga-btn-secondary-bg:        var(--nga-color-secondary, oklch(96% 0.003 85));
+  --nga-btn-secondary-fg:        var(--nga-color-secondary-foreground, oklch(13% 0.002 85));
+  --nga-btn-secondary-bg-hover:  color-mix(in oklch, var(--nga-btn-secondary-bg) 85%, black);
+  --nga-btn-secondary-bg-active: color-mix(in oklch, var(--nga-btn-secondary-bg) 75%, black);
+
+  /* Variant: destructive — muted terracotta */
+  --nga-btn-destructive-bg:        var(--nga-color-destructive, oklch(47% 0.130 22));
+  --nga-btn-destructive-fg:        var(--nga-color-destructive-foreground, oklch(100% 0 0));
+  --nga-btn-destructive-bg-hover:  color-mix(in oklch, var(--nga-btn-destructive-bg) 85%, black);
+  --nga-btn-destructive-bg-active: color-mix(in oklch, var(--nga-btn-destructive-bg) 75%, black);
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nga-btn-gap);
+  border: 1.5px solid transparent;
+  border-radius: var(--nga-btn-radius);
+  font-weight: var(--nga-btn-font-weight);
+  font-family: inherit;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--nga-btn-transition);
+  outline: none;
+}
+
+.nga-btn:focus-visible {
+  outline: var(--nga-btn-focus-ring-width) solid var(--nga-btn-focus-ring-color);
+  outline-offset: var(--nga-btn-focus-ring-offset);
+}
+
+.nga-btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-btn--xs {
+  padding: var(--nga-btn-padding-xs);
+  font-size: var(--nga-btn-font-size-xs);
+}
+.nga-btn--sm {
+  padding: var(--nga-btn-padding-sm);
+  font-size: var(--nga-btn-font-size-sm);
+}
+.nga-btn--md {
+  padding: var(--nga-btn-padding-md);
+  font-size: var(--nga-btn-font-size-md);
+}
+.nga-btn--lg {
+  padding: var(--nga-btn-padding-lg);
+  font-size: var(--nga-btn-font-size-lg);
+}
+.nga-btn--xl {
+  padding: var(--nga-btn-padding-xl);
+  font-size: var(--nga-btn-font-size-xl);
+}
+
+/* ── Variants ───────────────────────────────────────────────── */
+.nga-btn--primary {
+  background: var(--nga-btn-primary-bg);
+  color: var(--nga-btn-primary-fg);
+  border-color: var(--nga-btn-primary-bg);
+}
+.nga-btn--primary:hover:not([aria-disabled="true"]) {
+  background: var(--nga-btn-primary-bg-hover);
+  border-color: var(--nga-btn-primary-bg-hover);
+}
+.nga-btn--primary:active:not([aria-disabled="true"]) {
+  background: var(--nga-btn-primary-bg-active);
+  border-color: var(--nga-btn-primary-bg-active);
+}
+
+.nga-btn--outline {
+  background: transparent;
+  color: var(--nga-btn-outline-fg);
+  border-color: var(--nga-btn-outline-border);
+}
+.nga-btn--outline:hover:not([aria-disabled="true"]) {
+  background: var(--nga-btn-outline-bg-hover);
+}
+.nga-btn--outline:active:not([aria-disabled="true"]) {
+  background: var(--nga-btn-outline-bg-active);
+}
+
+.nga-btn--ghost {
+  background: transparent;
+  color: var(--nga-btn-ghost-fg);
+  border-color: transparent;
+}
+.nga-btn--ghost:hover:not([aria-disabled="true"]) {
+  background: var(--nga-btn-ghost-bg-hover);
+}
+.nga-btn--ghost:active:not([aria-disabled="true"]) {
+  background: var(--nga-btn-ghost-bg-active);
+}
+
+.nga-btn--secondary {
+  background: var(--nga-btn-secondary-bg);
+  color: var(--nga-btn-secondary-fg);
+  border-color: var(--nga-btn-secondary-bg);
+}
+.nga-btn--secondary:hover:not([aria-disabled="true"]) {
+  background: var(--nga-btn-secondary-bg-hover);
+  border-color: var(--nga-btn-secondary-bg-hover);
+}
+.nga-btn--secondary:active:not([aria-disabled="true"]) {
+  background: var(--nga-btn-secondary-bg-active);
+  border-color: var(--nga-btn-secondary-bg-active);
+}
+
+.nga-btn--destructive {
+  background: var(--nga-btn-destructive-bg);
+  color: var(--nga-btn-destructive-fg);
+  border-color: var(--nga-btn-destructive-bg);
+}
+.nga-btn--destructive:hover:not([aria-disabled="true"]) {
+  background: var(--nga-btn-destructive-bg-hover);
+  border-color: var(--nga-btn-destructive-bg-hover);
+}
+.nga-btn--destructive:active:not([aria-disabled="true"]) {
+  background: var(--nga-btn-destructive-bg-active);
+  border-color: var(--nga-btn-destructive-bg-active);
+}
+
+/* ── Loading state ──────────────────────────────────────────── */
+.nga-btn--loading {
+  pointer-events: none;
+}
+
+.nga-btn--loading > :not(.nga-btn-spinner) {
+  opacity: 0.5;
+}
+
+/* ── Spinner ────────────────────────────────────────────────── */
+@keyframes nga-btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+.nga-btn-spinner {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  animation: nga-btn-spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+.nga-btn--xs .nga-btn-spinner { width: var(--nga-btn-spinner-size-xs); height: var(--nga-btn-spinner-size-xs); }
+.nga-btn--sm .nga-btn-spinner { width: var(--nga-btn-spinner-size-sm); height: var(--nga-btn-spinner-size-sm); }
+.nga-btn--md .nga-btn-spinner { width: var(--nga-btn-spinner-size-md); height: var(--nga-btn-spinner-size-md); }
+.nga-btn--lg .nga-btn-spinner { width: var(--nga-btn-spinner-size-lg); height: var(--nga-btn-spinner-size-lg); }
+.nga-btn--xl .nga-btn-spinner { width: var(--nga-btn-spinner-size-xl); height: var(--nga-btn-spinner-size-xl); }
