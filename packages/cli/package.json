@@ -10,6 +10,6 @@
     "bin"
   ],
   "scripts": {
-    "build": "node ./bin/ngatoms.js"
+    "build": "echo 'Superseded by packages/ngatoms — no build needed'"
   }
 }

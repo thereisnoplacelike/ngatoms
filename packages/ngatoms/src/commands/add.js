@@ -35,6 +35,11 @@ export async function add(componentName, cwd = process.cwd()) {
     process.exit(1);
   }
 
+  if (!config.componentsDir || !config.stylesFile) {
+    console.error('ngatoms.json is missing required fields. Re-run `npx ngatoms init`.');
+    process.exit(1);
+  }
+
   const registry = await fetchRegistry();
   const component = findComponent(registry, componentName);
   if (!component) {

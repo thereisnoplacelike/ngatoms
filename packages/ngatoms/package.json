@@ -17,6 +17,6 @@
   },
   "scripts": {
     "build": "echo 'CLI has no build step'",
-    "test": "node --test src/**/*.test.js"
+    "test": "node --test 'src/**/*.test.js'"
   }
 }
