@@ -1,0 +1,7 @@
+{
+  "componentsDir": "src/components",
+  "stylesFile": "src/styles.css",
+  "themes": [
+    "src/themes/default.css"
+  ]
+}

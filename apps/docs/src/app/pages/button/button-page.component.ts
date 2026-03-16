@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgAtomsButtonDirective } from '../../../../../../packages/primitives/src/button';
+import { NgAtomsButtonDirective } from '../../../components/button';
 
 const VARIANTS = ['primary', 'outline', 'ghost', 'secondary', 'destructive'] as const;
 const SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as const;

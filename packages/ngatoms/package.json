@@ -1,14 +1,26 @@
 {
   "name": "ngatoms",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Angular UI primitives you own.",
   "author": "Lázaro Dutra",
   "license": "MIT",
-  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "ngatoms": "./bin/cli.js"
+  },
   "files": [
-    "index.js"
+    "bin",
+    "src/commands/add.js",
+    "src/commands/init.js",
+    "src/lib/config.js",
+    "src/lib/github.js",
+    "src/lib/registry.js"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "build": "node -e \"console.log('build placeholder')\""
+    "build": "echo 'CLI has no build step'",
+    "test": "node --test 'src/**/*.test.js'"
   }
 }
