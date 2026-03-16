@@ -12,8 +12,8 @@
   --nga-btn-gap: 0.5rem;
   --nga-btn-transition: background 150ms ease, border-color 150ms ease, opacity 150ms ease;
 
-  /* Focus ring */
-  --nga-btn-focus-ring-color: var(--nga-color-primary, #2563eb);
+  /* Focus ring — gold from semantic token */
+  --nga-btn-focus-ring-color: var(--nga-color-ring, oklch(76% 0.068 68));
   --nga-btn-focus-ring-offset: 2px;
   --nga-btn-focus-ring-width: 2px;
 
@@ -38,34 +38,34 @@
   --nga-btn-spinner-size-lg: 16px;
   --nga-btn-spinner-size-xl: 18px;
 
-  /* Variant: primary */
-  --nga-btn-primary-bg:        var(--nga-color-primary, #2563eb);
-  --nga-btn-primary-fg:        var(--nga-color-primary-foreground, #ffffff);
-  --nga-btn-primary-bg-hover:  color-mix(in srgb, var(--nga-btn-primary-bg) 85%, black);
-  --nga-btn-primary-bg-active: color-mix(in srgb, var(--nga-btn-primary-bg) 75%, black);
+  /* Variant: primary — near-black, fallback to oklch gray-900 */
+  --nga-btn-primary-bg:        var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-btn-primary-fg:        var(--nga-color-primary-foreground, oklch(100% 0 0));
+  --nga-btn-primary-bg-hover:  color-mix(in oklch, var(--nga-btn-primary-bg) 85%, black);
+  --nga-btn-primary-bg-active: color-mix(in oklch, var(--nga-btn-primary-bg) 75%, black);
 
-  /* Variant: outline */
-  --nga-btn-outline-border:    var(--nga-color-primary, #2563eb);
-  --nga-btn-outline-fg:        var(--nga-color-primary, #2563eb);
-  --nga-btn-outline-bg-hover:  color-mix(in srgb, var(--nga-btn-outline-border) 10%, transparent);
-  --nga-btn-outline-bg-active: color-mix(in srgb, var(--nga-btn-outline-border) 20%, transparent);
+  /* Variant: outline — near-black border */
+  --nga-btn-outline-border:    var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-btn-outline-fg:        var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-btn-outline-bg-hover:  color-mix(in oklch, var(--nga-btn-outline-border) 10%, transparent);
+  --nga-btn-outline-bg-active: color-mix(in oklch, var(--nga-btn-outline-border) 20%, transparent);
 
-  /* Variant: ghost */
-  --nga-btn-ghost-fg:          var(--nga-color-primary, #2563eb);
-  --nga-btn-ghost-bg-hover:    color-mix(in srgb, var(--nga-btn-ghost-fg) 10%, transparent);
-  --nga-btn-ghost-bg-active:   color-mix(in srgb, var(--nga-btn-ghost-fg) 20%, transparent);
+  /* Variant: ghost — near-black */
+  --nga-btn-ghost-fg:          var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-btn-ghost-bg-hover:    color-mix(in oklch, var(--nga-btn-ghost-fg) 10%, transparent);
+  --nga-btn-ghost-bg-active:   color-mix(in oklch, var(--nga-btn-ghost-fg) 20%, transparent);
 
-  /* Variant: secondary */
-  --nga-btn-secondary-bg:        #f1f5f9;
-  --nga-btn-secondary-fg:        #334155;
-  --nga-btn-secondary-bg-hover:  #e2e8f0;
-  --nga-btn-secondary-bg-active: #cbd5e1;
+  /* Variant: secondary — warm gray from semantic tokens */
+  --nga-btn-secondary-bg:        var(--nga-color-secondary, oklch(96% 0.003 85));
+  --nga-btn-secondary-fg:        var(--nga-color-secondary-foreground, oklch(13% 0.002 85));
+  --nga-btn-secondary-bg-hover:  color-mix(in oklch, var(--nga-btn-secondary-bg) 85%, black);
+  --nga-btn-secondary-bg-active: color-mix(in oklch, var(--nga-btn-secondary-bg) 75%, black);
 
-  /* Variant: destructive */
-  --nga-btn-destructive-bg:        #dc2626;
-  --nga-btn-destructive-fg:        #ffffff;
-  --nga-btn-destructive-bg-hover:  #b91c1c;
-  --nga-btn-destructive-bg-active: #991b1b;
+  /* Variant: destructive — muted terracotta */
+  --nga-btn-destructive-bg:        var(--nga-color-destructive, oklch(47% 0.130 22));
+  --nga-btn-destructive-fg:        var(--nga-color-destructive-foreground, oklch(100% 0 0));
+  --nga-btn-destructive-bg-hover:  color-mix(in oklch, var(--nga-btn-destructive-bg) 85%, black);
+  --nga-btn-destructive-bg-active: color-mix(in oklch, var(--nga-btn-destructive-bg) 75%, black);
 }
 
 /* ── Base ───────────────────────────────────────────────────── */
