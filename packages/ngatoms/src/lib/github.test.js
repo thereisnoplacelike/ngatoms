@@ -8,15 +8,20 @@ describe('github.js — URL building', () => {
     assert.ok(typeof VERSION === 'string' && VERSION.length > 0);
   });
 
-  it('getRef returns "v" prefixed version', () => {
-    assert.equal(getRef(), `v${VERSION}`);
+  it('getRef returns channel branch for prerelease versions', () => {
+    const prerelease = VERSION.match(/-(alpha|beta|rc)\.\d+$/);
+    if (prerelease) {
+      assert.equal(getRef(), prerelease[1]);
+    } else {
+      assert.equal(getRef(), `v${VERSION}`);
+    }
   });
 
   it('getRawUrl builds correct GitHub raw URL', () => {
     const url = getRawUrl('registry/registry.json');
     assert.equal(
       url,
-      `https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/v${VERSION}/registry/registry.json`
+      `https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/${getRef()}/registry/registry.json`
     );
   });
 
