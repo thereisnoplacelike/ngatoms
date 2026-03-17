@@ -1,5 +1,11 @@
 # ngatoms
 
+## 0.1.2
+
+### Patch Changes
+
+- c1b5aa5: `init` now fetches `tokens.css` from GitHub instead of writing a hardcoded theme template, so the generated theme always reflects the current brand palette.
+
 ## 0.1.1
 
 ### Patch Changes
