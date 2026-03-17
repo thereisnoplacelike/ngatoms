@@ -5,6 +5,8 @@ import { tmpdir } from 'os';
 import { join } from 'path';
 import { writeTheme } from './init.js';
 
+const STUB_TOKENS = ':root { --nga-color-primary: oklch(13% 0.002 85); }';
+
 let tmpDir;
 
 describe('init.js — writeTheme', () => {
@@ -17,18 +19,18 @@ describe('init.js — writeTheme', () => {
   });
 
   it('creates the theme file at the given path', async () => {
-    await writeTheme('src/styles.css', 'src/themes/default.css', tmpDir);
+    await writeTheme('src/styles.css', 'src/themes/default.css', STUB_TOKENS, tmpDir);
     assert.ok(existsSync(join(tmpDir, 'src/themes/default.css')));
   });
 
-  it('theme file contains --nga-color-primary', async () => {
-    await writeTheme('src/styles.css', 'src/themes/default.css', tmpDir);
+  it('writes the provided content to the theme file', async () => {
+    await writeTheme('src/styles.css', 'src/themes/default.css', STUB_TOKENS, tmpDir);
     const content = readFileSync(join(tmpDir, 'src/themes/default.css'), 'utf8');
-    assert.ok(content.includes('--nga-color-primary'));
+    assert.equal(content, STUB_TOKENS);
   });
 
   it('creates parent directories for the theme file', async () => {
-    await writeTheme('src/styles.css', 'src/deep/nested/theme.css', tmpDir);
+    await writeTheme('src/styles.css', 'src/deep/nested/theme.css', STUB_TOKENS, tmpDir);
     assert.ok(existsSync(join(tmpDir, 'src/deep/nested/theme.css')));
   });
 
@@ -37,14 +39,14 @@ describe('init.js — writeTheme', () => {
     mkdirSync(join(tmpDir, 'src'), { recursive: true });
     const stylesPath = join(tmpDir, 'src/styles.css');
     writeFileSync(stylesPath, 'body { margin: 0; }\n', 'utf8');
-    await writeTheme('src/styles.css', 'src/themes/default.css', tmpDir);
+    await writeTheme('src/styles.css', 'src/themes/default.css', STUB_TOKENS, tmpDir);
     const content = readFileSync(stylesPath, 'utf8');
     assert.ok(content.startsWith("@import './themes/default.css';"));
   });
 
   it('does not prepend @import if styles file does not exist', async () => {
     await assert.doesNotReject(
-      writeTheme('src/styles.css', 'src/themes/default.css', tmpDir)
+      writeTheme('src/styles.css', 'src/themes/default.css', STUB_TOKENS, tmpDir)
     );
   });
 
@@ -54,7 +56,7 @@ describe('init.js — writeTheme', () => {
     mkdir(srcDir, { recursive: true });
     const stylesPath = join(srcDir, 'styles.css');
     writeFileSync(stylesPath, "@import './themes/default.css';\nbody { margin: 0; }\n", 'utf8');
-    await writeTheme('src/styles.css', 'src/themes/default.css', tmpDir);
+    await writeTheme('src/styles.css', 'src/themes/default.css', STUB_TOKENS, tmpDir);
     const content = readFileSync(stylesPath, 'utf8');
     const count = (content.match(/@import/g) || []).length;
     assert.equal(count, 1);
