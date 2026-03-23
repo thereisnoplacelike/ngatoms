@@ -1,0 +1,30 @@
+/* =============================================================
+   NgAtoms Separator — separator.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/separator.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-separator-color: var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-separator-size:  1px;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-separator {
+  flex-shrink: 0;
+  background: var(--nga-separator-color);
+}
+
+/* ── Orientations ───────────────────────────────────────────── */
+.nga-separator--horizontal {
+  display: block;
+  width: 100%;
+  height: var(--nga-separator-size);
+}
+
+.nga-separator--vertical {
+  display: inline-block;
+  width: var(--nga-separator-size);
+  height: 100%;
+  align-self: stretch;
+}
