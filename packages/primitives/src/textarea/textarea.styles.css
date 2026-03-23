@@ -1,0 +1,158 @@
+/* =============================================================
+   NgAtoms Textarea — textarea.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/textarea.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-textarea-radius:      var(--nga-radius-md, 0.5rem);
+  --nga-textarea-font-weight: var(--nga-font-weight-normal, 400);
+  --nga-textarea-transition:  border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+  --nga-textarea-min-height:  80px;
+
+  /* Focus ring */
+  --nga-textarea-focus-ring-color:  var(--nga-color-ring, oklch(76% 0.068 68));
+  --nga-textarea-focus-ring-width:  2px;
+  --nga-textarea-focus-ring-offset: 0px;
+
+  /* Sizes — padding */
+  --nga-textarea-padding-xs: var(--nga-size-padding-y-xs, 3px) 8px;
+  --nga-textarea-padding-sm: var(--nga-size-padding-y-sm, 5px) 10px;
+  --nga-textarea-padding-md: var(--nga-size-padding-y-md, 8px) 12px;
+  --nga-textarea-padding-lg: var(--nga-size-padding-y-lg, 11px) 16px;
+  --nga-textarea-padding-xl: var(--nga-size-padding-y-xl, 14px) 20px;
+
+  /* Sizes — font */
+  --nga-textarea-font-size-xs: var(--nga-size-font-xs, 11px);
+  --nga-textarea-font-size-sm: var(--nga-size-font-sm, 13px);
+  --nga-textarea-font-size-md: var(--nga-size-font-md, 14px);
+  --nga-textarea-font-size-lg: var(--nga-size-font-lg, 16px);
+  --nga-textarea-font-size-xl: var(--nga-size-font-xl, 18px);
+
+  /* Variant: default */
+  --nga-textarea-default-bg:           var(--nga-color-background, oklch(100% 0 0));
+  --nga-textarea-default-fg:           var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-textarea-default-border:       var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-textarea-default-border-hover: var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-textarea-default-placeholder:  var(--nga-color-muted-foreground, oklch(55% 0.003 85));
+
+  /* Variant: filled */
+  --nga-textarea-filled-bg:           var(--nga-color-secondary, oklch(96% 0.003 85));
+  --nga-textarea-filled-fg:           var(--nga-color-secondary-foreground, oklch(13% 0.002 85));
+  --nga-textarea-filled-border:       transparent;
+  --nga-textarea-filled-border-hover: var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-textarea-filled-placeholder:  var(--nga-color-muted-foreground, oklch(55% 0.003 85));
+  --nga-textarea-filled-bg-hover:     color-mix(in oklch, var(--nga-textarea-filled-bg) 85%, black);
+
+  /* Variant: ghost */
+  --nga-textarea-ghost-bg:           transparent;
+  --nga-textarea-ghost-fg:           var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-textarea-ghost-border:       transparent;
+  --nga-textarea-ghost-border-hover: var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-textarea-ghost-placeholder:  var(--nga-color-muted-foreground, oklch(55% 0.003 85));
+
+  /* Invalid state */
+  --nga-textarea-invalid-border:     var(--nga-color-destructive, oklch(47% 0.130 22));
+  --nga-textarea-invalid-focus-ring: var(--nga-color-destructive, oklch(47% 0.130 22));
+}
+
+.dark {
+  --nga-textarea-filled-bg-hover: color-mix(in oklch, var(--nga-textarea-filled-bg) 82%, white);
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-textarea {
+  display: block;
+  width: 100%;
+  min-height: var(--nga-textarea-min-height);
+  border: 1.5px solid transparent;
+  border-radius: var(--nga-textarea-radius);
+  font-weight: var(--nga-textarea-font-weight);
+  font-family: inherit;
+  line-height: 1.5;
+  transition: var(--nga-textarea-transition);
+  outline: none;
+  appearance: none;
+  resize: vertical;
+}
+
+.nga-textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.nga-textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nga-textarea::-webkit-scrollbar-thumb {
+  background: var(--nga-color-border, oklch(82% 0.003 85));
+  border-radius: 9999px;
+}
+
+.nga-textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--nga-color-muted-foreground, oklch(55% 0.003 85));
+}
+
+.nga-textarea::placeholder {
+  opacity: 1;
+}
+
+.nga-textarea:focus-visible {
+  outline: var(--nga-textarea-focus-ring-width) solid var(--nga-textarea-focus-ring-color);
+  outline-offset: var(--nga-textarea-focus-ring-offset);
+}
+
+.nga-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  resize: none;
+}
+
+.nga-textarea[readonly] {
+  cursor: default;
+  resize: none;
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-textarea--xs { padding: var(--nga-textarea-padding-xs); font-size: var(--nga-textarea-font-size-xs); }
+.nga-textarea--sm { padding: var(--nga-textarea-padding-sm); font-size: var(--nga-textarea-font-size-sm); }
+.nga-textarea--md { padding: var(--nga-textarea-padding-md); font-size: var(--nga-textarea-font-size-md); }
+.nga-textarea--lg { padding: var(--nga-textarea-padding-lg); font-size: var(--nga-textarea-font-size-lg); }
+.nga-textarea--xl { padding: var(--nga-textarea-padding-xl); font-size: var(--nga-textarea-font-size-xl); }
+
+/* ── Variant: default ───────────────────────────────────────── */
+.nga-textarea--default {
+  background: var(--nga-textarea-default-bg);
+  color: var(--nga-textarea-default-fg);
+  border-color: var(--nga-textarea-default-border);
+}
+.nga-textarea--default::placeholder { color: var(--nga-textarea-default-placeholder); }
+.nga-textarea--default:hover:not(:disabled):not([readonly]) { border-color: var(--nga-textarea-default-border-hover); }
+.nga-textarea--default:focus-visible { border-color: var(--nga-textarea-focus-ring-color); }
+
+/* ── Variant: filled ────────────────────────────────────────── */
+.nga-textarea--filled {
+  background: var(--nga-textarea-filled-bg);
+  color: var(--nga-textarea-filled-fg);
+  border-color: var(--nga-textarea-filled-border);
+}
+.nga-textarea--filled::placeholder { color: var(--nga-textarea-filled-placeholder); }
+.nga-textarea--filled:hover:not(:disabled):not([readonly]) {
+  background: var(--nga-textarea-filled-bg-hover);
+  border-color: var(--nga-textarea-filled-border-hover);
+}
+.nga-textarea--filled:focus-visible { border-color: var(--nga-textarea-focus-ring-color); }
+
+/* ── Variant: ghost ─────────────────────────────────────────── */
+.nga-textarea--ghost {
+  background: var(--nga-textarea-ghost-bg);
+  color: var(--nga-textarea-ghost-fg);
+  border-color: var(--nga-textarea-ghost-border);
+}
+.nga-textarea--ghost::placeholder { color: var(--nga-textarea-ghost-placeholder); }
+.nga-textarea--ghost:hover:not(:disabled):not([readonly]) { border-color: var(--nga-textarea-ghost-border-hover); }
+.nga-textarea--ghost:focus-visible { border-color: var(--nga-textarea-focus-ring-color); }
+
+/* ── Invalid state ──────────────────────────────────────────── */
+.nga-textarea--invalid { border-color: var(--nga-textarea-invalid-border) !important; }
+.nga-textarea--invalid:focus-visible { outline-color: var(--nga-textarea-invalid-focus-ring); }
