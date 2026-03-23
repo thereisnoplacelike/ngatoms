@@ -1,0 +1,154 @@
+/* =============================================================
+   NgAtoms Dialog — dialog.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/dialog.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-dialog-shadow:  0 20px 60px oklch(0% 0 0 / 0.18), 0 4px 16px oklch(0% 0 0 / 0.10);
+  --nga-dialog-radius:  var(--nga-radius-lg, 0.75rem);
+  --nga-dialog-backdrop: oklch(0% 0 0 / 0.45);
+}
+
+.dark {
+  --nga-dialog-shadow: 0 20px 60px oklch(0% 0 0 / 0.45), 0 4px 16px oklch(0% 0 0 / 0.30);
+  --nga-dialog-backdrop: oklch(0% 0 0 / 0.65);
+}
+
+/* ── Root host ──────────────────────────────────────────────── */
+.nga-dialog-root {
+  display: contents;
+}
+
+/* ── Native dialog element ──────────────────────────────────── */
+.nga-dialog {
+  padding: 0;
+  border: none;
+  background: transparent;
+  max-height: 90dvh;
+  max-width: min(90vw, var(--nga-dialog-max-w, 480px));
+  width: 100%;
+  margin: auto;
+  overflow: visible;
+}
+
+.nga-dialog::backdrop {
+  background: var(--nga-dialog-backdrop);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Open animation */
+.nga-dialog[open] {
+  animation: nga-dialog-in 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nga-dialog[open]::backdrop {
+  animation: nga-backdrop-in 160ms ease;
+}
+
+@keyframes nga-dialog-in {
+  from { opacity: 0; transform: translateY(-12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes nga-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-dialog--sm { --nga-dialog-max-w: 360px; }
+.nga-dialog--md { --nga-dialog-max-w: 480px; }
+.nga-dialog--lg { --nga-dialog-max-w: 640px; }
+.nga-dialog--xl { --nga-dialog-max-w: 800px; }
+
+/* ── Panel ──────────────────────────────────────────────────── */
+.nga-dialog-panel {
+  background: var(--nga-color-card, oklch(100% 0 0));
+  border: 1px solid var(--nga-color-border, oklch(92% 0.004 85));
+  border-radius: var(--nga-dialog-radius);
+  box-shadow: var(--nga-dialog-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 90dvh;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.nga-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.375rem 1.375rem 0;
+}
+
+/* ── Title ──────────────────────────────────────────────────── */
+.nga-dialog-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--nga-color-foreground, oklch(13% 0.002 85));
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ── Description ────────────────────────────────────────────── */
+.nga-dialog-description {
+  font-size: 13.5px;
+  color: var(--nga-color-muted-foreground, oklch(54% 0.006 85));
+  margin: 0.25rem 0 0;
+  line-height: 1.5;
+}
+
+/* ── Body ───────────────────────────────────────────────────── */
+.nga-dialog-body {
+  padding: 1.25rem 1.375rem;
+  overflow-y: auto;
+  flex: 1;
+  font-size: var(--nga-size-font-sm, 13px);
+  color: var(--nga-color-foreground, oklch(13% 0.002 85));
+  line-height: 1.6;
+  scrollbar-width: thin;
+  scrollbar-color: var(--nga-color-border) transparent;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.nga-dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.625rem;
+  padding: 1rem 1.375rem;
+  border-top: 1px solid var(--nga-color-border, oklch(92% 0.004 85));
+  background: var(--nga-color-muted, oklch(96% 0.003 85));
+}
+
+/* ── Close button ───────────────────────────────────────────── */
+.nga-dialog-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--nga-radius-sm, 0.25rem);
+  background: transparent;
+  color: var(--nga-color-muted-foreground, oklch(54% 0.006 85));
+  cursor: pointer;
+  padding: 0;
+  transition: background 150ms ease, color 150ms ease;
+  outline: none;
+}
+
+.nga-dialog-close:hover {
+  background: var(--nga-color-muted, oklch(96% 0.003 85));
+  color: var(--nga-color-foreground, oklch(13% 0.002 85));
+}
+
+.nga-dialog-close:focus-visible {
+  outline: 2px solid var(--nga-color-ring, oklch(76% 0.068 68));
+  outline-offset: 1px;
+}

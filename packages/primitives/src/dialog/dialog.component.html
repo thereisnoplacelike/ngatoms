@@ -1,0 +1,14 @@
+<dialog
+  #dialogEl
+  class="nga-dialog"
+  [class.nga-dialog--sm]="size() === 'sm'"
+  [class.nga-dialog--md]="size() === 'md'"
+  [class.nga-dialog--lg]="size() === 'lg'"
+  [class.nga-dialog--xl]="size() === 'xl'"
+  (close)="open.set(false)"
+  (click)="onBackdropClick($event)"
+>
+  <div class="nga-dialog-panel" (click)="$event.stopPropagation()">
+    <ng-content />
+  </div>
+</dialog>
