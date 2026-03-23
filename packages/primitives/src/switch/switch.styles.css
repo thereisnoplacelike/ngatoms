@@ -1,0 +1,95 @@
+/* =============================================================
+   NgAtoms Switch — switch.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/switch.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-switch-transition:   background 150ms ease;
+  --nga-switch-focus-color:  var(--nga-color-ring, oklch(76% 0.068 68));
+
+  --nga-switch-bg:           var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-switch-checked-bg:   var(--nga-color-accent, oklch(76% 0.068 68));
+  --nga-switch-thumb-bg:     oklch(100% 0 0);
+  --nga-switch-thumb-inset:  2px;
+  --nga-switch-thumb-size:   16px;
+
+  --nga-switch-size-sm-w:     28px;
+  --nga-switch-size-sm-h:     16px;
+  --nga-switch-size-sm-thumb: 12px;
+
+  --nga-switch-size-md-w:     36px;
+  --nga-switch-size-md-h:     20px;
+  --nga-switch-size-md-thumb: 16px;
+
+  --nga-switch-size-lg-w:     44px;
+  --nga-switch-size-lg-h:     24px;
+  --nga-switch-size-lg-thumb: 20px;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-switch {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--nga-switch-bg);
+  border: none;
+  cursor: pointer;
+  transition: var(--nga-switch-transition);
+  margin: 0;
+}
+
+.nga-switch::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: var(--nga-switch-thumb-inset);
+  transform: translateY(-50%);
+  width: var(--nga-switch-thumb-size);
+  height: var(--nga-switch-thumb-size);
+  border-radius: 9999px;
+  background: var(--nga-switch-thumb-bg);
+  box-shadow: 0 1px 3px oklch(0% 0 0 / 0.2);
+  transition: left 150ms ease;
+}
+
+.nga-switch:focus-visible {
+  outline: 2px solid var(--nga-switch-focus-color);
+  outline-offset: 2px;
+}
+
+.nga-switch:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Checked ────────────────────────────────────────────────── */
+.nga-switch:checked {
+  background: var(--nga-switch-checked-bg);
+}
+
+.nga-switch:checked::before {
+  left: calc(100% - var(--nga-switch-thumb-size) - var(--nga-switch-thumb-inset));
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-switch--sm {
+  width: var(--nga-switch-size-sm-w);
+  height: var(--nga-switch-size-sm-h);
+  --nga-switch-thumb-size: var(--nga-switch-size-sm-thumb);
+}
+
+.nga-switch--md {
+  width: var(--nga-switch-size-md-w);
+  height: var(--nga-switch-size-md-h);
+  --nga-switch-thumb-size: var(--nga-switch-size-md-thumb);
+}
+
+.nga-switch--lg {
+  width: var(--nga-switch-size-lg-w);
+  height: var(--nga-switch-size-lg-h);
+  --nga-switch-thumb-size: var(--nga-switch-size-lg-thumb);
+}
