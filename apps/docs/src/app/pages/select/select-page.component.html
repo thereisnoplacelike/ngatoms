@@ -1,0 +1,102 @@
+<header class="page-header">
+  <h1 class="page-title">Select</h1>
+  <p class="page-desc">A custom dropdown with search, multiple selection, keyboard navigation, and variant support.</p>
+</header>
+
+<section class="showcase-section">
+  <h2 class="section-title">Variants</h2>
+  <div class="field-group">
+    <div class="field">
+      <label class="field-label">Default</label>
+      <nga-select [options]="departments" placeholder="Choose department" />
+    </div>
+    <div class="field">
+      <label class="field-label">Filled</label>
+      <nga-select [options]="departments" placeholder="Choose department" variant="filled" />
+    </div>
+    <div class="field">
+      <label class="field-label">Ghost</label>
+      <nga-select [options]="departments" placeholder="Choose department" variant="ghost" />
+    </div>
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">Sizes</h2>
+  <div class="field-group">
+    <div class="field">
+      <label class="field-label">Extra small</label>
+      <nga-select [options]="roles" size="xs" placeholder="Select role" />
+    </div>
+    <div class="field">
+      <label class="field-label">Small</label>
+      <nga-select [options]="roles" size="sm" placeholder="Select role" />
+    </div>
+    <div class="field">
+      <label class="field-label">Medium</label>
+      <nga-select [options]="roles" size="md" placeholder="Select role" />
+    </div>
+    <div class="field">
+      <label class="field-label">Large</label>
+      <nga-select [options]="roles" size="lg" placeholder="Select role" />
+    </div>
+    <div class="field">
+      <label class="field-label">Extra large</label>
+      <nga-select [options]="roles" size="xl" placeholder="Select role" />
+    </div>
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">With search</h2>
+  <div class="field-group">
+    <div class="field field--wide">
+      <label class="field-label">Country — searchable</label>
+      <nga-select
+        [options]="countries"
+        [searchable]="true"
+        placeholder="Search countries..."
+      />
+    </div>
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">Multiple selection</h2>
+  <div class="field-group">
+    <div class="field field--wide">
+      <label class="field-label">Skills — multiple + searchable</label>
+      <nga-select
+        [options]="skillOptions"
+        [multiple]="true"
+        [searchable]="true"
+        [(value)]="skills"
+        placeholder="Select skills..."
+      />
+      <span class="field-message field-message--hint">
+        {{ skills().length > 0 ? 'Selected: ' + skills().join(', ') : '' }}
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">States</h2>
+  <div class="field-group">
+    <div class="field">
+      <label class="field-label">Default</label>
+      <nga-select [options]="roles" placeholder="Select role" />
+      <span class="field-message"></span>
+    </div>
+    <div class="field">
+      <label class="field-label">Invalid</label>
+      <nga-select [options]="roles" [invalid]="true" [(value)]="invalidValue" placeholder="Select role" />
+      <span class="field-message field-message--error">This field is required.</span>
+    </div>
+    <div class="field">
+      <label class="field-label">Disabled</label>
+      <nga-select [options]="roles" [disabled]="true" placeholder="Unavailable" />
+      <span class="field-message"></span>
+    </div>
+  </div>
+</section>
