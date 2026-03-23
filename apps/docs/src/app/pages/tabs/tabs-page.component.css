@@ -1,0 +1,124 @@
+.page-header {
+  margin-bottom: 2.5rem;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+  color: var(--nga-color-foreground);
+}
+
+.page-desc {
+  font-size: 14px;
+  color: var(--nga-color-muted-foreground);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.showcase-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nga-color-muted-foreground);
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--nga-color-border);
+}
+
+/* ── Panel content ──────────────────────────────────────────── */
+.panel-card {
+  border: 1px solid var(--nga-color-border);
+  border-radius: var(--nga-radius-lg, 0.75rem);
+  padding: 1.25rem;
+  background: var(--nga-color-card);
+}
+
+.panel-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--nga-color-foreground);
+  margin: 0 0 0.25rem;
+}
+
+.panel-desc {
+  font-size: 13px;
+  color: var(--nga-color-muted-foreground);
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.panel-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--nga-color-border);
+}
+
+.panel-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--nga-color-border);
+  gap: 1rem;
+}
+
+.panel-field:last-child {
+  border-bottom: none;
+}
+
+.panel-field-label {
+  font-size: 13px;
+  color: var(--nga-color-muted-foreground);
+}
+
+.panel-field-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--nga-color-foreground);
+}
+
+.panel-field-value--success {
+  color: var(--nga-color-success, oklch(54% 0.052 148));
+}
+
+.panel-field-value--muted {
+  color: var(--nga-color-muted-foreground);
+  font-weight: 400;
+}
+
+/* ── Stats ──────────────────────────────────────────────────── */
+.stat-row {
+  display: flex;
+  gap: 1.5rem;
+  border-top: 1px solid var(--nga-color-border);
+  padding-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 80px;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--nga-color-foreground);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--nga-color-muted-foreground);
+}
