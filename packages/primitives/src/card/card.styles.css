@@ -1,0 +1,61 @@
+/* =============================================================
+   NgAtoms Card — card.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/card.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-card-bg:      var(--nga-color-card, oklch(100% 0 0));
+  --nga-card-fg:      var(--nga-color-card-foreground, oklch(8% 0.002 85));
+  --nga-card-border:  var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-card-radius:  var(--nga-radius-lg, 0.75rem);
+  --nga-card-shadow:  0 1px 3px oklch(0% 0 0 / 0.08), 0 1px 2px oklch(0% 0 0 / 0.04);
+}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.nga-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--nga-card-bg);
+  color: var(--nga-card-fg);
+  border: 1px solid var(--nga-card-border);
+  border-radius: var(--nga-card-radius);
+  box-shadow: var(--nga-card-shadow);
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.nga-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 1.25rem 1.25rem 0;
+}
+
+/* ── Title ──────────────────────────────────────────────────── */
+.nga-card-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* ── Description ────────────────────────────────────────────── */
+.nga-card-description {
+  font-size: 0.8125rem;
+  color: var(--nga-color-muted-foreground, oklch(54% 0.006 85));
+  line-height: 1.4;
+}
+
+/* ── Content ────────────────────────────────────────────────── */
+.nga-card-content {
+  padding: 1rem 1.25rem;
+  flex: 1;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.nga-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1.25rem 1.25rem;
+}
