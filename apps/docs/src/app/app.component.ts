@@ -14,9 +14,20 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
         </div>
         <nav class="sidebar-nav">
           <span class="nav-section">Components</span>
+          <a routerLink="/alert" routerLinkActive="active">Alert</a>
           <a routerLink="/badge" routerLinkActive="active">Badge</a>
+          <a routerLink="/card" routerLinkActive="active">Card</a>
+          <a routerLink="/checkbox" routerLinkActive="active">Checkbox</a>
+          <a routerLink="/separator" routerLinkActive="active">Separator</a>
+          <a routerLink="/textarea" routerLinkActive="active">Textarea</a>
           <a routerLink="/button" routerLinkActive="active">Button</a>
           <a routerLink="/input" routerLinkActive="active">Input</a>
+          <a routerLink="/accordion" routerLinkActive="active">Accordion</a>
+          <a routerLink="/dialog" routerLinkActive="active">Dialog</a>
+          <a routerLink="/tooltip" routerLinkActive="active">Tooltip</a>
+          <a routerLink="/select" routerLinkActive="active">Select</a>
+          <a routerLink="/tabs" routerLinkActive="active">Tabs</a>
+          <a routerLink="/switch" routerLinkActive="active">Switch</a>
         </nav>
         <div class="sidebar-footer">
           <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'">
