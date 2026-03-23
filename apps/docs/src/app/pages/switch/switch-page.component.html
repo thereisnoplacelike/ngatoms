@@ -1,0 +1,71 @@
+<header class="page-header">
+  <h1 class="page-title">Switch</h1>
+  <p class="page-desc">A toggle control for enabling or disabling a setting.</p>
+</header>
+
+<section class="showcase-section">
+  <h2 class="section-title">States</h2>
+  <div class="row-group">
+    <label class="switch-label">
+      <input ngAtomsSwitch [(checked)]="stateOff" />
+      <span>Off</span>
+    </label>
+    <label class="switch-label">
+      <input ngAtomsSwitch [(checked)]="stateOn" />
+      <span>On</span>
+    </label>
+    <label class="switch-label">
+      <input ngAtomsSwitch [checked]="false" disabled />
+      <span>Disabled off</span>
+    </label>
+    <label class="switch-label">
+      <input ngAtomsSwitch [checked]="true" disabled />
+      <span>Disabled on</span>
+    </label>
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">Sizes</h2>
+  <div class="row-group">
+    <label class="switch-label">
+      <input ngAtomsSwitch size="sm" [checked]="true" />
+      <span>Small</span>
+    </label>
+    <label class="switch-label">
+      <input ngAtomsSwitch size="md" [checked]="true" />
+      <span>Medium</span>
+    </label>
+    <label class="switch-label">
+      <input ngAtomsSwitch size="lg" [checked]="true" />
+      <span>Large</span>
+    </label>
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">In a list</h2>
+  <div class="switch-list">
+    <div class="switch-row">
+      <div class="switch-row-text">
+        <span class="switch-row-label">Push notifications</span>
+        <span class="switch-row-desc">Receive alerts for new activity</span>
+      </div>
+      <input ngAtomsSwitch [(checked)]="notifications" />
+    </div>
+    <div class="switch-row">
+      <div class="switch-row-text">
+        <span class="switch-row-label">Auto-save</span>
+        <span class="switch-row-desc">Automatically save changes as you work</span>
+      </div>
+      <input ngAtomsSwitch [(checked)]="autoSave" />
+    </div>
+    <div class="switch-row">
+      <div class="switch-row-text">
+        <span class="switch-row-label">Analytics</span>
+        <span class="switch-row-desc">Share usage data to help improve the product</span>
+      </div>
+      <input ngAtomsSwitch [(checked)]="analytics" />
+    </div>
+  </div>
+</section>
