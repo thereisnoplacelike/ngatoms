@@ -1,0 +1,108 @@
+<header class="page-header">
+  <h1 class="page-title">Dialog</h1>
+  <p class="page-desc">A modal window that appears in front of the main content. Uses the native <code class="inline-code">&lt;dialog&gt;</code> element for built-in focus trap and Escape key support.</p>
+</header>
+
+<section class="showcase-section">
+  <h2 class="section-title">Default</h2>
+  <div class="trigger-row">
+    <button ngAtomsButton (click)="editOpen.set(true)">Edit profile</button>
+  </div>
+
+  <nga-dialog [(open)]="editOpen">
+    <div ngAtomsDialogHeader>
+      <div>
+        <h2 ngAtomsDialogTitle>Edit profile</h2>
+        <p ngAtomsDialogDescription>Update your display name and email address.</p>
+      </div>
+      <button ngAtomsDialogClose>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div ngAtomsDialogBody>
+      <div class="form-field">
+        <label class="form-label">Display name</label>
+        <input class="form-input" type="text" value="Jane Smith" />
+      </div>
+      <div class="form-field">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" value="jane@example.com" />
+      </div>
+    </div>
+    <div ngAtomsDialogFooter>
+      <button ngAtomsButton variant="outline" (click)="editOpen.set(false)">Cancel</button>
+      <button ngAtomsButton (click)="editOpen.set(false)">Save changes</button>
+    </div>
+  </nga-dialog>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">Confirmation</h2>
+  <div class="trigger-row">
+    <button ngAtomsButton variant="destructive" (click)="confirmOpen.set(true)">Delete account</button>
+  </div>
+
+  <nga-dialog [(open)]="confirmOpen" size="sm">
+    <div ngAtomsDialogHeader>
+      <h2 ngAtomsDialogTitle>Delete account</h2>
+      <button ngAtomsDialogClose>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div ngAtomsDialogBody>
+      <p ngAtomsDialogDescription>
+        This action cannot be undone. Your account and all associated data will be permanently removed.
+      </p>
+    </div>
+    <div ngAtomsDialogFooter>
+      <button ngAtomsButton variant="outline" (click)="confirmOpen.set(false)">Cancel</button>
+      <button ngAtomsButton variant="destructive" (click)="confirmOpen.set(false)">Delete account</button>
+    </div>
+  </nga-dialog>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">Large</h2>
+  <div class="trigger-row">
+    <button ngAtomsButton variant="outline" (click)="largeOpen.set(true)">View terms</button>
+  </div>
+
+  <nga-dialog [(open)]="largeOpen" size="lg">
+    <div ngAtomsDialogHeader>
+      <div>
+        <h2 ngAtomsDialogTitle>Terms of service</h2>
+        <p ngAtomsDialogDescription>Last updated March 2026</p>
+      </div>
+      <button ngAtomsDialogClose>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div ngAtomsDialogBody>
+      <p>By using this service you agree to the following terms and conditions. Please read them carefully before proceeding.</p>
+      <h4 class="terms-heading">1. Acceptance of terms</h4>
+      <p>Access to and use of this service is subject to your acceptance of and compliance with these terms. These terms apply to all visitors, users, and others who access or use the service.</p>
+      <h4 class="terms-heading">2. Use of the service</h4>
+      <p>You may use the service only for lawful purposes and in accordance with these terms. You agree not to use the service in any way that violates any applicable law or regulation.</p>
+      <h4 class="terms-heading">3. Intellectual property</h4>
+      <p>The service and its original content, features, and functionality are and will remain the exclusive property of the company. The service is protected by copyright, trademark, and other applicable laws.</p>
+      <h4 class="terms-heading">4. Termination</h4>
+      <p>We may terminate or suspend access to our service immediately, without prior notice, for any reason, including breach of these terms. Upon termination your right to use the service will cease immediately.</p>
+    </div>
+    <div ngAtomsDialogFooter>
+      <button ngAtomsButton variant="outline" (click)="largeOpen.set(false)">Decline</button>
+      <button ngAtomsButton (click)="largeOpen.set(false)">Accept</button>
+    </div>
+  </nga-dialog>
+</section>
