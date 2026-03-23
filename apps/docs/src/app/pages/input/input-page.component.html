@@ -1,0 +1,48 @@
+<header class="page-header">
+  <h1 class="page-title">Input</h1>
+  <p class="page-desc">Text input field with multiple variants and sizes.</p>
+</header>
+
+<section class="showcase-section">
+  <h2 class="section-title">Variants × Sizes</h2>
+  <div class="grid-table">
+    <div class="grid-header">
+      <span></span>
+      @for (size of sizes; track size) {
+        <span class="col-label">{{ size }}</span>
+      }
+    </div>
+    @for (variant of variants; track variant) {
+      <div class="grid-row">
+        <span class="row-label">{{ variant }}</span>
+        @for (size of sizes; track size) {
+          <span class="cell">
+            <input ngAtomsInput [variant]="variant" [size]="size" placeholder="Placeholder" />
+          </span>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">States</h2>
+  <div class="states-grid">
+    <div class="state-item">
+      <span class="state-label">Default</span>
+      <input ngAtomsInput placeholder="Default input" />
+    </div>
+    <div class="state-item">
+      <span class="state-label">Invalid</span>
+      <input ngAtomsInput [invalid]="true" placeholder="Invalid input" />
+    </div>
+    <div class="state-item">
+      <span class="state-label">Disabled</span>
+      <input ngAtomsInput placeholder="Disabled input" disabled />
+    </div>
+    <div class="state-item">
+      <span class="state-label">Readonly</span>
+      <input ngAtomsInput value="Readonly value" readonly />
+    </div>
+  </div>
+</section>

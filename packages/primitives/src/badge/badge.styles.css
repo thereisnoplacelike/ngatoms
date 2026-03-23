@@ -1,0 +1,75 @@
+/* =============================================================
+   NgAtoms Badge — badge.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/badge.styles.css';
+   ============================================================= */
+
+/* ── Custom properties (override at :root or component level) ─ */
+:root {
+  --nga-badge-font-size:   var(--nga-size-font-xs, 11px);
+  --nga-badge-font-weight: var(--nga-font-weight-semibold, 600);
+  --nga-badge-padding:     2px 8px;
+  --nga-badge-radius:      var(--nga-radius-full, 9999px);
+  --nga-badge-transition:  background 150ms ease, color 150ms ease, border-color 150ms ease;
+
+  /* Variant: default */
+  --nga-badge-default-bg:   var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-badge-default-fg:   var(--nga-color-primary-foreground, oklch(100% 0 0));
+
+  /* Variant: secondary */
+  --nga-badge-secondary-bg: var(--nga-color-secondary, oklch(96% 0.003 85));
+  --nga-badge-secondary-fg: var(--nga-color-secondary-foreground, oklch(13% 0.002 85));
+
+  /* Variant: outline */
+  --nga-badge-outline-border: var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-badge-outline-fg:     var(--nga-color-foreground, oklch(13% 0.002 85));
+
+  /* Variant: destructive */
+  --nga-badge-destructive-bg: var(--nga-color-destructive, oklch(47% 0.130 22));
+  --nga-badge-destructive-fg: var(--nga-color-destructive-foreground, oklch(100% 0 0));
+
+  /* Variant: success */
+  --nga-badge-success-bg: var(--nga-color-success, oklch(54% 0.052 148));
+  --nga-badge-success-fg: var(--nga-color-success-foreground, oklch(100% 0 0));
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid transparent;
+  border-radius: var(--nga-badge-radius);
+  padding: var(--nga-badge-padding);
+  font-size: var(--nga-badge-font-size);
+  font-weight: var(--nga-badge-font-weight);
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: var(--nga-badge-transition);
+}
+
+/* ── Variants ───────────────────────────────────────────────── */
+.nga-badge--default {
+  background: var(--nga-badge-default-bg);
+  color: var(--nga-badge-default-fg);
+}
+
+.nga-badge--secondary {
+  background: var(--nga-badge-secondary-bg);
+  color: var(--nga-badge-secondary-fg);
+}
+
+.nga-badge--outline {
+  background: transparent;
+  color: var(--nga-badge-outline-fg);
+  border-color: var(--nga-badge-outline-border);
+}
+
+.nga-badge--destructive {
+  background: var(--nga-badge-destructive-bg);
+  color: var(--nga-badge-destructive-fg);
+}
+
+.nga-badge--success {
+  background: var(--nga-badge-success-bg);
+  color: var(--nga-badge-success-fg);
+}

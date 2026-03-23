@@ -1,5 +1,7 @@
 @import './themes/default.css';
+@import './components/badge/badge.styles.css';
 @import './components/button/button.styles.css';
+@import './components/input/input.styles.css';
 @import '@phosphor-icons/web/bold';
 
 *, *::before, *::after {
@@ -13,9 +15,9 @@ html, body {
 }
 
 body {
-  background: #0a0a0a;
-  color: #e4e4e7;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  background: var(--nga-color-background);
+  color: var(--nga-color-foreground);
+  font-family: var(--nga-font-sans);
   font-size: 14px;
   line-height: 1.5;
 }

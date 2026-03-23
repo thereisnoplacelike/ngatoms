@@ -1,6 +1,16 @@
 {
   "components": [
     {
+      "name": "badge",
+      "description": "A badge component with 5 variants: default, secondary, outline, destructive, and success.",
+      "files": [
+        "packages/primitives/src/badge/badge.directive.ts",
+        "packages/primitives/src/badge/badge.styles.css",
+        "packages/primitives/src/badge/index.ts"
+      ],
+      "cssImport": "badge.styles.css"
+    },
+    {
       "name": "button",
       "description": "A button directive with 5 variants, 5 sizes, loading state, and icon support.",
       "files": [
@@ -9,6 +19,16 @@
         "packages/primitives/src/button/index.ts"
       ],
       "cssImport": "button.styles.css"
+    },
+    {
+      "name": "input",
+      "description": "An input directive with 3 variants, 5 sizes, and invalid state.",
+      "files": [
+        "packages/primitives/src/input/input.directive.ts",
+        "packages/primitives/src/input/input.styles.css",
+        "packages/primitives/src/input/index.ts"
+      ],
+      "cssImport": "input.styles.css"
     }
   ]
 }
