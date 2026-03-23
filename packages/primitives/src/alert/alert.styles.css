@@ -1,0 +1,126 @@
+/* =============================================================
+   NgAtoms Alert — alert.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/alert.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-alert-radius:  var(--nga-radius-lg, 0.75rem);
+  --nga-alert-padding: 1rem 1.25rem;
+
+  /* Variant: default */
+  --nga-alert-default-bg:     var(--nga-color-card, oklch(100% 0 0));
+  --nga-alert-default-fg:     var(--nga-color-foreground, oklch(8% 0.002 85));
+  --nga-alert-default-border: var(--nga-color-border, oklch(82% 0.003 85));
+
+  /* Variant: info */
+  --nga-alert-info-bg:     oklch(96% 0.010 240);
+  --nga-alert-info-fg:     oklch(30% 0.060 240);
+  --nga-alert-info-border: oklch(80% 0.040 240);
+
+  /* Variant: success */
+  --nga-alert-success-bg:     oklch(96% 0.010 148);
+  --nga-alert-success-fg:     oklch(30% 0.046 148);
+  --nga-alert-success-border: oklch(75% 0.038 148);
+
+  /* Variant: warning */
+  --nga-alert-warning-bg:     oklch(97% 0.016 80);
+  --nga-alert-warning-fg:     oklch(35% 0.060 68);
+  --nga-alert-warning-border: oklch(80% 0.058 72);
+
+  /* Variant: destructive */
+  --nga-alert-destructive-bg:     oklch(97% 0.010 22);
+  --nga-alert-destructive-fg:     oklch(35% 0.080 22);
+  --nga-alert-destructive-border: oklch(78% 0.060 22);
+}
+
+.dark {
+  /* Variant: info */
+  --nga-alert-info-bg:     oklch(20% 0.020 240);
+  --nga-alert-info-fg:     oklch(75% 0.040 240);
+  --nga-alert-info-border: oklch(32% 0.040 240);
+
+  /* Variant: success */
+  --nga-alert-success-bg:     oklch(18% 0.015 148);
+  --nga-alert-success-fg:     oklch(68% 0.050 148);
+  --nga-alert-success-border: oklch(30% 0.035 148);
+
+  /* Variant: warning */
+  --nga-alert-warning-bg:     oklch(20% 0.020 80);
+  --nga-alert-warning-fg:     oklch(76% 0.068 68);
+  --nga-alert-warning-border: oklch(32% 0.050 72);
+
+  /* Variant: destructive */
+  --nga-alert-destructive-bg:     oklch(18% 0.020 22);
+  --nga-alert-destructive-fg:     oklch(72% 0.080 22);
+  --nga-alert-destructive-border: oklch(30% 0.060 22);
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-alert {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  align-items: start;
+  padding: var(--nga-alert-padding);
+  border-radius: var(--nga-alert-radius);
+  border: 1px solid;
+}
+
+.nga-alert:not(:has(.nga-alert-title + .nga-alert-description)) {
+  align-items: center;
+}
+
+/* ── Icon slot ──────────────────────────────────────────────── */
+.nga-alert > *:first-child {
+  margin-top: 0.125rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Title ──────────────────────────────────────────────────── */
+.nga-alert-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 0.25rem;
+}
+
+/* ── Description ────────────────────────────────────────────── */
+.nga-alert-description {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ── Variants ───────────────────────────────────────────────── */
+.nga-alert--default {
+  background: var(--nga-alert-default-bg);
+  color: var(--nga-alert-default-fg);
+  border-color: var(--nga-alert-default-border);
+}
+
+.nga-alert--info {
+  background: var(--nga-alert-info-bg);
+  color: var(--nga-alert-info-fg);
+  border-color: var(--nga-alert-info-border);
+}
+
+.nga-alert--success {
+  background: var(--nga-alert-success-bg);
+  color: var(--nga-alert-success-fg);
+  border-color: var(--nga-alert-success-border);
+}
+
+.nga-alert--warning {
+  background: var(--nga-alert-warning-bg);
+  color: var(--nga-alert-warning-fg);
+  border-color: var(--nga-alert-warning-border);
+}
+
+.nga-alert--destructive {
+  background: var(--nga-alert-destructive-bg);
+  color: var(--nga-alert-destructive-fg);
+  border-color: var(--nga-alert-destructive-border);
+}
