@@ -1,0 +1,87 @@
+<div class="nga-select-wrapper">
+
+  <!-- Trigger -->
+  <button
+    type="button"
+    [ngClass]="triggerClasses()"
+    [disabled]="disabled() || null"
+    [attr.aria-expanded]="isOpen()"
+    [attr.aria-haspopup]="'listbox'"
+    (click)="toggleOpen()"
+    (keydown)="onTriggerKeydown($event)"
+  >
+    <span [class.nga-select-placeholder]="!hasValue()">{{ displayValue() }}</span>
+    <svg
+      class="nga-select-chevron"
+      [class.nga-select-chevron--open]="isOpen()"
+      xmlns="http://www.w3.org/2000/svg"
+      width="14" height="14" viewBox="0 0 24 24"
+      fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round"
+      aria-hidden="true"
+    ><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+
+  <!-- Panel -->
+  @if (isOpen()) {
+    <div
+      class="nga-select-panel"
+      [class.nga-select-panel--above]="panelAbove()"
+      role="listbox"
+      [attr.aria-multiselectable]="multiple() ? 'true' : null"
+      (keydown)="onPanelKeydown($event)"
+    >
+      @if (searchable()) {
+        <div class="nga-select-search-wrap">
+          <svg
+            class="nga-select-search-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="13" height="13" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true"
+          ><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input
+            #searchInput
+            class="nga-select-search"
+            type="text"
+            placeholder="Search..."
+            autocomplete="off"
+            [value]="searchQuery()"
+            (input)="onSearch($event)"
+          />
+        </div>
+      }
+      <div class="nga-select-options" role="presentation">
+        @for (option of filteredOptions(); track option.value; let i = $index) {
+          <div
+            class="nga-select-option"
+            [class.nga-select-option--selected]="isSelected(option.value)"
+            [class.nga-select-option--focused]="focusedIndex() === i"
+            [class.nga-select-option--disabled]="option.disabled"
+            role="option"
+            [attr.aria-selected]="isSelected(option.value)"
+            (click)="selectOption(option)"
+            (mouseenter)="focusedIndex.set(i)"
+          >
+            <span class="nga-select-check">
+              @if (isSelected(option.value)) {
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true"
+                ><polyline points="20 6 9 17 4 12"/></svg>
+              }
+            </span>
+            {{ option.label }}
+          </div>
+        } @empty {
+          <div class="nga-select-empty">No results</div>
+        }
+      </div>
+    </div>
+  }
+
+</div>
