@@ -135,7 +135,7 @@ export class NgAtomsSelectComponent implements AfterViewChecked, OnDestroy {
         const opts = this.filteredOptions();
         if (event.key === 'ArrowDown') this.focusedIndex.update(i => Math.min(i + 1, opts.length - 1));
         if (event.key === 'ArrowUp') this.focusedIndex.update(i => Math.max(i - 1, 0));
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' || event.key === ' ') {
           const idx = this.focusedIndex();
           if (idx >= 0 && idx < opts.length) this.selectOption(opts[idx]);
         }

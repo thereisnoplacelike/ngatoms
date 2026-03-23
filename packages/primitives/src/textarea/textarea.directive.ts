@@ -76,8 +76,8 @@ export class NgAtomsTextareaDirective implements OnDestroy {
 
   private _resize(): void {
     const el = this.el.nativeElement;
-    el.style.height = 'auto';
-    el.style.height = `${el.scrollHeight}px`;
+    this.renderer.setStyle(el, 'height', 'auto');
+    this.renderer.setStyle(el, 'height', `${el.scrollHeight}px`);
   }
 
   ngOnDestroy(): void {
