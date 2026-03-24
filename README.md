@@ -1,100 +1,90 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-w.svg" width="160" />
-    <img src="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="160" alt="NgAtoms" />
-  </picture>
+  <a href="https://ngatoms.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-w.svg" width="160" />
+      <img src="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="160" alt="NgAtoms" />
+    </picture>
+  </a>
 </p>
 
-# NgAtoms
+<h1 align="center">NgAtoms</h1>
 
-NgAtoms is a collection of modern Angular UI primitives designed to be **copied directly into your project**.
+<p align="center">Angular UI primitives you own.<br/>No runtime dependency — copy components directly into your project.</p>
 
-Instead of installing a heavy component library, NgAtoms lets you add composable components like buttons, dialogs, inputs, and menus directly into your codebase — giving you full control over styling, behavior, and architecture.
+<p align="center">
+  <a href="https://ngatoms.com"><img src="https://img.shields.io/badge/docs-ngatoms.com-blue" alt="Documentation" /></a>
+  <a href="https://www.npmjs.com/package/ngatoms"><img src="https://img.shields.io/npm/v/ngatoms?label=npm" alt="npm version" /></a>
+  <img src="https://img.shields.io/badge/Angular-21+-red" alt="Angular 21+" />
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license" />
+</p>
+
+---
+
+## Quick Start
+
+```bash
+# 1. Initialize your project
+npx ngatoms init
+
+# 2. Add a component
+npx ngatoms add button
+```
 
 ## Components
 
-Full docs at **[ngatoms.com](https://ngatoms.com)**.
+Full docs and previews at **[ngatoms.com](https://ngatoms.com)**.
 
-| Component | Tier | Status |
-|-----------|------|--------|
-| `accordion` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `alert` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `badge` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `button` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `card` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `checkbox` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `dialog` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `input` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `select` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `separator` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `switch` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `tabs` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `textarea` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `tooltip` | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `avatar` | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `date-picker` | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `dropdown-menu` | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `number-input` | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `popover` | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `progress` | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `radio-group` | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `spinner` | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `breadcrumb` | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `combobox` | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `file-upload` | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `pagination` | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `slider` | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `stepper` | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `tag-input` | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `code-block` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `color-picker` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `context-menu` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `drawer` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `rating` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `skeleton` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `timeline` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `tree` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-
-## Goals
-
-- Framework-native Angular components
-- No runtime UI dependencies
-- Accessible primitives
-- Design-system friendly
-- Fully customizable
-
-## Installation
-
-Stable release:
-
-```bash
-npm install ngatoms
-```
-
-LTS release:
-
-```bash
-npm install ngatoms@lts
-```
-
-Release candidate:
-
-```bash
-npm install ngatoms@rc
-```
+| Component | Description | Tier | Status |
+|-----------|-------------|------|--------|
+| `accordion` | Collapsible items, single or multiple mode | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `alert` | Feedback messages — 5 variants | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `badge` | Labels — 5 variants | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `button` | Button directive — 5 variants, 5 sizes, loading state | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `card` | Container with header, content, footer slots | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `checkbox` | Checked, unchecked, and indeterminate states | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `dialog` | Modal using native `<dialog>`, focus trap, backdrop | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `input` | Input directive — 3 variants, 5 sizes, invalid state | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `select` | Custom dropdown with search and multiple selection | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `separator` | Horizontal or vertical divider | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `switch` | Toggle switch — 3 sizes | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `tabs` | Tabbed navigation — underline and pills variants | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `textarea` | Multiline input with auto-resize | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `tooltip` | Floating label — 4 placements, viewport clamping | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `avatar` | Image with fallback initials/icon | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `date-picker` | Calendar overlay for date selection | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `dropdown-menu` | Contextual action menu | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `number-input` | Numeric input with increment/decrement controls | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `popover` | Floating content anchored to a trigger | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `progress` | Progress bar — determinate and indeterminate | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `radio-group` | Radio button group with keyboard navigation | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `spinner` | Loading spinner | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `breadcrumb` | Hierarchical navigation trail | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `combobox` | Text input with filtered dropdown | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `file-upload` | Drag-and-drop file input zone | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `pagination` | Page navigation controls | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `slider` | Range slider — single and dual thumb | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `stepper` | Multi-step wizard progress indicator | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `tag-input` | Input that creates removable tag chips | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `code-block` | Syntax-highlighted code display | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `color-picker` | HSL/hex color selector | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `context-menu` | Right-click triggered menu | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `drawer` | Side-panel overlay | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `rating` | Star rating input | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `skeleton` | Placeholder loading shimmer | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `timeline` | Vertical event timeline | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `tree` | Collapsible tree view | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
 
 ## Monorepo Structure
 
 ```
 ngatoms/
 ├─ packages/
-│  ├─ ngatoms        # Main entry point
-│  ├─ cli            # CLI for scaffolding components into your project
+│  ├─ ngatoms        # Published CLI
 │  ├─ primitives     # Angular UI primitive components
 │  ├─ tokens         # Design tokens / CSS variables
 │  └─ utils          # Shared utilities
 ├─ apps/
-│  └─ docs           # Documentation site
+│  └─ docs           # Documentation site → ngatoms.com
 ├─ registry/         # Component registry metadata
 └─ tools/            # Build and publishing scripts
 ```
@@ -102,35 +92,19 @@ ngatoms/
 ## Development
 
 ```bash
-# Install dependencies
 npm install
-
-# Build all packages
 npm run build
-
-# Run tests
 npm run test
-
-# Lint
 npm run lint
-
-# Target a single workspace
-npm run build --workspace=packages/primitives
 ```
 
 ## Release Channels
 
-| Branch | npm tag | Example version |
-|--------|---------|----------------|
-| `main` | `latest` | `1.0.0` |
-| `lts` | `lts` | `1.0.5` |
-| `rc` | `rc` | `1.1.0-rc.0` |
-
-Releases are automated via **Changesets + GitHub Actions**. Every PR that modifies a publishable package must include a changeset:
-
-```bash
-npm run changeset
-```
+| Branch | npm tag | Description |
+|--------|---------|-------------|
+| `main` | `latest` | Stable |
+| `lts` | `lts` | Long-term support |
+| `rc` | `rc` | Release candidate |
 
 ## License
 
