@@ -1,14 +1,13 @@
-<nga-tabs defaultValue="preview" variant="underline" class="demo-tabs">
-  <div ngAtomsTabList>
-    <button ngAtomsTabTrigger value="preview">Preview</button>
-    <button ngAtomsTabTrigger value="code">Code</button>
+<div class="demo-wrapper">
+  <div class="demo-col demo-col--preview">
+    <span class="demo-label">Preview</span>
+    <div class="demo-preview">
+      <ng-content />
+    </div>
   </div>
 
-  <div ngAtomsTabPanel value="preview" class="demo-preview">
-    <ng-content />
-  </div>
-
-  <div ngAtomsTabPanel value="code" class="demo-code">
+  <div class="demo-col demo-col--code">
+    <span class="demo-label">Code</span>
     @if (files().length === 1) {
       <app-code-block [code]="files()[0].code" [language]="files()[0].language" />
     } @else {
@@ -26,4 +25,4 @@
       </nga-tabs>
     }
   </div>
-</nga-tabs>
+</div>

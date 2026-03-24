@@ -1,12 +1,12 @@
 .code-block-pre {
   margin: 0;
-  padding: var(--nga-space-4) var(--nga-space-6);
-  background: var(--nga-gray-950);
-  border-radius: var(--nga-radius-md);
+  padding: var(--nga-space-5) var(--nga-space-6);
+  background: transparent;
+  border-radius: 0;
   overflow-x: auto;
-  font-family: var(--nga-font-mono);
-  font-size: var(--nga-text-sm);
-  line-height: var(--nga-leading-relaxed);
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.75;
 }
 
 .hljs {
