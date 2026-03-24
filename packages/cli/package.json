@@ -1,5 +1,5 @@
 {
-  "name": "@thereisnoplacelike/ngatoms-cli",
+  "name": "@ngatoms/ngatoms-cli",
   "version": "0.0.2",
   "description": "CLI for NgAtoms",
   "private": true,

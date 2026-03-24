@@ -20,7 +20,7 @@ export function getRef() {
 }
 
 export function getRawUrl(filepath) {
-  return `https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/${getRef()}/${filepath}`;
+  return `https://raw.githubusercontent.com/ngAtoms/ngatoms/${getRef()}/${filepath}`;
 }
 
 export async function fetchText(url) {

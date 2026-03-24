@@ -1,5 +1,5 @@
 {
-  "name": "@thereisnoplacelike/ngatoms-primitives",
+  "name": "@ngatoms/ngatoms-primitives",
   "version": "0.1.0",
   "description": "Angular UI primitives for NgAtoms",
   "private": true,

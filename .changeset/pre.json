@@ -2,12 +2,12 @@
   "mode": "exit",
   "tag": "alpha",
   "initialVersions": {
-    "@thereisnoplacelike/ngatoms-docs": "0.0.2",
-    "@thereisnoplacelike/ngatoms-cli": "0.0.2",
+    "@ngatoms/ngatoms-docs": "0.0.2",
+    "@ngatoms/ngatoms-cli": "0.0.2",
     "ngatoms": "0.2.0",
-    "@thereisnoplacelike/ngatoms-primitives": "0.1.0",
-    "@thereisnoplacelike/ngatoms-tokens": "0.1.0",
-    "@thereisnoplacelike/ngatoms-utils": "0.0.2"
+    "@ngatoms/ngatoms-primitives": "0.1.0",
+    "@ngatoms/ngatoms-tokens": "0.1.0",
+    "@ngatoms/ngatoms-utils": "0.0.2"
   },
   "changesets": []
 }

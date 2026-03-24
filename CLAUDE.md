@@ -13,11 +13,11 @@ npm workspaces monorepo with the following packages:
 | Package | Name | Purpose |
 |---|---|---|
 | `packages/ngatoms` | `ngatoms` | Main entry point |
-| `packages/cli` | `@thereisnoplacelike/ngatoms-cli` | CLI for component scaffolding |
-| `packages/primitives` | `@thereisnoplacelike/ngatoms-primitives` | Angular UI primitive components |
-| `packages/tokens` | `@thereisnoplacelike/ngatoms-tokens` | Design tokens / CSS variables |
-| `packages/utils` | `@thereisnoplacelike/ngatoms-utils` | Shared utilities |
-| `apps/docs` | `@thereisnoplacelike/ngatoms-docs` | Documentation site |
+| `packages/cli` | `@ngatoms/ngatoms-cli` | CLI for component scaffolding |
+| `packages/primitives` | `@ngatoms/ngatoms-primitives` | Angular UI primitive components |
+| `packages/tokens` | `@ngatoms/ngatoms-tokens` | Design tokens / CSS variables |
+| `packages/utils` | `@ngatoms/ngatoms-utils` | Shared utilities |
+| `apps/docs` | `@ngatoms/ngatoms-docs` | Documentation site |
 | `registry/` | — | Component registry metadata (`registry.json`) |
 
 ## Common Commands
@@ -93,7 +93,7 @@ Node version: **22.x**
 ## Architecture Notes
 
 - All packages use **TypeScript + ES modules** (`"type": "module"`)
-- Scoped packages use the `@thereisnoplacelike/` namespace
+- Scoped packages use the `@ngatoms/` namespace
 - Each package explicitly declares its `files` array — only those files are published
 - The `registry/registry.json` is the component registry that the CLI reads from; it lists available components with metadata
 - Design tokens in `packages/tokens` are distributed as CSS variables
