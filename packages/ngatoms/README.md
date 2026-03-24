@@ -58,28 +58,28 @@ npx ngatoms add dialog
 
 | Component | Description | Status |
 |-----------|-------------|--------|
-| `accordion` | Collapsible items, single or multiple mode | ✅ Available |
-| `alert` | Feedback messages — 5 variants | ✅ Available |
-| `badge` | Labels — 5 variants | ✅ Available |
-| `button` | Button directive — 5 variants, 5 sizes, loading state | ✅ Available |
-| `card` | Container with header, content, footer slots | ✅ Available |
-| `checkbox` | Checked, unchecked, and indeterminate states | ✅ Available |
-| `dialog` | Modal using native `<dialog>`, focus trap, backdrop | ✅ Available |
-| `input` | Input directive — 3 variants, 5 sizes, invalid state | ✅ Available |
-| `select` | Custom dropdown with search and multiple selection | ✅ Available |
-| `separator` | Horizontal or vertical divider | ✅ Available |
-| `switch` | Toggle switch — 3 sizes | ✅ Available |
-| `tabs` | Tabbed navigation — underline and pills variants | ✅ Available |
-| `textarea` | Multiline input with auto-resize | ✅ Available |
-| `tooltip` | Floating label — 4 placements, viewport clamping | ✅ Available |
-| `avatar` | Image with fallback initials/icon | 🔜 Coming soon |
-| `date-picker` | Calendar overlay for date selection | 🔜 Coming soon |
-| `dropdown-menu` | Contextual action menu | 🔜 Coming soon |
-| `number-input` | Numeric input with increment/decrement controls | 🔜 Coming soon |
-| `popover` | Floating content anchored to a trigger | 🔜 Coming soon |
-| `progress` | Progress bar — determinate and indeterminate | 🔜 Coming soon |
-| `radio-group` | Radio button group with keyboard navigation | 🔜 Coming soon |
-| `spinner` | Loading spinner | 🔜 Coming soon |
+| `accordion` | Collapsible items, single or multiple mode | alpha |
+| `alert` | Feedback messages — 5 variants | alpha |
+| `badge` | Labels — 5 variants | alpha |
+| `button` | Button directive — 5 variants, 5 sizes, loading state | alpha |
+| `card` | Container with header, content, footer slots | alpha |
+| `checkbox` | Checked, unchecked, and indeterminate states | alpha |
+| `dialog` | Modal using native `<dialog>`, focus trap, backdrop | alpha |
+| `input` | Input directive — 3 variants, 5 sizes, invalid state | alpha |
+| `select` | Custom dropdown with search and multiple selection | alpha |
+| `separator` | Horizontal or vertical divider | alpha |
+| `switch` | Toggle switch — 3 sizes | alpha |
+| `tabs` | Tabbed navigation — underline and pills variants | alpha |
+| `textarea` | Multiline input with auto-resize | alpha |
+| `tooltip` | Floating label — 4 placements, viewport clamping | alpha |
+| `avatar` | Image with fallback initials/icon | planned |
+| `date-picker` | Calendar overlay for date selection | planned |
+| `dropdown-menu` | Contextual action menu | planned |
+| `number-input` | Numeric input with increment/decrement controls | planned |
+| `popover` | Floating content anchored to a trigger | planned |
+| `progress` | Progress bar — determinate and indeterminate | planned |
+| `radio-group` | Radio button group with keyboard navigation | planned |
+| `spinner` | Loading spinner | planned |
 
 ## Config (`ngatoms.json`)
 

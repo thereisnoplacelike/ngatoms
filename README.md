@@ -13,22 +13,30 @@ Instead of installing a heavy component library, NgAtoms lets you add composable
 
 ## Components
 
-| Component | Status | | Component | Status |
-|-----------|--------|-|-----------|--------|
-| `accordion` | ✅ | | `avatar` | 🔜 |
-| `alert` | ✅ | | `date-picker` | 🔜 |
-| `badge` | ✅ | | `dropdown-menu` | 🔜 |
-| `button` | ✅ | | `number-input` | 🔜 |
-| `card` | ✅ | | `popover` | 🔜 |
-| `checkbox` | ✅ | | `progress` | 🔜 |
-| `dialog` | ✅ | | `radio-group` | 🔜 |
-| `input` | ✅ | | `spinner` | 🔜 |
-| `select` | ✅ | | | |
-| `separator` | ✅ | | | |
-| `switch` | ✅ | | | |
-| `tabs` | ✅ | | | |
-| `textarea` | ✅ | | | |
-| `tooltip` | ✅ | | | |
+| Component | Status |
+|-----------|--------|
+| `accordion` | alpha |
+| `alert` | alpha |
+| `badge` | alpha |
+| `button` | alpha |
+| `card` | alpha |
+| `checkbox` | alpha |
+| `dialog` | alpha |
+| `input` | alpha |
+| `select` | alpha |
+| `separator` | alpha |
+| `switch` | alpha |
+| `tabs` | alpha |
+| `textarea` | alpha |
+| `tooltip` | alpha |
+| `avatar` | planned |
+| `date-picker` | planned |
+| `dropdown-menu` | planned |
+| `number-input` | planned |
+| `popover` | planned |
+| `progress` | planned |
+| `radio-group` | planned |
+| `spinner` | planned |
 
 ## Goals
 
