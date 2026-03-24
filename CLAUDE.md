@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Git Workflow
+
+- NEVER add Co-Authored-By lines to commits unless explicitly asked
+- Follow branch promotion flow: `rc` → `lts` → `main`. NEVER merge or commit directly to `main`
+- Always create PRs for changes; do not push directly to protected branches
+
 ## Project Overview
 
 **NgAtoms** is a collection of Angular UI primitives designed to be copied directly into projects rather than installed as a library dependency. Core philosophy: no runtime UI dependencies, full project control.
@@ -17,7 +23,7 @@ npm workspaces monorepo with the following packages:
 | `packages/primitives` | `@ngatoms/ngatoms-primitives` | Angular UI primitive components |
 | `packages/tokens` | `@ngatoms/ngatoms-tokens` | Design tokens / CSS variables |
 | `packages/utils` | `@ngatoms/ngatoms-utils` | Shared utilities |
-| `apps/docs` | `@ngatoms/ngatoms-docs` | Documentation site |
+| `apps/docs` | `@ngatoms/ngatoms-docs` | Angular 21 interactive docs — deployed to `ngatoms.com` via Cloudflare Pages |
 | `registry/` | — | Component registry metadata (`registry.json`) |
 
 ## Common Commands
@@ -69,6 +75,10 @@ npm run publish:rc
 
 **PRs that modify publishable packages (`packages/*` or `registry/`) require a changeset file** — enforced by CI.
 
+## Changesets
+
+- Always include a changeset (`npm run changeset`) for any publishable package modification. Do not wait for the user to remind you.
+
 ## Release Channels
 
 The project supports multiple release channels via branch strategy:
@@ -78,6 +88,16 @@ The project supports multiple release channels via branch strategy:
 | `main` | Stable | `latest` |
 | `lts` | Long-term support | `lts` |
 | `rc` | Release candidate | `rc` |
+
+## Deployment
+
+- **Cloudflare Pages** (current): `apps/docs` is deployed via Cloudflare Pages on push to `main`. Build command: `npm run build --workspace=apps/docs`. Output: `apps/docs/dist/browser`. Config in `wrangler.toml`.
+- When editing `wrangler.toml`: use `pages_build_output_dir` (not `assets`) — this is a Pages deployment, not a Workers deployment.
+- Do not add `<base href>` other than `/` to `apps/docs/src/index.html`.
+
+## npm Publishing
+
+- For npm auth in CI: use granular access tokens with per-package publish settings and bypass 2FA. Do NOT try OIDC or remove tokens as a debugging step.
 
 ## CI/CD
 
