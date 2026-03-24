@@ -1,19 +1,38 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-w.svg" width="160" />
-    <img src="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="160" alt="NgAtoms" />
-  </picture>
+  <a href="https://ngatoms.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-w.svg" width="160" />
+      <img src="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="160" alt="NgAtoms" />
+    </picture>
+  </a>
 </p>
 
-# NgAtoms
+<h1 align="center">NgAtoms</h1>
 
-NgAtoms is a collection of modern Angular UI primitives designed to be **copied directly into your project**.
+<p align="center">Angular UI primitives you own.<br/>No runtime dependency — copy components directly into your project.</p>
 
-Instead of installing a heavy component library, NgAtoms lets you add composable components like buttons, dialogs, inputs, and menus directly into your codebase — giving you full control over styling, behavior, and architecture.
+<p align="center">
+  <a href="https://ngatoms.com"><img src="https://img.shields.io/badge/docs-ngatoms.com-blue" alt="Documentation" /></a>
+  <a href="https://www.npmjs.com/package/ngatoms"><img src="https://img.shields.io/npm/v/ngatoms?label=npm" alt="npm version" /></a>
+  <img src="https://img.shields.io/badge/Angular-21+-red" alt="Angular 21+" />
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license" />
+</p>
+
+---
+
+## Quick Start
+
+```bash
+# 1. Initialize your project
+npx ngatoms init
+
+# 2. Add a component
+npx ngatoms add button
+```
 
 ## Components
 
-Full docs at **[ngatoms.com](https://ngatoms.com)**.
+Full docs and previews at **[ngatoms.com](https://ngatoms.com)**.
 
 | Component | Tier | Status |
 |-----------|------|--------|
@@ -55,46 +74,17 @@ Full docs at **[ngatoms.com](https://ngatoms.com)**.
 | `timeline` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
 | `tree` | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
 
-## Goals
-
-- Framework-native Angular components
-- No runtime UI dependencies
-- Accessible primitives
-- Design-system friendly
-- Fully customizable
-
-## Installation
-
-Stable release:
-
-```bash
-npm install ngatoms
-```
-
-LTS release:
-
-```bash
-npm install ngatoms@lts
-```
-
-Release candidate:
-
-```bash
-npm install ngatoms@rc
-```
-
 ## Monorepo Structure
 
 ```
 ngatoms/
 ├─ packages/
-│  ├─ ngatoms        # Main entry point
-│  ├─ cli            # CLI for scaffolding components into your project
+│  ├─ ngatoms        # Published CLI
 │  ├─ primitives     # Angular UI primitive components
 │  ├─ tokens         # Design tokens / CSS variables
 │  └─ utils          # Shared utilities
 ├─ apps/
-│  └─ docs           # Documentation site
+│  └─ docs           # Documentation site → ngatoms.com
 ├─ registry/         # Component registry metadata
 └─ tools/            # Build and publishing scripts
 ```
@@ -102,35 +92,19 @@ ngatoms/
 ## Development
 
 ```bash
-# Install dependencies
 npm install
-
-# Build all packages
 npm run build
-
-# Run tests
 npm run test
-
-# Lint
 npm run lint
-
-# Target a single workspace
-npm run build --workspace=packages/primitives
 ```
 
 ## Release Channels
 
-| Branch | npm tag | Example version |
-|--------|---------|----------------|
-| `main` | `latest` | `1.0.0` |
-| `lts` | `lts` | `1.0.5` |
-| `rc` | `rc` | `1.1.0-rc.0` |
-
-Releases are automated via **Changesets + GitHub Actions**. Every PR that modifies a publishable package must include a changeset:
-
-```bash
-npm run changeset
-```
+| Branch | npm tag | Description |
+|--------|---------|-------------|
+| `main` | `latest` | Stable |
+| `lts` | `lts` | Long-term support |
+| `rc` | `rc` | Release candidate |
 
 ## License
 
