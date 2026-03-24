@@ -1,5 +1,5 @@
 {
-  "name": "@thereisnoplacelike/ngatoms-utils",
+  "name": "@ngatoms/ngatoms-utils",
   "version": "0.0.2",
   "description": "Shared utilities for NgAtoms",
   "private": true,
