@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/main/apps/docs/src/assets/ngatoms-logo-w.svg" width="80" />
-    <img src="https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="80" alt="NgAtoms" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/main/apps/docs/src/assets/ngatoms-logo-w.svg" width="160" />
+    <img src="https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="160" alt="NgAtoms" />
   </picture>
 </p>
 
