@@ -5,8 +5,7 @@ on:
   push:
     branches:
       - main
-      - alpha
-      - beta
+      - lts
       - rc
 
 concurrency:
@@ -80,10 +79,50 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  release-preview:
-    name: Preview Release
+  release-lts:
+    name: LTS Release
     needs: ci
-    if: github.event_name == 'push' && (github.ref_name == 'alpha' || github.ref_name == 'beta' || github.ref_name == 'rc')
+    if: github.event_name == 'push' && github.ref_name == 'lts'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages
+        run: npm run build --if-present
+
+      - name: Publish packages & create GitHub Releases
+        uses: changesets/action@v1
+        with:
+          publish: npm run publish:changesets
+          createGithubReleases: true
+          commit: "chore: version packages"
+          title: "chore: version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  release-rc:
+    name: RC Release
+    needs: ci
+    if: github.event_name == 'push' && github.ref_name == 'rc'
     runs-on: ubuntu-latest
 
     permissions:
@@ -107,74 +146,19 @@ jobs:
         run: npm ci
 
       - name: Enter prerelease mode
-        shell: bash
-        run: |
-          if [[ "${GITHUB_REF_NAME}" == "alpha" ]]; then
-            npm run pre:enter:alpha
-          elif [[ "${GITHUB_REF_NAME}" == "beta" ]]; then
-            npm run pre:enter:beta
-          elif [[ "${GITHUB_REF_NAME}" == "rc" ]]; then
-            npm run pre:enter:rc
-          else
-            echo "Unsupported prerelease branch: ${GITHUB_REF_NAME}"
-            exit 1
-          fi
+        run: npm run pre:enter:rc
 
       - name: Version packages
         run: npm run version:packages
 
-      - name: Build preview packages
+      - name: Build packages
         run: npm run build --if-present
 
-      - name: Publish preview packages
+      - name: Publish RC packages
         run: npm run publish:changesets
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Read preview versions
-        id: versions
-        shell: bash
-        run: |
-          node <<'EOF' >> "$GITHUB_OUTPUT"
-          const fs = require('fs');
-          const path = require('path');
-
-          const packagesDir = path.join(process.cwd(), 'packages');
-          const versions = [];
-
-          if (fs.existsSync(packagesDir)) {
-            for (const entry of fs.readdirSync(packagesDir, { withFileTypes: true })) {
-              if (!entry.isDirectory()) continue;
-
-              const pkgPath = path.join(packagesDir, entry.name, 'package.json');
-              if (!fs.existsSync(pkgPath)) continue;
-
-              const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-              if (pkg.private) continue;
-              if (!pkg.name || !pkg.version) continue;
-
-              if (pkg.version.includes('-alpha.') || pkg.version.includes('-beta.') || pkg.version.includes('-rc.')) {
-                versions.push(`${pkg.name}@${pkg.version}`);
-              }
-            }
-          }
-
-          console.log(`published<<VERSIONS`);
-          console.log(versions.join('\n'));
-          console.log(`VERSIONS`);
-          EOF
-
       - name: Exit prerelease mode
         if: always()
         run: npm run pre:exit
-
-      - name: Create preview GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: preview-${{ github.ref_name }}-${{ github.run_number }}
-          name: Preview ${{ github.ref_name }} #${{ github.run_number }}
-          prerelease: true
-          generate_release_notes: true
-          body: |
-            Published preview packages:
-            ${{ steps.versions.outputs.published }}

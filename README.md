@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/main/apps/docs/src/assets/ngatoms-logo-w.svg" width="80" />
+    <img src="https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="80" alt="NgAtoms" />
+  </picture>
+</p>
+
 # NgAtoms
 
 NgAtoms is a collection of modern Angular UI primitives designed to be **copied directly into your project**.
@@ -20,11 +27,15 @@ Stable release:
 npm install ngatoms
 ```
 
-Preview releases:
+LTS release:
 
 ```bash
-npm install ngatoms@alpha
-npm install ngatoms@beta
+npm install ngatoms@lts
+```
+
+Release candidate:
+
+```bash
 npm install ngatoms@rc
 ```
 
@@ -65,12 +76,11 @@ npm run build --workspace=packages/primitives
 
 ## Release Channels
 
-| Branch | Channel | Example version |
+| Branch | npm tag | Example version |
 |--------|---------|----------------|
-| `main` | latest | `1.0.0` |
-| `alpha` | alpha | `1.1.0-alpha.0` |
-| `beta` | beta | `1.1.0-beta.0` |
-| `rc` | release candidate | `1.1.0-rc.0` |
+| `main` | `latest` | `1.0.0` |
+| `lts` | `lts` | `1.0.5` |
+| `rc` | `rc` | `1.1.0-rc.0` |
 
 Releases are automated via **Changesets + GitHub Actions**. Every PR that modifies a publishable package must include a changeset:
 

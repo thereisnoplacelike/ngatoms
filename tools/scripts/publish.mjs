@@ -23,7 +23,7 @@ function hasFlag(name) {
 const channel = getArg("--channel", "latest");
 const dryRun = hasFlag("--dry-run");
 
-const validChannels = ["latest", "alpha", "beta", "rc"];
+const validChannels = ["latest", "lts", "rc"];
 
 if (!validChannels.includes(channel)) {
     console.error(`Invalid channel: ${channel}`);
