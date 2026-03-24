@@ -10,6 +10,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsc --noEmit -p tsconfig.json"
+    "build": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint src/"
   }
 }

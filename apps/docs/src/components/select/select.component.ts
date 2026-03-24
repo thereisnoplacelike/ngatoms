@@ -3,7 +3,6 @@ import {
   Component,
   ElementRef,
   HostListener,
-  OnDestroy,
   computed,
   inject,
   input,
@@ -30,7 +29,7 @@ export type NgAtomsSelectSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   templateUrl: './select.component.html',
   styleUrl: './select.component.css',
 })
-export class NgAtomsSelectComponent implements AfterViewChecked, OnDestroy {
+export class NgAtomsSelectComponent implements AfterViewChecked {
   private readonly el = inject(ElementRef);
 
   readonly searchInputEl = viewChild<ElementRef<HTMLInputElement>>('searchInput');
@@ -186,5 +185,4 @@ export class NgAtomsSelectComponent implements AfterViewChecked, OnDestroy {
     this.panelAbove.set(spaceBelow < 240 && rect.top > spaceBelow);
   }
 
-  ngOnDestroy(): void {}
 }

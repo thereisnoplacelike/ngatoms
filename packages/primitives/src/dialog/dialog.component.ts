@@ -3,7 +3,6 @@ import {
   ElementRef,
   OnDestroy,
   effect,
-  inject,
   input,
   model,
   viewChild,

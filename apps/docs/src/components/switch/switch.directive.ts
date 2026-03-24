@@ -2,7 +2,6 @@ import {
   Directive,
   ElementRef,
   HostListener,
-  OnDestroy,
   Renderer2,
   effect,
   inject,
@@ -21,7 +20,7 @@ export type NgAtomsSwitchSize = 'sm' | 'md' | 'lg';
     role: 'switch',
   },
 })
-export class NgAtomsSwitchDirective implements OnDestroy {
+export class NgAtomsSwitchDirective {
   private readonly el = inject(ElementRef<HTMLInputElement>);
   private readonly renderer = inject(Renderer2);
 
@@ -48,5 +47,4 @@ export class NgAtomsSwitchDirective implements OnDestroy {
     this.checked.set((event.target as HTMLInputElement).checked);
   }
 
-  ngOnDestroy(): void {}
 }

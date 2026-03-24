@@ -1,7 +1,6 @@
 import {
   Directive,
   ElementRef,
-  OnDestroy,
   Renderer2,
   effect,
   inject,
@@ -17,7 +16,7 @@ import { NgAtomsTabsComponent } from './tabs.component';
     role: 'tabpanel',
   },
 })
-export class NgAtomsTabPanelDirective implements OnDestroy {
+export class NgAtomsTabPanelDirective {
   private readonly el = inject(ElementRef<HTMLElement>);
   private readonly renderer = inject(Renderer2);
   private readonly tabs = inject(NgAtomsTabsComponent);
@@ -37,5 +36,4 @@ export class NgAtomsTabPanelDirective implements OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {}
 }

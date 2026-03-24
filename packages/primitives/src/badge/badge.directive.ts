@@ -1,7 +1,6 @@
 import {
   Directive,
   ElementRef,
-  OnDestroy,
   Renderer2,
   effect,
   inject,
@@ -20,7 +19,7 @@ export type NgAtomsBadgeVariant =
   standalone: true,
   host: { class: 'nga-badge' },
 })
-export class NgAtomsBadgeDirective implements OnDestroy {
+export class NgAtomsBadgeDirective {
   private readonly el = inject(ElementRef<HTMLElement>);
   private readonly renderer = inject(Renderer2);
 
@@ -37,5 +36,4 @@ export class NgAtomsBadgeDirective implements OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {}
 }

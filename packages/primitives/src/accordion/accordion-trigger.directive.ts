@@ -2,9 +2,7 @@ import {
   Directive,
   ElementRef,
   HostListener,
-  OnDestroy,
   Renderer2,
-  computed,
   effect,
   inject,
 } from '@angular/core';
@@ -18,7 +16,7 @@ import { NgAtomsAccordionItemComponent } from './accordion-item.component';
     type: 'button',
   },
 })
-export class NgAtomsAccordionTriggerDirective implements OnDestroy {
+export class NgAtomsAccordionTriggerDirective {
   private readonly el = inject(ElementRef<HTMLElement>);
   private readonly renderer = inject(Renderer2);
   private readonly item = inject(NgAtomsAccordionItemComponent);
@@ -48,5 +46,4 @@ export class NgAtomsAccordionTriggerDirective implements OnDestroy {
     }
   }
 
-  ngOnDestroy(): void {}
 }

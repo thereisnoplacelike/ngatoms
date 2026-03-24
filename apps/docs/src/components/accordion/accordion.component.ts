@@ -1,6 +1,5 @@
 import {
   Component,
-  OnDestroy,
   effect,
   input,
   signal,
@@ -13,7 +12,7 @@ import {
   styleUrl: './accordion.component.css',
   host: { class: 'nga-accordion' },
 })
-export class NgAtomsAccordionComponent implements OnDestroy {
+export class NgAtomsAccordionComponent {
   readonly type = input<'single' | 'multiple'>('single');
   readonly collapsible = input<boolean>(true);
   readonly defaultValue = input<string | string[]>('');
@@ -40,5 +39,4 @@ export class NgAtomsAccordionComponent implements OnDestroy {
     this.openItems.set(current);
   }
 
-  ngOnDestroy(): void {}
 }

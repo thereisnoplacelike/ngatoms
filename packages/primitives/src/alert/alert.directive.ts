@@ -1,7 +1,6 @@
 import {
   Directive,
   ElementRef,
-  OnDestroy,
   Renderer2,
   effect,
   inject,
@@ -15,7 +14,7 @@ export type NgAtomsAlertVariant = 'default' | 'info' | 'success' | 'warning' | '
   standalone: true,
   host: { class: 'nga-alert', role: 'alert' },
 })
-export class NgAtomsAlertDirective implements OnDestroy {
+export class NgAtomsAlertDirective {
   private readonly el = inject(ElementRef<HTMLElement>);
   private readonly renderer = inject(Renderer2);
 
@@ -32,7 +31,6 @@ export class NgAtomsAlertDirective implements OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {}
 }
 
 @Directive({

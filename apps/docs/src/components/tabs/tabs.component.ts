@@ -1,6 +1,5 @@
 import {
   Component,
-  OnDestroy,
   effect,
   input,
   signal,
@@ -24,7 +23,7 @@ export class NgAtomsTabTriggerDirectiveRef {
     '[class.nga-tabs--pills]': "variant() === 'pills'",
   },
 })
-export class NgAtomsTabsComponent implements OnDestroy {
+export class NgAtomsTabsComponent {
   readonly defaultValue = input<string>('');
   readonly variant = input<NgAtomsTabsVariant>('underline');
 
@@ -69,5 +68,4 @@ export class NgAtomsTabsComponent implements OnDestroy {
     if (prev) { this.setActive(prev.value()); prev.focus(); }
   }
 
-  ngOnDestroy(): void {}
 }

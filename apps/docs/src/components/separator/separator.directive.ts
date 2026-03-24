@@ -1,7 +1,6 @@
 import {
   Directive,
   ElementRef,
-  OnDestroy,
   Renderer2,
   effect,
   inject,
@@ -18,7 +17,7 @@ export type NgAtomsSeparatorOrientation = 'horizontal' | 'vertical';
     role: 'separator',
   },
 })
-export class NgAtomsSeparatorDirective implements OnDestroy {
+export class NgAtomsSeparatorDirective {
   private readonly el = inject(ElementRef<HTMLElement>);
   private readonly renderer = inject(Renderer2);
 
@@ -36,5 +35,4 @@ export class NgAtomsSeparatorDirective implements OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {}
 }

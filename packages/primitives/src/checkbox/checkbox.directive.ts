@@ -2,7 +2,6 @@ import {
   Directive,
   ElementRef,
   HostListener,
-  OnDestroy,
   Renderer2,
   effect,
   inject,
@@ -21,7 +20,7 @@ export type NgAtomsCheckboxSize = 'sm' | 'md' | 'lg';
     role: 'checkbox',
   },
 })
-export class NgAtomsCheckboxDirective implements OnDestroy {
+export class NgAtomsCheckboxDirective {
   private readonly el = inject(ElementRef<HTMLInputElement>);
   private readonly renderer = inject(Renderer2);
 
@@ -53,5 +52,4 @@ export class NgAtomsCheckboxDirective implements OnDestroy {
     this.checked.set((event.target as HTMLInputElement).checked);
   }
 
-  ngOnDestroy(): void {}
 }

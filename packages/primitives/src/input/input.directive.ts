@@ -1,7 +1,6 @@
 import {
   Directive,
   ElementRef,
-  OnDestroy,
   Renderer2,
   effect,
   inject,
@@ -17,7 +16,7 @@ export type NgAtomsInputSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   standalone: true,
   host: { class: 'nga-input' },
 })
-export class NgAtomsInputDirective implements OnDestroy {
+export class NgAtomsInputDirective {
   private readonly el = inject(ElementRef<HTMLInputElement>);
   private readonly renderer = inject(Renderer2);
 
@@ -55,5 +54,4 @@ export class NgAtomsInputDirective implements OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {}
 }

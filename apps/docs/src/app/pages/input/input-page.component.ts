@@ -4,9 +4,6 @@ import { NgAtomsInputDirective } from '../../../components/input';
 const VARIANTS = ['default', 'filled', 'ghost'] as const;
 const SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
-type Variant = typeof VARIANTS[number];
-type Size = typeof SIZES[number];
-
 @Component({
   selector: 'app-input-page',
   standalone: true,

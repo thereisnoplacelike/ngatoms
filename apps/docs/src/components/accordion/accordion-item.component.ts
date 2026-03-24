@@ -1,6 +1,5 @@
 import {
   Component,
-  OnDestroy,
   computed,
   inject,
   input,
@@ -17,7 +16,7 @@ import { NgAtomsAccordionComponent } from './accordion.component';
     '[class.nga-accordion-item--open]': 'isOpen()',
   },
 })
-export class NgAtomsAccordionItemComponent implements OnDestroy {
+export class NgAtomsAccordionItemComponent {
   private readonly accordion = inject(NgAtomsAccordionComponent);
 
   readonly value = input.required<string>();
@@ -28,5 +27,4 @@ export class NgAtomsAccordionItemComponent implements OnDestroy {
     this.accordion.toggle(this.value());
   }
 
-  ngOnDestroy(): void {}
 }
