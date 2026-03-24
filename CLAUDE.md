@@ -58,9 +58,13 @@ npm run version:packages
 npm run publish:latest:dry
 npm run publish:latest
 
-# Preview channels: alpha, beta, rc
-npm run publish:alpha:dry
-npm run publish:alpha
+# LTS channel
+npm run publish:lts:dry
+npm run publish:lts
+
+# RC channel
+npm run publish:rc:dry
+npm run publish:rc
 ```
 
 **PRs that modify publishable packages (`packages/*` or `registry/`) require a changeset file** — enforced by CI.
@@ -72,8 +76,7 @@ The project supports multiple release channels via branch strategy:
 | Branch | Channel | npm tag |
 |---|---|---|
 | `main` | Stable | `latest` |
-| `alpha` | Alpha preview | `alpha` |
-| `beta` | Beta preview | `beta` |
+| `lts` | Long-term support | `lts` |
 | `rc` | Release candidate | `rc` |
 
 ## CI/CD
