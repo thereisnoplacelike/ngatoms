@@ -1,7 +1,12 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'alert', pathMatch: 'full' },
+  { path: '', redirectTo: 'get-started', pathMatch: 'full' },
+  {
+    path: 'get-started',
+    loadComponent: () =>
+      import('./pages/get-started/get-started-page.component').then(m => m.GetStartedPageComponent),
+  },
   {
     path: 'alert',
     loadComponent: () =>

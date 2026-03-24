@@ -1,0 +1,100 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--nga-color-border);
+}
+
+.hero-logo {
+  width: 160px;
+  height: 160px;
+}
+
+.hero-logo--light { display: block; }
+.hero-logo--dark  { display: none; }
+
+:host-context(.dark) .hero-logo--light { display: none; }
+:host-context(.dark) .hero-logo--dark  { display: block; }
+
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 0;
+  color: var(--nga-color-foreground);
+  line-height: 1;
+}
+
+.hero-tagline {
+  font-size: 16px;
+  color: var(--nga-color-muted-foreground);
+  margin: 0;
+  max-width: 440px;
+  line-height: 1.65;
+}
+
+.gs-section {
+  margin-bottom: 2.5rem;
+}
+
+.gs-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nga-color-muted-foreground);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--nga-color-border);
+}
+
+.gs-desc {
+  font-size: 13.5px;
+  color: var(--nga-color-muted-foreground);
+  margin: 0 0 0.75rem;
+  line-height: 1.6;
+}
+
+.inline-code {
+  font-family: var(--nga-font-mono, ui-monospace, monospace);
+  font-size: 12.5px;
+  background: var(--nga-color-muted);
+  color: var(--nga-color-foreground);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.code-block {
+  margin: 0;
+  padding: 0.875rem 1.125rem;
+  background: var(--nga-color-muted);
+  border: 1px solid var(--nga-color-border);
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.code-block code {
+  font-family: var(--nga-font-mono, ui-monospace, monospace);
+  font-size: 13px;
+  color: var(--nga-color-foreground);
+}
+
+.component-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.component-chip {
+  font-size: 12.5px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: var(--nga-color-muted);
+  border: 1px solid var(--nga-color-border);
+  color: var(--nga-color-muted-foreground);
+}

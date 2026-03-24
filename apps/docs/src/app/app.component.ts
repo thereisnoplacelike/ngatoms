@@ -9,10 +9,13 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
     <div class="layout">
       <aside class="sidebar">
         <div class="sidebar-brand">
+          <img class="brand-logo" [src]="isDark() ? 'assets/ngatoms-logo-w.svg' : 'assets/ngatoms-logo-b.svg'" alt="" aria-hidden="true" />
           <span class="brand-name">NgAtoms</span>
           <span class="brand-badge">alpha</span>
         </div>
         <nav class="sidebar-nav">
+          <span class="nav-section">Overview</span>
+          <a routerLink="/get-started" routerLinkActive="active">Get Started</a>
           <span class="nav-section">Components</span>
           <a routerLink="/alert" routerLinkActive="active">Alert</a>
           <a routerLink="/badge" routerLinkActive="active">Badge</a>
