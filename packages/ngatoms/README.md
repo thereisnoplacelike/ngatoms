@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="80" alt="NgAtoms" />
+  <a href="https://ngatoms.com/docs">
+    <img src="https://raw.githubusercontent.com/ngAtoms/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="80" alt="NgAtoms" />
+  </a>
 </p>
 
 <h1 align="center">NgAtoms</h1>
@@ -7,6 +9,7 @@
 <p align="center">Angular UI primitives you own.<br/>No runtime dependency — copy components directly into your project.</p>
 
 <p align="center">
+  <a href="https://ngatoms.com/docs"><img src="https://img.shields.io/badge/docs-ngatoms.com-blue" alt="Documentation" /></a>
   <a href="https://www.npmjs.com/package/ngatoms"><img src="https://img.shields.io/npm/v/ngatoms?label=npm" alt="npm version" /></a>
   <img src="https://img.shields.io/badge/Angular-21+-red" alt="Angular 21+" />
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license" />
