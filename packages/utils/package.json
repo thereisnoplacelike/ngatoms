@@ -1,6 +1,6 @@
 {
   "name": "@thereisnoplacelike/ngatoms-utils",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "description": "Shared utilities for NgAtoms",
   "private": true,
   "author": "Lázaro Dutra",
@@ -10,6 +10,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsc --noEmit -p tsconfig.json"
+    "build": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint src/"
   }
 }

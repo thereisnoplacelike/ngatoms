@@ -1,7 +1,10 @@
-<h1 class="page-title">Button</h1>
+<header class="page-header">
+  <h1 class="page-title">Button</h1>
+  <p class="page-desc">Displays a button or a component that looks like a button.</p>
+</header>
 
 <section class="showcase-section">
-  <h2 class="section-title">Variants &times; Sizes</h2>
+  <h2 class="section-title">Variants × Sizes</h2>
   <div class="grid-table">
     <div class="grid-header">
       <span></span>
@@ -13,7 +16,7 @@
       <div class="grid-row">
         <span class="row-label">{{ variant }}</span>
         @for (size of sizes; track size) {
-          <span>
+          <span class="cell">
             <button ngAtomsButton [variant]="variant" [size]="size">Button</button>
           </span>
         }

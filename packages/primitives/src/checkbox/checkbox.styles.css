@@ -1,0 +1,85 @@
+/* =============================================================
+   NgAtoms Checkbox — checkbox.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/checkbox.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-checkbox-radius:       var(--nga-radius-sm, 0.25rem);
+  --nga-checkbox-transition:   background 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+  --nga-checkbox-focus-color:  var(--nga-color-ring, oklch(76% 0.068 68));
+
+  --nga-checkbox-bg:           var(--nga-color-background, oklch(100% 0 0));
+  --nga-checkbox-border:       var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-checkbox-checked-bg:   var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-checkbox-checked-fg:   var(--nga-color-primary-foreground, oklch(100% 0 0));
+
+  --nga-checkbox-size-sm: 14px;
+  --nga-checkbox-size-md: 16px;
+  --nga-checkbox-size-lg: 20px;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  flex-shrink: 0;
+  border: 1.5px solid var(--nga-checkbox-border);
+  border-radius: var(--nga-checkbox-radius);
+  background: var(--nga-checkbox-bg);
+  transition: var(--nga-checkbox-transition);
+  cursor: pointer;
+  margin: 0;
+}
+
+.nga-checkbox:focus-visible {
+  outline: 2px solid var(--nga-checkbox-focus-color);
+  outline-offset: 2px;
+}
+
+.nga-checkbox:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Checked ────────────────────────────────────────────────── */
+.nga-checkbox:checked {
+  background: var(--nga-checkbox-checked-bg);
+  border-color: var(--nga-checkbox-checked-bg);
+}
+
+.nga-checkbox:checked::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 32%;
+  height: 52%;
+  border-right: 1.5px solid var(--nga-checkbox-checked-fg);
+  border-bottom: 1.5px solid var(--nga-checkbox-checked-fg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* ── Indeterminate ──────────────────────────────────────────── */
+.nga-checkbox:indeterminate {
+  background: var(--nga-checkbox-checked-bg);
+  border-color: var(--nga-checkbox-checked-bg);
+}
+
+.nga-checkbox:indeterminate::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 58%;
+  height: 1.5px;
+  background: var(--nga-checkbox-checked-fg);
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-checkbox--sm { width: var(--nga-checkbox-size-sm); height: var(--nga-checkbox-size-sm); }
+.nga-checkbox--md { width: var(--nga-checkbox-size-md); height: var(--nga-checkbox-size-md); }
+.nga-checkbox--lg { width: var(--nga-checkbox-size-lg); height: var(--nga-checkbox-size-lg); }

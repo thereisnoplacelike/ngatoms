@@ -1,0 +1,153 @@
+<header class="page-header">
+  <h1 class="page-title">Tabs</h1>
+  <p class="page-desc">Organizes content into distinct panels, only one visible at a time.</p>
+</header>
+
+<section class="showcase-section">
+  <h2 class="section-title">Underline (default)</h2>
+  <nga-tabs defaultValue="account">
+    <div ngAtomsTabList>
+      <button ngAtomsTabTrigger value="account">Account</button>
+      <button ngAtomsTabTrigger value="security">Security</button>
+      <button ngAtomsTabTrigger value="notifications">Notifications</button>
+      <button ngAtomsTabTrigger value="billing" disabled>Billing</button>
+    </div>
+
+    <div ngAtomsTabPanel value="account">
+      <div class="panel-card">
+        <h3 class="panel-title">Account settings</h3>
+        <p class="panel-desc">Manage your display name, avatar, and public profile.</p>
+        <div class="panel-fields">
+          <div class="panel-field">
+            <span class="panel-field-label">Display name</span>
+            <span class="panel-field-value">Jane Smith</span>
+          </div>
+          <div class="panel-field">
+            <span class="panel-field-label">Username</span>
+            <span class="panel-field-value">@janesmith</span>
+          </div>
+          <div class="panel-field">
+            <span class="panel-field-label">Email</span>
+            <span class="panel-field-value">jane&#64;example.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ngAtomsTabPanel value="security">
+      <div class="panel-card">
+        <h3 class="panel-title">Security</h3>
+        <p class="panel-desc">Update your password and manage two-factor authentication.</p>
+        <div class="panel-fields">
+          <div class="panel-field">
+            <span class="panel-field-label">Password</span>
+            <span class="panel-field-value">Last changed 3 months ago</span>
+          </div>
+          <div class="panel-field">
+            <span class="panel-field-label">Two-factor auth</span>
+            <span class="panel-field-value panel-field-value--success">Enabled</span>
+          </div>
+          <div class="panel-field">
+            <span class="panel-field-label">Active sessions</span>
+            <span class="panel-field-value">2 devices</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ngAtomsTabPanel value="notifications">
+      <div class="panel-card">
+        <h3 class="panel-title">Notifications</h3>
+        <p class="panel-desc">Choose what you want to be notified about.</p>
+        <div class="panel-fields">
+          <div class="panel-field">
+            <span class="panel-field-label">Email digests</span>
+            <span class="panel-field-value">Weekly</span>
+          </div>
+          <div class="panel-field">
+            <span class="panel-field-label">Push alerts</span>
+            <span class="panel-field-value panel-field-value--success">On</span>
+          </div>
+          <div class="panel-field">
+            <span class="panel-field-label">Marketing</span>
+            <span class="panel-field-value panel-field-value--muted">Off</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nga-tabs>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">Pills</h2>
+  <nga-tabs defaultValue="overview" variant="pills">
+    <div ngAtomsTabList>
+      <button ngAtomsTabTrigger value="overview">Overview</button>
+      <button ngAtomsTabTrigger value="analytics">Analytics</button>
+      <button ngAtomsTabTrigger value="reports">Reports</button>
+    </div>
+
+    <div ngAtomsTabPanel value="overview">
+      <div class="panel-card">
+        <h3 class="panel-title">Overview</h3>
+        <p class="panel-desc">A summary of your workspace activity and key metrics.</p>
+        <div class="stat-row">
+          <div class="stat">
+            <span class="stat-value">1,284</span>
+            <span class="stat-label">Total users</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">94%</span>
+            <span class="stat-label">Uptime</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">48</span>
+            <span class="stat-label">Active today</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ngAtomsTabPanel value="analytics">
+      <div class="panel-card">
+        <h3 class="panel-title">Analytics</h3>
+        <p class="panel-desc">Detailed usage metrics for the current billing period.</p>
+        <div class="stat-row">
+          <div class="stat">
+            <span class="stat-value">24.6k</span>
+            <span class="stat-label">Page views</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">3.2s</span>
+            <span class="stat-label">Avg. load time</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">18%</span>
+            <span class="stat-label">Bounce rate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ngAtomsTabPanel value="reports">
+      <div class="panel-card">
+        <h3 class="panel-title">Reports</h3>
+        <p class="panel-desc">Scheduled and on-demand reports for your team.</p>
+        <div class="panel-fields">
+          <div class="panel-field">
+            <span class="panel-field-label">Last report</span>
+            <span class="panel-field-value">Monthly summary — Mar 2026</span>
+          </div>
+          <div class="panel-field">
+            <span class="panel-field-label">Schedule</span>
+            <span class="panel-field-value">1st of every month</span>
+          </div>
+          <div class="panel-field">
+            <span class="panel-field-label">Recipients</span>
+            <span class="panel-field-value">4 team members</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nga-tabs>
+</section>

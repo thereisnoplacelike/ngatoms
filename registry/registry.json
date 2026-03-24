@@ -1,6 +1,66 @@
 {
   "components": [
     {
+      "name": "checkbox",
+      "description": "A checkbox input with checked, unchecked, and indeterminate states.",
+      "files": [
+        "packages/primitives/src/checkbox/checkbox.directive.ts",
+        "packages/primitives/src/checkbox/checkbox.styles.css",
+        "packages/primitives/src/checkbox/index.ts"
+      ],
+      "cssImport": "checkbox.styles.css"
+    },
+    {
+      "name": "alert",
+      "description": "A feedback message with 5 variants: default, info, success, warning, destructive.",
+      "files": [
+        "packages/primitives/src/alert/alert.directive.ts",
+        "packages/primitives/src/alert/alert.styles.css",
+        "packages/primitives/src/alert/index.ts"
+      ],
+      "cssImport": "alert.styles.css"
+    },
+    {
+      "name": "badge",
+      "description": "A badge component with 5 variants: default, secondary, outline, destructive, and success.",
+      "files": [
+        "packages/primitives/src/badge/badge.directive.ts",
+        "packages/primitives/src/badge/badge.styles.css",
+        "packages/primitives/src/badge/index.ts"
+      ],
+      "cssImport": "badge.styles.css"
+    },
+    {
+      "name": "card",
+      "description": "A container component with header, title, description, content, and footer slots.",
+      "files": [
+        "packages/primitives/src/card/card.directive.ts",
+        "packages/primitives/src/card/card.styles.css",
+        "packages/primitives/src/card/index.ts"
+      ],
+      "cssImport": "card.styles.css"
+    },
+    {
+      "name": "textarea",
+      "description": "A multiline text input with variants, sizes, invalid state, and auto-resize support.",
+      "files": [
+        "packages/primitives/src/textarea/textarea.directive.ts",
+        "packages/primitives/src/textarea/textarea.styles.css",
+        "packages/primitives/src/textarea/index.ts"
+      ],
+      "cssImport": "textarea.styles.css"
+    },
+    {
+      "name": "separator",
+      "description": "A visual divider between content, horizontal or vertical.",
+      "files": [
+        "packages/primitives/src/separator/separator.directive.ts",
+        "packages/primitives/src/separator/separator.styles.css",
+        "packages/primitives/src/separator/index.ts"
+      ],
+      "cssImport": "separator.styles.css"
+    },
+    {
       "name": "button",
       "description": "A button directive with 5 variants, 5 sizes, loading state, and icon support.",
       "files": [
@@ -9,6 +69,96 @@
         "packages/primitives/src/button/index.ts"
       ],
       "cssImport": "button.styles.css"
+    },
+    {
+      "name": "input",
+      "description": "An input directive with 3 variants, 5 sizes, and invalid state.",
+      "files": [
+        "packages/primitives/src/input/input.directive.ts",
+        "packages/primitives/src/input/input.styles.css",
+        "packages/primitives/src/input/index.ts"
+      ],
+      "cssImport": "input.styles.css"
+    },
+    {
+      "name": "tooltip",
+      "description": "A floating label on hover or focus with 4 placements, delay, and viewport clamping.",
+      "files": [
+        "packages/primitives/src/tooltip/tooltip.directive.ts",
+        "packages/primitives/src/tooltip/tooltip.styles.css",
+        "packages/primitives/src/tooltip/index.ts"
+      ],
+      "cssImport": "tooltip.styles.css"
+    },
+    {
+      "name": "dialog",
+      "description": "A modal dialog using the native <dialog> element with focus trap, backdrop, and size variants.",
+      "files": [
+        "packages/primitives/src/dialog/dialog.component.ts",
+        "packages/primitives/src/dialog/dialog.component.html",
+        "packages/primitives/src/dialog/dialog.component.css",
+        "packages/primitives/src/dialog/dialog-header.directive.ts",
+        "packages/primitives/src/dialog/dialog-title.directive.ts",
+        "packages/primitives/src/dialog/dialog-description.directive.ts",
+        "packages/primitives/src/dialog/dialog-body.directive.ts",
+        "packages/primitives/src/dialog/dialog-footer.directive.ts",
+        "packages/primitives/src/dialog/dialog-close.directive.ts",
+        "packages/primitives/src/dialog/dialog.styles.css",
+        "packages/primitives/src/dialog/index.ts"
+      ],
+      "cssImport": "dialog.styles.css"
+    },
+    {
+      "name": "accordion",
+      "description": "A vertically stacked set of collapsible items with single and multiple modes.",
+      "files": [
+        "packages/primitives/src/accordion/accordion.component.ts",
+        "packages/primitives/src/accordion/accordion.component.html",
+        "packages/primitives/src/accordion/accordion.component.css",
+        "packages/primitives/src/accordion/accordion-item.component.ts",
+        "packages/primitives/src/accordion/accordion-item.component.html",
+        "packages/primitives/src/accordion/accordion-item.component.css",
+        "packages/primitives/src/accordion/accordion-trigger.directive.ts",
+        "packages/primitives/src/accordion/accordion-content.directive.ts",
+        "packages/primitives/src/accordion/accordion.styles.css",
+        "packages/primitives/src/accordion/index.ts"
+      ],
+      "cssImport": "accordion.styles.css"
+    },
+    {
+      "name": "select",
+      "description": "A styled native select with 3 variants, 5 sizes, and invalid state.",
+      "files": [
+        "packages/primitives/src/select/select.component.ts",
+        "packages/primitives/src/select/select.styles.css",
+        "packages/primitives/src/select/index.ts"
+      ],
+      "cssImport": "select.styles.css"
+    },
+    {
+      "name": "tabs",
+      "description": "Tabbed navigation with underline and pills variants, keyboard navigation, and ARIA support.",
+      "files": [
+        "packages/primitives/src/tabs/tabs.component.ts",
+        "packages/primitives/src/tabs/tabs.component.html",
+        "packages/primitives/src/tabs/tabs.component.css",
+        "packages/primitives/src/tabs/tab-list.directive.ts",
+        "packages/primitives/src/tabs/tab-trigger.directive.ts",
+        "packages/primitives/src/tabs/tab-panel.directive.ts",
+        "packages/primitives/src/tabs/tabs.styles.css",
+        "packages/primitives/src/tabs/index.ts"
+      ],
+      "cssImport": "tabs.styles.css"
+    },
+    {
+      "name": "switch",
+      "description": "A toggle switch for enabling or disabling a setting, with 3 sizes.",
+      "files": [
+        "packages/primitives/src/switch/switch.directive.ts",
+        "packages/primitives/src/switch/switch.styles.css",
+        "packages/primitives/src/switch/index.ts"
+      ],
+      "cssImport": "switch.styles.css"
     }
   ]
 }

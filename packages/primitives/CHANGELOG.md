@@ -1,11 +1,14 @@
 # @thereisnoplacelike/ngatoms-primitives
 
-## 0.0.3
+## 0.1.0
 
-### Patch Changes
+### Minor Changes
 
-- 341fedb: Add full two-tier brand token system (Japandi/Scandinavian/Apple aesthetic) with oklch primitive color scales, semantic roles, dark mode via `.dark` class, typography, spacing, and radius tokens. Update button primitive to reference new semantic tokens with oklch fallbacks.
-- f721d4a: config packages
+- Add 8 new components: Input, Switch, Select (custom dropdown with search + multiple selection), Tabs, Accordion, Dialog, Tooltip, and Get Started docs page.
+
+  Update design tokens: cool blue-gray neutral palette (Acorn-inspired), new `info` and `warning` semantic colors, teal success, vivid destructive red, 3-level shadow scale, and improved system font stack.
+
+  Add ESLint configuration with Angular ESLint rules across all workspaces.
 
 ## 0.0.2
 

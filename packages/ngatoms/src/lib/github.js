@@ -14,6 +14,8 @@ if (pkg.name !== 'ngatoms') {
 export const VERSION = pkg.version;
 
 export function getRef() {
+  const prerelease = VERSION.match(/-(alpha|beta|rc)\.\d+$/);
+  if (prerelease) return prerelease[1];
   return `v${VERSION}`;
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "@thereisnoplacelike/ngatoms-primitives",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Angular UI primitives for NgAtoms",
   "private": true,
   "author": "Lázaro Dutra",
@@ -10,7 +10,8 @@
     "src"
   ],
   "scripts": {
-    "build": "ngc --noEmit -p tsconfig.json"
+    "build": "ngc --noEmit -p tsconfig.json",
+    "lint": "eslint src/"
   },
   "peerDependencies": {
     "@angular/common": ">=21.0.0",

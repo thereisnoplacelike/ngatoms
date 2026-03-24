@@ -1,0 +1,60 @@
+.page-header {
+  margin-bottom: 2.5rem;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+  color: var(--nga-color-foreground);
+}
+
+.page-desc {
+  font-size: 14px;
+  color: var(--nga-color-muted-foreground);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.showcase-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nga-color-muted-foreground);
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--nga-color-border);
+}
+
+.row-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.check-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--nga-color-foreground);
+  user-select: none;
+}
+
+.check-label span {
+  line-height: 1;
+}

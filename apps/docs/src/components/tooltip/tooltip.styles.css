@@ -1,0 +1,82 @@
+/* =============================================================
+   NgAtoms Tooltip — tooltip.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/tooltip.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-tooltip-bg:      var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-tooltip-fg:      var(--nga-color-background, oklch(100% 0 0));
+  --nga-tooltip-radius:  var(--nga-radius-sm, 0.25rem);
+  --nga-tooltip-arrow:   6px;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-tooltip {
+  position: fixed;
+  z-index: 9999;
+  padding: 5px 10px;
+  background: var(--nga-tooltip-bg);
+  color: var(--nga-tooltip-fg);
+  border-radius: var(--nga-tooltip-radius);
+  font-size: 12px;
+  font-family: inherit;
+  line-height: 1.45;
+  max-width: 260px;
+  pointer-events: none;
+  white-space: normal;
+  word-break: break-word;
+  animation: nga-tooltip-in 120ms ease;
+}
+
+@keyframes nga-tooltip-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Arrow ──────────────────────────────────────────────────── */
+.nga-tooltip::after {
+  content: '';
+  position: absolute;
+  background: var(--nga-tooltip-bg);
+}
+
+/* Top — arrow points down */
+.nga-tooltip--top::after {
+  bottom: calc(var(--nga-tooltip-arrow) * -0.65);
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--nga-tooltip-arrow);
+  height: calc(var(--nga-tooltip-arrow) * 0.65);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* Bottom — arrow points up */
+.nga-tooltip--bottom::after {
+  top: calc(var(--nga-tooltip-arrow) * -0.65);
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--nga-tooltip-arrow);
+  height: calc(var(--nga-tooltip-arrow) * 0.65);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+/* Left — arrow points right */
+.nga-tooltip--left::after {
+  right: calc(var(--nga-tooltip-arrow) * -0.65);
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(var(--nga-tooltip-arrow) * 0.65);
+  height: var(--nga-tooltip-arrow);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* Right — arrow points left */
+.nga-tooltip--right::after {
+  left: calc(var(--nga-tooltip-arrow) * -0.65);
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(var(--nga-tooltip-arrow) * 0.65);
+  height: var(--nga-tooltip-arrow);
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}

@@ -128,6 +128,26 @@
   --nga-tracking-normal:  0em;
   --nga-tracking-wide:    0.05em;
   --nga-tracking-wider:   0.1em;
+
+  /* Component size scale (xs → xl) */
+  --nga-size-font-xs: 11px;
+  --nga-size-font-sm: 13px;
+  --nga-size-font-md: 14px;
+  --nga-size-font-lg: 16px;
+  --nga-size-font-xl: 18px;
+
+  --nga-size-padding-y-xs: 3px;
+  --nga-size-padding-y-sm: 5px;
+  --nga-size-padding-y-md: 8px;
+  --nga-size-padding-y-lg: 11px;
+  --nga-size-padding-y-xl: 14px;
+
+  --nga-size-spinner-xs: 10px;
+  --nga-size-spinner-sm: 12px;
+  --nga-size-spinner-md: 14px;
+  --nga-size-spinner-lg: 16px;
+  --nga-size-spinner-xl: 18px;
+
 }
 
 /* ── Semantic: Dark mode (.dark on <html> or <body>) ──────── */

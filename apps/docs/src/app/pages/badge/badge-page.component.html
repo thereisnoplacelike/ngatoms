@@ -1,0 +1,24 @@
+<header class="page-header">
+  <h1 class="page-title">Badge</h1>
+  <p class="page-desc">Small status label for counts, states, or categories.</p>
+</header>
+
+<section class="showcase-section">
+  <h2 class="section-title">Variants</h2>
+  <div class="row-group">
+    @for (variant of variants; track variant) {
+      <span ngAtomsBadge [variant]="variant">{{ variant }}</span>
+    }
+  </div>
+</section>
+
+<section class="showcase-section">
+  <h2 class="section-title">Usage examples</h2>
+  <div class="row-group">
+    <span ngAtomsBadge variant="default">New</span>
+    <span ngAtomsBadge variant="secondary">Beta</span>
+    <span ngAtomsBadge variant="success">Active</span>
+    <span ngAtomsBadge variant="destructive">Deprecated</span>
+    <span ngAtomsBadge variant="outline">Draft</span>
+  </div>
+</section>

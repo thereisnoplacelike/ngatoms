@@ -1,0 +1,287 @@
+/* =============================================================
+   NgAtoms Select — select.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/select.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-select-radius:       var(--nga-radius-md, 0.5rem);
+  --nga-select-font-weight:  var(--nga-font-weight-normal, 400);
+  --nga-select-transition:   border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+  --nga-select-focus-ring:   var(--nga-color-ring, oklch(76% 0.068 68));
+
+  /* Variant: default */
+  --nga-select-default-bg:           var(--nga-color-background, oklch(100% 0 0));
+  --nga-select-default-fg:           var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-select-default-border:       var(--nga-color-border, oklch(92% 0.004 85));
+  --nga-select-default-border-hover: var(--nga-color-primary, oklch(13% 0.002 85));
+
+  /* Variant: filled */
+  --nga-select-filled-bg:           var(--nga-color-secondary, oklch(96% 0.003 85));
+  --nga-select-filled-fg:           var(--nga-color-secondary-foreground, oklch(13% 0.002 85));
+  --nga-select-filled-border:       transparent;
+  --nga-select-filled-border-hover: var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-select-filled-bg-hover:     color-mix(in oklch, var(--nga-select-filled-bg) 85%, black);
+
+  /* Variant: ghost */
+  --nga-select-ghost-bg:           transparent;
+  --nga-select-ghost-fg:           var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-select-ghost-border:       transparent;
+  --nga-select-ghost-border-hover: var(--nga-color-border, oklch(92% 0.004 85));
+
+  /* Invalid */
+  --nga-select-invalid-border:     var(--nga-color-destructive, oklch(47% 0.130 22));
+
+  /* Panel */
+  --nga-select-panel-bg:     var(--nga-color-card, oklch(100% 0 0));
+  --nga-select-panel-border: var(--nga-color-border, oklch(92% 0.004 85));
+  --nga-select-panel-shadow: 0 4px 16px oklch(0% 0 0 / 0.10), 0 1px 4px oklch(0% 0 0 / 0.06);
+
+  /* Options */
+  --nga-select-option-hover-bg:    var(--nga-color-muted, oklch(96% 0.003 85));
+  --nga-select-option-selected-bg: var(--nga-color-accent, oklch(76% 0.068 68));
+  --nga-select-option-selected-fg: oklch(13% 0.002 85);
+}
+
+/* ── Dark mode ──────────────────────────────────────────────── */
+.dark {
+  --nga-select-filled-bg-hover:     color-mix(in oklch, var(--nga-select-filled-bg) 82%, white);
+  --nga-select-panel-shadow:        0 4px 16px oklch(0% 0 0 / 0.30), 0 1px 4px oklch(0% 0 0 / 0.20);
+  --nga-select-option-selected-fg:  oklch(13% 0.002 85);
+}
+
+/* ── Root ───────────────────────────────────────────────────── */
+.nga-select-root {
+  display: block;
+}
+
+.nga-select-wrapper {
+  position: relative;
+}
+
+/* ── Trigger ────────────────────────────────────────────────── */
+.nga-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  border: 1.5px solid transparent;
+  border-radius: var(--nga-select-radius);
+  font-family: inherit;
+  font-weight: var(--nga-select-font-weight);
+  line-height: 1.5;
+  background: none;
+  cursor: pointer;
+  transition: var(--nga-select-transition);
+  outline: none;
+}
+
+.nga-select-trigger:focus-visible {
+  outline: 2px solid var(--nga-select-focus-ring);
+  outline-offset: 0px;
+}
+
+.nga-select-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nga-select-placeholder {
+  color: var(--nga-color-muted-foreground, oklch(54% 0.006 85));
+}
+
+/* ── Chevron ────────────────────────────────────────────────── */
+.nga-select-chevron {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: transform 150ms ease;
+}
+
+.nga-select-chevron--open {
+  transform: rotate(180deg);
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-select-trigger--xs { padding: 3px  8px;  font-size: var(--nga-size-font-xs, 11px); }
+.nga-select-trigger--sm { padding: 5px  10px; font-size: var(--nga-size-font-sm, 13px); }
+.nga-select-trigger--md { padding: 8px  12px; font-size: var(--nga-size-font-md, 14px); }
+.nga-select-trigger--lg { padding: 11px 16px; font-size: var(--nga-size-font-lg, 16px); }
+.nga-select-trigger--xl { padding: 14px 20px; font-size: var(--nga-size-font-xl, 18px); }
+
+/* ── Variant: default ───────────────────────────────────────── */
+.nga-select-trigger--default {
+  background: var(--nga-select-default-bg);
+  color: var(--nga-select-default-fg);
+  border-color: var(--nga-select-default-border);
+}
+.nga-select-trigger--default:hover:not(:disabled) {
+  border-color: var(--nga-select-default-border-hover);
+}
+.nga-select-trigger--default.nga-select-trigger--open,
+.nga-select-trigger--default:focus-visible {
+  border-color: var(--nga-select-focus-ring);
+}
+
+/* ── Variant: filled ────────────────────────────────────────── */
+.nga-select-trigger--filled {
+  background: var(--nga-select-filled-bg);
+  color: var(--nga-select-filled-fg);
+  border-color: var(--nga-select-filled-border);
+}
+.nga-select-trigger--filled:hover:not(:disabled) {
+  background: var(--nga-select-filled-bg-hover);
+  border-color: var(--nga-select-filled-border-hover);
+}
+.nga-select-trigger--filled.nga-select-trigger--open,
+.nga-select-trigger--filled:focus-visible {
+  border-color: var(--nga-select-focus-ring);
+}
+
+/* ── Variant: ghost ─────────────────────────────────────────── */
+.nga-select-trigger--ghost {
+  background: var(--nga-select-ghost-bg);
+  color: var(--nga-select-ghost-fg);
+  border-color: var(--nga-select-ghost-border);
+}
+.nga-select-trigger--ghost:hover:not(:disabled) {
+  border-color: var(--nga-select-ghost-border-hover);
+}
+.nga-select-trigger--ghost.nga-select-trigger--open,
+.nga-select-trigger--ghost:focus-visible {
+  border-color: var(--nga-select-focus-ring);
+}
+
+/* ── Invalid ────────────────────────────────────────────────── */
+.nga-select-trigger--invalid {
+  border-color: var(--nga-select-invalid-border) !important;
+}
+.nga-select-trigger--invalid:focus-visible {
+  outline-color: var(--nga-select-invalid-border);
+}
+
+/* ── Panel ──────────────────────────────────────────────────── */
+.nga-select-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--nga-select-panel-bg);
+  border: 1px solid var(--nga-select-panel-border);
+  border-radius: var(--nga-select-radius);
+  box-shadow: var(--nga-select-panel-shadow);
+  overflow: hidden;
+  animation: nga-select-panel-in 100ms ease;
+}
+
+.nga-select-panel--above {
+  top: auto;
+  bottom: calc(100% + 4px);
+  animation: nga-select-panel-in-above 100ms ease;
+}
+
+@keyframes nga-select-panel-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nga-select-panel-in-above {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Search ─────────────────────────────────────────────────── */
+.nga-select-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--nga-select-panel-border);
+}
+
+.nga-select-search-icon {
+  flex-shrink: 0;
+  color: var(--nga-color-muted-foreground, oklch(54% 0.006 85));
+}
+
+.nga-select-search {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--nga-size-font-sm, 13px);
+  color: var(--nga-color-foreground, oklch(13% 0.002 85));
+  line-height: 1.5;
+}
+
+.nga-select-search::placeholder {
+  color: var(--nga-color-muted-foreground, oklch(54% 0.006 85));
+}
+
+/* ── Options ────────────────────────────────────────────────── */
+.nga-select-options {
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 0.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--nga-select-panel-border) transparent;
+}
+
+.nga-select-options::-webkit-scrollbar { width: 4px; }
+.nga-select-options::-webkit-scrollbar-track { background: transparent; }
+.nga-select-options::-webkit-scrollbar-thumb { background: var(--nga-select-panel-border); border-radius: 9999px; }
+
+.nga-select-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4375rem 0.625rem;
+  border-radius: calc(var(--nga-select-radius) - 2px);
+  font-size: var(--nga-size-font-sm, 13px);
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 100ms ease, color 100ms ease;
+  color: var(--nga-color-foreground, oklch(13% 0.002 85));
+  user-select: none;
+}
+
+.nga-select-option--focused,
+.nga-select-option:hover:not(.nga-select-option--disabled) {
+  background: var(--nga-select-option-hover-bg);
+}
+
+.nga-select-option--selected {
+  background: var(--nga-select-option-selected-bg);
+  color: var(--nga-select-option-selected-fg);
+}
+
+.nga-select-option--selected.nga-select-option--focused,
+.nga-select-option--selected:hover:not(.nga-select-option--disabled) {
+  background: color-mix(in oklch, var(--nga-select-option-selected-bg) 85%, black);
+}
+
+.nga-select-option--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Checkmark slot ─────────────────────────────────────────── */
+.nga-select-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Empty state ────────────────────────────────────────────── */
+.nga-select-empty {
+  padding: 0.75rem 0.625rem;
+  text-align: center;
+  font-size: var(--nga-size-font-sm, 13px);
+  color: var(--nga-color-muted-foreground, oklch(54% 0.006 85));
+}

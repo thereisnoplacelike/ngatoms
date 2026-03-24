@@ -4,9 +4,6 @@ import { NgAtomsButtonDirective } from '../../../components/button';
 const VARIANTS = ['primary', 'outline', 'ghost', 'secondary', 'destructive'] as const;
 const SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
 
-type Variant = typeof VARIANTS[number];
-type Size = typeof SIZES[number];
-
 @Component({
   selector: 'app-button-page',
   standalone: true,

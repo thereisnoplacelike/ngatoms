@@ -1,8 +1,18 @@
-# ngatoms
+<p align="center">
+  <img src="https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/main/apps/docs/src/assets/ngatoms-logo-b.svg" width="80" alt="NgAtoms" />
+</p>
 
-Angular UI primitives you own.
+<h1 align="center">NgAtoms</h1>
 
-No runtime library dependency — components are copied directly into your project so you control the code.
+<p align="center">Angular UI primitives you own.<br/>No runtime dependency — copy components directly into your project.</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/ngatoms"><img src="https://img.shields.io/npm/v/ngatoms?label=npm" alt="npm version" /></a>
+  <img src="https://img.shields.io/badge/Angular-21+-red" alt="Angular 21+" />
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license" />
+</p>
+
+---
 
 ## Quick Start
 
@@ -38,7 +48,27 @@ Copies a component into your project:
 ```bash
 npx ngatoms add button
 npx ngatoms add input
+npx ngatoms add dialog
 ```
+
+## Available Components
+
+| Component | Description |
+|-----------|-------------|
+| `accordion` | Collapsible items, single or multiple mode |
+| `alert` | Feedback messages — 5 variants |
+| `badge` | Labels — 5 variants |
+| `button` | Button directive — 5 variants, 5 sizes, loading state |
+| `card` | Container with header, content, footer slots |
+| `checkbox` | Checked, unchecked, and indeterminate states |
+| `dialog` | Modal using native `<dialog>`, focus trap, backdrop |
+| `input` | Input directive — 3 variants, 5 sizes, invalid state |
+| `select` | Custom dropdown with search and multiple selection |
+| `separator` | Horizontal or vertical divider |
+| `switch` | Toggle switch — 3 sizes |
+| `tabs` | Tabbed navigation — underline and pills variants |
+| `textarea` | Multiline input with auto-resize |
+| `tooltip` | Floating label — 4 placements, viewport clamping |
 
 ## Config (`ngatoms.json`)
 
@@ -53,7 +83,7 @@ npx ngatoms add input
 ## Requirements
 
 - Node >= 18
-- Angular project
+- Angular >= 21
 
 ## License
 

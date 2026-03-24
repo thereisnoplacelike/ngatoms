@@ -1,0 +1,103 @@
+/* =============================================================
+   NgAtoms Accordion — accordion.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/accordion.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-accordion-border:     var(--nga-color-border, oklch(92% 0.004 85));
+  --nga-accordion-radius:     var(--nga-radius-md, 0.5rem);
+  --nga-accordion-transition: grid-template-rows 220ms ease;
+  --nga-accordion-focus-ring: var(--nga-color-ring, oklch(76% 0.068 68));
+}
+
+/* ── Root ───────────────────────────────────────────────────── */
+.nga-accordion {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--nga-accordion-border);
+  border-radius: var(--nga-accordion-radius);
+  overflow: hidden;
+}
+
+/* ── Item ───────────────────────────────────────────────────── */
+.nga-accordion-item {
+  border-bottom: 1px solid var(--nga-accordion-border);
+}
+
+.nga-accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* ── Trigger ────────────────────────────────────────────────── */
+.nga-accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.125rem;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: var(--nga-size-font-md, 14px);
+  font-weight: 500;
+  color: var(--nga-color-foreground, oklch(13% 0.002 85));
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: background 150ms ease, color 150ms ease;
+  gap: 0.75rem;
+}
+
+.nga-accordion-trigger:hover {
+  background: var(--nga-color-muted, oklch(96% 0.003 85));
+}
+
+.nga-accordion-trigger:focus-visible {
+  outline: 2px solid var(--nga-accordion-focus-ring);
+  outline-offset: -2px;
+}
+
+/* Chevron icon */
+.nga-accordion-trigger::after {
+  content: '';
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23374151' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 220ms ease;
+}
+
+.dark .nga-accordion-trigger::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23d1d5db' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+}
+
+.nga-accordion-trigger--open::after {
+  transform: rotate(180deg);
+}
+
+/* ── Panel — CSS grid height animation ──────────────────────── */
+.nga-accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: var(--nga-accordion-transition);
+}
+
+.nga-accordion-panel--open {
+  grid-template-rows: 1fr;
+}
+
+.nga-accordion-panel-inner {
+  overflow: hidden;
+}
+
+/* ── Content ────────────────────────────────────────────────── */
+.nga-accordion-content {
+  padding: 0 1.125rem 1rem;
+  font-size: var(--nga-size-font-sm, 13px);
+  color: var(--nga-color-muted-foreground, oklch(54% 0.006 85));
+  line-height: 1.6;
+}

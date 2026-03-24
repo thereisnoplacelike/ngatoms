@@ -1,0 +1,175 @@
+/* =============================================================
+   NgAtoms Input — input.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/input.styles.css';
+   ============================================================= */
+
+/* ── Custom properties (override at :root or component level) ─ */
+:root {
+  /* Shape */
+  --nga-input-radius: var(--nga-radius-md, 0.5rem);
+  --nga-input-font-weight: var(--nga-font-weight-normal, 400);
+  --nga-input-transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+
+  /* Focus ring */
+  --nga-input-focus-ring-color: var(--nga-color-ring, oklch(76% 0.068 68));
+  --nga-input-focus-ring-width: 2px;
+  --nga-input-focus-ring-offset: 0px;
+
+  /* Sizes — padding */
+  --nga-input-padding-xs: var(--nga-size-padding-y-xs, 3px) 8px;
+  --nga-input-padding-sm: var(--nga-size-padding-y-sm, 5px) 10px;
+  --nga-input-padding-md: var(--nga-size-padding-y-md, 8px) 12px;
+  --nga-input-padding-lg: var(--nga-size-padding-y-lg, 11px) 16px;
+  --nga-input-padding-xl: var(--nga-size-padding-y-xl, 14px) 20px;
+
+  /* Sizes — font */
+  --nga-input-font-size-xs: var(--nga-size-font-xs, 11px);
+  --nga-input-font-size-sm: var(--nga-size-font-sm, 13px);
+  --nga-input-font-size-md: var(--nga-size-font-md, 14px);
+  --nga-input-font-size-lg: var(--nga-size-font-lg, 16px);
+  --nga-input-font-size-xl: var(--nga-size-font-xl, 18px);
+
+  /* Variant: default — outlined */
+  --nga-input-default-bg:           var(--nga-color-background, oklch(100% 0 0));
+  --nga-input-default-fg:           var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-input-default-border:       var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-input-default-border-hover: var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-input-default-placeholder:  var(--nga-color-muted-foreground, oklch(55% 0.003 85));
+
+  /* Variant: filled — surface background */
+  --nga-input-filled-bg:           var(--nga-color-secondary, oklch(96% 0.003 85));
+  --nga-input-filled-fg:           var(--nga-color-secondary-foreground, oklch(13% 0.002 85));
+  --nga-input-filled-border:       transparent;
+  --nga-input-filled-border-hover: var(--nga-color-primary, oklch(13% 0.002 85));
+  --nga-input-filled-placeholder:  var(--nga-color-muted-foreground, oklch(55% 0.003 85));
+  --nga-input-filled-bg-hover:     color-mix(in oklch, var(--nga-input-filled-bg) 85%, black);
+
+  /* Variant: ghost — no border or background */
+  --nga-input-ghost-bg:           transparent;
+  --nga-input-ghost-fg:           var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-input-ghost-border:       transparent;
+  --nga-input-ghost-border-hover: var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-input-ghost-placeholder:  var(--nga-color-muted-foreground, oklch(55% 0.003 85));
+
+  /* Invalid state */
+  --nga-input-invalid-border:      var(--nga-color-destructive, oklch(47% 0.130 22));
+  --nga-input-invalid-focus-ring:  var(--nga-color-destructive, oklch(47% 0.130 22));
+}
+
+/* ── Dark mode token overrides ──────────────────────────────── */
+.dark {
+  --nga-input-filled-bg-hover: color-mix(in oklch, var(--nga-input-filled-bg) 82%, white);
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-input {
+  display: block;
+  width: 100%;
+  border: 1.5px solid transparent;
+  border-radius: var(--nga-input-radius);
+  font-weight: var(--nga-input-font-weight);
+  font-family: inherit;
+  line-height: 1.5;
+  transition: var(--nga-input-transition);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.nga-input::placeholder {
+  opacity: 1;
+}
+
+.nga-input:focus-visible {
+  outline: var(--nga-input-focus-ring-width) solid var(--nga-input-focus-ring-color);
+  outline-offset: var(--nga-input-focus-ring-offset);
+}
+
+.nga-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nga-input[readonly] {
+  cursor: default;
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-input--xs {
+  padding: var(--nga-input-padding-xs);
+  font-size: var(--nga-input-font-size-xs);
+}
+.nga-input--sm {
+  padding: var(--nga-input-padding-sm);
+  font-size: var(--nga-input-font-size-sm);
+}
+.nga-input--md {
+  padding: var(--nga-input-padding-md);
+  font-size: var(--nga-input-font-size-md);
+}
+.nga-input--lg {
+  padding: var(--nga-input-padding-lg);
+  font-size: var(--nga-input-font-size-lg);
+}
+.nga-input--xl {
+  padding: var(--nga-input-padding-xl);
+  font-size: var(--nga-input-font-size-xl);
+}
+
+/* ── Variant: default ───────────────────────────────────────── */
+.nga-input--default {
+  background: var(--nga-input-default-bg);
+  color: var(--nga-input-default-fg);
+  border-color: var(--nga-input-default-border);
+}
+.nga-input--default::placeholder {
+  color: var(--nga-input-default-placeholder);
+}
+.nga-input--default:hover:not(:disabled):not([readonly]) {
+  border-color: var(--nga-input-default-border-hover);
+}
+.nga-input--default:focus-visible {
+  border-color: var(--nga-input-focus-ring-color);
+}
+
+/* ── Variant: filled ────────────────────────────────────────── */
+.nga-input--filled {
+  background: var(--nga-input-filled-bg);
+  color: var(--nga-input-filled-fg);
+  border-color: var(--nga-input-filled-border);
+}
+.nga-input--filled::placeholder {
+  color: var(--nga-input-filled-placeholder);
+}
+.nga-input--filled:hover:not(:disabled):not([readonly]) {
+  background: var(--nga-input-filled-bg-hover);
+  border-color: var(--nga-input-filled-border-hover);
+}
+.nga-input--filled:focus-visible {
+  border-color: var(--nga-input-focus-ring-color);
+}
+
+/* ── Variant: ghost ─────────────────────────────────────────── */
+.nga-input--ghost {
+  background: var(--nga-input-ghost-bg);
+  color: var(--nga-input-ghost-fg);
+  border-color: var(--nga-input-ghost-border);
+}
+.nga-input--ghost::placeholder {
+  color: var(--nga-input-ghost-placeholder);
+}
+.nga-input--ghost:hover:not(:disabled):not([readonly]) {
+  border-color: var(--nga-input-ghost-border-hover);
+}
+.nga-input--ghost:focus-visible {
+  border-color: var(--nga-input-focus-ring-color);
+}
+
+/* ── Invalid state ──────────────────────────────────────────── */
+.nga-input--invalid {
+  border-color: var(--nga-input-invalid-border) !important;
+}
+.nga-input--invalid:focus-visible {
+  outline-color: var(--nga-input-invalid-focus-ring);
+}

@@ -8,9 +8,9 @@
 :root {
   /* Shape */
   --nga-btn-radius: var(--nga-radius-md, 0.5rem);
-  --nga-btn-font-weight: 600;
-  --nga-btn-gap: 0.5rem;
-  --nga-btn-transition: background 150ms ease, border-color 150ms ease, opacity 150ms ease;
+  --nga-btn-font-weight: var(--nga-font-weight-semibold, 600);
+  --nga-btn-gap: var(--nga-space-2, 0.5rem);
+  --nga-btn-transition: background 150ms ease, border-color 150ms ease, opacity 150ms ease, transform 80ms ease;
 
   /* Focus ring — gold from semantic token */
   --nga-btn-focus-ring-color: var(--nga-color-ring, oklch(76% 0.068 68));
@@ -18,31 +18,31 @@
   --nga-btn-focus-ring-width: 2px;
 
   /* Sizes — padding */
-  --nga-btn-padding-xs: 3px 10px;
-  --nga-btn-padding-sm: 5px 14px;
-  --nga-btn-padding-md: 8px 20px;
-  --nga-btn-padding-lg: 11px 28px;
-  --nga-btn-padding-xl: 14px 36px;
+  --nga-btn-padding-xs: var(--nga-size-padding-y-xs, 3px) 10px;
+  --nga-btn-padding-sm: var(--nga-size-padding-y-sm, 5px) 14px;
+  --nga-btn-padding-md: var(--nga-size-padding-y-md, 8px) 20px;
+  --nga-btn-padding-lg: var(--nga-size-padding-y-lg, 11px) 28px;
+  --nga-btn-padding-xl: var(--nga-size-padding-y-xl, 14px) 36px;
 
   /* Sizes — font */
-  --nga-btn-font-size-xs: 11px;
-  --nga-btn-font-size-sm: 13px;
-  --nga-btn-font-size-md: 14px;
-  --nga-btn-font-size-lg: 16px;
-  --nga-btn-font-size-xl: 18px;
+  --nga-btn-font-size-xs: var(--nga-size-font-xs, 11px);
+  --nga-btn-font-size-sm: var(--nga-size-font-sm, 13px);
+  --nga-btn-font-size-md: var(--nga-size-font-md, 14px);
+  --nga-btn-font-size-lg: var(--nga-size-font-lg, 16px);
+  --nga-btn-font-size-xl: var(--nga-size-font-xl, 18px);
 
   /* Sizes — spinner */
-  --nga-btn-spinner-size-xs: 10px;
-  --nga-btn-spinner-size-sm: 12px;
-  --nga-btn-spinner-size-md: 14px;
-  --nga-btn-spinner-size-lg: 16px;
-  --nga-btn-spinner-size-xl: 18px;
+  --nga-btn-spinner-size-xs: var(--nga-size-spinner-xs, 10px);
+  --nga-btn-spinner-size-sm: var(--nga-size-spinner-sm, 12px);
+  --nga-btn-spinner-size-md: var(--nga-size-spinner-md, 14px);
+  --nga-btn-spinner-size-lg: var(--nga-size-spinner-lg, 16px);
+  --nga-btn-spinner-size-xl: var(--nga-size-spinner-xl, 18px);
 
   /* Variant: primary — near-black, fallback to oklch gray-900 */
   --nga-btn-primary-bg:        var(--nga-color-primary, oklch(13% 0.002 85));
   --nga-btn-primary-fg:        var(--nga-color-primary-foreground, oklch(100% 0 0));
-  --nga-btn-primary-bg-hover:  color-mix(in oklch, var(--nga-btn-primary-bg) 85%, black);
-  --nga-btn-primary-bg-active: color-mix(in oklch, var(--nga-btn-primary-bg) 75%, black);
+  --nga-btn-primary-bg-hover:  color-mix(in oklch, var(--nga-btn-primary-bg) 82%, white);
+  --nga-btn-primary-bg-active: color-mix(in oklch, var(--nga-btn-primary-bg) 78%, black);
 
   /* Variant: outline — near-black border */
   --nga-btn-outline-border:    var(--nga-color-primary, oklch(13% 0.002 85));
@@ -64,8 +64,18 @@
   /* Variant: destructive — muted terracotta */
   --nga-btn-destructive-bg:        var(--nga-color-destructive, oklch(47% 0.130 22));
   --nga-btn-destructive-fg:        var(--nga-color-destructive-foreground, oklch(100% 0 0));
-  --nga-btn-destructive-bg-hover:  color-mix(in oklch, var(--nga-btn-destructive-bg) 85%, black);
-  --nga-btn-destructive-bg-active: color-mix(in oklch, var(--nga-btn-destructive-bg) 75%, black);
+  --nga-btn-destructive-bg-hover:  color-mix(in oklch, var(--nga-btn-destructive-bg) 82%, white);
+  --nga-btn-destructive-bg-active: color-mix(in oklch, var(--nga-btn-destructive-bg) 78%, black);
+}
+
+/* ── Dark mode token overrides ──────────────────────────────── */
+/* In dark mode primary is near-white and secondary is near-black,
+   so the light/dark mixing directions must flip. */
+.dark {
+  --nga-btn-primary-bg-hover:    color-mix(in oklch, var(--nga-btn-primary-bg) 85%, black);
+  --nga-btn-primary-bg-active:   color-mix(in oklch, var(--nga-btn-primary-bg) 75%, black);
+  --nga-btn-secondary-bg-hover:  color-mix(in oklch, var(--nga-btn-secondary-bg) 82%, white);
+  --nga-btn-secondary-bg-active: color-mix(in oklch, var(--nga-btn-secondary-bg) 72%, white);
 }
 
 /* ── Base ───────────────────────────────────────────────────── */
@@ -86,12 +96,17 @@
   outline: none;
 }
 
+.nga-btn:active:not([aria-disabled="true"]):not(:disabled) {
+  transform: scale(0.97);
+}
+
 .nga-btn:focus-visible {
   outline: var(--nga-btn-focus-ring-width) solid var(--nga-btn-focus-ring-color);
   outline-offset: var(--nga-btn-focus-ring-offset);
 }
 
-.nga-btn[aria-disabled="true"] {
+.nga-btn[aria-disabled="true"],
+.nga-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -124,11 +139,11 @@
   color: var(--nga-btn-primary-fg);
   border-color: var(--nga-btn-primary-bg);
 }
-.nga-btn--primary:hover:not([aria-disabled="true"]) {
+.nga-btn--primary:hover:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-primary-bg-hover);
   border-color: var(--nga-btn-primary-bg-hover);
 }
-.nga-btn--primary:active:not([aria-disabled="true"]) {
+.nga-btn--primary:active:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-primary-bg-active);
   border-color: var(--nga-btn-primary-bg-active);
 }
@@ -138,10 +153,10 @@
   color: var(--nga-btn-outline-fg);
   border-color: var(--nga-btn-outline-border);
 }
-.nga-btn--outline:hover:not([aria-disabled="true"]) {
+.nga-btn--outline:hover:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-outline-bg-hover);
 }
-.nga-btn--outline:active:not([aria-disabled="true"]) {
+.nga-btn--outline:active:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-outline-bg-active);
 }
 
@@ -150,10 +165,10 @@
   color: var(--nga-btn-ghost-fg);
   border-color: transparent;
 }
-.nga-btn--ghost:hover:not([aria-disabled="true"]) {
+.nga-btn--ghost:hover:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-ghost-bg-hover);
 }
-.nga-btn--ghost:active:not([aria-disabled="true"]) {
+.nga-btn--ghost:active:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-ghost-bg-active);
 }
 
@@ -162,11 +177,11 @@
   color: var(--nga-btn-secondary-fg);
   border-color: var(--nga-btn-secondary-bg);
 }
-.nga-btn--secondary:hover:not([aria-disabled="true"]) {
+.nga-btn--secondary:hover:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-secondary-bg-hover);
   border-color: var(--nga-btn-secondary-bg-hover);
 }
-.nga-btn--secondary:active:not([aria-disabled="true"]) {
+.nga-btn--secondary:active:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-secondary-bg-active);
   border-color: var(--nga-btn-secondary-bg-active);
 }
@@ -176,11 +191,11 @@
   color: var(--nga-btn-destructive-fg);
   border-color: var(--nga-btn-destructive-bg);
 }
-.nga-btn--destructive:hover:not([aria-disabled="true"]) {
+.nga-btn--destructive:hover:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-destructive-bg-hover);
   border-color: var(--nga-btn-destructive-bg-hover);
 }
-.nga-btn--destructive:active:not([aria-disabled="true"]) {
+.nga-btn--destructive:active:not([aria-disabled="true"]):not(:disabled) {
   background: var(--nga-btn-destructive-bg-active);
   border-color: var(--nga-btn-destructive-bg-active);
 }
