@@ -1,6 +1,6 @@
 {
   "name": "ngatoms",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Angular UI primitives you own.",
   "author": "Lázaro Dutra",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "url": "https://github.com/ngAtoms/ngatoms.git",
     "directory": "packages/ngatoms"
   },
-  "homepage": "https://ngatoms.com",
+  "homepage": "https://ngatoms.com/docs",
   "bugs": {
     "url": "https://github.com/ngAtoms/ngatoms/issues"
   },
