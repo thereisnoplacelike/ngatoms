@@ -56,6 +56,8 @@ npx ngatoms add dialog
 
 ## Components
 
+Full docs and previews at **[ngatoms.com](https://ngatoms.com)**.
+
 | Component | Description | Status |
 |-----------|-------------|--------|
 | `accordion` | Collapsible items, single or multiple mode | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
@@ -72,14 +74,29 @@ npx ngatoms add dialog
 | `tabs` | Tabbed navigation — underline and pills variants | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `textarea` | Multiline input with auto-resize | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `tooltip` | Floating label — 4 placements, viewport clamping | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `avatar` | Image with fallback initials/icon | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `date-picker` | Calendar overlay for date selection | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `dropdown-menu` | Contextual action menu | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `number-input` | Numeric input with increment/decrement controls | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `popover` | Floating content anchored to a trigger | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `progress` | Progress bar — determinate and indeterminate | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `radio-group` | Radio button group with keyboard navigation | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `spinner` | Loading spinner | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `avatar` | Image with fallback initials/icon | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `date-picker` | Calendar overlay for date selection | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `dropdown-menu` | Contextual action menu | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `number-input` | Numeric input with increment/decrement controls | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `popover` | Floating content anchored to a trigger | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `progress` | Progress bar — determinate and indeterminate | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `radio-group` | Radio button group with keyboard navigation | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `spinner` | Loading spinner | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
+| `breadcrumb` | Hierarchical navigation trail | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `combobox` | Text input with filtered dropdown | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `file-upload` | Drag-and-drop file input zone | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `pagination` | Page navigation controls | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `slider` | Range slider — single and dual thumb | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `stepper` | Multi-step wizard progress indicator | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `tag-input` | Input that creates removable tag chips | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `code-block` | Syntax-highlighted code display | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `color-picker` | HSL/hex color selector | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `context-menu` | Right-click triggered menu | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `drawer` | Side-panel overlay | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `rating` | Star rating input | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `skeleton` | Placeholder loading shimmer | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `timeline` | Vertical event timeline | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `tree` | Collapsible tree view | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
 
 ## Config (`ngatoms.json`)
 
