@@ -9,5 +9,8 @@
     "dev": "ng serve --project=docs",
     "build": "ng build --project=docs",
     "lint": "eslint src/"
+  },
+  "dependencies": {
+    "highlight.js": "^11.10.0"
   }
 }

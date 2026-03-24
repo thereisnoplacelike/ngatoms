@@ -1,62 +1,64 @@
-<header class="page-header">
-  <h1 class="page-title">Checkbox</h1>
-  <p class="page-desc">A control that allows the user to toggle between checked, unchecked, and indeterminate states.</p>
-</header>
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Checkbox</h1>
+    <p class="page-desc">A control that allows the user to toggle between checked, unchecked, and indeterminate states.</p>
+  </header>
 
-<section class="showcase-section">
-  <h2 class="section-title">States</h2>
-  <div class="row-group">
-    <label class="check-label">
-      <input ngAtomsCheckbox [(checked)]="unchecked" />
-      <span>Unchecked</span>
-    </label>
-    <label class="check-label">
-      <input ngAtomsCheckbox [(checked)]="checked" />
-      <span>Checked</span>
-    </label>
-    <label class="check-label">
-      <input ngAtomsCheckbox [indeterminate]="true" />
-      <span>Indeterminate</span>
-    </label>
-    <label class="check-label">
-      <input ngAtomsCheckbox [checked]="true" disabled />
-      <span>Disabled</span>
-    </label>
-  </div>
-</section>
+  <section class="showcase-section">
+    <h2 class="section-title">States</h2>
+    <div class="row-group">
+      <label class="check-label">
+        <input ngAtomsCheckbox [(checked)]="unchecked" />
+        <span>Unchecked</span>
+      </label>
+      <label class="check-label">
+        <input ngAtomsCheckbox [(checked)]="checked" />
+        <span>Checked</span>
+      </label>
+      <label class="check-label">
+        <input ngAtomsCheckbox [indeterminate]="true" />
+        <span>Indeterminate</span>
+      </label>
+      <label class="check-label">
+        <input ngAtomsCheckbox [checked]="true" disabled />
+        <span>Disabled</span>
+      </label>
+    </div>
+  </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Sizes</h2>
-  <div class="row-group">
-    <label class="check-label">
-      <input ngAtomsCheckbox size="sm" [checked]="true" />
-      <span>Small</span>
-    </label>
-    <label class="check-label">
-      <input ngAtomsCheckbox size="md" [checked]="true" />
-      <span>Medium</span>
-    </label>
-    <label class="check-label">
-      <input ngAtomsCheckbox size="lg" [checked]="true" />
-      <span>Large</span>
-    </label>
-  </div>
-</section>
+  <section class="showcase-section">
+    <h2 class="section-title">Sizes</h2>
+    <div class="row-group">
+      <label class="check-label">
+        <input ngAtomsCheckbox size="sm" [checked]="true" />
+        <span>Small</span>
+      </label>
+      <label class="check-label">
+        <input ngAtomsCheckbox size="md" [checked]="true" />
+        <span>Medium</span>
+      </label>
+      <label class="check-label">
+        <input ngAtomsCheckbox size="lg" [checked]="true" />
+        <span>Large</span>
+      </label>
+    </div>
+  </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">In a list</h2>
-  <div class="check-list">
-    <label class="check-label">
-      <input ngAtomsCheckbox [checked]="true" />
-      <span>Accept terms and conditions</span>
-    </label>
-    <label class="check-label">
-      <input ngAtomsCheckbox [checked]="true" />
-      <span>Subscribe to newsletter</span>
-    </label>
-    <label class="check-label">
-      <input ngAtomsCheckbox />
-      <span>Enable two-factor authentication</span>
-    </label>
-  </div>
-</section>
+  <section class="showcase-section">
+    <h2 class="section-title">In a list</h2>
+    <div class="check-list">
+      <label class="check-label">
+        <input ngAtomsCheckbox [checked]="true" />
+        <span>Accept terms and conditions</span>
+      </label>
+      <label class="check-label">
+        <input ngAtomsCheckbox [checked]="true" />
+        <span>Subscribe to newsletter</span>
+      </label>
+      <label class="check-label">
+        <input ngAtomsCheckbox />
+        <span>Enable two-factor authentication</span>
+      </label>
+    </div>
+  </section>
+</app-component-demo>

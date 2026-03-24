@@ -1,0 +1,105 @@
+.code-block-pre {
+  margin: 0;
+  padding: var(--nga-space-4) var(--nga-space-6);
+  background: var(--nga-gray-950);
+  border-radius: var(--nga-radius-md);
+  overflow-x: auto;
+  font-family: var(--nga-font-mono);
+  font-size: var(--nga-text-sm);
+  line-height: var(--nga-leading-relaxed);
+}
+
+.hljs {
+  display: block;
+  background: transparent;
+  color: var(--nga-gray-200);
+  padding: 0;
+}
+
+/* Keywords: if, const, import, export, class, return, etc. */
+:host ::ng-deep .hljs-keyword,
+:host ::ng-deep .hljs-built_in,
+:host ::ng-deep .hljs-selector-tag {
+  color: oklch(72% 0.12 250);
+}
+
+/* Strings */
+:host ::ng-deep .hljs-string,
+:host ::ng-deep .hljs-attr,
+:host ::ng-deep .hljs-attribute {
+  color: oklch(78% 0.10 148);
+}
+
+/* Comments */
+:host ::ng-deep .hljs-comment,
+:host ::ng-deep .hljs-quote {
+  color: var(--nga-gray-500);
+  font-style: italic;
+}
+
+/* Numbers */
+:host ::ng-deep .hljs-number,
+:host ::ng-deep .hljs-literal {
+  color: oklch(75% 0.12 50);
+}
+
+/* Types, classes, tags */
+:host ::ng-deep .hljs-title,
+:host ::ng-deep .hljs-class,
+:host ::ng-deep .hljs-type,
+:host ::ng-deep .hljs-name {
+  color: oklch(80% 0.10 55);
+}
+
+/* Decorators and meta */
+:host ::ng-deep .hljs-meta,
+:host ::ng-deep .hljs-meta .hljs-keyword {
+  color: oklch(72% 0.10 290);
+}
+
+/* HTML/XML tags */
+:host ::ng-deep .hljs-tag {
+  color: oklch(72% 0.12 250);
+}
+
+/* Variables and params */
+:host ::ng-deep .hljs-variable,
+:host ::ng-deep .hljs-params {
+  color: oklch(82% 0.06 85);
+}
+
+/* Punctuation */
+:host ::ng-deep .hljs-punctuation {
+  color: var(--nga-gray-400);
+}
+
+/* Function names */
+:host ::ng-deep .hljs-function,
+:host ::ng-deep .hljs-title.function_ {
+  color: oklch(78% 0.10 200);
+}
+
+/* Property access */
+:host ::ng-deep .hljs-property {
+  color: oklch(80% 0.08 85);
+}
+
+/* CSS selectors */
+:host ::ng-deep .hljs-selector-class,
+:host ::ng-deep .hljs-selector-id {
+  color: oklch(78% 0.10 148);
+}
+
+/* Regex */
+:host ::ng-deep .hljs-regexp {
+  color: oklch(72% 0.12 22);
+}
+
+/* Deletion / addition (diffs) */
+:host ::ng-deep .hljs-deletion {
+  color: oklch(65% 0.14 22);
+}
+
+:host ::ng-deep .hljs-addition {
+  color: oklch(70% 0.10 148);
+}

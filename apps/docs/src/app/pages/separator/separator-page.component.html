@@ -1,24 +1,26 @@
-<header class="page-header">
-  <h1 class="page-title">Separator</h1>
-  <p class="page-desc">A visual divider between content sections.</p>
-</header>
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Separator</h1>
+    <p class="page-desc">A visual divider between content sections.</p>
+  </header>
 
-<section class="showcase-section">
-  <h2 class="section-title">Horizontal</h2>
-  <div class="demo-block">
-    <p class="demo-label">Section A</p>
-    <div ngAtomsSeparator></div>
-    <p class="demo-label">Section B</p>
-  </div>
-</section>
+  <section class="showcase-section">
+    <h2 class="section-title">Horizontal</h2>
+    <div class="demo-block">
+      <p class="demo-label">Section A</p>
+      <div ngAtomsSeparator></div>
+      <p class="demo-label">Section B</p>
+    </div>
+  </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Vertical</h2>
-  <div class="demo-inline">
-    <span class="demo-label">Home</span>
-    <div ngAtomsSeparator [orientation]="'vertical'"></div>
-    <span class="demo-label">Components</span>
-    <div ngAtomsSeparator [orientation]="'vertical'"></div>
-    <span class="demo-label">Separator</span>
-  </div>
-</section>
+  <section class="showcase-section">
+    <h2 class="section-title">Vertical</h2>
+    <div class="demo-inline">
+      <span class="demo-label">Home</span>
+      <div ngAtomsSeparator [orientation]="'vertical'"></div>
+      <span class="demo-label">Components</span>
+      <div ngAtomsSeparator [orientation]="'vertical'"></div>
+      <span class="demo-label">Separator</span>
+    </div>
+  </section>
+</app-component-demo>

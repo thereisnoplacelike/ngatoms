@@ -1,31 +1,33 @@
-<header class="page-header">
-  <h1 class="page-title">Alert</h1>
-  <p class="page-desc">Displays a callout message for user feedback or system status.</p>
-</header>
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Alert</h1>
+    <p class="page-desc">Displays a callout message for user feedback or system status.</p>
+  </header>
 
-<section class="showcase-section">
-  <h2 class="section-title">Variants</h2>
-  <div class="alert-list">
-    @for (variant of variants; track variant) {
-      <div ngAtomsAlert [variant]="variant">
-        <i [class]="meta[variant].icon"></i>
-        <div>
-          <p ngAtomsAlertTitle>{{ meta[variant].title }}</p>
-          <p ngAtomsAlertDescription>{{ meta[variant].description }}</p>
+  <section class="showcase-section">
+    <h2 class="section-title">Variants</h2>
+    <div class="alert-list">
+      @for (variant of variants; track variant) {
+        <div ngAtomsAlert [variant]="variant">
+          <i [class]="meta[variant].icon"></i>
+          <div>
+            <p ngAtomsAlertTitle>{{ meta[variant].title }}</p>
+            <p ngAtomsAlertDescription>{{ meta[variant].description }}</p>
+          </div>
         </div>
-      </div>
-    }
-  </div>
-</section>
+      }
+    </div>
+  </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Without description</h2>
-  <div class="alert-list">
-    @for (variant of variants; track variant) {
-      <div ngAtomsAlert [variant]="variant">
-        <i [class]="meta[variant].icon"></i>
-        <p ngAtomsAlertTitle>{{ meta[variant].title }}</p>
-      </div>
-    }
-  </div>
-</section>
+  <section class="showcase-section">
+    <h2 class="section-title">Without description</h2>
+    <div class="alert-list">
+      @for (variant of variants; track variant) {
+        <div ngAtomsAlert [variant]="variant">
+          <i [class]="meta[variant].icon"></i>
+          <p ngAtomsAlertTitle>{{ meta[variant].title }}</p>
+        </div>
+      }
+    </div>
+  </section>
+</app-component-demo>
