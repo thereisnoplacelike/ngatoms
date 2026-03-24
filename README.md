@@ -15,28 +15,28 @@ Instead of installing a heavy component library, NgAtoms lets you add composable
 
 | Component | Status |
 |-----------|--------|
-| `accordion` | alpha |
-| `alert` | alpha |
-| `badge` | alpha |
-| `button` | alpha |
-| `card` | alpha |
-| `checkbox` | alpha |
-| `dialog` | alpha |
-| `input` | alpha |
-| `select` | alpha |
-| `separator` | alpha |
-| `switch` | alpha |
-| `tabs` | alpha |
-| `textarea` | alpha |
-| `tooltip` | alpha |
-| `avatar` | planned |
-| `date-picker` | planned |
-| `dropdown-menu` | planned |
-| `number-input` | planned |
-| `popover` | planned |
-| `progress` | planned |
-| `radio-group` | planned |
-| `spinner` | planned |
+| `accordion` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `alert` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `badge` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `button` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `card` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `checkbox` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `dialog` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `input` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `select` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `separator` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `switch` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `tabs` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `textarea` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `tooltip` | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `avatar` | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `date-picker` | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `dropdown-menu` | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `number-input` | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `popover` | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `progress` | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `radio-group` | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `spinner` | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
 
 ## Goals
 

@@ -58,28 +58,28 @@ npx ngatoms add dialog
 
 | Component | Description | Status |
 |-----------|-------------|--------|
-| `accordion` | Collapsible items, single or multiple mode | alpha |
-| `alert` | Feedback messages — 5 variants | alpha |
-| `badge` | Labels — 5 variants | alpha |
-| `button` | Button directive — 5 variants, 5 sizes, loading state | alpha |
-| `card` | Container with header, content, footer slots | alpha |
-| `checkbox` | Checked, unchecked, and indeterminate states | alpha |
-| `dialog` | Modal using native `<dialog>`, focus trap, backdrop | alpha |
-| `input` | Input directive — 3 variants, 5 sizes, invalid state | alpha |
-| `select` | Custom dropdown with search and multiple selection | alpha |
-| `separator` | Horizontal or vertical divider | alpha |
-| `switch` | Toggle switch — 3 sizes | alpha |
-| `tabs` | Tabbed navigation — underline and pills variants | alpha |
-| `textarea` | Multiline input with auto-resize | alpha |
-| `tooltip` | Floating label — 4 placements, viewport clamping | alpha |
-| `avatar` | Image with fallback initials/icon | planned |
-| `date-picker` | Calendar overlay for date selection | planned |
-| `dropdown-menu` | Contextual action menu | planned |
-| `number-input` | Numeric input with increment/decrement controls | planned |
-| `popover` | Floating content anchored to a trigger | planned |
-| `progress` | Progress bar — determinate and indeterminate | planned |
-| `radio-group` | Radio button group with keyboard navigation | planned |
-| `spinner` | Loading spinner | planned |
+| `accordion` | Collapsible items, single or multiple mode | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `alert` | Feedback messages — 5 variants | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `badge` | Labels — 5 variants | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `button` | Button directive — 5 variants, 5 sizes, loading state | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `card` | Container with header, content, footer slots | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `checkbox` | Checked, unchecked, and indeterminate states | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `dialog` | Modal using native `<dialog>`, focus trap, backdrop | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `input` | Input directive — 3 variants, 5 sizes, invalid state | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `select` | Custom dropdown with search and multiple selection | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `separator` | Horizontal or vertical divider | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `switch` | Toggle switch — 3 sizes | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `tabs` | Tabbed navigation — underline and pills variants | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `textarea` | Multiline input with auto-resize | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `tooltip` | Floating label — 4 placements, viewport clamping | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `avatar` | Image with fallback initials/icon | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `date-picker` | Calendar overlay for date selection | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `dropdown-menu` | Contextual action menu | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `number-input` | Numeric input with increment/decrement controls | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `popover` | Floating content anchored to a trigger | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `progress` | Progress bar — determinate and indeterminate | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `radio-group` | Radio button group with keyboard navigation | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `spinner` | Loading spinner | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
 
 ## Config (`ngatoms.json`)
 
