@@ -21,13 +21,13 @@ describe('github.js — URL building', () => {
     const url = getRawUrl('registry/registry.json');
     assert.equal(
       url,
-      `https://raw.githubusercontent.com/thereisnoplacelike/ngatoms/${getRef()}/registry/registry.json`
+      `https://raw.githubusercontent.com/ngAtoms/ngatoms/${getRef()}/registry/registry.json`
     );
   });
 
   it('getRawUrl works for nested file paths', () => {
     const url = getRawUrl('packages/primitives/src/button/button.directive.ts');
-    assert.ok(url.includes('thereisnoplacelike/ngatoms'));
+    assert.ok(url.includes('ngAtoms/ngatoms'));
     assert.ok(url.endsWith('packages/primitives/src/button/button.directive.ts'));
   });
 });

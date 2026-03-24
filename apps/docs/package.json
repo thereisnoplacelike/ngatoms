@@ -1,5 +1,5 @@
 {
-  "name": "@thereisnoplacelike/ngatoms-docs",
+  "name": "@ngatoms/ngatoms-docs",
   "version": "0.0.2",
   "private": true,
   "description": "NgAtoms playground app",

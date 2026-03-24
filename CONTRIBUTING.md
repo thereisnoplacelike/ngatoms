@@ -5,7 +5,7 @@ Contributions are welcome.
 ## Setup
 
 ```bash
-git clone https://github.com/thereisnoplacelike/ngatoms.git
+git clone https://github.com/ngAtoms/ngatoms.git
 cd ngatoms
 npm install
 npm run build

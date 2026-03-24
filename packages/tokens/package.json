@@ -1,5 +1,5 @@
 {
-  "name": "@thereisnoplacelike/ngatoms-tokens",
+  "name": "@ngatoms/ngatoms-tokens",
   "version": "0.1.0",
   "description": "Design tokens for NgAtoms",
   "author": "Lázaro Dutra",

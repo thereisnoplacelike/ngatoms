@@ -19,12 +19,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/thereisnoplacelike/ngatoms.git",
+    "url": "https://github.com/ngAtoms/ngatoms.git",
     "directory": "packages/ngatoms"
   },
-  "homepage": "https://github.com/thereisnoplacelike/ngatoms#readme",
+  "homepage": "https://ngatoms.com",
   "bugs": {
-    "url": "https://github.com/thereisnoplacelike/ngatoms/issues"
+    "url": "https://github.com/ngAtoms/ngatoms/issues"
   },
   "engines": {
     "node": ">=18"
