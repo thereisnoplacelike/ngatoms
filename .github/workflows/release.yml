@@ -47,7 +47,6 @@ jobs:
 
     permissions:
       contents: write
-      pull-requests: write
       id-token: write
 
     steps:
@@ -61,22 +60,20 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: npm ci
 
+      - name: Version packages
+        run: npm run version:packages
+
       - name: Build packages
         run: npm run build --if-present
 
-      - name: Publish packages & create GitHub Releases
-        uses: changesets/action@v1
-        with:
-          publish: npm run publish:changesets
-          createGithubReleases: true
-          commit: "chore: version packages"
-          title: "chore: version packages"
+      - name: Publish packages
+        run: npm run publish:changesets
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   release-lts:
@@ -87,7 +84,6 @@ jobs:
 
     permissions:
       contents: write
-      pull-requests: write
       id-token: write
 
     steps:
@@ -101,23 +97,28 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: npm ci
 
+      - name: Enter LTS mode
+        run: npm run pre:enter:lts
+
+      - name: Version packages
+        run: npm run version:packages
+
       - name: Build packages
         run: npm run build --if-present
 
-      - name: Publish packages & create GitHub Releases
-        uses: changesets/action@v1
-        with:
-          publish: npm run publish:changesets
-          createGithubReleases: true
-          commit: "chore: version packages"
-          title: "chore: version packages"
+      - name: Publish LTS packages
+        run: npm run publish:changesets
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Exit LTS mode
+        if: always()
+        run: npm run pre:exit
 
   release-rc:
     name: RC Release
