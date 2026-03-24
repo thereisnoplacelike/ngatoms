@@ -11,6 +11,25 @@ NgAtoms is a collection of modern Angular UI primitives designed to be **copied 
 
 Instead of installing a heavy component library, NgAtoms lets you add composable components like buttons, dialogs, inputs, and menus directly into your codebase — giving you full control over styling, behavior, and architecture.
 
+## Components
+
+| Component | Status | | Component | Status |
+|-----------|--------|-|-----------|--------|
+| `accordion` | ✅ | | `avatar` | 🔜 |
+| `alert` | ✅ | | `date-picker` | 🔜 |
+| `badge` | ✅ | | `dropdown-menu` | 🔜 |
+| `button` | ✅ | | `number-input` | 🔜 |
+| `card` | ✅ | | `popover` | 🔜 |
+| `checkbox` | ✅ | | `progress` | 🔜 |
+| `dialog` | ✅ | | `radio-group` | 🔜 |
+| `input` | ✅ | | `spinner` | 🔜 |
+| `select` | ✅ | | | |
+| `separator` | ✅ | | | |
+| `switch` | ✅ | | | |
+| `tabs` | ✅ | | | |
+| `textarea` | ✅ | | | |
+| `tooltip` | ✅ | | | |
+
 ## Goals
 
 - Framework-native Angular components
