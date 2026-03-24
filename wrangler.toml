@@ -1,2 +1,3 @@
 name = "ng-atoms-docs"
-pages_build_output_dir = "apps/docs/dist/browser"
+compatibility_date = "2025-01-01"
+assets = { directory = "apps/docs/dist/browser" }
