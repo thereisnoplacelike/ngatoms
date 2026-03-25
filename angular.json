@@ -21,8 +21,7 @@
               "apps/docs/src/favicon.ico",
               "apps/docs/src/favicon.svg",
               "apps/docs/src/apple-touch-icon.png",
-              { "glob": "**/*", "input": "apps/docs/src/assets", "output": "assets" },
-              { "glob": "_redirects", "input": "apps/docs/src", "output": "/" }
+              { "glob": "**/*", "input": "apps/docs/src/assets", "output": "assets" }
             ]
           }
         },

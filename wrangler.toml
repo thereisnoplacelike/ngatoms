@@ -1,3 +1,6 @@
 name = "ng-atoms-docs"
 compatibility_date = "2025-01-01"
-assets = { directory = "apps/docs/dist/browser" }
+
+[assets]
+directory = "apps/docs/dist/browser"
+not_found_handling = "single-page-application"

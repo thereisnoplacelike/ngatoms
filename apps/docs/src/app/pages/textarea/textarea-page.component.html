@@ -1,50 +1,52 @@
-<header class="page-header">
-  <h1 class="page-title">Textarea</h1>
-  <p class="page-desc">Multiline text input with variants, sizes, and auto-resize support.</p>
-</header>
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Textarea</h1>
+    <p class="page-desc">Multiline text input with variants, sizes, and auto-resize support.</p>
+  </header>
 
-<section class="showcase-section">
-  <h2 class="section-title">Variants</h2>
-  <div class="col-group">
-    @for (variant of variants; track variant) {
+  <section class="showcase-section">
+    <h2 class="section-title">Variants</h2>
+    <div class="col-group">
+      @for (variant of variants; track variant) {
+        <div class="field">
+          <span class="field-label">{{ variant }}</span>
+          <textarea ngAtomsTextarea [variant]="variant" placeholder="Enter your message..."></textarea>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Sizes</h2>
+    <div class="col-group">
+      @for (size of sizes; track size) {
+        <div class="field">
+          <span class="field-label">{{ size }}</span>
+          <textarea ngAtomsTextarea [size]="size" placeholder="Enter your message..."></textarea>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">States</h2>
+    <div class="col-group">
       <div class="field">
-        <span class="field-label">{{ variant }}</span>
-        <textarea ngAtomsTextarea [variant]="variant" placeholder="Enter your message..."></textarea>
+        <span class="field-label">Invalid</span>
+        <textarea ngAtomsTextarea [invalid]="true" placeholder="This field has an error"></textarea>
       </div>
-    }
-  </div>
-</section>
-
-<section class="showcase-section">
-  <h2 class="section-title">Sizes</h2>
-  <div class="col-group">
-    @for (size of sizes; track size) {
       <div class="field">
-        <span class="field-label">{{ size }}</span>
-        <textarea ngAtomsTextarea [size]="size" placeholder="Enter your message..."></textarea>
+        <span class="field-label">Disabled</span>
+        <textarea ngAtomsTextarea placeholder="Disabled textarea" disabled></textarea>
       </div>
-    }
-  </div>
-</section>
-
-<section class="showcase-section">
-  <h2 class="section-title">States</h2>
-  <div class="col-group">
-    <div class="field">
-      <span class="field-label">Invalid</span>
-      <textarea ngAtomsTextarea [invalid]="true" placeholder="This field has an error"></textarea>
+      <div class="field">
+        <span class="field-label">Readonly</span>
+        <textarea ngAtomsTextarea readonly>This content is read-only.</textarea>
+      </div>
+      <div class="field">
+        <span class="field-label">Auto-resize</span>
+        <textarea ngAtomsTextarea [autoResize]="true" placeholder="Type to auto-resize..."></textarea>
+      </div>
     </div>
-    <div class="field">
-      <span class="field-label">Disabled</span>
-      <textarea ngAtomsTextarea placeholder="Disabled textarea" disabled></textarea>
-    </div>
-    <div class="field">
-      <span class="field-label">Readonly</span>
-      <textarea ngAtomsTextarea readonly>This content is read-only.</textarea>
-    </div>
-    <div class="field">
-      <span class="field-label">Auto-resize</span>
-      <textarea ngAtomsTextarea [autoResize]="true" placeholder="Type to auto-resize..."></textarea>
-    </div>
-  </div>
-</section>
+  </section>
+</app-component-demo>

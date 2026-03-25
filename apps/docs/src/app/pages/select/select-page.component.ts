@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { NgAtomsSelectComponent, NgAtomsSelectOption } from '../../../components/select';
+import { ComponentDemoComponent, CodeFile } from '../../../components/component-demo/component-demo.component';
 
 @Component({
   selector: 'app-select-page',
   standalone: true,
-  imports: [NgAtomsSelectComponent],
+  imports: [NgAtomsSelectComponent, ComponentDemoComponent],
   templateUrl: './select-page.component.html',
   styleUrl: './select-page.component.css',
 })
@@ -52,5 +53,54 @@ export class SelectPageComponent {
     { value: 'python', label: 'Python' },
     { value: 'rust', label: 'Rust' },
     { value: 'go', label: 'Go' },
+  ];
+
+  readonly codeFiles: CodeFile[] = [
+    {
+      name: 'example.component.html',
+      language: 'html',
+      code: `<!-- Basic select -->
+<nga-select [options]="options" placeholder="Choose an option" />
+
+<!-- With two-way binding -->
+<nga-select [options]="options" [(value)]="selected" placeholder="Choose an option" />
+
+<!-- Searchable -->
+<nga-select [options]="options" [searchable]="true" placeholder="Search options..." />
+
+<!-- Multiple selection -->
+<nga-select [options]="options" [multiple]="true" [(value)]="selectedMany" placeholder="Select multiple..." />
+
+<!-- Variants -->
+<nga-select [options]="options" variant="filled" placeholder="Filled" />
+<nga-select [options]="options" variant="ghost" placeholder="Ghost" />
+
+<!-- Invalid state -->
+<nga-select [options]="options" [invalid]="true" placeholder="Select role" />`,
+    },
+    {
+      name: 'example.component.ts',
+      language: 'typescript',
+      code: `import { Component, signal } from '@angular/core';
+import { NgAtomsSelectComponent, NgAtomsSelectOption } from './components/select';
+
+@Component({
+  selector: 'app-example',
+  standalone: true,
+  imports: [NgAtomsSelectComponent],
+  templateUrl: './example.component.html',
+})
+export class ExampleComponent {
+  readonly selected = signal<string | null>(null);
+  readonly selectedMany = signal<string[]>([]);
+
+  readonly options: NgAtomsSelectOption[] = [
+    { value: 'admin', label: 'Admin' },
+    { value: 'editor', label: 'Editor' },
+    { value: 'viewer', label: 'Viewer' },
+    { value: 'guest', label: 'Guest', disabled: true },
+  ];
+}`,
+    },
   ];
 }
