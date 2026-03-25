@@ -6,7 +6,6 @@
   border-radius: var(--nga-radius-lg);
   overflow: hidden;
   background: var(--nga-color-card);
-  margin-block: var(--nga-space-6);
 }
 
 /* ── Column shared ─────────────────────────────────────────── */
@@ -66,27 +65,16 @@
   overflow-y: auto;
 }
 
-/* ── Code panel — dark (default) ──────────────────────────── */
+/* ── Code panel ────────────────────────────────────────────── */
 .demo-col--code {
   overflow: hidden;
-  background: var(--nga-gray-950);
+  background: var(--code-panel-bg);
 }
 
 .demo-col--code .demo-label {
-  background: oklch(11% 0.002 85);
-  border-bottom-color: oklch(18% 0.003 85);
-  color: var(--nga-gray-400);
-}
-
-/* ── Code panel — light mode override ─────────────────────── */
-:root:not(.dark) .demo-col--code {
-  background: var(--nga-gray-50);
-}
-
-:root:not(.dark) .demo-col--code .demo-label {
-  background: var(--nga-gray-100);
-  border-bottom-color: var(--nga-color-border);
-  color: var(--nga-color-muted-foreground);
+  background: var(--code-panel-header-bg);
+  border-bottom-color: var(--code-panel-border);
+  color: var(--code-panel-muted);
 }
 
 /* ── code-block fill ───────────────────────────────────────── */
@@ -107,46 +95,34 @@ app-code-block {
   min-height: 0;
 }
 
-.code-file-tabs [ngAtomsTabPanel] {
+.code-file-tabs [ngAtomsTabPanel]:not(.nga-tab-panel--hidden) {
   flex: 1;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  padding-top: 0;
 }
 
-/* Tab list inside dark code panel */
 .code-file-tabs [ngAtomsTabList] {
   flex-shrink: 0;
+  width: 100%;
+  border-radius: 0;
   padding: var(--nga-space-2) var(--nga-space-3);
-  background: oklch(11% 0.002 85);
-  border-bottom: 1px solid oklch(18% 0.003 85);
+  background: var(--code-panel-header-bg);
+  border-bottom: 1px solid var(--code-panel-border);
   gap: var(--nga-space-1);
-}
-
-:root:not(.dark) .code-file-tabs [ngAtomsTabList] {
-  background: var(--nga-gray-100);
-  border-bottom-color: var(--nga-color-border);
 }
 
 .code-file-tabs [ngAtomsTabTrigger] {
   font-size: 0.75rem;
   padding-inline: var(--nga-space-3);
   padding-block: var(--nga-space-1);
-  color: var(--nga-gray-400);
-}
-
-:root:not(.dark) .code-file-tabs [ngAtomsTabTrigger] {
-  color: var(--nga-color-muted-foreground);
+  color: var(--code-panel-muted);
 }
 
 .code-file-tabs [ngAtomsTabTrigger].nga-tab-trigger--active {
-  color: var(--nga-gray-50);
-  background: var(--nga-gray-800);
-}
-
-:root:not(.dark) .code-file-tabs [ngAtomsTabTrigger].nga-tab-trigger--active {
-  color: var(--nga-color-foreground);
-  background: var(--nga-color-background);
+  color: var(--code-tab-active-fg);
+  background: var(--code-tab-active-bg);
 }
 
 /* ── Responsive ────────────────────────────────────────────── */

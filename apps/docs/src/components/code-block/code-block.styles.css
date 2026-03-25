@@ -1,0 +1,151 @@
+/* =============================================================
+   NgAtoms Docs — highlight.js token colors
+   Dark mode (default) + light mode via :root:not(.dark)
+   ============================================================= */
+
+/* ── Base ───────────────────────────────────────────────────── */
+.hljs {
+  display: block;
+  background: transparent;
+  color: oklch(90% 0.004 85);
+}
+
+:root:not(.dark) .hljs {
+  color: oklch(18% 0.003 85);
+}
+
+/* ── Keywords ───────────────────────────────────────────────── */
+.hljs-keyword,
+.hljs-built_in {
+  color: oklch(75% 0.26 250);
+}
+
+:root:not(.dark) .hljs-keyword,
+:root:not(.dark) .hljs-built_in {
+  color: oklch(36% 0.18 260);
+}
+
+/* ── Strings ────────────────────────────────────────────────── */
+.hljs-string,
+.hljs-attr,
+.hljs-attribute {
+  color: oklch(82% 0.22 148);
+}
+
+:root:not(.dark) .hljs-string,
+:root:not(.dark) .hljs-attr,
+:root:not(.dark) .hljs-attribute {
+  color: oklch(34% 0.13 148);
+}
+
+/* ── Comments ───────────────────────────────────────────────── */
+.hljs-comment,
+.hljs-quote {
+  color: oklch(52% 0.008 85);
+  font-style: italic;
+}
+
+:root:not(.dark) .hljs-comment,
+:root:not(.dark) .hljs-quote {
+  color: oklch(50% 0.006 85);
+  font-style: italic;
+}
+
+/* ── Numbers & literals ─────────────────────────────────────── */
+.hljs-number,
+.hljs-literal {
+  color: oklch(80% 0.22 50);
+}
+
+:root:not(.dark) .hljs-number,
+:root:not(.dark) .hljs-literal {
+  color: oklch(40% 0.14 50);
+}
+
+/* ── Types & class names ────────────────────────────────────── */
+.hljs-title,
+.hljs-class,
+.hljs-type {
+  color: oklch(86% 0.20 85);
+}
+
+:root:not(.dark) .hljs-title,
+:root:not(.dark) .hljs-class,
+:root:not(.dark) .hljs-type {
+  color: oklch(38% 0.14 55);
+}
+
+/* ── HTML/XML tag names ─────────────────────────────────────── */
+.hljs-name,
+.hljs-tag,
+.hljs-selector-tag {
+  color: oklch(72% 0.24 10);
+}
+
+:root:not(.dark) .hljs-name,
+:root:not(.dark) .hljs-tag,
+:root:not(.dark) .hljs-selector-tag {
+  color: oklch(36% 0.18 260);
+}
+
+/* ── Decorators / meta ──────────────────────────────────────── */
+.hljs-meta,
+.hljs-meta .hljs-keyword {
+  color: oklch(76% 0.24 300);
+}
+
+:root:not(.dark) .hljs-meta,
+:root:not(.dark) .hljs-meta .hljs-keyword {
+  color: oklch(38% 0.16 290);
+}
+
+/* ── Function names ─────────────────────────────────────────── */
+.hljs-function,
+.hljs-title.function_ {
+  color: oklch(84% 0.20 195);
+}
+
+:root:not(.dark) .hljs-function,
+:root:not(.dark) .hljs-title.function_ {
+  color: oklch(34% 0.14 200);
+}
+
+/* ── Variables & params ─────────────────────────────────────── */
+.hljs-variable,
+.hljs-params {
+  color: oklch(88% 0.06 85);
+}
+
+:root:not(.dark) .hljs-variable,
+:root:not(.dark) .hljs-params {
+  color: oklch(28% 0.005 85);
+}
+
+/* ── Properties ─────────────────────────────────────────────── */
+.hljs-property {
+  color: oklch(84% 0.16 195);
+}
+
+:root:not(.dark) .hljs-property {
+  color: oklch(30% 0.008 85);
+}
+
+/* ── Punctuation ────────────────────────────────────────────── */
+.hljs-punctuation {
+  color: oklch(65% 0.006 85);
+}
+
+:root:not(.dark) .hljs-punctuation {
+  color: oklch(44% 0.006 85);
+}
+
+/* ── CSS selectors ──────────────────────────────────────────── */
+.hljs-selector-class,
+.hljs-selector-id {
+  color: oklch(82% 0.22 148);
+}
+
+:root:not(.dark) .hljs-selector-class,
+:root:not(.dark) .hljs-selector-id {
+  color: oklch(34% 0.13 148);
+}
