@@ -13,6 +13,26 @@
 @import './components/select/select.styles.css';
 @import './components/tabs/tabs.styles.css';
 @import './components/switch/switch.styles.css';
+@import './components/code-block/code-block.styles.css';
+
+/* ── Code panel theme tokens ────────────────────────────────── */
+:root {
+  --code-panel-bg:        #000000;
+  --code-panel-header-bg: #0d0d0d;
+  --code-panel-border:    #1a1a1a;
+  --code-panel-muted:     #555555;
+  --code-tab-active-bg:   #1a1a1a;
+  --code-tab-active-fg:   #cccccc;
+}
+
+:root:not(.dark) {
+  --code-panel-bg:        #f6f8fa;
+  --code-panel-header-bg: #eaeef2;
+  --code-panel-border:    #d0d7de;
+  --code-panel-muted:     #57606a;
+  --code-tab-active-bg:   #ffffff;
+  --code-tab-active-fg:   #24292f;
+}
 @import '@phosphor-icons/web/bold';
 
 *, *::before, *::after {

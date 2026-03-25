@@ -1,66 +1,68 @@
-<header class="page-header">
-  <h1 class="page-title">Accordion</h1>
-  <p class="page-desc">A vertically stacked set of interactive headings that reveal or hide associated content.</p>
-</header>
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Accordion</h1>
+    <p class="page-desc">A vertically stacked set of interactive headings that reveal or hide associated content.</p>
+  </header>
 
-<section class="showcase-section">
-  <h2 class="section-title">Single (default)</h2>
-  <nga-accordion defaultValue="what">
-    <nga-accordion-item value="what">
-      <button ngAtomsAccordionTrigger>What is NgAtoms?</button>
-      <div ngAtomsAccordionContent>
-        NgAtoms is a collection of Angular UI primitives designed to be copied directly into your project.
-        No runtime dependencies — you own the code and can customise every detail.
-      </div>
-    </nga-accordion-item>
-    <nga-accordion-item value="how">
-      <button ngAtomsAccordionTrigger>How does it work?</button>
-      <div ngAtomsAccordionContent>
-        Run <code class="inline-code">ngatoms add &lt;component&gt;</code> and the directive, CSS, and types
-        are copied straight into your codebase. Import the CSS globally and apply the directive to your elements.
-      </div>
-    </nga-accordion-item>
-    <nga-accordion-item value="style">
-      <button ngAtomsAccordionTrigger>Can I change the styles?</button>
-      <div ngAtomsAccordionContent>
-        Yes. All styles are plain CSS custom properties. Override them at <code class="inline-code">:root</code>
-        or at a component level. Dark mode is handled by toggling the <code class="inline-code">.dark</code>
-        class on the <code class="inline-code">&lt;html&gt;</code> element.
-      </div>
-    </nga-accordion-item>
-    <nga-accordion-item value="deps">
-      <button ngAtomsAccordionTrigger>Any runtime dependencies?</button>
-      <div ngAtomsAccordionContent>
-        None. NgAtoms uses only Angular core APIs — signals, directives, and Renderer2.
-        There is no UI library, no CDK requirement, and no third-party stylesheet.
-      </div>
-    </nga-accordion-item>
-  </nga-accordion>
-</section>
+  <section class="showcase-section">
+    <h2 class="section-title">Single (default)</h2>
+    <nga-accordion defaultValue="what">
+      <nga-accordion-item value="what">
+        <button ngAtomsAccordionTrigger>What is NgAtoms?</button>
+        <div ngAtomsAccordionContent>
+          NgAtoms is a collection of Angular UI primitives designed to be copied directly into your project.
+          No runtime dependencies — you own the code and can customise every detail.
+        </div>
+      </nga-accordion-item>
+      <nga-accordion-item value="how">
+        <button ngAtomsAccordionTrigger>How does it work?</button>
+        <div ngAtomsAccordionContent>
+          Run <code class="inline-code">ngatoms add &lt;component&gt;</code> and the directive, CSS, and types
+          are copied straight into your codebase. Import the CSS globally and apply the directive to your elements.
+        </div>
+      </nga-accordion-item>
+      <nga-accordion-item value="style">
+        <button ngAtomsAccordionTrigger>Can I change the styles?</button>
+        <div ngAtomsAccordionContent>
+          Yes. All styles are plain CSS custom properties. Override them at <code class="inline-code">:root</code>
+          or at a component level. Dark mode is handled by toggling the <code class="inline-code">.dark</code>
+          class on the <code class="inline-code">&lt;html&gt;</code> element.
+        </div>
+      </nga-accordion-item>
+      <nga-accordion-item value="deps">
+        <button ngAtomsAccordionTrigger>Any runtime dependencies?</button>
+        <div ngAtomsAccordionContent>
+          None. NgAtoms uses only Angular core APIs — signals, directives, and Renderer2.
+          There is no UI library, no CDK requirement, and no third-party stylesheet.
+        </div>
+      </nga-accordion-item>
+    </nga-accordion>
+  </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Multiple</h2>
-  <nga-accordion type="multiple" defaultValue="shipping">
-    <nga-accordion-item value="shipping">
-      <button ngAtomsAccordionTrigger>Shipping policy</button>
-      <div ngAtomsAccordionContent>
-        Orders ship within 1–2 business days. Standard delivery takes 3–5 business days.
-        Express options are available at checkout for most destinations.
-      </div>
-    </nga-accordion-item>
-    <nga-accordion-item value="returns">
-      <button ngAtomsAccordionTrigger>Returns &amp; refunds</button>
-      <div ngAtomsAccordionContent>
-        Items can be returned within 30 days of delivery. Refunds are processed to the original
-        payment method within 5–7 business days of receiving the return.
-      </div>
-    </nga-accordion-item>
-    <nga-accordion-item value="warranty">
-      <button ngAtomsAccordionTrigger>Warranty information</button>
-      <div ngAtomsAccordionContent>
-        All products include a 12-month manufacturer warranty covering defects in materials
-        and workmanship. Accidental damage is not covered.
-      </div>
-    </nga-accordion-item>
-  </nga-accordion>
-</section>
+  <section class="showcase-section">
+    <h2 class="section-title">Multiple</h2>
+    <nga-accordion type="multiple" defaultValue="shipping">
+      <nga-accordion-item value="shipping">
+        <button ngAtomsAccordionTrigger>Shipping policy</button>
+        <div ngAtomsAccordionContent>
+          Orders ship within 1–2 business days. Standard delivery takes 3–5 business days.
+          Express options are available at checkout for most destinations.
+        </div>
+      </nga-accordion-item>
+      <nga-accordion-item value="returns">
+        <button ngAtomsAccordionTrigger>Returns &amp; refunds</button>
+        <div ngAtomsAccordionContent>
+          Items can be returned within 30 days of delivery. Refunds are processed to the original
+          payment method within 5–7 business days of receiving the return.
+        </div>
+      </nga-accordion-item>
+      <nga-accordion-item value="warranty">
+        <button ngAtomsAccordionTrigger>Warranty information</button>
+        <div ngAtomsAccordionContent>
+          All products include a 12-month manufacturer warranty covering defects in materials
+          and workmanship. Accidental damage is not covered.
+        </div>
+      </nga-accordion-item>
+    </nga-accordion>
+  </section>
+</app-component-demo>

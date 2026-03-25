@@ -1,7 +1,7 @@
 .layout {
   display: grid;
   grid-template-columns: 220px 1fr;
-  min-height: 100vh;
+  height: 100dvh;
 }
 
 .sidebar {
@@ -91,12 +91,23 @@
 .content {
   padding: 2.5rem 3rem;
   min-width: 0;
+  overflow: auto;
 }
 
 .sidebar-footer {
   margin-top: auto;
   padding: 1rem 0.75rem 0.5rem;
   border-top: 1px solid var(--nga-color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bmc-btn img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
 }
 
 .theme-toggle {
