@@ -1,0 +1,10 @@
+.code-block-pre {
+  margin: 0;
+  flex: 1;
+  padding: var(--nga-space-5) var(--nga-space-6);
+  background: transparent;
+  overflow: auto;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.75;
+}

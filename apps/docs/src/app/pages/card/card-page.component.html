@@ -1,78 +1,80 @@
-<header class="page-header">
-  <h1 class="page-title">Card</h1>
-  <p class="page-desc">A container for grouping related content and actions.</p>
-</header>
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Card</h1>
+    <p class="page-desc">A container for grouping related content and actions.</p>
+  </header>
 
-<section class="showcase-section">
-  <h2 class="section-title">Anatomy</h2>
-  <div class="cards-row">
-    <div ngAtomsCard style="width: 320px">
-      <div ngAtomsCardHeader>
-        <h3 ngAtomsCardTitle>Card title</h3>
-        <p ngAtomsCardDescription>A short description of the card content.</p>
-      </div>
-      <div ngAtomsCardContent>
-        <p class="content-placeholder">Main content area goes here.</p>
-      </div>
-      <div ngAtomsCardFooter>
-        <button ngAtomsButton variant="outline" size="sm">Cancel</button>
-        <button ngAtomsButton size="sm">Confirm</button>
+  <section class="showcase-section">
+    <h2 class="section-title">Anatomy</h2>
+    <div class="cards-row">
+      <div ngAtomsCard style="width: 320px">
+        <div ngAtomsCardHeader>
+          <h3 ngAtomsCardTitle>Card title</h3>
+          <p ngAtomsCardDescription>A short description of the card content.</p>
+        </div>
+        <div ngAtomsCardContent>
+          <p class="content-placeholder">Main content area goes here.</p>
+        </div>
+        <div ngAtomsCardFooter>
+          <button ngAtomsButton variant="outline" size="sm">Cancel</button>
+          <button ngAtomsButton size="sm">Confirm</button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Header only</h2>
-  <div class="cards-row">
-    <div ngAtomsCard style="width: 320px">
-      <div ngAtomsCardHeader>
-        <h3 ngAtomsCardTitle>Notifications</h3>
-        <p ngAtomsCardDescription>You have 3 unread messages.</p>
-      </div>
-      <div ngAtomsCardContent>
-        <div class="notif-list">
-          <div class="notif-item">
-            <span class="notif-dot"></span>
-            <span class="notif-text">New comment on your post</span>
-          </div>
-          <div ngAtomsSeparator></div>
-          <div class="notif-item">
-            <span class="notif-dot"></span>
-            <span class="notif-text">Your report is ready</span>
-          </div>
-          <div ngAtomsSeparator></div>
-          <div class="notif-item">
-            <span class="notif-dot"></span>
-            <span class="notif-text">Deployment completed</span>
+  <section class="showcase-section">
+    <h2 class="section-title">Header only</h2>
+    <div class="cards-row">
+      <div ngAtomsCard style="width: 320px">
+        <div ngAtomsCardHeader>
+          <h3 ngAtomsCardTitle>Notifications</h3>
+          <p ngAtomsCardDescription>You have 3 unread messages.</p>
+        </div>
+        <div ngAtomsCardContent>
+          <div class="notif-list">
+            <div class="notif-item">
+              <span class="notif-dot"></span>
+              <span class="notif-text">New comment on your post</span>
+            </div>
+            <div ngAtomsSeparator></div>
+            <div class="notif-item">
+              <span class="notif-dot"></span>
+              <span class="notif-text">Your report is ready</span>
+            </div>
+            <div ngAtomsSeparator></div>
+            <div class="notif-item">
+              <span class="notif-dot"></span>
+              <span class="notif-text">Deployment completed</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">With badge</h2>
-  <div class="cards-row">
-    <div ngAtomsCard style="width: 320px">
-      <div ngAtomsCardHeader>
-        <div class="header-row">
-          <h3 ngAtomsCardTitle>API Access</h3>
-          <span ngAtomsBadge variant="success">Active</span>
+  <section class="showcase-section">
+    <h2 class="section-title">With badge</h2>
+    <div class="cards-row">
+      <div ngAtomsCard style="width: 320px">
+        <div ngAtomsCardHeader>
+          <div class="header-row">
+            <h3 ngAtomsCardTitle>API Access</h3>
+            <span ngAtomsBadge variant="success">Active</span>
+          </div>
+          <p ngAtomsCardDescription>Manage your API keys and access tokens.</p>
         </div>
-        <p ngAtomsCardDescription>Manage your API keys and access tokens.</p>
-      </div>
-      <div ngAtomsCardContent>
-        <div class="key-row">
-          <span class="key-label">Key</span>
-          <code class="key-value">sk-••••••••••••3f9a</code>
+        <div ngAtomsCardContent>
+          <div class="key-row">
+            <span class="key-label">Key</span>
+            <code class="key-value">sk-••••••••••••3f9a</code>
+          </div>
         </div>
-      </div>
-      <div ngAtomsCardFooter>
-        <button ngAtomsButton variant="destructive" size="sm">Revoke</button>
-        <button ngAtomsButton variant="outline" size="sm">Regenerate</button>
+        <div ngAtomsCardFooter>
+          <button ngAtomsButton variant="destructive" size="sm">Revoke</button>
+          <button ngAtomsButton variant="outline" size="sm">Regenerate</button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</app-component-demo>

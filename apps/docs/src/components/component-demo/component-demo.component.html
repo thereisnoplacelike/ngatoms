@@ -1,0 +1,28 @@
+<div class="demo-wrapper">
+  <div class="demo-col demo-col--preview">
+    <span class="demo-label">Preview</span>
+    <div class="demo-preview">
+      <ng-content />
+    </div>
+  </div>
+
+  <div class="demo-col demo-col--code">
+    <span class="demo-label">Code</span>
+    @if (files().length === 1) {
+      <app-code-block [code]="files()[0].code" [language]="files()[0].language" />
+    } @else {
+      <nga-tabs [defaultValue]="files()[0]?.name" variant="pills" class="code-file-tabs">
+        <div ngAtomsTabList>
+          @for (file of files(); track file.name) {
+            <button ngAtomsTabTrigger [value]="file.name">{{ file.name }}</button>
+          }
+        </div>
+        @for (file of files(); track file.name) {
+          <div ngAtomsTabPanel [value]="file.name">
+            <app-code-block [code]="file.code" [language]="file.language" />
+          </div>
+        }
+      </nga-tabs>
+    }
+  </div>
+</div>

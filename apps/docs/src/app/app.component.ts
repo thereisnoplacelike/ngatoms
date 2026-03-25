@@ -33,6 +33,9 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
           <a routerLink="/switch" routerLinkActive="active">Switch</a>
         </nav>
         <div class="sidebar-footer">
+          <a class="bmc-btn" href="https://www.buymeacoffee.com/lazarodutrae" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=lazarodutrae&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" alt="Buy me a coffee" />
+          </a>
           <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'">
             @if (isDark()) {
               <i class="ph-bold ph-sun"></i>

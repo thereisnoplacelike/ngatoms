@@ -1,62 +1,63 @@
-<header class="page-header">
-  <h1 class="page-title">Tooltip</h1>
-  <p class="page-desc">A floating label that appears on hover or focus. Appended to <code class="inline-code">document.body</code> for reliable stacking.</p>
-</header>
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Tooltip</h1>
+    <p class="page-desc">A floating label that appears on hover or focus. Appended to <code class="inline-code">document.body</code> for reliable stacking.</p>
+  </header>
 
-<section class="showcase-section">
-  <h2 class="section-title">Placements</h2>
-  <div class="placement-grid">
-    <button ngAtomsButton variant="outline"
-      [ngAtomsTooltip]="'Appears above'" placement="top">
-      Top
-    </button>
-    <button ngAtomsButton variant="outline"
-      [ngAtomsTooltip]="'Appears below'" placement="bottom">
-      Bottom
-    </button>
-    <button ngAtomsButton variant="outline"
-      [ngAtomsTooltip]="'Appears to the left'" placement="left">
-      Left
-    </button>
-    <button ngAtomsButton variant="outline"
-      [ngAtomsTooltip]="'Appears to the right'" placement="right">
-      Right
-    </button>
-  </div>
-</section>
+  <section class="showcase-section">
+    <h2 class="section-title">Placements</h2>
+    <div class="placement-grid">
+      <button ngAtomsButton variant="outline"
+        [ngAtomsTooltip]="'Appears above'" placement="top">
+        Top
+      </button>
+      <button ngAtomsButton variant="outline"
+        [ngAtomsTooltip]="'Appears below'" placement="bottom">
+        Bottom
+      </button>
+      <button ngAtomsButton variant="outline"
+        [ngAtomsTooltip]="'Appears to the left'" placement="left">
+        Left
+      </button>
+      <button ngAtomsButton variant="outline"
+        [ngAtomsTooltip]="'Appears to the right'" placement="right">
+        Right
+      </button>
+    </div>
+  </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">On different elements</h2>
-  <div class="row-group">
-    <button ngAtomsButton
-      [ngAtomsTooltip]="'Save your changes'">
-      Save
-    </button>
+  <section class="showcase-section">
+    <h2 class="section-title">On different elements</h2>
+    <div class="row-group">
+      <button ngAtomsButton
+        [ngAtomsTooltip]="'Save your changes'">
+        Save
+      </button>
 
-    <button ngAtomsButton variant="ghost"
-      [ngAtomsTooltip]="'Remove this item permanently'" placement="bottom">
-      Delete
-    </button>
+      <button ngAtomsButton variant="ghost"
+        [ngAtomsTooltip]="'Remove this item permanently'" placement="bottom">
+        Delete
+      </button>
 
-    <span ngAtomsBadge variant="secondary"
-      [ngAtomsTooltip]="'This feature is in early access'">
-      Beta
-    </span>
+      <span ngAtomsBadge variant="secondary"
+        [ngAtomsTooltip]="'This feature is in early access'">
+        Beta
+      </span>
 
-    <span class="hint-text"
-      [ngAtomsTooltip]="'Unique identifier assigned at account creation'" placement="right">
-      User ID <span class="hint-icon">?</span>
-    </span>
-  </div>
-</section>
+      <span class="hint-text"
+        [ngAtomsTooltip]="'Unique identifier assigned at account creation'" placement="right">
+        User ID <span class="hint-icon">?</span>
+      </span>
+    </div>
+  </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Long content</h2>
-  <div class="row-group">
-    <button ngAtomsButton variant="outline"
-      [ngAtomsTooltip]="'Two-factor authentication adds a second layer of security by requiring a verification code in addition to your password.'">
-      Two-factor auth
-    </button>
-  </div>
-</section>
-
+  <section class="showcase-section">
+    <h2 class="section-title">Long content</h2>
+    <div class="row-group">
+      <button ngAtomsButton variant="outline"
+        [ngAtomsTooltip]="'Two-factor authentication adds a second layer of security by requiring a verification code in addition to your password.'">
+        Two-factor auth
+      </button>
+    </div>
+  </section>
+</app-component-demo>
