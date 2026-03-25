@@ -1,6 +1,7 @@
 .demo-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: calc(100dvh - 5rem);
   border: 1px solid var(--nga-color-border);
   border-radius: var(--nga-radius-lg);
   overflow: hidden;
@@ -13,6 +14,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  overflow: hidden;
 }
 
 .demo-col--preview {
@@ -21,6 +23,7 @@
 
 /* ── Labels ────────────────────────────────────────────────── */
 .demo-label {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: var(--nga-space-2);
@@ -61,17 +64,12 @@
   gap: var(--nga-space-6);
   align-items: flex-start;
   overflow-y: auto;
-  max-height: 520px;
 }
 
-/* ── Code panel ────────────────────────────────────────────── */
+/* ── Code panel — dark (default) ──────────────────────────── */
 .demo-col--code {
-  background: var(--nga-gray-950);
-  position: sticky;
-  top: 0;
-  align-self: start;
-  max-height: calc(100vh - 80px);
   overflow: hidden;
+  background: var(--nga-gray-950);
 }
 
 .demo-col--code .demo-label {
@@ -80,25 +78,54 @@
   color: var(--nga-gray-400);
 }
 
+/* ── Code panel — light mode override ─────────────────────── */
+:root:not(.dark) .demo-col--code {
+  background: var(--nga-gray-50);
+}
+
+:root:not(.dark) .demo-col--code .demo-label {
+  background: var(--nga-gray-100);
+  border-bottom-color: var(--nga-color-border);
+  color: var(--nga-color-muted-foreground);
+}
+
+/* ── code-block fill ───────────────────────────────────────── */
 app-code-block {
-  display: block;
-  overflow-y: auto;
-  max-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
 }
 
 /* ── File sub-tabs ─────────────────────────────────────────── */
 .code-file-tabs {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
 }
 
-/* Override tab list styling inside dark code panel */
+.code-file-tabs [ngAtomsTabPanel] {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tab list inside dark code panel */
 .code-file-tabs [ngAtomsTabList] {
+  flex-shrink: 0;
   padding: var(--nga-space-2) var(--nga-space-3);
   background: oklch(11% 0.002 85);
   border-bottom: 1px solid oklch(18% 0.003 85);
   gap: var(--nga-space-1);
+}
+
+:root:not(.dark) .code-file-tabs [ngAtomsTabList] {
+  background: var(--nga-gray-100);
+  border-bottom-color: var(--nga-color-border);
 }
 
 .code-file-tabs [ngAtomsTabTrigger] {
@@ -108,24 +135,34 @@ app-code-block {
   color: var(--nga-gray-400);
 }
 
+:root:not(.dark) .code-file-tabs [ngAtomsTabTrigger] {
+  color: var(--nga-color-muted-foreground);
+}
+
 .code-file-tabs [ngAtomsTabTrigger].nga-tab-trigger--active {
   color: var(--nga-gray-50);
   background: var(--nga-gray-800);
+}
+
+:root:not(.dark) .code-file-tabs [ngAtomsTabTrigger].nga-tab-trigger--active {
+  color: var(--nga-color-foreground);
+  background: var(--nga-color-background);
 }
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 860px) {
   .demo-wrapper {
     grid-template-columns: 1fr;
+    height: auto;
   }
 
   .demo-col--preview {
     border-right: none;
     border-bottom: 1px solid var(--nga-color-border);
+    max-height: 50dvh;
   }
 
   .demo-col--code {
-    position: static;
-    max-height: 400px;
+    max-height: 50dvh;
   }
 }

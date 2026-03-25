@@ -1,49 +1,75 @@
 .code-block-pre {
   margin: 0;
+  flex: 1;
   padding: var(--nga-space-5) var(--nga-space-6);
   background: transparent;
-  border-radius: 0;
-  overflow-x: auto;
+  overflow: auto;
   font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
   font-size: 0.8125rem;
   line-height: 1.75;
 }
 
+/* ── Base token color ──────────────────────────────────────── */
 .hljs {
   display: block;
   background: transparent;
   color: var(--nga-gray-200);
-  padding: 0;
 }
 
-/* Keywords: if, const, import, export, class, return, etc. */
+:root:not(.dark) .hljs {
+  color: var(--nga-gray-800);
+}
+
+/* ── Keywords: if, const, import, export, class, return ────── */
 :host ::ng-deep .hljs-keyword,
 :host ::ng-deep .hljs-built_in,
 :host ::ng-deep .hljs-selector-tag {
   color: oklch(72% 0.12 250);
 }
 
-/* Strings */
+:root:not(.dark) :host ::ng-deep .hljs-keyword,
+:root:not(.dark) :host ::ng-deep .hljs-built_in,
+:root:not(.dark) :host ::ng-deep .hljs-selector-tag {
+  color: oklch(42% 0.14 250);
+}
+
+/* ── Strings ───────────────────────────────────────────────── */
 :host ::ng-deep .hljs-string,
 :host ::ng-deep .hljs-attr,
 :host ::ng-deep .hljs-attribute {
   color: oklch(78% 0.10 148);
 }
 
-/* Comments */
+:root:not(.dark) :host ::ng-deep .hljs-string,
+:root:not(.dark) :host ::ng-deep .hljs-attr,
+:root:not(.dark) :host ::ng-deep .hljs-attribute {
+  color: oklch(38% 0.10 148);
+}
+
+/* ── Comments ──────────────────────────────────────────────── */
 :host ::ng-deep .hljs-comment,
 :host ::ng-deep .hljs-quote {
   color: var(--nga-gray-500);
   font-style: italic;
 }
 
-/* Numbers */
+:root:not(.dark) :host ::ng-deep .hljs-comment,
+:root:not(.dark) :host ::ng-deep .hljs-quote {
+  color: var(--nga-gray-400);
+}
+
+/* ── Numbers ───────────────────────────────────────────────── */
 :host ::ng-deep .hljs-number,
 :host ::ng-deep .hljs-literal {
   color: oklch(75% 0.12 50);
 }
 
-/* Types, classes, tags */
+:root:not(.dark) :host ::ng-deep .hljs-number,
+:root:not(.dark) :host ::ng-deep .hljs-literal {
+  color: oklch(48% 0.12 50);
+}
+
+/* ── Types, classes, tags ──────────────────────────────────── */
 :host ::ng-deep .hljs-title,
 :host ::ng-deep .hljs-class,
 :host ::ng-deep .hljs-type,
@@ -51,55 +77,80 @@
   color: oklch(80% 0.10 55);
 }
 
-/* Decorators and meta */
+:root:not(.dark) :host ::ng-deep .hljs-title,
+:root:not(.dark) :host ::ng-deep .hljs-class,
+:root:not(.dark) :host ::ng-deep .hljs-type,
+:root:not(.dark) :host ::ng-deep .hljs-name {
+  color: oklch(45% 0.12 55);
+}
+
+/* ── Decorators / meta ─────────────────────────────────────── */
 :host ::ng-deep .hljs-meta,
 :host ::ng-deep .hljs-meta .hljs-keyword {
   color: oklch(72% 0.10 290);
 }
 
-/* HTML/XML tags */
+:root:not(.dark) :host ::ng-deep .hljs-meta,
+:root:not(.dark) :host ::ng-deep .hljs-meta .hljs-keyword {
+  color: oklch(42% 0.12 290);
+}
+
+/* ── HTML/XML tags ─────────────────────────────────────────── */
 :host ::ng-deep .hljs-tag {
   color: oklch(72% 0.12 250);
 }
 
-/* Variables and params */
+:root:not(.dark) :host ::ng-deep .hljs-tag {
+  color: oklch(42% 0.14 250);
+}
+
+/* ── Variables & params ────────────────────────────────────── */
 :host ::ng-deep .hljs-variable,
 :host ::ng-deep .hljs-params {
   color: oklch(82% 0.06 85);
 }
 
-/* Punctuation */
+:root:not(.dark) :host ::ng-deep .hljs-variable,
+:root:not(.dark) :host ::ng-deep .hljs-params {
+  color: oklch(35% 0.06 85);
+}
+
+/* ── Punctuation ───────────────────────────────────────────── */
 :host ::ng-deep .hljs-punctuation {
   color: var(--nga-gray-400);
 }
 
-/* Function names */
+:root:not(.dark) :host ::ng-deep .hljs-punctuation {
+  color: var(--nga-gray-500);
+}
+
+/* ── Function names ────────────────────────────────────────── */
 :host ::ng-deep .hljs-function,
 :host ::ng-deep .hljs-title.function_ {
   color: oklch(78% 0.10 200);
 }
 
-/* Property access */
+:root:not(.dark) :host ::ng-deep .hljs-function,
+:root:not(.dark) :host ::ng-deep .hljs-title.function_ {
+  color: oklch(40% 0.12 200);
+}
+
+/* ── Property access ───────────────────────────────────────── */
 :host ::ng-deep .hljs-property {
   color: oklch(80% 0.08 85);
 }
 
-/* CSS selectors */
+:root:not(.dark) :host ::ng-deep .hljs-property {
+  color: oklch(38% 0.08 85);
+}
+
+/* ── CSS selectors ─────────────────────────────────────────── */
 :host ::ng-deep .hljs-selector-class,
 :host ::ng-deep .hljs-selector-id {
   color: oklch(78% 0.10 148);
 }
 
-/* Regex */
-:host ::ng-deep .hljs-regexp {
-  color: oklch(72% 0.12 22);
-}
-
-/* Deletion / addition (diffs) */
-:host ::ng-deep .hljs-deletion {
-  color: oklch(65% 0.14 22);
-}
-
-:host ::ng-deep .hljs-addition {
-  color: oklch(70% 0.10 148);
+:root:not(.dark) :host ::ng-deep .hljs-selector-class,
+:root:not(.dark) :host ::ng-deep .hljs-selector-id {
+  color: oklch(38% 0.10 148);
 }
