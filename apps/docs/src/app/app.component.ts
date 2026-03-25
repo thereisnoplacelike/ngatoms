@@ -16,21 +16,30 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
         <nav class="sidebar-nav">
           <span class="nav-section">Overview</span>
           <a routerLink="/get-started" routerLinkActive="active">Get Started</a>
-          <span class="nav-section">Components</span>
+
+          <span class="nav-section">Forms</span>
+          <a routerLink="/button" routerLinkActive="active">Button</a>
+          <a routerLink="/checkbox" routerLinkActive="active">Checkbox</a>
+          <a routerLink="/input" routerLinkActive="active">Input</a>
+          <a routerLink="/select" routerLinkActive="active">Select</a>
+          <a routerLink="/switch" routerLinkActive="active">Switch</a>
+          <a routerLink="/textarea" routerLinkActive="active">Textarea</a>
+
+          <span class="nav-section">Layout</span>
+          <a routerLink="/card" routerLinkActive="active">Card</a>
+          <a routerLink="/separator" routerLinkActive="active">Separator</a>
+
+          <span class="nav-section">Feedback</span>
           <a routerLink="/alert" routerLinkActive="active">Alert</a>
           <a routerLink="/badge" routerLinkActive="active">Badge</a>
-          <a routerLink="/card" routerLinkActive="active">Card</a>
-          <a routerLink="/checkbox" routerLinkActive="active">Checkbox</a>
-          <a routerLink="/separator" routerLinkActive="active">Separator</a>
-          <a routerLink="/textarea" routerLinkActive="active">Textarea</a>
-          <a routerLink="/button" routerLinkActive="active">Button</a>
-          <a routerLink="/input" routerLinkActive="active">Input</a>
-          <a routerLink="/accordion" routerLinkActive="active">Accordion</a>
-          <a routerLink="/dialog" routerLinkActive="active">Dialog</a>
           <a routerLink="/tooltip" routerLinkActive="active">Tooltip</a>
-          <a routerLink="/select" routerLinkActive="active">Select</a>
+
+          <span class="nav-section">Navigation</span>
+          <a routerLink="/accordion" routerLinkActive="active">Accordion</a>
           <a routerLink="/tabs" routerLinkActive="active">Tabs</a>
-          <a routerLink="/switch" routerLinkActive="active">Switch</a>
+
+          <span class="nav-section">Overlays</span>
+          <a routerLink="/dialog" routerLinkActive="active">Dialog</a>
         </nav>
         <div class="sidebar-footer">
           <a class="bmc-btn" href="https://www.buymeacoffee.com/lazarodutrae" target="_blank" rel="noopener noreferrer">
