@@ -11,8 +11,10 @@ import { ComponentDemoComponent, CodeFile } from '../../../components/component-
 })
 export class RadioGroupPageComponent {
   readonly plan    = signal('pro');
-  readonly size    = signal('md');
   readonly payment = signal('card');
+  readonly sizeSm  = signal('a');
+  readonly sizeMd  = signal('a');
+  readonly sizeLg  = signal('a');
 
   readonly codeFiles: CodeFile[] = [
     {

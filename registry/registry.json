@@ -202,6 +202,17 @@
         "packages/primitives/src/spinner/index.ts"
       ],
       "cssImport": "spinner.styles.css"
+    },
+    {
+      "name": "number-input",
+      "description": "A numeric input with increment and decrement controls, min/max clamping, and step support.",
+      "files": [
+        "packages/primitives/src/number-input/number-input.component.ts",
+        "packages/primitives/src/number-input/number-input.component.html",
+        "packages/primitives/src/number-input/number-input.styles.css",
+        "packages/primitives/src/number-input/index.ts"
+      ],
+      "cssImport": "number-input.styles.css"
     }
   ]
 }

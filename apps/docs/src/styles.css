@@ -17,6 +17,7 @@
 @import './components/progress/progress.styles.css';
 @import './components/avatar/avatar.styles.css';
 @import './components/radio-group/radio-group.styles.css';
+@import './components/number-input/number-input.styles.css';
 @import './components/code-block/code-block.styles.css';
 @import '@phosphor-icons/web/bold';
 

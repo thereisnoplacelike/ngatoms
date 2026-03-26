@@ -32,26 +32,6 @@
   border-bottom: 1px solid var(--nga-color-border);
 }
 
-.radio-item {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  cursor: pointer;
-  font-size: var(--nga-text-sm, 0.875rem);
-  color: var(--nga-color-foreground);
-}
-
-.radio-item--disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.selected-value {
-  margin: 0.75rem 0 0;
-  font-size: var(--nga-text-xs, 0.75rem);
-  color: var(--nga-color-muted-foreground);
-}
-
 .sizes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -69,7 +49,24 @@
   color: var(--nga-color-muted-foreground);
 }
 
-.selected-value code {
-  font-family: var(--nga-font-mono, ui-monospace, monospace);
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.state-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.state-label {
   font-size: var(--nga-text-xs, 0.75rem);
+  color: var(--nga-color-muted-foreground);
+}
+
+.state-desc {
+  font-size: var(--nga-text-xs, 0.75rem);
+  color: var(--nga-color-muted-foreground);
 }

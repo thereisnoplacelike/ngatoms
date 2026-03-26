@@ -1,0 +1,44 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Number Input</h1>
+    <p class="page-desc">A numeric input with increment and decrement controls, min/max clamping, and step support.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Sizes</h2>
+    <div class="sizes-grid">
+      <div class="size-item">
+        <span class="size-label">sm</span>
+        <nga-number-input [(value)]="qty" size="sm" [min]="0"></nga-number-input>
+      </div>
+      <div class="size-item">
+        <span class="size-label">md</span>
+        <nga-number-input [(value)]="qty" size="md" [min]="0"></nga-number-input>
+      </div>
+      <div class="size-item">
+        <span class="size-label">lg</span>
+        <nga-number-input [(value)]="qty" size="lg" [min]="0"></nga-number-input>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">States</h2>
+    <div class="states-grid">
+      <div class="state-item">
+        <span class="state-label">Min / Max</span>
+        <nga-number-input [(value)]="rating" [min]="1" [max]="10"></nga-number-input>
+        <span class="state-desc">Min 1 — Max 10</span>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Step</span>
+        <nga-number-input [(value)]="temp" [step]="0.5"></nga-number-input>
+        <span class="state-desc">Step 0.5</span>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Disabled</span>
+        <nga-number-input [value]="42" [disabled]="true"></nga-number-input>
+      </div>
+    </div>
+  </section>
+</app-component-demo>

@@ -97,4 +97,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/progress/progress-page.component').then(m => m.ProgressPageComponent),
   },
+  {
+    path: 'number-input',
+    loadComponent: () =>
+      import('./pages/number-input/number-input-page.component').then(m => m.NumberInputPageComponent),
+  },
 ];

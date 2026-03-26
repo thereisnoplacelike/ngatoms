@@ -43,20 +43,47 @@
 
   <section class="showcase-section">
     <h2 class="section-title">Sizes</h2>
-    <nga-radio-group [(value)]="size" orientation="horizontal">
-      <label class="radio-item">
-        <input ngAtomsRadio value="sm" size="sm" />
-        <span>Small</span>
-      </label>
-      <label class="radio-item">
-        <input ngAtomsRadio value="md" size="md" />
-        <span>Medium</span>
-      </label>
-      <label class="radio-item">
-        <input ngAtomsRadio value="lg" size="lg" />
-        <span>Large</span>
-      </label>
-    </nga-radio-group>
+    <div class="sizes-grid">
+      <div class="size-item">
+        <span class="size-label">sm</span>
+        <nga-radio-group [(value)]="sizeSm">
+          <label class="radio-item">
+            <input ngAtomsRadio value="a" size="sm" />
+            <span>Option A</span>
+          </label>
+          <label class="radio-item">
+            <input ngAtomsRadio value="b" size="sm" />
+            <span>Option B</span>
+          </label>
+        </nga-radio-group>
+      </div>
+      <div class="size-item">
+        <span class="size-label">md</span>
+        <nga-radio-group [(value)]="sizeMd">
+          <label class="radio-item">
+            <input ngAtomsRadio value="a" />
+            <span>Option A</span>
+          </label>
+          <label class="radio-item">
+            <input ngAtomsRadio value="b" />
+            <span>Option B</span>
+          </label>
+        </nga-radio-group>
+      </div>
+      <div class="size-item">
+        <span class="size-label">lg</span>
+        <nga-radio-group [(value)]="sizeLg">
+          <label class="radio-item">
+            <input ngAtomsRadio value="a" size="lg" />
+            <span>Option A</span>
+          </label>
+          <label class="radio-item">
+            <input ngAtomsRadio value="b" size="lg" />
+            <span>Option B</span>
+          </label>
+        </nga-radio-group>
+      </div>
+    </div>
   </section>
 
   <section class="showcase-section">

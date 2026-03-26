@@ -1,0 +1,119 @@
+/* =============================================================
+   NgAtoms Number Input — number-input.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/number-input.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-number-input-radius:     var(--nga-radius-md, 0.5rem);
+  --nga-number-input-border:     var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-number-input-bg:         var(--nga-color-background, oklch(100% 0 0));
+  --nga-number-input-fg:         var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-number-input-btn-bg:     var(--nga-color-muted, oklch(96% 0.003 85));
+  --nga-number-input-btn-hover:  var(--nga-color-secondary, oklch(92% 0.004 85));
+  --nga-number-input-focus-ring: var(--nga-color-ring, oklch(76% 0.068 68));
+  --nga-number-input-transition: border-color 150ms ease, box-shadow 150ms ease;
+
+  --nga-number-input-height-sm: 2rem;
+  --nga-number-input-height-md: 2.5rem;
+  --nga-number-input-height-lg: 3rem;
+
+  --nga-number-input-font-sm:  var(--nga-text-xs,  0.75rem);
+  --nga-number-input-font-md:  var(--nga-text-sm,  0.875rem);
+  --nga-number-input-font-lg:  var(--nga-text-base, 1rem);
+
+  --nga-number-input-btn-sm:   1.75rem;
+  --nga-number-input-btn-md:   2.25rem;
+  --nga-number-input-btn-lg:   2.75rem;
+}
+
+/* ── Wrapper ────────────────────────────────────────────────── */
+.nga-number-input {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1.5px solid var(--nga-number-input-border);
+  border-radius: var(--nga-number-input-radius);
+  background: var(--nga-number-input-bg);
+  overflow: hidden;
+  transition: var(--nga-number-input-transition);
+}
+
+.nga-number-input:focus-within {
+  border-color: var(--nga-number-input-focus-ring);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--nga-number-input-focus-ring) 25%, transparent);
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.nga-number-input__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--nga-number-input-btn-bg);
+  color: var(--nga-number-input-fg);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background 150ms ease;
+  user-select: none;
+}
+
+.nga-number-input__btn:hover:not(:disabled) {
+  background: var(--nga-number-input-btn-hover);
+}
+
+.nga-number-input__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.nga-number-input__btn:first-child {
+  border-right: 1.5px solid var(--nga-number-input-border);
+}
+
+.nga-number-input__btn:last-child {
+  border-left: 1.5px solid var(--nga-number-input-border);
+}
+
+/* ── Field ──────────────────────────────────────────────────── */
+.nga-number-input__field {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--nga-number-input-fg);
+  font-family: inherit;
+  font-weight: var(--nga-font-weight-normal, 400);
+  text-align: center;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.nga-number-input__field::-webkit-inner-spin-button,
+.nga-number-input__field::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-number-input--sm {
+  height: var(--nga-number-input-height-sm);
+  font-size: var(--nga-number-input-font-sm);
+}
+.nga-number-input--sm .nga-number-input__btn { width: var(--nga-number-input-btn-sm); }
+
+.nga-number-input--md {
+  height: var(--nga-number-input-height-md);
+  font-size: var(--nga-number-input-font-md);
+}
+.nga-number-input--md .nga-number-input__btn { width: var(--nga-number-input-btn-md); }
+
+.nga-number-input--lg {
+  height: var(--nga-number-input-height-lg);
+  font-size: var(--nga-number-input-font-lg);
+}
+.nga-number-input--lg .nga-number-input__btn { width: var(--nga-number-input-btn-lg); }

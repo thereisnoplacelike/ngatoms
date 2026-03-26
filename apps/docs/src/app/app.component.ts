@@ -23,6 +23,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
           <a routerLink="/checkbox" routerLinkActive="active">Checkbox</a>
           <a routerLink="/input" routerLinkActive="active">Input</a>
           <a routerLink="/select" routerLinkActive="active">Select</a>
+          <a routerLink="/number-input" routerLinkActive="active">Number Input</a>
           <a routerLink="/switch" routerLinkActive="active">Switch</a>
           <a routerLink="/textarea" routerLinkActive="active">Textarea</a>
 
