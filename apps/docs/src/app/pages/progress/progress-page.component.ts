@@ -16,14 +16,27 @@ export class ProgressPageComponent {
 
   readonly codeFiles: CodeFile[] = [
     {
-      name: 'example.component.html',
+      name: 'variants.html',
       language: 'html',
-      code: `<nga-progress variant="accent" [value]="65"></nga-progress>
-<nga-progress variant="success" [value]="80"></nga-progress>
-<nga-progress variant="destructive" [value]="40"></nga-progress>
-
-<!-- Indeterminate -->
-<nga-progress variant="accent" [indeterminate]="true"></nga-progress>`,
+      code: `<nga-progress variant="default" [value]="65"></nga-progress>
+<nga-progress variant="accent" [value]="65"></nga-progress>
+<nga-progress variant="success" [value]="65"></nga-progress>
+<nga-progress variant="destructive" [value]="65"></nga-progress>`,
+    },
+    {
+      name: 'sizes.html',
+      language: 'html',
+      code: `<nga-progress variant="accent" [value]="60" size="sm"></nga-progress>
+<nga-progress variant="accent" [value]="60" size="md"></nga-progress>
+<nga-progress variant="accent" [value]="60" size="lg"></nga-progress>`,
+    },
+    {
+      name: 'indeterminate.html',
+      language: 'html',
+      code: `<nga-progress variant="default" [indeterminate]="true"></nga-progress>
+<nga-progress variant="accent" [indeterminate]="true"></nga-progress>
+<nga-progress variant="success" [indeterminate]="true"></nga-progress>
+<nga-progress variant="destructive" [indeterminate]="true"></nga-progress>`,
     },
   ];
 }

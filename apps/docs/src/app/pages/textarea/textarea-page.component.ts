@@ -18,25 +18,35 @@ export class TextareaPageComponent {
 
   readonly codeFiles: CodeFile[] = [
     {
-      name: 'example.component.html',
+      name: 'variants.html',
       language: 'html',
-      code: `<!-- Default variant -->
-<textarea ngAtomsTextarea placeholder="Enter your message..."></textarea>
-
-<!-- Filled variant -->
-<textarea ngAtomsTextarea variant="filled" placeholder="Enter your message..."></textarea>
-
-<!-- Ghost variant -->
-<textarea ngAtomsTextarea variant="ghost" placeholder="Enter your message..."></textarea>
-
-<!-- Auto-resize -->
-<textarea ngAtomsTextarea [autoResize]="true" placeholder="Type to auto-resize..."></textarea>
-
-<!-- Invalid state -->
+      code: `<textarea ngAtomsTextarea placeholder="Default"></textarea>
+<textarea ngAtomsTextarea variant="filled" placeholder="Filled"></textarea>
+<textarea ngAtomsTextarea variant="ghost" placeholder="Ghost"></textarea>`,
+    },
+    {
+      name: 'sizes.html',
+      language: 'html',
+      code: `<textarea ngAtomsTextarea size="xs" placeholder="Extra small"></textarea>
+<textarea ngAtomsTextarea size="sm" placeholder="Small"></textarea>
+<textarea ngAtomsTextarea size="md" placeholder="Medium"></textarea>
+<textarea ngAtomsTextarea size="lg" placeholder="Large"></textarea>
+<textarea ngAtomsTextarea size="xl" placeholder="Extra large"></textarea>`,
+    },
+    {
+      name: 'states.html',
+      language: 'html',
+      code: `<!-- Invalid -->
 <textarea ngAtomsTextarea [invalid]="true" placeholder="This field has an error"></textarea>
 
 <!-- Disabled -->
-<textarea ngAtomsTextarea placeholder="Disabled textarea" disabled></textarea>`,
+<textarea ngAtomsTextarea placeholder="Disabled textarea" disabled></textarea>
+
+<!-- Readonly -->
+<textarea ngAtomsTextarea readonly>This content is read-only.</textarea>
+
+<!-- Auto-resize -->
+<textarea ngAtomsTextarea [autoResize]="true" placeholder="Type to auto-resize..."></textarea>`,
     },
   ];
 }

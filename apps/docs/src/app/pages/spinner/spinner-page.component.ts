@@ -16,11 +16,19 @@ export class SpinnerPageComponent {
 
   readonly codeFiles: CodeFile[] = [
     {
-      name: 'example.component.html',
+      name: 'sizes.html',
       language: 'html',
       code: `<span ngAtomsSpinner size="sm"></span>
 <span ngAtomsSpinner size="md"></span>
 <span ngAtomsSpinner size="lg"></span>`,
+    },
+    {
+      name: 'colors.html',
+      language: 'html',
+      code: `<!-- Inherits the current CSS color -->
+<span ngAtomsSpinner style="color: var(--nga-color-primary)"></span>
+<span ngAtomsSpinner style="color: var(--nga-color-destructive)"></span>
+<span ngAtomsSpinner style="color: var(--nga-color-success)"></span>`,
     },
   ];
 }

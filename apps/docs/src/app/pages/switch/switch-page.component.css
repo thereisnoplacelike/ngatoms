@@ -32,11 +32,38 @@
   border-bottom: 1px solid var(--nga-color-border);
 }
 
-.row-group {
-  display: flex;
-  flex-wrap: wrap;
+.states-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
-  align-items: center;
+}
+
+.state-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.state-label {
+  font-size: var(--nga-text-xs, 0.75rem);
+  color: var(--nga-color-muted-foreground);
+}
+
+.sizes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.size-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.size-label {
+  font-size: var(--nga-text-xs, 0.75rem);
+  color: var(--nga-color-muted-foreground);
 }
 
 .switch-label {

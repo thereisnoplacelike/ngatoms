@@ -7,40 +7,51 @@
   <section class="showcase-section">
     <h2 class="section-title">Image</h2>
     <p class="section-note">Images are random avatars served by <a class="section-link" href="https://i.pravatar.cc" target="_blank" rel="noopener noreferrer"><code>i.pravatar.cc</code></a>.</p>
-    <div class="row-group">
+    <div class="sizes-grid">
       @for (size of sizes; track size) {
-        <nga-avatar
-          src="https://i.pravatar.cc/150"
-          alt="Jane Doe"
-          [size]="size"
-        ></nga-avatar>
+        <div class="size-item">
+          <span class="size-label">{{ size }}</span>
+          <nga-avatar src="https://i.pravatar.cc/150" alt="Jane Doe" [size]="size"></nga-avatar>
+        </div>
       }
     </div>
   </section>
 
   <section class="showcase-section">
     <h2 class="section-title">Initials fallback</h2>
-    <div class="row-group">
+    <div class="sizes-grid">
       @for (size of sizes; track size) {
-        <nga-avatar fallback="JD" [size]="size"></nga-avatar>
+        <div class="size-item">
+          <span class="size-label">{{ size }}</span>
+          <nga-avatar fallback="JD" [size]="size"></nga-avatar>
+        </div>
       }
     </div>
   </section>
 
   <section class="showcase-section">
     <h2 class="section-title">Icon fallback</h2>
-    <div class="row-group">
+    <div class="sizes-grid">
       @for (size of sizes; track size) {
-        <nga-avatar [size]="size"></nga-avatar>
+        <div class="size-item">
+          <span class="size-label">{{ size }}</span>
+          <nga-avatar [size]="size"></nga-avatar>
+        </div>
       }
     </div>
   </section>
 
   <section class="showcase-section">
-    <h2 class="section-title">Broken image → initials</h2>
-    <div class="row-group">
-      <nga-avatar src="broken-url.jpg" fallback="AB" size="md"></nga-avatar>
-      <nga-avatar src="broken-url.jpg" size="md"></nga-avatar>
+    <h2 class="section-title">Broken image</h2>
+    <div class="states-grid">
+      <div class="state-item">
+        <span class="state-label">Broken → initials</span>
+        <nga-avatar src="broken-url.jpg" fallback="AB" size="md"></nga-avatar>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Broken → icon</span>
+        <nga-avatar src="broken-url.jpg" size="md"></nga-avatar>
+      </div>
     </div>
   </section>
 </app-component-demo>

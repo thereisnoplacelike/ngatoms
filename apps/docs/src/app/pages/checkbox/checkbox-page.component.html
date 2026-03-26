@@ -6,41 +6,62 @@
 
   <section class="showcase-section">
     <h2 class="section-title">States</h2>
-    <div class="row-group">
-      <label class="check-label">
-        <input ngAtomsCheckbox [(checked)]="unchecked" />
-        <span>Unchecked</span>
-      </label>
-      <label class="check-label">
-        <input ngAtomsCheckbox [(checked)]="checked" />
-        <span>Checked</span>
-      </label>
-      <label class="check-label">
-        <input ngAtomsCheckbox [indeterminate]="true" />
-        <span>Indeterminate</span>
-      </label>
-      <label class="check-label">
-        <input ngAtomsCheckbox [checked]="true" disabled />
-        <span>Disabled</span>
-      </label>
+    <div class="states-grid">
+      <div class="state-item">
+        <span class="state-label">Unchecked</span>
+        <label class="check-label">
+          <input ngAtomsCheckbox [(checked)]="unchecked" />
+          <span>Unchecked</span>
+        </label>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Checked</span>
+        <label class="check-label">
+          <input ngAtomsCheckbox [(checked)]="checked" />
+          <span>Checked</span>
+        </label>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Indeterminate</span>
+        <label class="check-label">
+          <input ngAtomsCheckbox [indeterminate]="true" />
+          <span>Indeterminate</span>
+        </label>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Disabled</span>
+        <label class="check-label">
+          <input ngAtomsCheckbox [checked]="true" disabled />
+          <span>Disabled</span>
+        </label>
+      </div>
     </div>
   </section>
 
   <section class="showcase-section">
     <h2 class="section-title">Sizes</h2>
-    <div class="row-group">
-      <label class="check-label">
-        <input ngAtomsCheckbox size="sm" [checked]="true" />
-        <span>Small</span>
-      </label>
-      <label class="check-label">
-        <input ngAtomsCheckbox size="md" [checked]="true" />
-        <span>Medium</span>
-      </label>
-      <label class="check-label">
-        <input ngAtomsCheckbox size="lg" [checked]="true" />
-        <span>Large</span>
-      </label>
+    <div class="sizes-grid">
+      <div class="size-item">
+        <span class="size-label">sm</span>
+        <label class="check-label">
+          <input ngAtomsCheckbox size="sm" [checked]="true" />
+          <span>Small</span>
+        </label>
+      </div>
+      <div class="size-item">
+        <span class="size-label">md</span>
+        <label class="check-label">
+          <input ngAtomsCheckbox size="md" [checked]="true" />
+          <span>Medium</span>
+        </label>
+      </div>
+      <div class="size-item">
+        <span class="size-label">lg</span>
+        <label class="check-label">
+          <input ngAtomsCheckbox size="lg" [checked]="true" />
+          <span>Large</span>
+        </label>
+      </div>
     </div>
   </section>
 

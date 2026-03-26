@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, computed, effect, inject, input, model, viewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, computed, effect, inject, input, model } from '@angular/core';
 
 export type NgAtomsNumberInputSize = 'sm' | 'md' | 'lg';
 

@@ -16,16 +16,24 @@ export class AvatarPageComponent {
 
   readonly codeFiles: CodeFile[] = [
     {
-      name: 'example.component.html',
+      name: 'sizes.html',
       language: 'html',
-      code: `<!-- With image -->
-<nga-avatar src="https://i.pravatar.cc/150" alt="Jane Doe"></nga-avatar>
-
-<!-- With initials fallback -->
-<nga-avatar fallback="JD"></nga-avatar>
+      code: `<nga-avatar src="https://i.pravatar.cc/150" alt="Jane Doe" size="sm"></nga-avatar>
+<nga-avatar src="https://i.pravatar.cc/150" alt="Jane Doe" size="md"></nga-avatar>
+<nga-avatar src="https://i.pravatar.cc/150" alt="Jane Doe" size="lg"></nga-avatar>
+<nga-avatar src="https://i.pravatar.cc/150" alt="Jane Doe" size="xl"></nga-avatar>`,
+    },
+    {
+      name: 'fallbacks.html',
+      language: 'html',
+      code: `<!-- Initials fallback -->
+<nga-avatar fallback="JD" size="md"></nga-avatar>
 
 <!-- Icon fallback (no src or fallback) -->
-<nga-avatar></nga-avatar>`,
+<nga-avatar size="md"></nga-avatar>
+
+<!-- Broken image → initials -->
+<nga-avatar src="broken-url.jpg" fallback="AB" size="md"></nga-avatar>`,
     },
   ];
 }

@@ -6,9 +6,9 @@
 
   <section class="showcase-section">
     <h2 class="section-title">Variants</h2>
-    <div class="stack-group">
+    <div class="variants-list">
       @for (variant of variants; track variant) {
-        <div class="variant-row">
+        <div class="variant-item">
           <span class="variant-label">{{ variant }}</span>
           <nga-progress [variant]="variant" [value]="65" size="md"></nga-progress>
         </div>
@@ -18,20 +18,31 @@
 
   <section class="showcase-section">
     <h2 class="section-title">Sizes</h2>
-    <div class="stack-group">
-      <nga-progress variant="accent" [value]="60" size="sm"></nga-progress>
-      <nga-progress variant="accent" [value]="60" size="md"></nga-progress>
-      <nga-progress variant="accent" [value]="60" size="lg"></nga-progress>
+    <div class="variants-list">
+      <div class="variant-item">
+        <span class="variant-label">sm</span>
+        <nga-progress variant="accent" [value]="60" size="sm"></nga-progress>
+      </div>
+      <div class="variant-item">
+        <span class="variant-label">md</span>
+        <nga-progress variant="accent" [value]="60" size="md"></nga-progress>
+      </div>
+      <div class="variant-item">
+        <span class="variant-label">lg</span>
+        <nga-progress variant="accent" [value]="60" size="lg"></nga-progress>
+      </div>
     </div>
   </section>
 
   <section class="showcase-section">
     <h2 class="section-title">Indeterminate</h2>
-    <div class="stack-group">
-      <nga-progress variant="default"     [indeterminate]="true"></nga-progress>
-      <nga-progress variant="accent"      [indeterminate]="true"></nga-progress>
-      <nga-progress variant="success"     [indeterminate]="true"></nga-progress>
-      <nga-progress variant="destructive" [indeterminate]="true"></nga-progress>
+    <div class="variants-list">
+      @for (variant of variants; track variant) {
+        <div class="variant-item">
+          <span class="variant-label">{{ variant }}</span>
+          <nga-progress [variant]="variant" [indeterminate]="true"></nga-progress>
+        </div>
+      }
     </div>
   </section>
 </app-component-demo>
