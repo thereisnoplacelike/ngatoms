@@ -77,4 +77,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/switch/switch-page.component').then(m => m.SwitchPageComponent),
   },
+  {
+    path: 'spinner',
+    loadComponent: () =>
+      import('./pages/spinner/spinner-page.component').then(m => m.SpinnerPageComponent),
+  },
 ];

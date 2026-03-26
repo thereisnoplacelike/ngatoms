@@ -159,6 +159,16 @@
         "packages/primitives/src/switch/index.ts"
       ],
       "cssImport": "switch.styles.css"
+    },
+    {
+      "name": "spinner",
+      "description": "A loading spinner with 3 sizes.",
+      "files": [
+        "packages/primitives/src/spinner/spinner.directive.ts",
+        "packages/primitives/src/spinner/spinner.styles.css",
+        "packages/primitives/src/spinner/index.ts"
+      ],
+      "cssImport": "spinner.styles.css"
     }
   ]
 }

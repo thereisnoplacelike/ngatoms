@@ -32,6 +32,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
           <span class="nav-section">Feedback</span>
           <a routerLink="/alert" routerLinkActive="active">Alert</a>
           <a routerLink="/badge" routerLinkActive="active">Badge</a>
+          <a routerLink="/spinner" routerLinkActive="active">Spinner</a>
           <a routerLink="/tooltip" routerLinkActive="active">Tooltip</a>
 
           <span class="nav-section">Navigation</span>

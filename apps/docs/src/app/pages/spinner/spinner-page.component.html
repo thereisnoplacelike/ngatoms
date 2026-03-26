@@ -1,0 +1,36 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Spinner</h1>
+    <p class="page-desc">A loading indicator for async operations.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Sizes</h2>
+    <div class="row-group">
+      @for (size of sizes; track size) {
+        <span ngAtomsSpinner [size]="size"></span>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Colors</h2>
+    <div class="row-group">
+      <div class="color-swatch" style="color: var(--nga-color-foreground)">
+        <span ngAtomsSpinner size="md"></span>
+      </div>
+      <div class="color-swatch" style="color: var(--nga-color-primary)">
+        <span ngAtomsSpinner size="md"></span>
+      </div>
+      <div class="color-swatch" style="color: var(--nga-color-destructive)">
+        <span ngAtomsSpinner size="md"></span>
+      </div>
+      <div class="color-swatch" style="color: var(--nga-color-success)">
+        <span ngAtomsSpinner size="md"></span>
+      </div>
+      <div class="color-swatch" style="background: var(--nga-color-primary); color: var(--nga-color-primary-foreground)">
+        <span ngAtomsSpinner size="md"></span>
+      </div>
+    </div>
+  </section>
+</app-component-demo>

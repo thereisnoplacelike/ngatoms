@@ -79,22 +79,103 @@
 }
 
 .code-block code {
-  font-family: var(--nga-font-mono, ui-monospace, monospace);
+  font-family: var(--nga-font-mono, ui-monospace, monospace), serif;
   font-size: 13px;
   color: var(--nga-color-foreground);
 }
 
-.component-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.component-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--nga-color-border);
+  border-radius: 0.5rem;
 }
 
-.component-chip {
-  font-size: 12.5px;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  background: var(--nga-color-muted);
-  border: 1px solid var(--nga-color-border);
+.component-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.component-table thead tr {
+  border-bottom: 1px solid var(--nga-color-border);
+}
+
+.component-table th {
+  padding: 0.55rem 1rem;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--nga-color-muted-foreground);
+  white-space: nowrap;
+}
+
+.component-table td {
+  padding: 0.55rem 1rem;
+  color: var(--nga-color-foreground);
+  border-top: 1px solid var(--nga-color-border);
+  vertical-align: middle;
+}
+
+.component-table tbody tr:first-child td {
+  border-top: none;
+}
+
+.component-table tbody tr:hover td {
+  background: var(--nga-color-muted);
+}
+
+.tier-divider td {
+  border-top: 2px solid var(--nga-color-border) !important;
+}
+
+.component-link {
+  font-family: var(--nga-font-mono, ui-monospace, monospace);
+  font-size: 12.5px;
+  color: var(--nga-color-foreground);
+  text-decoration: none;
+}
+
+.component-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.component-name {
+  font-family: var(--nga-font-mono, ui-monospace, monospace);
+  font-size: 12.5px;
+  color: var(--nga-color-muted-foreground);
+}
+
+.tier-cell {
+  color: var(--nga-color-muted-foreground);
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.status-alpha {
+  background: color-mix(in srgb, orange 12%, transparent);
+  color: orange;
+}
+
+.status-in-progress {
+  background: color-mix(in srgb, #3b82f6 12%, transparent);
+  color: #3b82f6;
+}
+
+.status-planned {
+  background: var(--nga-color-muted);
+  color: var(--nga-color-muted-foreground);
+  border: 1px solid var(--nga-color-border);
 }

@@ -13,7 +13,9 @@
 @import './components/select/select.styles.css';
 @import './components/tabs/tabs.styles.css';
 @import './components/switch/switch.styles.css';
+@import './components/spinner/spinner.styles.css';
 @import './components/code-block/code-block.styles.css';
+@import '@phosphor-icons/web/bold';
 
 /* ── Code panel theme tokens ────────────────────────────────── */
 :root {
@@ -33,7 +35,6 @@
   --code-tab-active-bg:   #ffffff;
   --code-tab-active-fg:   #24292f;
 }
-@import '@phosphor-icons/web/bold';
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -48,7 +49,7 @@ html, body {
 body {
   background: var(--nga-color-background);
   color: var(--nga-color-foreground);
-  font-family: var(--nga-font-sans);
+  font-family: var(--nga-font-sans), serif;
   font-size: 14px;
   line-height: 1.5;
 }
