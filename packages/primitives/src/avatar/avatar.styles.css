@@ -1,0 +1,86 @@
+/* =============================================================
+   NgAtoms Avatar — avatar.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/avatar.styles.css';
+   ============================================================= */
+
+/* ── Custom properties ──────────────────────────────────────── */
+:root {
+  --nga-avatar-radius:       var(--nga-radius-full, 9999px);
+  --nga-avatar-bg:           var(--nga-color-muted, oklch(96% 0.003 85));
+  --nga-avatar-fg:           var(--nga-color-muted-foreground, oklch(54% 0.006 85));
+  --nga-avatar-border:       var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-avatar-font-weight:  600;
+
+  --nga-avatar-size-sm: 28px;
+  --nga-avatar-size-md: 36px;
+  --nga-avatar-size-lg: 48px;
+  --nga-avatar-size-xl: 64px;
+
+  --nga-avatar-font-sm: 11px;
+  --nga-avatar-font-md: 13px;
+  --nga-avatar-font-lg: 16px;
+  --nga-avatar-font-xl: 20px;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--nga-avatar-radius);
+  background: var(--nga-avatar-bg);
+  color: var(--nga-avatar-fg);
+  border: 1px solid var(--nga-avatar-border);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* ── Image ──────────────────────────────────────────────────── */
+.nga-avatar__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Fallback initials ──────────────────────────────────────── */
+.nga-avatar__fallback {
+  font-weight: var(--nga-avatar-font-weight);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* ── Fallback icon ──────────────────────────────────────────── */
+.nga-avatar__icon {
+  width: 55%;
+  height: 55%;
+  opacity: 0.5;
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-avatar--sm {
+  width:  var(--nga-avatar-size-sm);
+  height: var(--nga-avatar-size-sm);
+  font-size: var(--nga-avatar-font-sm);
+}
+
+.nga-avatar--md {
+  width:  var(--nga-avatar-size-md);
+  height: var(--nga-avatar-size-md);
+  font-size: var(--nga-avatar-font-md);
+}
+
+.nga-avatar--lg {
+  width:  var(--nga-avatar-size-lg);
+  height: var(--nga-avatar-size-lg);
+  font-size: var(--nga-avatar-font-lg);
+}
+
+.nga-avatar--xl {
+  width:  var(--nga-avatar-size-xl);
+  height: var(--nga-avatar-size-xl);
+  font-size: var(--nga-avatar-font-xl);
+}

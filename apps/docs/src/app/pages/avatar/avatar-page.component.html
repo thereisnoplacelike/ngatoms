@@ -1,0 +1,46 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Avatar</h1>
+    <p class="page-desc">Displays a user image with fallback to initials or a generic icon.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Image</h2>
+    <p class="section-note">Images are random avatars served by <a class="section-link" href="https://i.pravatar.cc" target="_blank" rel="noopener noreferrer"><code>i.pravatar.cc</code></a>.</p>
+    <div class="row-group">
+      @for (size of sizes; track size) {
+        <nga-avatar
+          src="https://i.pravatar.cc/150"
+          alt="Jane Doe"
+          [size]="size"
+        ></nga-avatar>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Initials fallback</h2>
+    <div class="row-group">
+      @for (size of sizes; track size) {
+        <nga-avatar fallback="JD" [size]="size"></nga-avatar>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Icon fallback</h2>
+    <div class="row-group">
+      @for (size of sizes; track size) {
+        <nga-avatar [size]="size"></nga-avatar>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Broken image → initials</h2>
+    <div class="row-group">
+      <nga-avatar src="broken-url.jpg" fallback="AB" size="md"></nga-avatar>
+      <nga-avatar src="broken-url.jpg" size="md"></nga-avatar>
+    </div>
+  </section>
+</app-component-demo>

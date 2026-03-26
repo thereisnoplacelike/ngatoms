@@ -82,4 +82,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/spinner/spinner-page.component').then(m => m.SpinnerPageComponent),
   },
+  {
+    path: 'avatar',
+    loadComponent: () =>
+      import('./pages/avatar/avatar-page.component').then(m => m.AvatarPageComponent),
+  },
+  {
+    path: 'progress',
+    loadComponent: () =>
+      import('./pages/progress/progress-page.component').then(m => m.ProgressPageComponent),
+  },
 ];

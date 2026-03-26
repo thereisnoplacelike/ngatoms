@@ -1,0 +1,37 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Progress</h1>
+    <p class="page-desc">Displays a value within a known range, or an indeterminate loading state.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Variants</h2>
+    <div class="stack-group">
+      @for (variant of variants; track variant) {
+        <div class="variant-row">
+          <span class="variant-label">{{ variant }}</span>
+          <nga-progress [variant]="variant" [value]="65" size="md"></nga-progress>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Sizes</h2>
+    <div class="stack-group">
+      <nga-progress variant="accent" [value]="60" size="sm"></nga-progress>
+      <nga-progress variant="accent" [value]="60" size="md"></nga-progress>
+      <nga-progress variant="accent" [value]="60" size="lg"></nga-progress>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Indeterminate</h2>
+    <div class="stack-group">
+      <nga-progress variant="default"     [indeterminate]="true"></nga-progress>
+      <nga-progress variant="accent"      [indeterminate]="true"></nga-progress>
+      <nga-progress variant="success"     [indeterminate]="true"></nga-progress>
+      <nga-progress variant="destructive" [indeterminate]="true"></nga-progress>
+    </div>
+  </section>
+</app-component-demo>

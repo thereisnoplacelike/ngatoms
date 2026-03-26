@@ -57,11 +57,11 @@
 /* ── Preview panel ─────────────────────────────────────────── */
 .demo-preview {
   flex: 1;
-  padding: var(--nga-space-8);
   display: flex;
+  padding: var(--nga-space-8);
   flex-direction: column;
   gap: var(--nga-space-6);
-  align-items: flex-start;
+  align-items: stretch;
   overflow-y: auto;
 }
 

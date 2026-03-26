@@ -161,6 +161,27 @@
       "cssImport": "switch.styles.css"
     },
     {
+      "name": "avatar",
+      "description": "A user avatar with image, initials fallback, and icon fallback. Supports 4 sizes.",
+      "files": [
+        "packages/primitives/src/avatar/avatar.component.ts",
+        "packages/primitives/src/avatar/avatar.component.html",
+        "packages/primitives/src/avatar/avatar.styles.css",
+        "packages/primitives/src/avatar/index.ts"
+      ],
+      "cssImport": "avatar.styles.css"
+    },
+    {
+      "name": "progress",
+      "description": "A progress bar with determinate and indeterminate modes, and 3 sizes.",
+      "files": [
+        "packages/primitives/src/progress/progress.component.ts",
+        "packages/primitives/src/progress/progress.styles.css",
+        "packages/primitives/src/progress/index.ts"
+      ],
+      "cssImport": "progress.styles.css"
+    },
+    {
       "name": "spinner",
       "description": "A loading spinner with 3 sizes.",
       "files": [

@@ -14,6 +14,8 @@
 @import './components/tabs/tabs.styles.css';
 @import './components/switch/switch.styles.css';
 @import './components/spinner/spinner.styles.css';
+@import './components/progress/progress.styles.css';
+@import './components/avatar/avatar.styles.css';
 @import './components/code-block/code-block.styles.css';
 @import '@phosphor-icons/web/bold';
 

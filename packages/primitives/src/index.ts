@@ -14,3 +14,5 @@ export * from './separator';
 export * from './switch';
 export * from './textarea';
 export * from './spinner';
+export * from './progress';
+export * from './avatar';
