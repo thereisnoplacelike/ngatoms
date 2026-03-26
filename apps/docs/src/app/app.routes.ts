@@ -83,6 +83,11 @@ export const routes: Routes = [
       import('./pages/spinner/spinner-page.component').then(m => m.SpinnerPageComponent),
   },
   {
+    path: 'radio-group',
+    loadComponent: () =>
+      import('./pages/radio-group/radio-group-page.component').then(m => m.RadioGroupPageComponent),
+  },
+  {
     path: 'avatar',
     loadComponent: () =>
       import('./pages/avatar/avatar-page.component').then(m => m.AvatarPageComponent),

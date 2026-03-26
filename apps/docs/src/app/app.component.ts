@@ -19,6 +19,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
           <span class="nav-section">Forms</span>
           <a routerLink="/button" routerLinkActive="active">Button</a>
+          <a routerLink="/radio-group" routerLinkActive="active">Radio Group</a>
           <a routerLink="/checkbox" routerLinkActive="active">Checkbox</a>
           <a routerLink="/input" routerLinkActive="active">Input</a>
           <a routerLink="/select" routerLinkActive="active">Select</a>

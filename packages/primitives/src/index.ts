@@ -16,3 +16,4 @@ export * from './textarea';
 export * from './spinner';
 export * from './progress';
 export * from './avatar';
+export * from './radio-group';

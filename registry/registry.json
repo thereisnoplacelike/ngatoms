@@ -161,6 +161,18 @@
       "cssImport": "switch.styles.css"
     },
     {
+      "name": "radio-group",
+      "description": "A radio button group with keyboard navigation, ARIA support, and 3 sizes.",
+      "files": [
+        "packages/primitives/src/radio-group/radio-group.component.ts",
+        "packages/primitives/src/radio-group/radio-group.component.html",
+        "packages/primitives/src/radio-group/radio.directive.ts",
+        "packages/primitives/src/radio-group/radio-group.styles.css",
+        "packages/primitives/src/radio-group/index.ts"
+      ],
+      "cssImport": "radio-group.styles.css"
+    },
+    {
       "name": "avatar",
       "description": "A user avatar with image, initials fallback, and icon fallback. Supports 4 sizes.",
       "files": [

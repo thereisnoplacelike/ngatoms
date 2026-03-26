@@ -16,6 +16,7 @@
 @import './components/spinner/spinner.styles.css';
 @import './components/progress/progress.styles.css';
 @import './components/avatar/avatar.styles.css';
+@import './components/radio-group/radio-group.styles.css';
 @import './components/code-block/code-block.styles.css';
 @import '@phosphor-icons/web/bold';
 
