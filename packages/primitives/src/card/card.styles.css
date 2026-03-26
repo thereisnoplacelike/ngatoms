@@ -34,8 +34,8 @@
 /* ── Title ──────────────────────────────────────────────────── */
 .nga-card-title {
   font-size: 0.9375rem;
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: var(--nga-font-weight-semibold, 600);
+  line-height: var(--nga-leading-tight, 1.25);
   letter-spacing: -0.01em;
 }
 

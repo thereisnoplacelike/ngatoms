@@ -26,7 +26,7 @@
   border: none;
   background: transparent;
   max-height: 90dvh;
-  max-width: min(90vw, var(--nga-dialog-max-w, 480px));
+  max-width: min(90vw, var(--nga-dialog-max-w, 30rem));
   width: 100%;
   margin: auto;
   overflow: visible;
@@ -58,10 +58,10 @@
 }
 
 /* ── Sizes ──────────────────────────────────────────────────── */
-.nga-dialog--sm { --nga-dialog-max-w: 360px; }
-.nga-dialog--md { --nga-dialog-max-w: 480px; }
-.nga-dialog--lg { --nga-dialog-max-w: 640px; }
-.nga-dialog--xl { --nga-dialog-max-w: 800px; }
+.nga-dialog--sm { --nga-dialog-max-w: 22.5rem; }
+.nga-dialog--md { --nga-dialog-max-w: 30rem; }
+.nga-dialog--lg { --nga-dialog-max-w: 40rem; }
+.nga-dialog--xl { --nga-dialog-max-w: 50rem; }
 
 /* ── Panel ──────────────────────────────────────────────────── */
 .nga-dialog-panel {
@@ -86,8 +86,8 @@
 
 /* ── Title ──────────────────────────────────────────────────── */
 .nga-dialog-title {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: var(--nga-text-base, 1rem);
+  font-weight: var(--nga-font-weight-semibold, 600);
   letter-spacing: -0.01em;
   color: var(--nga-color-foreground, oklch(13% 0.002 85));
   margin: 0;
@@ -96,7 +96,7 @@
 
 /* ── Description ────────────────────────────────────────────── */
 .nga-dialog-description {
-  font-size: 13.5px;
+  font-size: 0.84375rem;
   color: var(--nga-color-muted-foreground, oklch(54% 0.006 85));
   margin: 0.25rem 0 0;
   line-height: 1.5;
@@ -131,8 +131,8 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   border: none;
   border-radius: var(--nga-radius-sm, 0.25rem);
   background: transparent;

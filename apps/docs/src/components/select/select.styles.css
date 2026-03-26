@@ -80,7 +80,7 @@
 
 .nga-select-trigger:focus-visible {
   outline: 2px solid var(--nga-select-focus-ring);
-  outline-offset: 0px;
+  outline-offset: 0;
 }
 
 .nga-select-trigger:disabled {
@@ -230,7 +230,7 @@
   scrollbar-color: var(--nga-select-panel-border) transparent;
 }
 
-.nga-select-options::-webkit-scrollbar { width: 4px; }
+.nga-select-options::-webkit-scrollbar { width: 0.25rem; }
 .nga-select-options::-webkit-scrollbar-track { background: transparent; }
 .nga-select-options::-webkit-scrollbar-thumb { background: var(--nga-select-panel-border); border-radius: 9999px; }
 
@@ -274,8 +274,8 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 14px;
-  height: 14px;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 
 /* ── Empty state ────────────────────────────────────────────── */

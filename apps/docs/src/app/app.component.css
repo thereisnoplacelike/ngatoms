@@ -32,16 +32,16 @@
 }
 
 .brand-name {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 0.9375rem;
+  font-weight: var(--nga-font-weight-semibold, 600);
   letter-spacing: -0.01em;
   color: var(--nga-color-foreground);
 }
 
 .brand-badge {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-size: 0.625rem;
+  font-weight: var(--nga-font-weight-medium, 500);
+  letter-spacing: var(--nga-tracking-wide, 0.05em);
   text-transform: uppercase;
   color: var(--nga-color-accent-foreground);
   background: color-mix(in oklch, var(--nga-color-accent) 20%, transparent);
@@ -58,9 +58,9 @@
 }
 
 .nav-section {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: var(--nga-text-xs, 0.75rem);
+  font-weight: var(--nga-font-weight-semibold, 600);
+  letter-spacing: var(--nga-tracking-wider, 0.1em);
   text-transform: uppercase;
   color: var(--nga-color-muted-foreground);
   padding: 0 0.5rem 0.375rem;
@@ -73,7 +73,7 @@
   display: block;
   padding: 0.375rem 0.625rem;
   border-radius: 0.375rem;
-  font-size: 13.5px;
+  font-size: 0.84375rem;
   color: var(--nga-color-muted-foreground);
   transition: background 0.12s, color 0.12s;
 }
@@ -121,7 +121,7 @@
   border: none;
   background: transparent;
   color: var(--nga-color-muted-foreground);
-  font-size: 13.5px;
+  font-size: 0.84375rem;
   cursor: pointer;
   transition: background 0.12s, color 0.12s;
   font-family: inherit;

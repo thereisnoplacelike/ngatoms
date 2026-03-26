@@ -10,8 +10,8 @@
 }
 
 .hero-logo {
-  width: 160px;
-  height: 160px;
+  width: 10rem;
+  height: 10rem;
 }
 
 .hero-logo--light { display: block; }
@@ -22,20 +22,20 @@
 
 
 .hero-title {
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  font-size: 3rem;
+  font-weight: var(--nga-font-weight-bold, 700);
+  letter-spacing: var(--nga-tracking-tight, -0.02em);
   margin: 0;
   color: var(--nga-color-foreground);
   line-height: 1;
 }
 
 .hero-tagline {
-  font-size: 16px;
+  font-size: var(--nga-text-base, 1rem);
   color: var(--nga-color-muted-foreground);
   margin: 0;
-  max-width: 440px;
-  line-height: 1.65;
+  max-width: 27.5rem;
+  line-height: var(--nga-leading-relaxed, 1.625);
 }
 
 .gs-section {
@@ -43,9 +43,9 @@
 }
 
 .gs-section-title {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: var(--nga-text-xs, 0.75rem);
+  font-weight: var(--nga-font-weight-semibold, 600);
+  letter-spacing: var(--nga-tracking-wider, 0.1em);
   text-transform: uppercase;
   color: var(--nga-color-muted-foreground);
   margin: 0 0 0.75rem;
@@ -54,19 +54,19 @@
 }
 
 .gs-desc {
-  font-size: 13.5px;
+  font-size: var(--nga-text-sm, 0.875rem);
   color: var(--nga-color-muted-foreground);
   margin: 0 0 0.75rem;
-  line-height: 1.6;
+  line-height: var(--nga-leading-relaxed, 1.625);
 }
 
 .inline-code {
-  font-family: var(--nga-font-mono, ui-monospace, monospace);
-  font-size: 12.5px;
+  font-family: var(--nga-font-mono, ui-monospace, monospace), serif;
+  font-size: 0.8125rem;
   background: var(--nga-color-muted);
   color: var(--nga-color-foreground);
   padding: 1px 5px;
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 
 .code-block {
@@ -80,7 +80,7 @@
 
 .code-block code {
   font-family: var(--nga-font-mono, ui-monospace, monospace), serif;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--nga-color-foreground);
 }
 
@@ -93,7 +93,7 @@
 .component-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .component-table thead tr {
@@ -103,9 +103,9 @@
 .component-table th {
   padding: 0.55rem 1rem;
   text-align: left;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: var(--nga-text-xs, 0.75rem);
+  font-weight: var(--nga-font-weight-semibold, 600);
+  letter-spacing: var(--nga-tracking-wide, 0.05em);
   text-transform: uppercase;
   color: var(--nga-color-muted-foreground);
   white-space: nowrap;
@@ -131,7 +131,7 @@
 }
 
 .component-link {
-  font-family: var(--nga-font-mono, ui-monospace, monospace);
+  font-family: var(--nga-font-mono, ui-monospace, monospace), serif;
   font-size: 12.5px;
   color: var(--nga-color-foreground);
   text-decoration: none;
@@ -143,23 +143,23 @@
 }
 
 .component-name {
-  font-family: var(--nga-font-mono, ui-monospace, monospace);
+  font-family: var(--nga-font-mono, ui-monospace, monospace), serif;
   font-size: 12.5px;
   color: var(--nga-color-muted-foreground);
 }
 
 .tier-cell {
   color: var(--nga-color-muted-foreground);
-  font-size: 12px;
+  font-size: 0.75rem;
   text-align: center;
   white-space: nowrap;
 }
 
 .status-badge {
   display: inline-block;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 2px 8px;
+  font-size: var(--nga-text-xs, 0.75rem);
+  font-weight: var(--nga-font-weight-medium, 500);
+  padding: 0.125rem 0.5rem;
   border-radius: 9999px;
   white-space: nowrap;
 }

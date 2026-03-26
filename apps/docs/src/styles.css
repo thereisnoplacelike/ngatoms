@@ -52,8 +52,8 @@ body {
   background: var(--nga-color-background);
   color: var(--nga-color-foreground);
   font-family: var(--nga-font-sans), serif;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: var(--nga-text-sm, 0.875rem);
+  line-height: var(--nga-leading-normal, 1.5);
 }
 
 a {

@@ -8,7 +8,7 @@
 :root {
   --nga-badge-font-size:   var(--nga-size-font-xs, 11px);
   --nga-badge-font-weight: var(--nga-font-weight-semibold, 600);
-  --nga-badge-padding:     2px 8px;
+  --nga-badge-padding:     0.125rem 0.5rem;
   --nga-badge-radius:      var(--nga-radius-full, 9999px);
   --nga-badge-transition:  background 150ms ease, color 150ms ease, border-color 150ms ease;
 

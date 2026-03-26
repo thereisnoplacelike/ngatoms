@@ -17,13 +17,13 @@
   --nga-spinner-easing:     linear;
 
   /* Sizes */
-  --nga-spinner-size-sm:    14px;
+  --nga-spinner-size-sm:    0.875rem;
   --nga-spinner-width-sm:   1.5px;
 
-  --nga-spinner-size-md:    20px;
+  --nga-spinner-size-md:    1.25rem;
   --nga-spinner-width-md:   2px;
 
-  --nga-spinner-size-lg:    28px;
+  --nga-spinner-size-lg:    1.75rem;
   --nga-spinner-width-lg:   3px;
 }
 

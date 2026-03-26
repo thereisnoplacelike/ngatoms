@@ -14,7 +14,7 @@
   /* Focus ring */
   --nga-input-focus-ring-color: var(--nga-color-ring, oklch(76% 0.068 68));
   --nga-input-focus-ring-width: 2px;
-  --nga-input-focus-ring-offset: 0px;
+  --nga-input-focus-ring-offset: 0;
 
   /* Sizes — padding */
   --nga-input-padding-xs: var(--nga-size-padding-y-xs, 3px) 8px;

@@ -10,17 +10,17 @@
   --nga-avatar-bg:           var(--nga-color-muted, oklch(96% 0.003 85));
   --nga-avatar-fg:           var(--nga-color-muted-foreground, oklch(54% 0.006 85));
   --nga-avatar-border:       var(--nga-color-border, oklch(82% 0.003 85));
-  --nga-avatar-font-weight:  600;
+  --nga-avatar-font-weight:  var(--nga-font-weight-semibold, 600);
 
-  --nga-avatar-size-sm: 28px;
-  --nga-avatar-size-md: 36px;
-  --nga-avatar-size-lg: 48px;
-  --nga-avatar-size-xl: 64px;
+  --nga-avatar-size-sm: 1.75rem;
+  --nga-avatar-size-md: 2.25rem;
+  --nga-avatar-size-lg: 3rem;
+  --nga-avatar-size-xl: 4rem;
 
-  --nga-avatar-font-sm: 11px;
-  --nga-avatar-font-md: 13px;
-  --nga-avatar-font-lg: 16px;
-  --nga-avatar-font-xl: 20px;
+  --nga-avatar-font-sm: var(--nga-text-xs, 0.75rem);
+  --nga-avatar-font-md: 0.8125rem;
+  --nga-avatar-font-lg: var(--nga-text-base, 1rem);
+  --nga-avatar-font-xl: var(--nga-text-xl, 1.25rem);
 }
 
 /* ── Base ───────────────────────────────────────────────────── */
