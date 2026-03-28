@@ -26,9 +26,6 @@
   "bugs": {
     "url": "https://github.com/ngAtoms/ngatoms/issues"
   },
-  "publishConfig": {
-    "provenance": true
-  },
   "engines": {
     "node": ">=18"
   },
