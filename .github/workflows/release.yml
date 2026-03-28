@@ -77,6 +77,8 @@ jobs:
 
       - name: Publish packages
         run: npm run publish:changesets
+        env:
+          NPM_CONFIG_PROVENANCE: true
 
   release-lts:
     name: LTS Release
@@ -115,6 +117,8 @@ jobs:
 
       - name: Publish LTS packages
         run: npm run publish:changesets
+        env:
+          NPM_CONFIG_PROVENANCE: true
 
       - name: Exit LTS mode
         if: always()
@@ -157,6 +161,8 @@ jobs:
 
       - name: Publish RC packages
         run: npm run publish:changesets
+        env:
+          NPM_CONFIG_PROVENANCE: true
 
       - name: Exit prerelease mode
         if: always()
