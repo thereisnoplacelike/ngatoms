@@ -64,6 +64,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: npm ci
@@ -77,7 +78,7 @@ jobs:
       - name: Publish packages
         run: npm run publish:changesets
         env:
-          NPM_CONFIG_PROVENANCE: true
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   release-lts:
     name: LTS Release
@@ -116,7 +117,7 @@ jobs:
       - name: Publish LTS packages
         run: npm run publish:changesets
         env:
-          NPM_CONFIG_PROVENANCE: true
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Exit LTS mode
         if: always()
@@ -159,7 +160,7 @@ jobs:
       - name: Publish RC packages
         run: npm run publish:changesets
         env:
-          NPM_CONFIG_PROVENANCE: true
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Exit prerelease mode
         if: always()
