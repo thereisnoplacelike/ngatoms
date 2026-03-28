@@ -11,6 +11,7 @@ jobs:
   check-changeset:
     name: Check changeset
     runs-on: ubuntu-latest
+    if: github.actor != 'dependabot[bot]'
 
     steps:
       - name: Checkout PR branch
