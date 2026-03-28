@@ -163,6 +163,7 @@ jobs:
         run: npm run publish:changesets
         env:
           NPM_CONFIG_PROVENANCE: true
+          NPM_CONFIG_LOGLEVEL: verbose
 
       - name: Exit prerelease mode
         if: always()
