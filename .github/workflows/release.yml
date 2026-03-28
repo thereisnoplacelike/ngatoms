@@ -77,8 +77,6 @@ jobs:
 
       - name: Publish packages
         run: npm run publish:changesets
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   release-lts:
     name: LTS Release
@@ -117,8 +115,6 @@ jobs:
 
       - name: Publish LTS packages
         run: npm run publish:changesets
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Exit LTS mode
         if: always()
@@ -159,15 +155,8 @@ jobs:
       - name: Build packages
         run: npm run build --if-present
 
-      - name: Verify npm auth
-        run: npm whoami
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Publish RC packages
         run: npm run publish:changesets
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Exit prerelease mode
         if: always()
