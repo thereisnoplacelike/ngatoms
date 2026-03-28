@@ -64,7 +64,6 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: npm ci
@@ -101,7 +100,6 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: npm ci
@@ -145,7 +143,6 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
         run: npm ci
@@ -159,18 +156,10 @@ jobs:
       - name: Build packages
         run: npm run build --if-present
 
-      - name: Debug OIDC claims
-        run: |
-          OIDC_TOKEN=$(curl -sS "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=npm" \
-            -H "Authorization: bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" \
-            | python3 -c "import sys,json; print(json.load(sys.stdin)['value'])")
-          echo "$OIDC_TOKEN" | cut -d. -f2 | base64 -d 2>/dev/null | python3 -m json.tool || true
-
       - name: Publish RC packages
         run: npm run publish:changesets
         env:
           NPM_CONFIG_PROVENANCE: true
-          NPM_CONFIG_LOGLEVEL: verbose
 
       - name: Exit prerelease mode
         if: always()
