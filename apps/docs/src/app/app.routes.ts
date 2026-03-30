@@ -102,4 +102,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/number-input/number-input-page.component').then(m => m.NumberInputPageComponent),
   },
+  {
+    path: 'popover',
+    loadComponent: () =>
+      import('./pages/popover/popover-page.component').then(m => m.PopoverPageComponent),
+  },
 ];

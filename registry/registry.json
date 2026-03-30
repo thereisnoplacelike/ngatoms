@@ -213,6 +213,19 @@
         "packages/primitives/src/number-input/index.ts"
       ],
       "cssImport": "number-input.styles.css"
+    },
+    {
+      "name": "popover",
+      "description": "A floating panel anchored to a trigger element with 4 placements, outside-click dismissal, and Escape key support.",
+      "files": [
+        "packages/primitives/src/popover/popover.component.ts",
+        "packages/primitives/src/popover/popover.component.html",
+        "packages/primitives/src/popover/popover.component.css",
+        "packages/primitives/src/popover/popover-trigger.directive.ts",
+        "packages/primitives/src/popover/popover.styles.css",
+        "packages/primitives/src/popover/index.ts"
+      ],
+      "cssImport": "popover.styles.css"
     }
   ]
 }

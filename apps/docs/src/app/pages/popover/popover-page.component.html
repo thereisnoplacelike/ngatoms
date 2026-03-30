@@ -1,0 +1,53 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Popover</h1>
+    <p class="page-desc">A floating panel anchored to a trigger element. Supports 4 placements, closes on outside click or Escape.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Default</h2>
+    <div class="demo-row">
+      <nga-popover [open]="open()" (openChange)="open.set($event)" placement="bottom">
+        <button class="demo-trigger" ngAtomsPopoverTrigger>Open popover</button>
+        <div class="demo-content">
+          <p class="demo-content-title">About NgAtoms</p>
+          <p class="demo-content-body">Angular UI primitives you copy into your project — no runtime deps, full control.</p>
+        </div>
+      </nga-popover>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Placements</h2>
+    <div class="placements-grid">
+      <div class="placement-item">
+        <span class="placement-label">top</span>
+        <nga-popover [open]="openTop()" (openChange)="openTop.set($event)" placement="top">
+          <button class="demo-trigger" ngAtomsPopoverTrigger>Top</button>
+          <p class="demo-content-body">Opens above.</p>
+        </nga-popover>
+      </div>
+      <div class="placement-item">
+        <span class="placement-label">bottom</span>
+        <nga-popover [open]="openBottom()" (openChange)="openBottom.set($event)" placement="bottom">
+          <button class="demo-trigger" ngAtomsPopoverTrigger>Bottom</button>
+          <p class="demo-content-body">Opens below.</p>
+        </nga-popover>
+      </div>
+      <div class="placement-item">
+        <span class="placement-label">left</span>
+        <nga-popover [open]="openLeft()" (openChange)="openLeft.set($event)" placement="left">
+          <button class="demo-trigger" ngAtomsPopoverTrigger>Left</button>
+          <p class="demo-content-body">Opens to the left.</p>
+        </nga-popover>
+      </div>
+      <div class="placement-item">
+        <span class="placement-label">right</span>
+        <nga-popover [open]="openRight()" (openChange)="openRight.set($event)" placement="right">
+          <button class="demo-trigger" ngAtomsPopoverTrigger>Right</button>
+          <p class="demo-content-body">Opens to the right.</p>
+        </nga-popover>
+      </div>
+    </div>
+  </section>
+</app-component-demo>

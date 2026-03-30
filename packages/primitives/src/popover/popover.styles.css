@@ -1,0 +1,80 @@
+/* =============================================================
+   NgAtoms Popover — popover.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/popover.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-popover-bg:     var(--nga-color-card, oklch(100% 0 0));
+  --nga-popover-border: var(--nga-color-border, oklch(92% 0.004 85));
+  --nga-popover-radius: var(--nga-radius-md, 0.5rem);
+  --nga-popover-shadow: 0 4px 24px oklch(0% 0 0 / 0.10), 0 1px 4px oklch(0% 0 0 / 0.06);
+}
+
+.dark {
+  --nga-popover-shadow: 0 4px 24px oklch(0% 0 0 / 0.35), 0 1px 4px oklch(0% 0 0 / 0.18);
+}
+
+/* ── Host ───────────────────────────────────────────────────── */
+.nga-popover-root {
+  display: inline-block;
+}
+
+/* ── Panel base ─────────────────────────────────────────────── */
+.nga-popover-panel {
+  position: fixed;
+  z-index: 9999;
+  min-width: 14rem;
+  max-width: calc(100vw - 2rem);
+  padding: 1rem;
+  background: var(--nga-popover-bg);
+  border: 1px solid var(--nga-popover-border);
+  border-radius: var(--nga-popover-radius);
+  box-shadow: var(--nga-popover-shadow);
+  color: var(--nga-color-foreground, oklch(13% 0.002 85));
+  font-size: var(--nga-text-sm, 0.875rem);
+  line-height: 1.5;
+  /* Hidden until open */
+  display: none;
+}
+
+.nga-popover-panel--open {
+  display: block;
+}
+
+/* ── Entry animations (direction matches placement) ─────────── */
+.nga-popover-panel--open.nga-popover-panel--bottom {
+  animation: nga-popover-in-bottom 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nga-popover-panel--open.nga-popover-panel--top {
+  animation: nga-popover-in-top 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nga-popover-panel--open.nga-popover-panel--left {
+  animation: nga-popover-in-left 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nga-popover-panel--open.nga-popover-panel--right {
+  animation: nga-popover-in-right 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes nga-popover-in-bottom {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes nga-popover-in-top {
+  from { opacity: 0; transform: translateY(6px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes nga-popover-in-left {
+  from { opacity: 0; transform: translateX(6px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes nga-popover-in-right {
+  from { opacity: 0; transform: translateX(-6px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
