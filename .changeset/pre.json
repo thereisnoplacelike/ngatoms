@@ -1,10 +1,10 @@
 {
-  "mode": "exit",
-  "tag": "alpha",
+  "mode": "pre",
+  "tag": "rc",
   "initialVersions": {
     "@ngatoms/ngatoms-docs": "0.0.2",
     "@ngatoms/ngatoms-cli": "0.0.2",
-    "ngatoms": "0.2.0",
+    "ngatoms": "0.3.0",
     "@ngatoms/ngatoms-primitives": "0.1.0",
     "@ngatoms/ngatoms-tokens": "0.1.0",
     "@ngatoms/ngatoms-utils": "0.0.2"
