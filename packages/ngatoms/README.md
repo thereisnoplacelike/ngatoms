@@ -67,8 +67,12 @@ Full docs and previews at **[ngatoms.com](https://ngatoms.com)**.
 | `button` | 5 variants, 5 sizes, loading state, icon support | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `card` | Container with header, content, footer slots | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `checkbox` | Checked, unchecked, and indeterminate states | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `date-picker` | Custom calendar overlay — single/range, min/max, i18n, month/year picker | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `dialog` | Modal using native `<dialog>`, focus trap, backdrop | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `dropdown-menu` | Contextual action menu — 4 placements, flip, icons, keyboard navigation | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `input` | 3 variants, 5 sizes, invalid state | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `number-input` | Numeric input with increment/decrement controls | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `popover` | Floating content anchored to a trigger — 4 placements, flip | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `progress` | Progress bar — determinate and indeterminate | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `radio-group` | Radio button group with keyboard navigation | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `select` | Styled native select — 3 variants, 5 sizes | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
@@ -78,10 +82,6 @@ Full docs and previews at **[ngatoms.com](https://ngatoms.com)**.
 | `tabs` | Underline and pills variants, keyboard navigation | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `textarea` | Multiline input with auto-resize | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
 | `tooltip` | Floating label — 4 placements, viewport clamping | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `date-picker` | Calendar overlay for date selection | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `dropdown-menu` | Contextual action menu | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `number-input` | Numeric input with increment/decrement controls | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `popover` | Floating content anchored to a trigger | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
 | `breadcrumb` | Hierarchical navigation trail | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
 | `combobox` | Text input with filtered dropdown | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
 | `file-upload` | Drag-and-drop file input zone | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
