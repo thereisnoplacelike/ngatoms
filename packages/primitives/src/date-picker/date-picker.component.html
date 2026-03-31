@@ -1,0 +1,144 @@
+<button
+  type="button"
+  class="nga-date-picker-trigger"
+  [class.nga-date-picker-trigger--sm]="size() === 'sm'"
+  [class.nga-date-picker-trigger--md]="size() === 'md'"
+  [class.nga-date-picker-trigger--lg]="size() === 'lg'"
+  [class.nga-date-picker-trigger--open]="open()"
+  [class.nga-date-picker-trigger--invalid]="invalid()"
+  [class.nga-date-picker-trigger--disabled]="disabled()"
+  [attr.disabled]="disabled() || null"
+  [attr.aria-expanded]="open()"
+  aria-haspopup="dialog"
+  (click)="toggle()"
+>
+  <span
+    class="nga-date-picker-trigger-text"
+    [class.nga-date-picker-trigger-text--placeholder]="!displayValue()"
+  >{{ displayValue() || placeholder() }}</span>
+  <svg class="nga-date-picker-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+  </svg>
+</button>
+
+<div
+  #panelEl
+  class="nga-date-picker-panel"
+  [class.nga-date-picker-panel--open]="open()"
+  role="dialog"
+  aria-label="Date picker"
+  [attr.aria-hidden]="!open() || null"
+>
+  <!-- ── Header ───────────────────────────────────────────── -->
+  <div class="nga-date-picker-header">
+    @if (view() === 'days') {
+      <button type="button" class="nga-date-picker-nav" (click)="prevMonth()" aria-label="Previous month">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <div class="nga-date-picker-header-labels">
+        <button type="button" class="nga-date-picker-header-btn" (click)="toggleMonthView()">
+          {{ monthLabels()[viewMonth()] }}
+        </button>
+        <button type="button" class="nga-date-picker-header-btn" (click)="toggleYearView()">
+          {{ viewYear() }}
+        </button>
+      </div>
+      <button type="button" class="nga-date-picker-nav" (click)="nextMonth()" aria-label="Next month">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    } @else if (view() === 'months') {
+      <button type="button" class="nga-date-picker-nav" (click)="toggleMonthView()" aria-label="Back to days">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <button type="button" class="nga-date-picker-header-btn" (click)="toggleYearView()">
+        {{ viewYear() }}
+      </button>
+      <span></span>
+    } @else {
+      <button type="button" class="nga-date-picker-nav" (click)="prevYearRange()" aria-label="Previous years">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <span class="nga-date-picker-month-label">{{ yearRangeLabel() }}</span>
+      <button type="button" class="nga-date-picker-nav" (click)="nextYearRange()" aria-label="Next years">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    }
+  </div>
+
+  <!-- ── Day grid ─────────────────────────────────────────── -->
+  @if (view() === 'days') {
+    <div class="nga-date-picker-grid" (mouseleave)="onGridLeave()">
+      @for (h of dayLabels(); track h) {
+        <span class="nga-date-picker-day-header">{{ h }}</span>
+      }
+      @for (day of calendarDays(); track day.dateStr) {
+        <button
+          type="button"
+          class="nga-date-picker-day"
+          [class.nga-date-picker-day--outside]="!day.isCurrentMonth"
+          [class.nga-date-picker-day--today]="day.isToday"
+          [class.nga-date-picker-day--selected]="day.isSelected"
+          [class.nga-date-picker-day--range-start]="day.isRangeStart"
+          [class.nga-date-picker-day--range-end]="day.isRangeEnd"
+          [class.nga-date-picker-day--in-range]="day.isInRange"
+          [class.nga-date-picker-day--disabled]="day.isDisabled"
+          [attr.aria-disabled]="day.isDisabled || null"
+          [attr.aria-pressed]="day.isSelected"
+          [attr.aria-label]="day.date.toLocaleDateString(locale(), { month: 'long', day: 'numeric', year: 'numeric' })"
+          (click)="selectDay(day)"
+          (mouseenter)="onDayHover(day)"
+        >{{ day.day }}</button>
+      }
+    </div>
+  }
+
+  <!-- ── Month grid ────────────────────────────────────────── -->
+  @if (view() === 'months') {
+    <div class="nga-date-picker-month-grid">
+      @for (m of monthLabels(); track m; let i = $index) {
+        <button
+          type="button"
+          class="nga-date-picker-month-cell"
+          [class.nga-date-picker-month-cell--active]="i === viewMonth()"
+          (click)="selectMonth(i)"
+        >{{ monthsShort[i] }}</button>
+      }
+    </div>
+  }
+
+  <!-- ── Year grid ─────────────────────────────────────────── -->
+  @if (view() === 'years') {
+    <div class="nga-date-picker-year-grid">
+      @for (y of yearRange(); track y) {
+        <button
+          type="button"
+          class="nga-date-picker-year-cell"
+          [class.nga-date-picker-year-cell--active]="y === viewYear()"
+          (click)="selectYear(y)"
+        >{{ y }}</button>
+      }
+    </div>
+  }
+
+  <!-- ── Today button ──────────────────────────────────────── -->
+  @if (showToday()) {
+    <div class="nga-date-picker-footer">
+      <button type="button" class="nga-date-picker-today-btn" (click)="selectToday()">
+        {{ todayLabel() }}
+      </button>
+    </div>
+  }
+</div>

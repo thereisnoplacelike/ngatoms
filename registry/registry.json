@@ -218,7 +218,9 @@
       "name": "date-picker",
       "description": "A styled native date input with 3 variants, 5 sizes, invalid state, and cross-browser webkit normalizations.",
       "files": [
-        "packages/primitives/src/date-picker/date-picker.directive.ts",
+        "packages/primitives/src/date-picker/date-picker.component.ts",
+        "packages/primitives/src/date-picker/date-picker.component.html",
+        "packages/primitives/src/date-picker/date-picker.component.css",
         "packages/primitives/src/date-picker/date-picker.styles.css",
         "packages/primitives/src/date-picker/index.ts"
       ],
