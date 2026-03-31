@@ -1,0 +1,14 @@
+<ng-content select="[ngAtomsDropdownTrigger]" />
+<div
+  #panelEl
+  class="nga-dropdown-panel"
+  [class.nga-dropdown-panel--open]="open()"
+  [class.nga-dropdown-panel--top]="activePlacement() === 'top'"
+  [class.nga-dropdown-panel--bottom]="activePlacement() === 'bottom'"
+  [class.nga-dropdown-panel--left]="activePlacement() === 'left'"
+  [class.nga-dropdown-panel--right]="activePlacement() === 'right'"
+  role="menu"
+  [attr.aria-hidden]="!open() || null"
+>
+  <ng-content />
+</div>

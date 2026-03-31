@@ -19,3 +19,5 @@ export * from './avatar';
 export * from './radio-group';
 export * from './number-input';
 export * from './popover';
+export * from './dropdown-menu';
+export * from './date-picker';

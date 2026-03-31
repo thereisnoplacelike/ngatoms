@@ -107,4 +107,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/popover/popover-page.component').then(m => m.PopoverPageComponent),
   },
+  {
+    path: 'date-picker',
+    loadComponent: () =>
+      import('./pages/date-picker/date-picker-page.component').then(m => m.DatePickerPageComponent),
+  },
+  {
+    path: 'dropdown-menu',
+    loadComponent: () =>
+      import('./pages/dropdown-menu/dropdown-menu-page.component').then(m => m.DropdownMenuPageComponent),
+  },
 ];

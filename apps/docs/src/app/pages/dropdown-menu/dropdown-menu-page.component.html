@@ -1,0 +1,147 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Dropdown Menu</h1>
+    <p class="page-desc">A contextual action menu anchored to a trigger. Supports keyboard navigation, labels, separators, disabled and destructive item variants, and optional icons.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Default</h2>
+    <div class="demo-row">
+      <nga-dropdown-menu>
+        <button class="demo-trigger" ngAtomsDropdownTrigger>
+          Options
+          <i class="ph-bold ph-caret-down nga-dropdown-caret"></i>
+        </button>
+        <span ngAtomsDropdownLabel>Account</span>
+        <button ngAtomsDropdownItem>Profile</button>
+        <button ngAtomsDropdownItem>Settings</button>
+        <div ngAtomsDropdownSeparator></div>
+        <button ngAtomsDropdownItem>Help</button>
+        <button ngAtomsDropdownItem [destructive]="true">Sign out</button>
+      </nga-dropdown-menu>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">With Icons</h2>
+    <div class="demo-row">
+      <nga-dropdown-menu>
+        <button class="demo-trigger" ngAtomsDropdownTrigger>
+          Actions
+          <i class="ph-bold ph-caret-down nga-dropdown-caret"></i>
+        </button>
+        <button ngAtomsDropdownItem>
+          <i class="ph-bold ph-pencil-simple"></i>
+          Edit
+        </button>
+        <button ngAtomsDropdownItem>
+          <i class="ph-bold ph-copy"></i>
+          Duplicate
+        </button>
+        <button ngAtomsDropdownItem>
+          <i class="ph-bold ph-link"></i>
+          Copy link
+        </button>
+        <div ngAtomsDropdownSeparator></div>
+        <button ngAtomsDropdownItem [destructive]="true">
+          <i class="ph-bold ph-trash"></i>
+          Delete
+        </button>
+      </nga-dropdown-menu>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Disabled Items</h2>
+    <div class="demo-row">
+      <nga-dropdown-menu>
+        <button class="demo-trigger" ngAtomsDropdownTrigger>
+          File
+          <i class="ph-bold ph-caret-down nga-dropdown-caret"></i>
+        </button>
+        <button ngAtomsDropdownItem>
+          <i class="ph-bold ph-file-plus"></i>
+          New file
+        </button>
+        <button ngAtomsDropdownItem [disabled]="true">
+          <i class="ph-bold ph-upload-simple"></i>
+          Upload
+        </button>
+        <div ngAtomsDropdownSeparator></div>
+        <button ngAtomsDropdownItem [destructive]="true" [disabled]="true">
+          <i class="ph-bold ph-trash"></i>
+          Delete all
+        </button>
+      </nga-dropdown-menu>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Grouped Items</h2>
+    <div class="demo-row">
+      <nga-dropdown-menu>
+        <button class="demo-trigger" ngAtomsDropdownTrigger>
+          View
+          <i class="ph-bold ph-caret-down nga-dropdown-caret"></i>
+        </button>
+        <span ngAtomsDropdownLabel>Layout</span>
+        <button ngAtomsDropdownItem>
+          <i class="ph-bold ph-list"></i>
+          List
+        </button>
+        <button ngAtomsDropdownItem>
+          <i class="ph-bold ph-grid-four"></i>
+          Grid
+        </button>
+        <button ngAtomsDropdownItem>
+          <i class="ph-bold ph-columns"></i>
+          Board
+        </button>
+        <div ngAtomsDropdownSeparator></div>
+        <span ngAtomsDropdownLabel>Sort by</span>
+        <button ngAtomsDropdownItem>Name</button>
+        <button ngAtomsDropdownItem>Date modified</button>
+        <button ngAtomsDropdownItem>Size</button>
+      </nga-dropdown-menu>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Alignment</h2>
+    <div class="align-grid">
+      <div class="align-item">
+        <span class="align-label">start (default)</span>
+        <nga-dropdown-menu align="start">
+          <button class="demo-trigger" ngAtomsDropdownTrigger>
+            Start
+            <i class="ph-bold ph-caret-down nga-dropdown-caret"></i>
+          </button>
+          <button ngAtomsDropdownItem>Item one</button>
+          <button ngAtomsDropdownItem>Item two</button>
+        </nga-dropdown-menu>
+      </div>
+      <div class="align-item">
+        <span class="align-label">center</span>
+        <nga-dropdown-menu align="center">
+          <button class="demo-trigger" ngAtomsDropdownTrigger>
+            Center
+            <i class="ph-bold ph-caret-down nga-dropdown-caret"></i>
+          </button>
+          <button ngAtomsDropdownItem>Item one</button>
+          <button ngAtomsDropdownItem>Item two</button>
+        </nga-dropdown-menu>
+      </div>
+      <div class="align-item">
+        <span class="align-label">end</span>
+        <nga-dropdown-menu align="end">
+          <button class="demo-trigger" ngAtomsDropdownTrigger>
+            End
+            <i class="ph-bold ph-caret-down nga-dropdown-caret"></i>
+          </button>
+          <button ngAtomsDropdownItem>Item one</button>
+          <button ngAtomsDropdownItem>Item two</button>
+        </nga-dropdown-menu>
+      </div>
+    </div>
+  </section>
+</app-component-demo>

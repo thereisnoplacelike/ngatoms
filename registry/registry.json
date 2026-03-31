@@ -215,6 +215,32 @@
       "cssImport": "number-input.styles.css"
     },
     {
+      "name": "date-picker",
+      "description": "A styled native date input with 3 variants, 5 sizes, invalid state, and cross-browser webkit normalizations.",
+      "files": [
+        "packages/primitives/src/date-picker/date-picker.directive.ts",
+        "packages/primitives/src/date-picker/date-picker.styles.css",
+        "packages/primitives/src/date-picker/index.ts"
+      ],
+      "cssImport": "date-picker.styles.css"
+    },
+    {
+      "name": "dropdown-menu",
+      "description": "A contextual action menu with trigger, items, separators, and labels. Supports keyboard navigation, disabled and destructive item variants, and 4 placements with start/center/end alignment.",
+      "files": [
+        "packages/primitives/src/dropdown-menu/dropdown-menu.component.ts",
+        "packages/primitives/src/dropdown-menu/dropdown-menu.component.html",
+        "packages/primitives/src/dropdown-menu/dropdown-menu.component.css",
+        "packages/primitives/src/dropdown-menu/dropdown-trigger.directive.ts",
+        "packages/primitives/src/dropdown-menu/dropdown-item.directive.ts",
+        "packages/primitives/src/dropdown-menu/dropdown-separator.directive.ts",
+        "packages/primitives/src/dropdown-menu/dropdown-label.directive.ts",
+        "packages/primitives/src/dropdown-menu/dropdown-menu.styles.css",
+        "packages/primitives/src/dropdown-menu/index.ts"
+      ],
+      "cssImport": "dropdown-menu.styles.css"
+    },
+    {
       "name": "popover",
       "description": "A floating panel anchored to a trigger element with 4 placements, outside-click dismissal, and Escape key support.",
       "files": [

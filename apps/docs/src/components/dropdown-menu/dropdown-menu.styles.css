@@ -1,0 +1,176 @@
+/* =============================================================
+   NgAtoms Dropdown Menu — dropdown-menu.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/dropdown-menu.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-dropdown-bg:          var(--nga-color-card, oklch(100% 0 0));
+  --nga-dropdown-border:      var(--nga-color-border, oklch(92% 0.004 85));
+  --nga-dropdown-radius:      var(--nga-radius-md, 0.5rem);
+  --nga-dropdown-shadow:      0 4px 24px oklch(0% 0 0 / 0.10), 0 1px 4px oklch(0% 0 0 / 0.06);
+  --nga-dropdown-padding:     0.25rem;
+  --nga-dropdown-min-width:   10rem;
+
+  --nga-dropdown-item-height:      2rem;
+  --nga-dropdown-item-px:          0.625rem;
+  --nga-dropdown-item-radius:      calc(var(--nga-radius-md, 0.5rem) - 2px);
+  --nga-dropdown-item-gap:         0.5rem;
+  --nga-dropdown-item-color:       var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-dropdown-item-hover-bg:    var(--nga-color-muted, oklch(97% 0.002 85));
+  --nga-dropdown-item-focus-bg:    var(--nga-color-muted, oklch(97% 0.002 85));
+  --nga-dropdown-item-disabled-opacity: 0.5;
+  --nga-dropdown-item-destructive-color: var(--nga-color-destructive, oklch(55% 0.22 27));
+
+  --nga-dropdown-label-color:  var(--nga-color-muted-foreground, oklch(55% 0.008 85));
+  --nga-dropdown-label-size:   var(--nga-text-xs, 0.75rem);
+
+  --nga-dropdown-separator-color: var(--nga-color-border, oklch(92% 0.004 85));
+}
+
+.dark {
+  --nga-dropdown-shadow: 0 4px 24px oklch(0% 0 0 / 0.35), 0 1px 4px oklch(0% 0 0 / 0.18);
+}
+
+/* ── Host ───────────────────────────────────────────────────── */
+.nga-dropdown-root {
+  display: inline-block;
+}
+
+/* ── Panel ──────────────────────────────────────────────────── */
+.nga-dropdown-panel {
+  position: fixed;
+  z-index: 9999;
+  min-width: var(--nga-dropdown-min-width);
+  padding: var(--nga-dropdown-padding);
+  background: var(--nga-dropdown-bg);
+  border: 1px solid var(--nga-dropdown-border);
+  border-radius: var(--nga-dropdown-radius);
+  box-shadow: var(--nga-dropdown-shadow);
+  color: var(--nga-dropdown-item-color);
+  font-size: var(--nga-text-sm, 0.875rem);
+  /* Hidden until open */
+  display: none;
+}
+
+.nga-dropdown-panel--open {
+  display: block;
+}
+
+/* ── Entry animations ───────────────────────────────────────── */
+.nga-dropdown-panel--open.nga-dropdown-panel--bottom {
+  animation: nga-dropdown-in-bottom 130ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nga-dropdown-panel--open.nga-dropdown-panel--top {
+  animation: nga-dropdown-in-top 130ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nga-dropdown-panel--open.nga-dropdown-panel--left {
+  animation: nga-dropdown-in-left 130ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nga-dropdown-panel--open.nga-dropdown-panel--right {
+  animation: nga-dropdown-in-right 130ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes nga-dropdown-in-bottom {
+  from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes nga-dropdown-in-top {
+  from { opacity: 0; transform: translateY(4px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes nga-dropdown-in-left {
+  from { opacity: 0; transform: translateX(4px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes nga-dropdown-in-right {
+  from { opacity: 0; transform: translateX(-4px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Item ───────────────────────────────────────────────────── */
+.nga-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: var(--nga-dropdown-item-gap);
+  width: 100%;
+  min-height: var(--nga-dropdown-item-height);
+  padding: 0 var(--nga-dropdown-item-px);
+  border: none;
+  border-radius: var(--nga-dropdown-item-radius);
+  background: transparent;
+  color: var(--nga-dropdown-item-color);
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 1;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.nga-dropdown-item:hover {
+  background: var(--nga-dropdown-item-hover-bg);
+}
+
+.nga-dropdown-item:focus-visible,
+.nga-dropdown-item:focus {
+  background: var(--nga-dropdown-item-focus-bg);
+}
+
+/* ── Item variants ──────────────────────────────────────────── */
+.nga-dropdown-item--destructive {
+  color: var(--nga-dropdown-item-destructive-color);
+}
+
+.nga-dropdown-item--disabled {
+  opacity: var(--nga-dropdown-item-disabled-opacity);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* ── Item icon ──────────────────────────────────────────────── */
+.nga-dropdown-item i,
+.nga-dropdown-item svg {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ── Trigger caret flip ─────────────────────────────────────── */
+.nga-dropdown-trigger--open .nga-dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.nga-dropdown-caret {
+  transition: transform 150ms ease;
+  display: inline-block;
+}
+
+/* ── Separator ──────────────────────────────────────────────── */
+.nga-dropdown-separator {
+  height: 1px;
+  margin: var(--nga-dropdown-padding) calc(-1 * var(--nga-dropdown-padding));
+  background: var(--nga-dropdown-separator-color);
+}
+
+/* ── Label ──────────────────────────────────────────────────── */
+.nga-dropdown-label {
+  display: block;
+  padding: 0.375rem var(--nga-dropdown-item-px) 0.25rem;
+  color: var(--nga-dropdown-label-color);
+  font-size: var(--nga-dropdown-label-size);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
