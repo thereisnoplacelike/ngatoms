@@ -80,6 +80,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Push tags
+        run: git push --follow-tags
+
   release-lts:
     name: LTS Release
     needs: ci
@@ -119,6 +122,9 @@ jobs:
         run: npm run publish:changesets
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push tags
+        run: git push --follow-tags
 
       - name: Exit LTS mode
         if: always()
@@ -163,6 +169,9 @@ jobs:
         run: npm run publish:changesets
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push tags
+        run: git push --follow-tags
 
       - name: Exit prerelease mode
         if: always()

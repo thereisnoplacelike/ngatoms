@@ -13,7 +13,7 @@ describe('github.js — URL building', () => {
     if (prerelease) {
       assert.equal(getRef(), prerelease[1]);
     } else {
-      assert.equal(getRef(), `v${VERSION}`);
+      assert.equal(getRef(), `ngatoms@${VERSION}`);
     }
   });
 
