@@ -3,18 +3,18 @@
 }
 
 .page-title {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: 1.75rem;
+  font-weight: var(--nga-font-weight-semibold, 600);
+  letter-spacing: var(--nga-tracking-tight, -0.02em);
   margin: 0 0 0.5rem;
   color: var(--nga-color-foreground);
 }
 
 .page-desc {
-  font-size: 14px;
+  font-size: var(--nga-text-sm, 0.875rem);
   color: var(--nga-color-muted-foreground);
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--nga-leading-relaxed, 1.625);
 }
 
 .showcase-section {
@@ -22,9 +22,9 @@
 }
 
 .section-title {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: var(--nga-text-xs, 0.75rem);
+  font-weight: var(--nga-font-weight-semibold, 600);
+  letter-spacing: var(--nga-tracking-wider, 0.1em);
   text-transform: uppercase;
   color: var(--nga-color-muted-foreground);
   margin: 0 0 1rem;
@@ -40,7 +40,7 @@
 
 .content-placeholder {
   margin: 0;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--nga-color-muted-foreground);
 }
 
@@ -66,7 +66,7 @@
 }
 
 .notif-text {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--nga-color-foreground);
 }
 
@@ -87,15 +87,15 @@
 }
 
 .key-label {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: var(--nga-text-xs, 0.75rem);
+  font-weight: var(--nga-font-weight-semibold, 600);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--nga-tracking-wide, 0.05em);
   color: var(--nga-color-muted-foreground);
 }
 
 .key-value {
   font-family: var(--nga-font-mono);
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--nga-color-foreground);
 }

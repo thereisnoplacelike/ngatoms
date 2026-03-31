@@ -13,3 +13,12 @@ export * from './tabs';
 export * from './separator';
 export * from './switch';
 export * from './textarea';
+export * from './spinner';
+export * from './progress';
+export * from './avatar';
+export * from './radio-group';
+export * from './number-input';
+export * from './popover';
+export * from './dropdown-menu';
+export * from './date-picker';
+

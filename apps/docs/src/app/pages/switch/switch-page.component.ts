@@ -18,21 +18,36 @@ export class SwitchPageComponent {
 
   readonly codeFiles: CodeFile[] = [
     {
-      name: 'example.component.html',
+      name: 'states.html',
       language: 'html',
-      code: `<label>
+      code: `<!-- Off -->
+<label>
   <input ngAtomsSwitch [(checked)]="isEnabled" />
-  <span>Enable feature</span>
+  <span>Off</span>
 </label>
 
-<!-- Disabled -->
+<!-- On -->
+<label>
+  <input ngAtomsSwitch [checked]="true" />
+  <span>On</span>
+</label>
+
+<!-- Disabled off -->
+<label>
+  <input ngAtomsSwitch [checked]="false" disabled />
+  <span>Off</span>
+</label>
+
+<!-- Disabled on -->
 <label>
   <input ngAtomsSwitch [checked]="true" disabled />
-  <span>Always on</span>
-</label>
-
-<!-- Sizes -->
-<input ngAtomsSwitch size="sm" [checked]="true" />
+  <span>On</span>
+</label>`,
+    },
+    {
+      name: 'sizes.html',
+      language: 'html',
+      code: `<input ngAtomsSwitch size="sm" [checked]="true" />
 <input ngAtomsSwitch size="md" [checked]="true" />
 <input ngAtomsSwitch size="lg" [checked]="true" />`,
     },

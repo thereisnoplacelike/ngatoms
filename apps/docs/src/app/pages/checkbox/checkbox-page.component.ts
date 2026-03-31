@@ -16,21 +16,48 @@ export class CheckboxPageComponent {
 
   readonly codeFiles: CodeFile[] = [
     {
-      name: 'example.component.html',
+      name: 'states.html',
       language: 'html',
-      code: `<label>
+      code: `<!-- Unchecked -->
+<label>
   <input ngAtomsCheckbox [(checked)]="isChecked" />
-  <span>Accept terms and conditions</span>
+  <span>Unchecked</span>
 </label>
 
+<!-- Checked -->
+<label>
+  <input ngAtomsCheckbox [checked]="true" />
+  <span>Checked</span>
+</label>
+
+<!-- Indeterminate -->
 <label>
   <input ngAtomsCheckbox [indeterminate]="true" />
-  <span>Indeterminate state</span>
+  <span>Indeterminate</span>
 </label>
 
+<!-- Disabled -->
 <label>
   <input ngAtomsCheckbox [checked]="true" disabled />
   <span>Disabled</span>
+</label>`,
+    },
+    {
+      name: 'sizes.html',
+      language: 'html',
+      code: `<label>
+  <input ngAtomsCheckbox size="sm" [checked]="true" />
+  <span>Small</span>
+</label>
+
+<label>
+  <input ngAtomsCheckbox size="md" [checked]="true" />
+  <span>Medium</span>
+</label>
+
+<label>
+  <input ngAtomsCheckbox size="lg" [checked]="true" />
+  <span>Large</span>
 </label>`,
     },
     {

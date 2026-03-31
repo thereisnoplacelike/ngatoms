@@ -3,18 +3,18 @@
 }
 
 .page-title {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: 1.75rem;
+  font-weight: var(--nga-font-weight-semibold, 600);
+  letter-spacing: var(--nga-tracking-tight, -0.02em);
   margin: 0 0 0.5rem;
   color: var(--nga-color-foreground);
 }
 
 .page-desc {
-  font-size: 14px;
+  font-size: var(--nga-text-sm, 0.875rem);
   color: var(--nga-color-muted-foreground);
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--nga-leading-relaxed, 1.625);
 }
 
 .showcase-section {
@@ -22,9 +22,9 @@
 }
 
 .section-title {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: var(--nga-text-xs, 0.75rem);
+  font-weight: var(--nga-font-weight-semibold, 600);
+  letter-spacing: var(--nga-tracking-wider, 0.1em);
   text-transform: uppercase;
   color: var(--nga-color-muted-foreground);
   margin: 0 0 1rem;
@@ -41,17 +41,17 @@
 }
 
 .panel-title {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 0.9375rem;
+  font-weight: var(--nga-font-weight-semibold, 600);
   color: var(--nga-color-foreground);
   margin: 0 0 0.25rem;
 }
 
 .panel-desc {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--nga-color-muted-foreground);
   margin: 0 0 1.25rem;
-  line-height: 1.5;
+  line-height: var(--nga-leading-normal, 1.5);
 }
 
 .panel-fields {
@@ -75,13 +75,13 @@
 }
 
 .panel-field-label {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--nga-color-muted-foreground);
 }
 
 .panel-field-value {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 0.8125rem;
+  font-weight: var(--nga-font-weight-medium, 500);
   color: var(--nga-color-foreground);
 }
 
@@ -91,7 +91,7 @@
 
 .panel-field-value--muted {
   color: var(--nga-color-muted-foreground);
-  font-weight: 400;
+  font-weight: var(--nga-font-weight-normal, 400);
 }
 
 /* ── Stats ──────────────────────────────────────────────────── */
@@ -111,14 +111,14 @@
 }
 
 .stat-value {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-size: 1.375rem;
+  font-weight: var(--nga-font-weight-semibold, 600);
+  letter-spacing: var(--nga-tracking-tight, -0.02em);
   color: var(--nga-color-foreground);
   line-height: 1.2;
 }
 
 .stat-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--nga-color-muted-foreground);
 }

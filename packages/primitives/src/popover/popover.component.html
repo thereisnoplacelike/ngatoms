@@ -1,0 +1,14 @@
+<ng-content select="[ngAtomsPopoverTrigger]" />
+<div
+  #panelEl
+  class="nga-popover-panel"
+  [class.nga-popover-panel--open]="open()"
+  [class.nga-popover-panel--top]="activePlacement() === 'top'"
+  [class.nga-popover-panel--bottom]="activePlacement() === 'bottom'"
+  [class.nga-popover-panel--left]="activePlacement() === 'left'"
+  [class.nga-popover-panel--right]="activePlacement() === 'right'"
+  role="dialog"
+  [attr.aria-hidden]="!open() || null"
+>
+  <ng-content />
+</div>

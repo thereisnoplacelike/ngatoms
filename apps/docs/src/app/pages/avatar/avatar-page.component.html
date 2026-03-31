@@ -1,0 +1,57 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Avatar</h1>
+    <p class="page-desc">Displays a user image with fallback to initials or a generic icon.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Image</h2>
+    <p class="section-note">Images are random avatars served by <a class="section-link" href="https://i.pravatar.cc" target="_blank" rel="noopener noreferrer"><code>i.pravatar.cc</code></a>.</p>
+    <div class="sizes-grid">
+      @for (size of sizes; track size) {
+        <div class="size-item">
+          <span class="size-label">{{ size }}</span>
+          <nga-avatar src="https://i.pravatar.cc/150" alt="Jane Doe" [size]="size"></nga-avatar>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Initials fallback</h2>
+    <div class="sizes-grid">
+      @for (size of sizes; track size) {
+        <div class="size-item">
+          <span class="size-label">{{ size }}</span>
+          <nga-avatar fallback="JD" [size]="size"></nga-avatar>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Icon fallback</h2>
+    <div class="sizes-grid">
+      @for (size of sizes; track size) {
+        <div class="size-item">
+          <span class="size-label">{{ size }}</span>
+          <nga-avatar [size]="size"></nga-avatar>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Broken image</h2>
+    <div class="states-grid">
+      <div class="state-item">
+        <span class="state-label">Broken → initials</span>
+        <nga-avatar src="broken-url.jpg" fallback="AB" size="md"></nga-avatar>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Broken → icon</span>
+        <nga-avatar src="broken-url.jpg" size="md"></nga-avatar>
+      </div>
+    </div>
+  </section>
+</app-component-demo>

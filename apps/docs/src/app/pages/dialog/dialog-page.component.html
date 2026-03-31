@@ -10,7 +10,7 @@
       <button ngAtomsButton (click)="editOpen.set(true)">Edit profile</button>
     </div>
 
-    <nga-dialog [(open)]="editOpen">
+    <nga-dialog [open]="editOpen()" (openChange)="editOpen.set($event)">
       <div ngAtomsDialogHeader>
         <div>
           <h2 ngAtomsDialogTitle>Edit profile</h2>
@@ -47,7 +47,7 @@
       <button ngAtomsButton variant="destructive" (click)="confirmOpen.set(true)">Delete account</button>
     </div>
 
-    <nga-dialog [(open)]="confirmOpen" size="sm">
+    <nga-dialog [open]="confirmOpen()" (openChange)="confirmOpen.set($event)" size="sm">
       <div ngAtomsDialogHeader>
         <h2 ngAtomsDialogTitle>Delete account</h2>
         <button ngAtomsDialogClose>
@@ -76,7 +76,7 @@
       <button ngAtomsButton variant="outline" (click)="largeOpen.set(true)">View terms</button>
     </div>
 
-    <nga-dialog [(open)]="largeOpen" size="lg">
+    <nga-dialog [open]="largeOpen()" (openChange)="largeOpen.set($event)" size="lg">
       <div ngAtomsDialogHeader>
         <div>
           <h2 ngAtomsDialogTitle>Terms of service</h2>

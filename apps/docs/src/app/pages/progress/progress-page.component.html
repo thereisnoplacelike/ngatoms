@@ -1,0 +1,48 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Progress</h1>
+    <p class="page-desc">Displays a value within a known range, or an indeterminate loading state.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Variants</h2>
+    <div class="variants-list">
+      @for (variant of variants; track variant) {
+        <div class="variant-item">
+          <span class="variant-label">{{ variant }}</span>
+          <nga-progress [variant]="variant" [value]="65" size="md"></nga-progress>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Sizes</h2>
+    <div class="variants-list">
+      <div class="variant-item">
+        <span class="variant-label">sm</span>
+        <nga-progress variant="accent" [value]="60" size="sm"></nga-progress>
+      </div>
+      <div class="variant-item">
+        <span class="variant-label">md</span>
+        <nga-progress variant="accent" [value]="60" size="md"></nga-progress>
+      </div>
+      <div class="variant-item">
+        <span class="variant-label">lg</span>
+        <nga-progress variant="accent" [value]="60" size="lg"></nga-progress>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Indeterminate</h2>
+    <div class="variants-list">
+      @for (variant of variants; track variant) {
+        <div class="variant-item">
+          <span class="variant-label">{{ variant }}</span>
+          <nga-progress [variant]="variant" [indeterminate]="true"></nga-progress>
+        </div>
+      }
+    </div>
+  </section>
+</app-component-demo>

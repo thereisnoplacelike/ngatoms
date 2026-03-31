@@ -1,0 +1,102 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Radio Group</h1>
+    <p class="page-desc">A set of mutually exclusive options with keyboard navigation and ARIA support.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Default (vertical)</h2>
+    <nga-radio-group [(value)]="plan">
+      <label class="radio-item">
+        <input ngAtomsRadio value="free" />
+        <span>Free</span>
+      </label>
+      <label class="radio-item">
+        <input ngAtomsRadio value="pro" />
+        <span>Pro</span>
+      </label>
+      <label class="radio-item">
+        <input ngAtomsRadio value="enterprise" />
+        <span>Enterprise</span>
+      </label>
+    </nga-radio-group>
+    <p class="selected-value">Selected: <code>{{ plan() }}</code></p>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Horizontal</h2>
+    <nga-radio-group [(value)]="payment" orientation="horizontal">
+      <label class="radio-item">
+        <input ngAtomsRadio value="card" />
+        <span>Card</span>
+      </label>
+      <label class="radio-item">
+        <input ngAtomsRadio value="paypal" />
+        <span>PayPal</span>
+      </label>
+      <label class="radio-item">
+        <input ngAtomsRadio value="crypto" />
+        <span>Crypto</span>
+      </label>
+    </nga-radio-group>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Sizes</h2>
+    <div class="sizes-grid">
+      <div class="size-item">
+        <span class="size-label">sm</span>
+        <nga-radio-group [(value)]="sizeSm">
+          <label class="radio-item">
+            <input ngAtomsRadio value="a" size="sm" />
+            <span>Option A</span>
+          </label>
+          <label class="radio-item">
+            <input ngAtomsRadio value="b" size="sm" />
+            <span>Option B</span>
+          </label>
+        </nga-radio-group>
+      </div>
+      <div class="size-item">
+        <span class="size-label">md</span>
+        <nga-radio-group [(value)]="sizeMd">
+          <label class="radio-item">
+            <input ngAtomsRadio value="a" />
+            <span>Option A</span>
+          </label>
+          <label class="radio-item">
+            <input ngAtomsRadio value="b" />
+            <span>Option B</span>
+          </label>
+        </nga-radio-group>
+      </div>
+      <div class="size-item">
+        <span class="size-label">lg</span>
+        <nga-radio-group [(value)]="sizeLg">
+          <label class="radio-item">
+            <input ngAtomsRadio value="a" size="lg" />
+            <span>Option A</span>
+          </label>
+          <label class="radio-item">
+            <input ngAtomsRadio value="b" size="lg" />
+            <span>Option B</span>
+          </label>
+        </nga-radio-group>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Disabled</h2>
+    <nga-radio-group value="active">
+      <label class="radio-item">
+        <input ngAtomsRadio value="active" />
+        <span>Active</span>
+      </label>
+      <label class="radio-item radio-item--disabled">
+        <input ngAtomsRadio value="disabled" disabled />
+        <span>Disabled option</span>
+      </label>
+    </nga-radio-group>
+  </section>
+</app-component-demo>

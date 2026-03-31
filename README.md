@@ -34,45 +34,45 @@ npx ngatoms add button
 
 Full docs and previews at **[ngatoms.com](https://ngatoms.com)**.
 
-| Component | Description | Tier | Status |
-|-----------|-------------|------|--------|
-| `accordion` | Collapsible items, single or multiple mode | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `alert` | Feedback messages — 5 variants | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `badge` | Labels — 5 variants | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `button` | Button directive — 5 variants, 5 sizes, loading state | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `card` | Container with header, content, footer slots | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `checkbox` | Checked, unchecked, and indeterminate states | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `dialog` | Modal using native `<dialog>`, focus trap, backdrop | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `input` | Input directive — 3 variants, 5 sizes, invalid state | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `select` | Custom dropdown with search and multiple selection | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `separator` | Horizontal or vertical divider | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `switch` | Toggle switch — 3 sizes | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `tabs` | Tabbed navigation — underline and pills variants | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `textarea` | Multiline input with auto-resize | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `tooltip` | Floating label — 4 placements, viewport clamping | — | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
-| `avatar` | Image with fallback initials/icon | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `date-picker` | Calendar overlay for date selection | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `dropdown-menu` | Contextual action menu | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `number-input` | Numeric input with increment/decrement controls | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `popover` | Floating content anchored to a trigger | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `progress` | Progress bar — determinate and indeterminate | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `radio-group` | Radio button group with keyboard navigation | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `spinner` | Loading spinner | 1 | ![in progress](https://img.shields.io/badge/in_progress-blue?style=flat-square) |
-| `breadcrumb` | Hierarchical navigation trail | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `combobox` | Text input with filtered dropdown | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `file-upload` | Drag-and-drop file input zone | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `pagination` | Page navigation controls | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `slider` | Range slider — single and dual thumb | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `stepper` | Multi-step wizard progress indicator | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `tag-input` | Input that creates removable tag chips | 2 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `code-block` | Syntax-highlighted code display | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `color-picker` | HSL/hex color selector | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `context-menu` | Right-click triggered menu | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `drawer` | Side-panel overlay | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `rating` | Star rating input | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `skeleton` | Placeholder loading shimmer | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `timeline` | Vertical event timeline | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
-| `tree` | Collapsible tree view | 3 | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| Component | Description | Status |
+|-----------|-------------|--------|
+| `accordion` | Collapsible items, single or multiple mode | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `alert` | Feedback messages — 5 variants | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `avatar` | Image with fallback initials or icon | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `badge` | Labels — 5 variants | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `button` | 5 variants, 5 sizes, loading state, icon support | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `card` | Container with header, content, footer slots | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `checkbox` | Checked, unchecked, and indeterminate states | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `date-picker` | Custom calendar overlay — single/range, min/max, i18n, month/year picker | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `dialog` | Modal using native `<dialog>`, focus trap, backdrop | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `dropdown-menu` | Contextual action menu — 4 placements, flip, icons, keyboard navigation | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `input` | 3 variants, 5 sizes, invalid state | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `number-input` | Numeric input with increment/decrement controls | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `popover` | Floating content anchored to a trigger — 4 placements, flip | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `progress` | Progress bar — determinate and indeterminate | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `radio-group` | Radio button group with keyboard navigation | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `select` | Styled native select — 3 variants, 5 sizes | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `separator` | Horizontal or vertical divider | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `spinner` | Loading spinner | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `switch` | Toggle switch — 3 sizes | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `tabs` | Underline and pills variants, keyboard navigation | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `textarea` | Multiline input with auto-resize | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `tooltip` | Floating label — 4 placements, viewport clamping | ![alpha](https://img.shields.io/badge/alpha-orange?style=flat-square) |
+| `breadcrumb` | Hierarchical navigation trail | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `combobox` | Text input with filtered dropdown | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `file-upload` | Drag-and-drop file input zone | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `pagination` | Page navigation controls | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `slider` | Range slider — single and dual thumb | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `stepper` | Multi-step wizard progress indicator | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `tag-input` | Input that creates removable tag chips | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `code-block` | Syntax-highlighted code display | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `color-picker` | HSL/hex color selector | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `context-menu` | Right-click triggered menu | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `drawer` | Side-panel overlay | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `rating` | Star rating input | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `skeleton` | Placeholder loading shimmer | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `timeline` | Vertical event timeline | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
+| `tree` | Collapsible tree view | ![planned](https://img.shields.io/badge/planned-lightgrey?style=flat-square) |
 
 ## Monorepo Structure
 

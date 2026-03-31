@@ -1,0 +1,119 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Date Picker</h1>
+    <p class="page-desc">A fully custom calendar overlay with single and range selection, min/max/available-date constraints, clickable month and year pickers, and i18n support.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Single</h2>
+    <div class="demo-row">
+      <div class="demo-field">
+        <nga-date-picker [(value)]="single" placeholder="Pick a date" style="width: 220px" />
+        @if (single()) {
+          <span class="hint">{{ single() }}</span>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Range</h2>
+    <div class="demo-row">
+      <div class="demo-field">
+        <nga-date-picker
+          mode="range"
+          [(startDate)]="rangeStart"
+          [(endDate)]="rangeEnd"
+          placeholder="Select a range"
+          style="width: 280px"
+        />
+        @if (rangeStart()) {
+          <span class="hint">{{ rangeStart() }} → {{ rangeEnd() || '...' }}</span>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Min / Max date</h2>
+    <div class="demo-row">
+      <div class="demo-field">
+        <nga-date-picker
+          [minDate]="minDate"
+          [maxDate]="maxDate"
+          placeholder="Pick a date"
+          style="width: 220px"
+        />
+        <span class="hint">{{ minDate }} → {{ maxDate }}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Available dates</h2>
+    <div class="demo-row">
+      <div class="demo-field">
+        <nga-date-picker
+          [availableDates]="availableDates"
+          placeholder="Pick a date"
+          style="width: 220px"
+        />
+        <span class="hint">Only 5 specific dates are enabled</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Today button</h2>
+    <div class="demo-row">
+      <div class="demo-field">
+        <nga-date-picker [showToday]="true" placeholder="Pick a date" style="width: 220px" />
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Sizes</h2>
+    <div class="sizes-row">
+      <div class="demo-field">
+        <label class="field-label">sm</label>
+        <nga-date-picker size="sm" placeholder="Pick a date" style="width: 180px" />
+      </div>
+      <div class="demo-field">
+        <label class="field-label">md</label>
+        <nga-date-picker size="md" placeholder="Pick a date" style="width: 200px" />
+      </div>
+      <div class="demo-field">
+        <label class="field-label">lg</label>
+        <nga-date-picker size="lg" placeholder="Pick a date" style="width: 220px" />
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">States</h2>
+    <div class="sizes-row">
+      <div class="demo-field">
+        <label class="field-label">Invalid</label>
+        <nga-date-picker [invalid]="true" placeholder="Pick a date" style="width: 200px" />
+      </div>
+      <div class="demo-field">
+        <label class="field-label">Disabled</label>
+        <nga-date-picker [disabled]="true" value="2026-03-31" style="width: 200px" />
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Translations (pt-BR)</h2>
+    <div class="demo-row">
+      <nga-date-picker
+        locale="pt-BR"
+        [dayLabels]="['Do', 'Se', 'Te', 'Qu', 'Qu', 'Se', 'Sá']"
+        [monthLabels]="['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']"
+        placeholder="Selecione uma data"
+        style="width: 220px"
+      />
+    </div>
+  </section>
+</app-component-demo>

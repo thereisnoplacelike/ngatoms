@@ -11,20 +11,20 @@
   --nga-switch-bg:           var(--nga-color-border, oklch(82% 0.003 85));
   --nga-switch-checked-bg:   var(--nga-color-accent, oklch(76% 0.068 68));
   --nga-switch-thumb-bg:     oklch(100% 0 0);
-  --nga-switch-thumb-inset:  2px;
-  --nga-switch-thumb-size:   16px;
+  --nga-switch-thumb-inset:  0.125rem;
+  --nga-switch-thumb-size:   1rem;
 
-  --nga-switch-size-sm-w:     28px;
-  --nga-switch-size-sm-h:     16px;
-  --nga-switch-size-sm-thumb: 12px;
+  --nga-switch-size-sm-w:     1.75rem;
+  --nga-switch-size-sm-h:     1rem;
+  --nga-switch-size-sm-thumb: 0.75rem;
 
-  --nga-switch-size-md-w:     36px;
-  --nga-switch-size-md-h:     20px;
-  --nga-switch-size-md-thumb: 16px;
+  --nga-switch-size-md-w:     2.25rem;
+  --nga-switch-size-md-h:     1.25rem;
+  --nga-switch-size-md-thumb: 1rem;
 
-  --nga-switch-size-lg-w:     44px;
-  --nga-switch-size-lg-h:     24px;
-  --nga-switch-size-lg-thumb: 20px;
+  --nga-switch-size-lg-w:     2.75rem;
+  --nga-switch-size-lg-h:     1.5rem;
+  --nga-switch-size-lg-thumb: 1.25rem;
 }
 
 /* ── Base ───────────────────────────────────────────────────── */

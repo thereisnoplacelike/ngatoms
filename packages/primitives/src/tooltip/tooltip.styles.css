@@ -15,14 +15,14 @@
 .nga-tooltip {
   position: fixed;
   z-index: 9999;
-  padding: 5px 10px;
+  padding: 0.3125rem 0.625rem;
   background: var(--nga-tooltip-bg);
   color: var(--nga-tooltip-fg);
   border-radius: var(--nga-tooltip-radius);
-  font-size: 12px;
+  font-size: var(--nga-text-xs, 0.75rem);
   font-family: inherit;
   line-height: 1.45;
-  max-width: 260px;
+  max-width: 16.25rem;
   pointer-events: none;
   white-space: normal;
   word-break: break-word;

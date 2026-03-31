@@ -13,7 +13,16 @@
 @import './components/select/select.styles.css';
 @import './components/tabs/tabs.styles.css';
 @import './components/switch/switch.styles.css';
+@import './components/spinner/spinner.styles.css';
+@import './components/progress/progress.styles.css';
+@import './components/avatar/avatar.styles.css';
+@import './components/radio-group/radio-group.styles.css';
+@import './components/number-input/number-input.styles.css';
+@import './components/popover/popover.styles.css';
+@import './components/dropdown-menu/dropdown-menu.styles.css';
+@import './components/date-picker/date-picker.styles.css';
 @import './components/code-block/code-block.styles.css';
+@import '@phosphor-icons/web/bold';
 
 /* ── Code panel theme tokens ────────────────────────────────── */
 :root {
@@ -33,7 +42,6 @@
   --code-tab-active-bg:   #ffffff;
   --code-tab-active-fg:   #24292f;
 }
-@import '@phosphor-icons/web/bold';
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -48,9 +56,9 @@ html, body {
 body {
   background: var(--nga-color-background);
   color: var(--nga-color-foreground);
-  font-family: var(--nga-font-sans);
-  font-size: 14px;
-  line-height: 1.5;
+  font-family: var(--nga-font-sans), serif;
+  font-size: var(--nga-text-sm, 0.875rem);
+  line-height: var(--nga-leading-normal, 1.5);
 }
 
 a {

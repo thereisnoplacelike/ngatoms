@@ -1,0 +1,54 @@
+<app-component-demo [files]="codeFiles">
+  <header class="page-header">
+    <h1 class="page-title">Spinner</h1>
+    <p class="page-desc">A loading indicator for async operations.</p>
+  </header>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Sizes</h2>
+    <div class="sizes-grid">
+      @for (size of sizes; track size) {
+        <div class="size-item">
+          <span class="size-label">{{ size }}</span>
+          <span ngAtomsSpinner [size]="size"></span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2 class="section-title">Colors</h2>
+    <div class="states-grid">
+      <div class="state-item">
+        <span class="state-label">Foreground</span>
+        <div class="color-swatch" style="color: var(--nga-color-foreground)">
+          <span ngAtomsSpinner size="md"></span>
+        </div>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Primary</span>
+        <div class="color-swatch" style="color: var(--nga-color-primary)">
+          <span ngAtomsSpinner size="md"></span>
+        </div>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Destructive</span>
+        <div class="color-swatch" style="color: var(--nga-color-destructive)">
+          <span ngAtomsSpinner size="md"></span>
+        </div>
+      </div>
+      <div class="state-item">
+        <span class="state-label">Success</span>
+        <div class="color-swatch" style="color: var(--nga-color-success)">
+          <span ngAtomsSpinner size="md"></span>
+        </div>
+      </div>
+      <div class="state-item">
+        <span class="state-label">On primary</span>
+        <div class="color-swatch color-swatch--filled" style="background: var(--nga-color-primary); color: var(--nga-color-primary-foreground)">
+          <span ngAtomsSpinner size="md"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</app-component-demo>

@@ -77,4 +77,44 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/switch/switch-page.component').then(m => m.SwitchPageComponent),
   },
+  {
+    path: 'spinner',
+    loadComponent: () =>
+      import('./pages/spinner/spinner-page.component').then(m => m.SpinnerPageComponent),
+  },
+  {
+    path: 'radio-group',
+    loadComponent: () =>
+      import('./pages/radio-group/radio-group-page.component').then(m => m.RadioGroupPageComponent),
+  },
+  {
+    path: 'avatar',
+    loadComponent: () =>
+      import('./pages/avatar/avatar-page.component').then(m => m.AvatarPageComponent),
+  },
+  {
+    path: 'progress',
+    loadComponent: () =>
+      import('./pages/progress/progress-page.component').then(m => m.ProgressPageComponent),
+  },
+  {
+    path: 'number-input',
+    loadComponent: () =>
+      import('./pages/number-input/number-input-page.component').then(m => m.NumberInputPageComponent),
+  },
+  {
+    path: 'popover',
+    loadComponent: () =>
+      import('./pages/popover/popover-page.component').then(m => m.PopoverPageComponent),
+  },
+  {
+    path: 'date-picker',
+    loadComponent: () =>
+      import('./pages/date-picker/date-picker-page.component').then(m => m.DatePickerPageComponent),
+  },
+  {
+    path: 'dropdown-menu',
+    loadComponent: () =>
+      import('./pages/dropdown-menu/dropdown-menu-page.component').then(m => m.DropdownMenuPageComponent),
+  },
 ];

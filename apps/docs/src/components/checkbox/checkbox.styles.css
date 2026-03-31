@@ -14,9 +14,9 @@
   --nga-checkbox-checked-bg:   var(--nga-color-primary, oklch(13% 0.002 85));
   --nga-checkbox-checked-fg:   var(--nga-color-primary-foreground, oklch(100% 0 0));
 
-  --nga-checkbox-size-sm: 14px;
-  --nga-checkbox-size-md: 16px;
-  --nga-checkbox-size-lg: 20px;
+  --nga-checkbox-size-sm: 0.875rem;
+  --nga-checkbox-size-md: 1rem;
+  --nga-checkbox-size-lg: 1.25rem;
 }
 
 /* ── Base ───────────────────────────────────────────────────── */

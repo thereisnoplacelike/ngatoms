@@ -1,0 +1,58 @@
+/* =============================================================
+   NgAtoms Spinner — spinner.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/spinner.styles.css';
+   ============================================================= */
+
+/* ── Keyframes ──────────────────────────────────────────────── */
+@keyframes nga-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Custom properties (override at :root or component level) ─ */
+:root {
+  --nga-spinner-color:      currentColor;
+  --nga-spinner-track:      color-mix(in srgb, currentColor 18%, transparent);
+  --nga-spinner-duration:   0.65s;
+  --nga-spinner-easing:     linear;
+
+  /* Sizes */
+  --nga-spinner-size-sm:    0.875rem;
+  --nga-spinner-width-sm:   1.5px;
+
+  --nga-spinner-size-md:    1.25rem;
+  --nga-spinner-width-md:   2px;
+
+  --nga-spinner-size-lg:    1.75rem;
+  --nga-spinner-width-lg:   3px;
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+.nga-spinner {
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--nga-spinner-track);
+  border-top-color: var(--nga-spinner-color);
+  animation: nga-spin var(--nga-spinner-duration) var(--nga-spinner-easing) infinite;
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.nga-spinner--sm {
+  width:  var(--nga-spinner-size-sm);
+  height: var(--nga-spinner-size-sm);
+  border-width: var(--nga-spinner-width-sm);
+}
+
+.nga-spinner--md {
+  width:  var(--nga-spinner-size-md);
+  height: var(--nga-spinner-size-md);
+  border-width: var(--nga-spinner-width-md);
+}
+
+.nga-spinner--lg {
+  width:  var(--nga-spinner-size-lg);
+  height: var(--nga-spinner-size-lg);
+  border-width: var(--nga-spinner-width-lg);
+}

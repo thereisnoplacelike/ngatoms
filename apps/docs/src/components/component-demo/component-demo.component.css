@@ -28,8 +28,8 @@
   gap: var(--nga-space-2);
   padding: var(--nga-space-2) var(--nga-space-4);
   font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: var(--nga-font-weight-semibold, 600);
+  letter-spacing: var(--nga-tracking-wider, 0.1em);
   text-transform: uppercase;
   color: var(--nga-color-muted-foreground);
   background: var(--nga-color-muted);
@@ -49,7 +49,7 @@
   content: '</>';
   font-family: monospace;
   font-size: 0.625rem;
-  font-weight: 700;
+  font-weight: var(--nga-font-weight-bold, 700);
   color: var(--nga-gold-400);
   letter-spacing: 0;
 }
@@ -57,11 +57,11 @@
 /* ── Preview panel ─────────────────────────────────────────── */
 .demo-preview {
   flex: 1;
-  padding: var(--nga-space-8);
   display: flex;
+  padding: var(--nga-space-8);
   flex-direction: column;
   gap: var(--nga-space-6);
-  align-items: flex-start;
+  align-items: stretch;
   overflow-y: auto;
 }
 

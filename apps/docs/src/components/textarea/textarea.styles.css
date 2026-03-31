@@ -8,12 +8,12 @@
   --nga-textarea-radius:      var(--nga-radius-md, 0.5rem);
   --nga-textarea-font-weight: var(--nga-font-weight-normal, 400);
   --nga-textarea-transition:  border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
-  --nga-textarea-min-height:  80px;
+  --nga-textarea-min-height:  5rem;
 
   /* Focus ring */
   --nga-textarea-focus-ring-color:  var(--nga-color-ring, oklch(76% 0.068 68));
   --nga-textarea-focus-ring-width:  2px;
-  --nga-textarea-focus-ring-offset: 0px;
+  --nga-textarea-focus-ring-offset: 0;
 
   /* Sizes — padding */
   --nga-textarea-padding-xs: var(--nga-size-padding-y-xs, 3px) 8px;
@@ -77,7 +77,7 @@
 }
 
 .nga-textarea::-webkit-scrollbar {
-  width: 4px;
+  width: 0.25rem;
 }
 
 .nga-textarea::-webkit-scrollbar-track {

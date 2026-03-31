@@ -2,7 +2,7 @@
   <img class="hero-logo hero-logo--dark" src="assets/ngatoms-logo-w.svg" alt="NgAtoms logo" />
   <img class="hero-logo hero-logo--light" src="assets/ngatoms-logo-b.svg" alt="NgAtoms logo" />
   <h1 class="hero-title">NgAtoms</h1>
-  <p class="hero-tagline">Angular UI primitives you own. Copy them into your project — no runtime dependency, full control.</p>
+  <p class="hero-tagline">Angular UI primitives you own. Copy them into your project, no runtime dependency, full control.</p>
 </div>
 
 <section class="gs-section">
@@ -24,21 +24,203 @@
 </section>
 
 <section class="gs-section">
-  <h2 class="gs-section-title">Available components</h2>
-  <div class="component-grid">
-    <span class="component-chip">Accordion</span>
-    <span class="component-chip">Alert</span>
-    <span class="component-chip">Badge</span>
-    <span class="component-chip">Button</span>
-    <span class="component-chip">Card</span>
-    <span class="component-chip">Checkbox</span>
-    <span class="component-chip">Dialog</span>
-    <span class="component-chip">Input</span>
-    <span class="component-chip">Select</span>
-    <span class="component-chip">Separator</span>
-    <span class="component-chip">Switch</span>
-    <span class="component-chip">Tabs</span>
-    <span class="component-chip">Textarea</span>
-    <span class="component-chip">Tooltip</span>
+  <h2 class="gs-section-title">Components</h2>
+  <div class="component-table-wrap">
+    <table class="component-table">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a routerLink="/accordion" class="component-link">accordion</a></td>
+          <td>Collapsible items, single or multiple mode</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/alert" class="component-link">alert</a></td>
+          <td>Feedback messages — 5 variants</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/avatar" class="component-link">avatar</a></td>
+          <td>Image with fallback initials or icon</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/badge" class="component-link">badge</a></td>
+          <td>Labels — 5 variants</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/button" class="component-link">button</a></td>
+          <td>5 variants, 5 sizes, loading state, icon support</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/card" class="component-link">card</a></td>
+          <td>Container with header, content, footer slots</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/checkbox" class="component-link">checkbox</a></td>
+          <td>Checked, unchecked, and indeterminate states</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/date-picker" class="component-link">date-picker</a></td>
+          <td>Custom calendar overlay — single/range, min/max, i18n, month/year picker</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/dialog" class="component-link">dialog</a></td>
+          <td>Modal using native &lt;dialog&gt;, focus trap, backdrop</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/dropdown-menu" class="component-link">dropdown-menu</a></td>
+          <td>Contextual action menu — 4 placements, flip, icons, keyboard navigation</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/input" class="component-link">input</a></td>
+          <td>3 variants, 5 sizes, invalid state</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/number-input" class="component-link">number-input</a></td>
+          <td>Numeric input with increment/decrement controls</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/popover" class="component-link">popover</a></td>
+          <td>Floating content anchored to a trigger — 4 placements, flip</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/progress" class="component-link">progress</a></td>
+          <td>Progress bar — determinate and indeterminate</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/radio-group" class="component-link">radio-group</a></td>
+          <td>Radio button group with keyboard navigation</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/select" class="component-link">select</a></td>
+          <td>Styled native select — 3 variants, 5 sizes</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/separator" class="component-link">separator</a></td>
+          <td>Horizontal or vertical divider</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/spinner" class="component-link">spinner</a></td>
+          <td>Loading spinner</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/switch" class="component-link">switch</a></td>
+          <td>Toggle switch — 3 sizes</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/tabs" class="component-link">tabs</a></td>
+          <td>Underline and pills variants, keyboard navigation</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/textarea" class="component-link">textarea</a></td>
+          <td>Multiline input with auto-resize</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><a routerLink="/tooltip" class="component-link">tooltip</a></td>
+          <td>Floating label — 4 placements, viewport clamping</td>
+          <td><span class="status-badge status-alpha">alpha</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">breadcrumb</span></td>
+          <td>Hierarchical navigation trail</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">code-block</span></td>
+          <td>Syntax-highlighted code display</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">color-picker</span></td>
+          <td>HSL/hex color selector</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">combobox</span></td>
+          <td>Text input with filtered dropdown</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">context-menu</span></td>
+          <td>Right-click triggered menu</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">drawer</span></td>
+          <td>Side-panel overlay</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">file-upload</span></td>
+          <td>Drag-and-drop file input zone</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">pagination</span></td>
+          <td>Page navigation controls</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">rating</span></td>
+          <td>Star rating input</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">skeleton</span></td>
+          <td>Placeholder loading shimmer</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">slider</span></td>
+          <td>Range slider — single and dual thumb</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">stepper</span></td>
+          <td>Multi-step wizard progress indicator</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">tag-input</span></td>
+          <td>Input that creates removable tag chips</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">timeline</span></td>
+          <td>Vertical event timeline</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+        <tr>
+          <td><span class="component-name">tree</span></td>
+          <td>Collapsible tree view</td>
+          <td><span class="status-badge status-planned">planned</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>

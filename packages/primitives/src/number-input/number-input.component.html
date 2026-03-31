@@ -1,0 +1,29 @@
+<button
+  class="nga-number-input__btn"
+  type="button"
+  tabindex="-1"
+  [disabled]="disabled() || !canDecrement()"
+  (click)="decrement()"
+  aria-label="Decrement"
+>−</button>
+
+<input
+  class="nga-number-input__field"
+  type="number"
+  [value]="value()"
+  [min]="min()"
+  [max]="max()"
+  [step]="step()"
+  [disabled]="disabled()"
+  [attr.aria-invalid]="invalid() ? 'true' : null"
+  (input)="onInput($event)"
+/>
+
+<button
+  class="nga-number-input__btn"
+  type="button"
+  tabindex="-1"
+  [disabled]="disabled() || !canIncrement()"
+  (click)="increment()"
+  aria-label="Increment"
+>+</button>

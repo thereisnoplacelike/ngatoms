@@ -1,0 +1,465 @@
+/* =============================================================
+   NgAtoms Date Picker — date-picker.styles.css
+   Import once in your global styles.css:
+     @import '@/path/to/date-picker.styles.css';
+   ============================================================= */
+
+:root {
+  --nga-date-picker-radius:        var(--nga-radius-md, 0.5rem);
+  --nga-date-picker-transition:    border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+  --nga-date-picker-focus-color:   var(--nga-color-ring, oklch(76% 0.068 68));
+
+  /* Trigger sizes */
+  --nga-date-picker-trigger-h-sm:  2rem;
+  --nga-date-picker-trigger-h-md:  2.25rem;
+  --nga-date-picker-trigger-h-lg:  2.75rem;
+  --nga-date-picker-trigger-px-sm: 0.625rem;
+  --nga-date-picker-trigger-px-md: 0.75rem;
+  --nga-date-picker-trigger-px-lg: 1rem;
+  --nga-date-picker-trigger-fs-sm: var(--nga-text-xs, 0.75rem);
+  --nga-date-picker-trigger-fs-md: var(--nga-text-sm, 0.875rem);
+  --nga-date-picker-trigger-fs-lg: var(--nga-text-base, 1rem);
+
+  /* Trigger colours */
+  --nga-date-picker-trigger-bg:         var(--nga-color-background, oklch(100% 0 0));
+  --nga-date-picker-trigger-fg:         var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-date-picker-trigger-border:     var(--nga-color-border, oklch(82% 0.003 85));
+  --nga-date-picker-trigger-border-hover: var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-date-picker-trigger-placeholder: var(--nga-color-muted-foreground, oklch(55% 0.008 85));
+  --nga-date-picker-trigger-invalid-border: var(--nga-color-destructive, oklch(47% 0.130 22));
+
+  /* Panel */
+  --nga-date-picker-panel-bg:     var(--nga-color-card, oklch(100% 0 0));
+  --nga-date-picker-panel-border: var(--nga-color-border, oklch(92% 0.004 85));
+  --nga-date-picker-panel-radius: var(--nga-radius-md, 0.5rem);
+  --nga-date-picker-panel-shadow: 0 4px 24px oklch(0% 0 0 / 0.10), 0 1px 4px oklch(0% 0 0 / 0.06);
+  --nga-date-picker-panel-width:  280px;
+  --nga-date-picker-panel-p:      0.75rem;
+
+  /* Header */
+  --nga-date-picker-header-fg:    var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-date-picker-nav-bg-hover: var(--nga-color-muted, oklch(97% 0.002 85));
+  --nga-date-picker-nav-size:     1.75rem;
+
+  /* Day grid */
+  --nga-date-picker-day-size:     2.25rem;
+  --nga-date-picker-day-radius:   var(--nga-radius-sm, 0.25rem);
+  --nga-date-picker-day-fg:       var(--nga-color-foreground, oklch(13% 0.002 85));
+  --nga-date-picker-day-outside-fg: var(--nga-color-muted-foreground, oklch(70% 0.004 85));
+  --nga-date-picker-day-hover-bg:   var(--nga-color-muted, oklch(97% 0.002 85));
+  --nga-date-picker-day-header-fg:  var(--nga-color-muted-foreground, oklch(55% 0.008 85));
+
+  /* Today */
+  --nga-date-picker-today-border: var(--nga-color-foreground, oklch(13% 0.002 85));
+
+  /* Selected */
+  --nga-date-picker-selected-bg:  var(--nga-color-accent, oklch(76% 0.068 68));
+  --nga-date-picker-selected-fg:  var(--nga-color-accent-foreground, oklch(13% 0.002 85));
+
+  /* Range fill */
+  --nga-date-picker-range-bg:     color-mix(in oklch, var(--nga-date-picker-selected-bg) 20%, transparent);
+  --nga-date-picker-range-fg:     var(--nga-color-foreground, oklch(13% 0.002 85));
+}
+
+.dark {
+  --nga-date-picker-panel-shadow: 0 4px 24px oklch(0% 0 0 / 0.35), 0 1px 4px oklch(0% 0 0 / 0.18);
+  --nga-date-picker-day-outside-fg: var(--nga-color-muted-foreground, oklch(45% 0.004 85));
+}
+
+/* ── Trigger ────────────────────────────────────────────────── */
+.nga-date-picker-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  border: 1.5px solid var(--nga-date-picker-trigger-border);
+  border-radius: var(--nga-date-picker-radius);
+  background: var(--nga-date-picker-trigger-bg);
+  color: var(--nga-date-picker-trigger-fg);
+  font-family: inherit;
+  font-size: var(--nga-date-picker-trigger-fs-md);
+  cursor: pointer;
+  transition: var(--nga-date-picker-transition);
+  outline: none;
+  text-align: left;
+  box-sizing: border-box;
+
+  height: var(--nga-date-picker-trigger-h-md);
+  padding: 0 var(--nga-date-picker-trigger-px-md);
+}
+
+.nga-date-picker-trigger--sm {
+  height: var(--nga-date-picker-trigger-h-sm);
+  padding: 0 var(--nga-date-picker-trigger-px-sm);
+  font-size: var(--nga-date-picker-trigger-fs-sm);
+}
+
+.nga-date-picker-trigger--lg {
+  height: var(--nga-date-picker-trigger-h-lg);
+  padding: 0 var(--nga-date-picker-trigger-px-lg);
+  font-size: var(--nga-date-picker-trigger-fs-lg);
+}
+
+.nga-date-picker-trigger:hover:not(:disabled) {
+  border-color: var(--nga-date-picker-trigger-border-hover);
+}
+
+.nga-date-picker-trigger:focus-visible {
+  outline: 2px solid var(--nga-date-picker-focus-color);
+  outline-offset: 2px;
+}
+
+.nga-date-picker-trigger--open {
+  border-color: var(--nga-date-picker-focus-color);
+}
+
+.nga-date-picker-trigger--invalid {
+  border-color: var(--nga-date-picker-trigger-invalid-border) !important;
+}
+
+.nga-date-picker-trigger--disabled,
+.nga-date-picker-trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nga-date-picker-trigger-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nga-date-picker-trigger-text--placeholder {
+  color: var(--nga-date-picker-trigger-placeholder);
+}
+
+.nga-date-picker-icon {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.6;
+}
+
+/* ── Panel ──────────────────────────────────────────────────── */
+.nga-date-picker-panel {
+  position: fixed;
+  z-index: 9999;
+  width: var(--nga-date-picker-panel-width);
+  padding: var(--nga-date-picker-panel-p);
+  background: var(--nga-date-picker-panel-bg);
+  border: 1px solid var(--nga-date-picker-panel-border);
+  border-radius: var(--nga-date-picker-panel-radius);
+  box-shadow: var(--nga-date-picker-panel-shadow);
+  display: none;
+  box-sizing: border-box;
+}
+
+.nga-date-picker-panel--open {
+  display: block;
+  animation: nga-date-picker-in 130ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes nga-date-picker-in {
+  from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.nga-date-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.nga-date-picker-month-label {
+  font-size: var(--nga-text-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--nga-date-picker-header-fg);
+}
+
+.nga-date-picker-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--nga-date-picker-nav-size);
+  height: var(--nga-date-picker-nav-size);
+  border: none;
+  border-radius: var(--nga-date-picker-day-radius);
+  background: transparent;
+  color: var(--nga-date-picker-header-fg);
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  transition: background 120ms ease;
+}
+
+.nga-date-picker-nav svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.nga-date-picker-nav:hover {
+  background: var(--nga-date-picker-nav-bg-hover);
+}
+
+.nga-date-picker-nav:focus-visible {
+  outline: 2px solid var(--nga-date-picker-focus-color);
+  outline-offset: 2px;
+}
+
+/* ── Header label buttons ───────────────────────────────────── */
+.nga-date-picker-header-labels {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.nga-date-picker-header-btn {
+  border: none;
+  background: transparent;
+  color: var(--nga-date-picker-header-fg);
+  font-size: var(--nga-text-sm, 0.875rem);
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--nga-date-picker-day-radius);
+  outline: none;
+  transition: background 120ms ease;
+}
+
+.nga-date-picker-header-btn:hover {
+  background: var(--nga-date-picker-nav-bg-hover);
+}
+
+.nga-date-picker-header-btn:focus-visible {
+  outline: 2px solid var(--nga-date-picker-focus-color);
+  outline-offset: 2px;
+}
+
+/* ── Month picker grid ──────────────────────────────────────── */
+.nga-date-picker-month-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 0.25rem 0;
+}
+
+.nga-date-picker-month-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--nga-date-picker-day-radius);
+  background: transparent;
+  color: var(--nga-date-picker-day-fg);
+  font-size: var(--nga-text-sm, 0.875rem);
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: background 100ms ease;
+}
+
+.nga-date-picker-month-cell:hover:not(.nga-date-picker-month-cell--active) {
+  background: var(--nga-date-picker-day-hover-bg);
+}
+
+.nga-date-picker-month-cell:focus-visible {
+  outline: 2px solid var(--nga-date-picker-focus-color);
+  outline-offset: -1px;
+}
+
+.nga-date-picker-month-cell--active {
+  background: var(--nga-date-picker-selected-bg);
+  color: var(--nga-date-picker-selected-fg);
+  font-weight: 600;
+}
+
+/* ── Year picker grid ───────────────────────────────────────── */
+.nga-date-picker-year-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 0.25rem 0;
+}
+
+.nga-date-picker-year-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--nga-date-picker-day-radius);
+  background: transparent;
+  color: var(--nga-date-picker-day-fg);
+  font-size: var(--nga-text-sm, 0.875rem);
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: background 100ms ease;
+}
+
+.nga-date-picker-year-cell:hover:not(.nga-date-picker-year-cell--active) {
+  background: var(--nga-date-picker-day-hover-bg);
+}
+
+.nga-date-picker-year-cell:focus-visible {
+  outline: 2px solid var(--nga-date-picker-focus-color);
+  outline-offset: -1px;
+}
+
+.nga-date-picker-year-cell--active {
+  background: var(--nga-date-picker-selected-bg);
+  color: var(--nga-date-picker-selected-fg);
+  font-weight: 600;
+}
+
+/* ── Grid ───────────────────────────────────────────────────── */
+.nga-date-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+/* ── Day header row ─────────────────────────────────────────── */
+.nga-date-picker-day-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--nga-date-picker-day-size);
+  font-size: var(--nga-text-xs, 0.75rem);
+  font-weight: 500;
+  color: var(--nga-date-picker-day-header-fg);
+}
+
+/* ── Day cells ──────────────────────────────────────────────── */
+.nga-date-picker-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--nga-date-picker-day-size);
+  border: 1.5px solid transparent;
+  border-radius: var(--nga-date-picker-day-radius);
+  background: transparent;
+  color: var(--nga-date-picker-day-fg);
+  font-size: var(--nga-text-sm, 0.875rem);
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  transition: background 100ms ease, color 100ms ease;
+  box-sizing: border-box;
+}
+
+.nga-date-picker-day:hover:not(.nga-date-picker-day--selected) {
+  background: var(--nga-date-picker-day-hover-bg);
+}
+
+.nga-date-picker-day:focus-visible {
+  outline: 2px solid var(--nga-date-picker-focus-color);
+  outline-offset: -1px;
+}
+
+/* Outside current month */
+.nga-date-picker-day--outside {
+  color: var(--nga-date-picker-day-outside-fg);
+}
+
+/* Today ring */
+.nga-date-picker-day--today:not(.nga-date-picker-day--selected) {
+  border-color: var(--nga-date-picker-today-border);
+  font-weight: 600;
+}
+
+/* Selected / range endpoints */
+.nga-date-picker-day--selected,
+.nga-date-picker-day--range-start,
+.nga-date-picker-day--range-end {
+  background: var(--nga-date-picker-selected-bg);
+  color: var(--nga-date-picker-selected-fg);
+  font-weight: 600;
+  border-color: transparent;
+  z-index: 1;
+}
+
+.nga-date-picker-day--selected:hover,
+.nga-date-picker-day--range-start:hover,
+.nga-date-picker-day--range-end:hover {
+  background: color-mix(in oklch, var(--nga-date-picker-selected-bg) 90%, black);
+}
+
+/* Range fill */
+.nga-date-picker-day--in-range {
+  background: var(--nga-date-picker-range-bg);
+  color: var(--nga-date-picker-range-fg);
+  border-radius: 0;
+  border-color: transparent;
+}
+
+.nga-date-picker-day--in-range:hover {
+  background: color-mix(in oklch, var(--nga-date-picker-range-bg) 90%, black);
+}
+
+/* Rounded caps on range endpoints */
+.nga-date-picker-day--range-start {
+  border-radius: var(--nga-date-picker-day-radius) 0 0 var(--nga-date-picker-day-radius);
+}
+
+.nga-date-picker-day--range-end {
+  border-radius: 0 var(--nga-date-picker-day-radius) var(--nga-date-picker-day-radius) 0;
+}
+
+/* Same-day range: full radius */
+.nga-date-picker-day--range-start.nga-date-picker-day--range-end {
+  border-radius: var(--nga-date-picker-day-radius);
+}
+
+/* Disabled */
+.nga-date-picker-day--disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Today button ───────────────────────────────────────────── */
+.nga-date-picker-footer {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--nga-date-picker-panel-border);
+  display: flex;
+  justify-content: center;
+}
+
+.nga-date-picker-today-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.75rem;
+  padding: 0 0.75rem;
+  border: 1.5px solid var(--nga-date-picker-panel-border);
+  border-radius: var(--nga-date-picker-day-radius);
+  background: transparent;
+  color: var(--nga-date-picker-day-fg);
+  font-size: var(--nga-text-xs, 0.75rem);
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: background 120ms ease, border-color 120ms ease;
+  width: 100%;
+}
+
+.nga-date-picker-today-btn:hover {
+  background: var(--nga-date-picker-day-hover-bg);
+  border-color: var(--nga-date-picker-trigger-border-hover);
+}
+
+.nga-date-picker-today-btn:focus-visible {
+  outline: 2px solid var(--nga-date-picker-focus-color);
+  outline-offset: 2px;
+}
