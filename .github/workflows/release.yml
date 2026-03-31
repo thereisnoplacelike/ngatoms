@@ -69,8 +69,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Configure git
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+
       - name: Version packages
         run: npm run version:packages
+
+      - name: Commit version bump
+        run: |
+          git add -A
+          git commit -m "chore: version packages" || echo "nothing to commit"
 
       - name: Build packages
         run: npm run build --if-present
@@ -80,7 +90,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Push tags
+      - name: Push
         run: git push --follow-tags
 
   release-lts:
@@ -109,11 +119,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Configure git
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+
       - name: Enter LTS mode
         run: npm run pre:enter:lts
 
       - name: Version packages
         run: npm run version:packages
+
+      - name: Commit version bump
+        run: |
+          git add -A
+          git commit -m "chore: version packages" || echo "nothing to commit"
 
       - name: Build packages
         run: npm run build --if-present
@@ -123,12 +143,16 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Push tags
+      - name: Push
         run: git push --follow-tags
 
       - name: Exit LTS mode
         if: always()
-        run: npm run pre:exit
+        run: |
+          npm run pre:exit
+          git add -A
+          git commit -m "chore: exit prerelease mode" || echo "nothing to commit"
+          git push
 
   release-rc:
     name: RC Release
@@ -156,11 +180,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Enter prerelease mode
-        run: npm run pre:enter:rc
+      - name: Configure git
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
 
       - name: Version packages
         run: npm run version:packages
+
+      - name: Commit version bump
+        run: |
+          git add -A
+          git commit -m "chore: version packages" || echo "nothing to commit"
 
       - name: Build packages
         run: npm run build --if-present
@@ -170,9 +201,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Push tags
+      - name: Push
         run: git push --follow-tags
-
-      - name: Exit prerelease mode
-        if: always()
-        run: npm run pre:exit
