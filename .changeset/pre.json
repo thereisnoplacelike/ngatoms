@@ -9,5 +9,18 @@
     "@ngatoms/ngatoms-tokens": "0.1.0",
     "@ngatoms/ngatoms-utils": "0.0.2"
   },
-  "changesets": []
+  "changesets": [
+    "add-popover",
+    "cli-shorthand-add",
+    "cli-status-colors",
+    "cli-update-check",
+    "date-picker",
+    "dropdown-menu",
+    "fix-getref-tag-format",
+    "fix-lint-readme-updates",
+    "init-fetch-tokens",
+    "readme-component-status-v2",
+    "readme-component-status",
+    "registry-status-field"
+  ]
 }

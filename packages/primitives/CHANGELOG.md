@@ -1,5 +1,15 @@
 # @thereisnoplacelike/ngatoms-primitives
 
+## 0.2.0-rc.0
+
+### Minor Changes
+
+- efbcede: Add popover primitive
+
+### Patch Changes
+
+- 914ffe6: fix(date-picker): remove unused MONTHS constant to resolve lint errors; update README and docs component table — promote date-picker, dropdown-menu, and popover to alpha, remove tier column, sort alphabetically
+
 ## 0.1.0
 
 ### Minor Changes
