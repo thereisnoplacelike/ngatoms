@@ -49,7 +49,9 @@ export async function add(componentName, cwd = process.cwd()) {
   }
 
   if (component.status === 'alpha') {
-    console.warn(`⚠ "${componentName}" is in alpha — the API may change between versions.`);
+    console.log(`\x1b[48;5;220m\x1b[30m  ▲ ALPHA  \x1b[0m \x1b[38;5;220m"${componentName}" is in alpha — the API may change between versions.\x1b[0m`);
+  } else if (component.status === 'stable') {
+    console.log(`\x1b[48;5;46m\x1b[30m  ✔ STABLE  \x1b[0m \x1b[38;5;46m"${componentName}" is stable.\x1b[0m`);
   }
 
   const targetDir = join(cwd, config.componentsDir, componentName);
