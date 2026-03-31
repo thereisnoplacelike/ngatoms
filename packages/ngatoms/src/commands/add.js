@@ -48,6 +48,10 @@ export async function add(componentName, cwd = process.cwd()) {
     process.exit(1);
   }
 
+  if (component.status === 'alpha') {
+    console.warn(`⚠ "${componentName}" is in alpha — the API may change between versions.`);
+  }
+
   const targetDir = join(cwd, config.componentsDir, componentName);
   if (existsSync(targetDir)) {
     const rl = createInterface({ input: process.stdin, output: process.stdout });

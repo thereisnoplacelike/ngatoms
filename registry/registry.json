@@ -3,6 +3,7 @@
     {
       "name": "checkbox",
       "description": "A checkbox input with checked, unchecked, and indeterminate states.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/checkbox/checkbox.directive.ts",
         "packages/primitives/src/checkbox/checkbox.styles.css",
@@ -13,6 +14,7 @@
     {
       "name": "alert",
       "description": "A feedback message with 5 variants: default, info, success, warning, destructive.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/alert/alert.directive.ts",
         "packages/primitives/src/alert/alert.styles.css",
@@ -23,6 +25,7 @@
     {
       "name": "badge",
       "description": "A badge component with 5 variants: default, secondary, outline, destructive, and success.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/badge/badge.directive.ts",
         "packages/primitives/src/badge/badge.styles.css",
@@ -33,6 +36,7 @@
     {
       "name": "card",
       "description": "A container component with header, title, description, content, and footer slots.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/card/card.directive.ts",
         "packages/primitives/src/card/card.styles.css",
@@ -43,6 +47,7 @@
     {
       "name": "textarea",
       "description": "A multiline text input with variants, sizes, invalid state, and auto-resize support.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/textarea/textarea.directive.ts",
         "packages/primitives/src/textarea/textarea.styles.css",
@@ -53,6 +58,7 @@
     {
       "name": "separator",
       "description": "A visual divider between content, horizontal or vertical.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/separator/separator.directive.ts",
         "packages/primitives/src/separator/separator.styles.css",
@@ -63,6 +69,7 @@
     {
       "name": "button",
       "description": "A button directive with 5 variants, 5 sizes, loading state, and icon support.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/button/button.directive.ts",
         "packages/primitives/src/button/button.styles.css",
@@ -73,6 +80,7 @@
     {
       "name": "input",
       "description": "An input directive with 3 variants, 5 sizes, and invalid state.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/input/input.directive.ts",
         "packages/primitives/src/input/input.styles.css",
@@ -83,6 +91,7 @@
     {
       "name": "tooltip",
       "description": "A floating label on hover or focus with 4 placements, delay, and viewport clamping.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/tooltip/tooltip.directive.ts",
         "packages/primitives/src/tooltip/tooltip.styles.css",
@@ -93,6 +102,7 @@
     {
       "name": "dialog",
       "description": "A modal dialog using the native <dialog> element with focus trap, backdrop, and size variants.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/dialog/dialog.component.ts",
         "packages/primitives/src/dialog/dialog.component.html",
@@ -111,6 +121,7 @@
     {
       "name": "accordion",
       "description": "A vertically stacked set of collapsible items with single and multiple modes.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/accordion/accordion.component.ts",
         "packages/primitives/src/accordion/accordion.component.html",
@@ -128,6 +139,7 @@
     {
       "name": "select",
       "description": "A styled native select with 3 variants, 5 sizes, and invalid state.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/select/select.component.ts",
         "packages/primitives/src/select/select.styles.css",
@@ -138,6 +150,7 @@
     {
       "name": "tabs",
       "description": "Tabbed navigation with underline and pills variants, keyboard navigation, and ARIA support.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/tabs/tabs.component.ts",
         "packages/primitives/src/tabs/tabs.component.html",
@@ -153,6 +166,7 @@
     {
       "name": "switch",
       "description": "A toggle switch for enabling or disabling a setting, with 3 sizes.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/switch/switch.directive.ts",
         "packages/primitives/src/switch/switch.styles.css",
@@ -163,11 +177,12 @@
     {
       "name": "radio-group",
       "description": "A radio button group with keyboard navigation, ARIA support, and 3 sizes.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/radio-group/radio-group.component.ts",
         "packages/primitives/src/radio-group/radio-group.component.html",
-        "packages/primitives/src/radio-group/radio.directive.ts",
         "packages/primitives/src/radio-group/radio-group.styles.css",
+        "packages/primitives/src/radio-group/radio.directive.ts",
         "packages/primitives/src/radio-group/index.ts"
       ],
       "cssImport": "radio-group.styles.css"
@@ -175,6 +190,7 @@
     {
       "name": "avatar",
       "description": "A user avatar with image, initials fallback, and icon fallback. Supports 4 sizes.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/avatar/avatar.component.ts",
         "packages/primitives/src/avatar/avatar.component.html",
@@ -186,6 +202,7 @@
     {
       "name": "progress",
       "description": "A progress bar with determinate and indeterminate modes, and 3 sizes.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/progress/progress.component.ts",
         "packages/primitives/src/progress/progress.styles.css",
@@ -196,6 +213,7 @@
     {
       "name": "spinner",
       "description": "A loading spinner with 3 sizes.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/spinner/spinner.directive.ts",
         "packages/primitives/src/spinner/spinner.styles.css",
@@ -206,6 +224,7 @@
     {
       "name": "number-input",
       "description": "A numeric input with increment and decrement controls, min/max clamping, and step support.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/number-input/number-input.component.ts",
         "packages/primitives/src/number-input/number-input.component.html",
@@ -216,7 +235,8 @@
     },
     {
       "name": "date-picker",
-      "description": "A styled native date input with 3 variants, 5 sizes, invalid state, and cross-browser webkit normalizations.",
+      "description": "A custom calendar overlay with single and range selection, min/max constraints, month/year pickers, and i18n support.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/date-picker/date-picker.component.ts",
         "packages/primitives/src/date-picker/date-picker.component.html",
@@ -229,6 +249,7 @@
     {
       "name": "dropdown-menu",
       "description": "A contextual action menu with trigger, items, separators, and labels. Supports keyboard navigation, disabled and destructive item variants, and 4 placements with start/center/end alignment.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/dropdown-menu/dropdown-menu.component.ts",
         "packages/primitives/src/dropdown-menu/dropdown-menu.component.html",
@@ -245,6 +266,7 @@
     {
       "name": "popover",
       "description": "A floating panel anchored to a trigger element with 4 placements, outside-click dismissal, and Escape key support.",
+      "status": "alpha",
       "files": [
         "packages/primitives/src/popover/popover.component.ts",
         "packages/primitives/src/popover/popover.component.html",
