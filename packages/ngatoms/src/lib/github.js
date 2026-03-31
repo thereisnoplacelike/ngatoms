@@ -23,6 +23,19 @@ export function getRawUrl(filepath) {
   return `https://raw.githubusercontent.com/ngAtoms/ngatoms/${getRef()}/${filepath}`;
 }
 
+export async function checkForUpdate() {
+  try {
+    const res = await fetch('https://registry.npmjs.org/ngatoms/latest', { signal: AbortSignal.timeout(3000) });
+    if (!res.ok) return;
+    const { version: latest } = await res.json();
+    if (latest !== VERSION) {
+      console.log(`\x1b[48;5;240m\x1b[37m  ↑ update  \x1b[0m \x1b[90mngatoms \x1b[0m\x1b[37m${VERSION}\x1b[0m\x1b[90m → \x1b[0m\x1b[32m${latest}\x1b[0m\x1b[90m  run \x1b[0m\x1b[37mnpx ngatoms@latest\x1b[0m`);
+    }
+  } catch {
+    // silently ignore — network issues should never block the CLI
+  }
+}
+
 export async function fetchText(url) {
   const res = await fetch(url);
   if (!res.ok) {

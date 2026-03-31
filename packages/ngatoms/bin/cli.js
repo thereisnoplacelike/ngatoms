@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 import { init } from '../src/commands/init.js';
 import { add } from '../src/commands/add.js';
+import { checkForUpdate } from '../src/lib/github.js';
+
+checkForUpdate();
 
 const [,, command, ...args] = process.argv;
 
